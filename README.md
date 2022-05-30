@@ -3,7 +3,7 @@
 #### updated 30 May 2023
 
 ##### Overview:
-- This project will attempt to provide an interactive mapping visulisation of Roman territorial expansion from 500 B.C. to A.D. 200. The primary focus is on Roman roads as it correlates to the growth of the empire. The Roman road network directly contributed to commerce, ease of travel, and enabled rapid movement of Roman armies and logistical resupply.
+- This project will attempt to provide an interactive mapping visualisation of Roman territorial expansion from 500 B.C. to A.D. 200. The primary focus is on Roman roads as it correlates to the growth of the empire. The Roman road network directly contributed to commerce, ease of travel, and enabled rapid movement of Roman armies and logistical resupply.
 
 - Why Roman roads anyway? They're longer lasting than modern roads! Some of these ancient roads didn't see much degradation until tanks rolled over them during World War 2, but even so, the roads were still in decent shape after the fact. Furthermore, Roman roads were marvels in engineering in terms of placement and would give the modern surveyor the run for their money if there was a contest of who could make a straighter road far over the horizon.
 
