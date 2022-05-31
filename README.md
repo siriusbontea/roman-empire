@@ -1,6 +1,6 @@
 ## Alpha Version
 ## 🚀Mapping the Infrastructure of the Roman Empire
-#### updated 30 May 2023
+#### updated 30 May 2022
 
 ##### Webpage:
 [https://siriusbontea.github.io/roman-empire/](https://siriusbontea.github.io/roman-empire/)
@@ -34,25 +34,34 @@
 
 - Due to these shortfalls, I used QGIS to create the vector files I needed and align them with the Natural Earth vector files.<sup>1</sup> I referred to the various reference maps (see list below) to create additional vector files for the following time periods:
 
-     - [500 B.C. extent](FinalProjectProposal/500BC_extent_intersection.geojson) GeoJSON
-     - [338 B.C. extent](FinalProjectProposal/338BC_extent_intersection.geojson) GeoJSON
-     - [298 B.C. extent](FinalProjectProposal/298BC_extent_intersection.geojson) GeoJSON
-     - [290 B.C. extent](FinalProjectProposal/290BC_extent_intersection.geojson) GeoJSON
-     - [272 B.C. extent](FinalProjectProposal/272BC_extent_intersection.geojson) GeoJSON
-     - [264 B.C. extent](FinalProjectProposal/264BC_extent_intersection.geojson) GeoJSON
-     - [218 B.C. extent](FinalProjectProposal/218BC_extent_intersection.geojson) GeoJSON
-     - [133 B.C. extemt](FinalProjectProposal/133BC_extent_intersection.geojson) GeoJSON<sup>2</sup>
-     - [60 B.C. extent](FinalProjectProposal/60BC_extent_intersection.geojson) GeoJSON
-     - [A.D. 14 extent](FinalProjectProposal/AD14_extent_intersection.geojson) GeoJSON
-     - [A.D. 69 extent](FinalProjectProposal/AD69_extent_intersection.geojson) GeoJSON
-     - [A.D. 117 extent](FinalProjectProposal/AD117_extent_intersection.geojson) GeoJSON
-     - [A.D. 200 extent](FinalProjectProposal/AD200_extent_intersection.geojson) GeoJSON
-     - [Max extent](FinalProjectProposal/max_extent_intersection.geojson) GeoJSON<sup>3</sup>
+     - [500 B.C. extent](data/500BC_extent_intersection.geojson) GeoJSON
+     - [338 B.C. extent](data/338BC_extent_intersection.geojson) GeoJSON
+     - [298 B.C. extent](data/298BC_extent_intersection.geojson) GeoJSON
+     - [290 B.C. extent](data/290BC_extent_intersection.geojson) GeoJSON
+     - [272 B.C. extent](data/272BC_extent_intersection.geojson) GeoJSON
+     - [264 B.C. extent](data/264BC_extent_intersection.geojson) GeoJSON
+     - [218 B.C. extent](data/218BC_extent_intersection.geojson) GeoJSON
+     - [133 B.C. extemt](data/133BC_extent_intersection.geojson) GeoJSON<sup>2</sup>
+     - [60 B.C. extent](data/60BC_extent_intersection.geojson) GeoJSON
+     - [A.D. 14 extent](data/AD14_extent_intersection.geojson) GeoJSON
+     - [A.D. 69 extent](data/AD69_extent_intersection.geojson) GeoJSON
+     - [A.D. 117 extent](data/AD117_extent_intersection.geojson) GeoJSON
+     - [A.D. 200 extent](data/AD200_extent_intersection.geojson) GeoJSON
+     - [Max extent](data/max_extent_intersection.geojson) GeoJSON<sup>3</sup>
 
 *Notes:* 
 <br/> <sup>1</sup> Some of these vector files, are still a bit rough (in my opinion), and will be further refined.
 <br/> <sup>2</sup> There are inconsistencies for the 133 B.C. maps depending on the source material and will be the highest priority for revision.
 <br/> <sup>3</sup> The "Max extent" vector file is *not* to be used denote a particular time period, but rather to be used for clipping/intersection work within QGIS.  For example, regions in Mesopotamia and Germania Magna were temporary holdings at best or areas of Roman influence due to road/trade networks (and not necessarily Roman conquered territories).
+
+##### Base Map:
+
+[The Wandering Cartographer (Digital Atlas of the Roman Empire)](https://wanderingcartographer.wordpress.com/2020/01/05/digital-atlas-of-the-roman-empire/) Article on how to add the Digital Atlas of the Roman Empire (DARE) basemap to QGIS.
+
+##### Other Resources:
+- Font selection for this project attepts to be as close to authentic Roman inscriptions as possible. The [Trajan font](https://fonts.adobe.com/fonts/trajan#fonts-section) from the [Adobe Font Collection](https://fonts.adobe.com/) is based upon the [carved inscription on the Trajan column](http://codex99.com/typography/21.html) at the Basilica Ulpia in the Forum of Trajan and depicts the Emperor Trajan's own account of his conquest of Emperor Trajan’s own account of his compaigns leading to the conquest of Decebalus (A.D. 101 - 102) and the annexation of Dacia (A.D. 105 - 106).
+
+- Colours are based on the [dyes used by the Romans](https://www.jennydean.co.uk/colours-of-the-romans/) which often had [symobolism](https://ancient-rome.info/ancient-roman-colors-symbolism/) in mind. Additionally, materials such as parchment are normally much brighter when new made compared than the darker hues we see in museum due to aging. Due to variability in the dyes, pigments, and materials used, its nearly impossible to create a perfect match on a webpage. However, I'll do the best I can to provide a close approximation.
 
 ##### User-Interface:
 - A mobile-friendly responsive Leaflet map will be means to deliver content.
@@ -64,7 +73,7 @@
 - custom icons will be used to represent key locations (major cities, key terrain), location types (forts, towns), cultural areas (tribal locations), politcal boundaries (provicial areas).
 
 ##### Draft Mock-up
-- Link to [draft mock-up](FinalProjectProposal/outline.pdf) PDF
+- Link to [draft mock-up](data/outline.pdf) PDF
 
 ##### Reference Maps:
 - [OmniAtlas (Category: Roman Empire)](https://omniatlas.com/tags/roman-empire/)
