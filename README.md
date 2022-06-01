@@ -25,6 +25,7 @@
      - Bootstrap - JS/CSS library for general layout, theme, and styles
 - Github Pages (maybe Mapbox?)
 - Adobe Stock Photos (SVGs for map icons, etc.)
+- [Convertio](https://convertio.co/) used to convert Adobe Illustrator (.ai) files to SVG.
 - possibly other hosting service for larger data (i.e., map tiles). 
 
 ##### Data files:
@@ -61,7 +62,7 @@
 ##### Other Resources:
 - Font selection for this project attepts to be as close to authentic Roman inscriptions as possible. The [Trajan font](https://fonts.adobe.com/fonts/trajan#fonts-section) from the [Adobe Font Collection](https://fonts.adobe.com/) is based upon the [carved inscription on the Trajan column](http://codex99.com/typography/21.html) at the Basilica Ulpia in the Forum of Trajan and depicts the Emperor Trajan's own account of his conquest of Emperor Trajan’s own account of his compaigns leading to the conquest of Decebalus (A.D. 101 - 102) and the annexation of Dacia (A.D. 105 - 106).
 
-- Colours are based on the [dyes used by the Romans](https://www.jennydean.co.uk/colours-of-the-romans/) which often had [symobolism](https://ancient-rome.info/ancient-roman-colors-symbolism/) in mind. Additionally, materials such as parchment are normally much brighter when new made compared than the darker hues we see in museum due to aging. Due to variability in the dyes, pigments, and materials used, its nearly impossible to create a perfect match on a webpage. However, I'll do the best I can to provide a close approximation.
+- Colours are based on the [dyes used by the Romans](https://www.jennydean.co.uk/colours-of-the-romans/) which often had [symobolism](https://ancient-rome.info/ancient-roman-colors-symbolism/) in mind. Additionally, materials such as parchment are normally much brighter when newly made compared to the darker hues we see in museums due to aging. Due to variability in the dyes, pigments, and materials used, its nearly impossible to create a perfect match on a webpage. However, I'll do the best I can to provide a close approximation.
 
 ##### User-Interface:
 - A mobile-friendly responsive Leaflet map will be means to deliver content.
