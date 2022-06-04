@@ -30,30 +30,7 @@
 
 
 
-    var southWest = L.latLng(-30, -20),
-        northEast = L.latLng(80, 110),
-        bounds = L.latLngBounds(southWest, northEast);
-
-    const map = L.map("map", {
-        zoomSnap: 0.1,
-        center: [41.9100498, 12.4659593], // Rome
-        zoom: 7.5, // 
-        zoomControl: false,
-        minZoom: 5,
-        maxZoom: 11,
-        maxBounds: bounds,
-    });
-    map.attributionControl.setPrefix("");
-
-
-    //// DARE map tile layer for now - It's a beautiful map, but for this project, I plan to make my own.
-    L.tileLayer(
-        `https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png`, {
-            attribution: '<a href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>',
-            maxZoom: 11,
-        }
-    ).addTo(map);
-    ////
+    
 
 
 

@@ -126,6 +126,25 @@ a:hover {
     max-height: 20%;
 }
 
+.blue-tooltip {
+  font-family: "Grand Hotel";
+  font-style: italic;
+  border-radius: 20px;
+  color: #0033a0;
+  font-size: 2em;
+  background-color: #ffffff3b;
+  border: 2px solid #63666a48;
+  text-shadow: #ffffff 0rem 0rem 4px;
+}
+
+.leaflet-tooltip-left.blue-tooltip::before {
+  border-left-color: #63666a;
+}
+
+.leaflet-tooltip-right.blue-tooltip::before {
+  border-right-color: #63666a;
+}
+
 .leaflet-legend {
     width: 200px;
     /* height: 180px; */
