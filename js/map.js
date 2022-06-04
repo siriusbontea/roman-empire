@@ -1,35 +1,26 @@
 
-//// DARE map tile layer for now - It's a beautiful map, but for this project, I plan to make my own.
-// L.tileLayer(
-//     `https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png`, {
-//         attribution: '<a href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>',
-//         maxZoom: 11,
-//     }
-// ).addTo(map);
-////
+// // ////////// Start of Projected
+// var naprj = {
+//   epsg: "EPSG:3034",
+//   def: "+proj=lcc+lat_1=35+lat_2=65+lat_0=52+lon_0=10+x_0=4000000+y_0=2800000+ellps=GRS80+towgs84=0,0,0,0,0,0,0+units=m+no_defs",
+//   resolutions: [8192, 4096, 2048, 1024, 512, 256, 128],
+//   origin: [0, 0],
+// };
 
-// ////////// Start of Projected
-var naprj = {
-  epsg: "EPSG:3034",
-  def: "+proj=lcc+lat_1=35+lat_2=65+lat_0=52+lon_0=10+x_0=4000000+y_0=2800000+ellps=GRS80+towgs84=0,0,0,0,0,0,0+units=m+no_defs",
-  resolutions: [8192, 4096, 2048, 1024, 512, 256, 128],
-  origin: [0, 0],
-};
-
-var crs = new L.Proj.CRS(naprj.epsg, naprj.def, {
-  resolutions: naprj.resolutions,
-  origin: naprj.origin,
-});
+// var crs = new L.Proj.CRS(naprj.epsg, naprj.def, {
+//   resolutions: naprj.resolutions,
+//   origin: naprj.origin,
+// });
 
 
-// ////////// End of Projected
+// // ////////// End of Projected
 
 var southWest = L.latLng(-5, -20),
   northEast = L.latLng(80, 110),
   bounds = L.latLngBounds(southWest, northEast);
 
 var options = {
-  // crs: crs,
+  // crs: crs,   // comment if not using projection other than WGS84
   center: [41.9100498, 12.4659593], // Rome
   zoom: 7.5,
   zoomSnap: 0.1,
@@ -55,6 +46,13 @@ L.tileLayer(
 ).addTo(map);
 // end DARE map tiles
 
+///// start of Mapbox GL JS (from instructions)
+// mapboxgl.accessToken = 'pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg';
+// var map = new mapboxgl.Map({
+// container: 'map',
+// style: 'mapbox://styles/mapbox/streets-v11'
+// });
+///// end of Mapbox GL JS
 
 
 var romeIcon = L.icon({
