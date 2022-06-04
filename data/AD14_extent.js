@@ -1,6 +1,6 @@
-{
+var extentAD14 = {
 "type": "FeatureCollection",
-"name": "AD14_extent_intersection",
+"name": "Extent of Roman Empire, A.D. 14",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
 "features": [
 { "type": "Feature", "properties": { "OBJECTID": null, "AREA": null, "PERIMETER": null, "NEWDIO_": null, "NEWDIO_ID": null, "ID": null, "Shape_Leng": null, "Shape_Area": null, "featurecla": "Land", "scalerank": 0, "min_zoom": 0.0 }, "geometry": { "type": "MultiPolygon", "coordinates": [ [ [ [ 0.860637817401331, 50.964618560213154 ], [ 0.866071204808434, 51.013519046877086 ], [ 0.900482658386755, 51.058797275269612 ], [ 0.943949757643582, 51.05336388786251 ], [ 0.996472502578914, 51.026196950826993 ], [ 1.001649618465942, 51.017725306648217 ], [ 0.976410352000073, 50.99445221600007 ], [ 0.96648196700005, 50.98273346600007 ], [ 0.969086134000065, 50.956854559000078 ], [ 0.97982832100007, 50.918158270000049 ], [ 0.945160352000073, 50.909369208000044 ], [ 0.88391790815038, 50.92216663002371 ], [ 0.860637817401331, 50.964618560213154 ] ] ] ] } },

@@ -30,8 +30,8 @@
 
 
 
-    var southWest = L.latLng(20, -20),
-        northEast = L.latLng(65, 80),
+    var southWest = L.latLng(-30, -20),
+        northEast = L.latLng(80, 110),
         bounds = L.latLngBounds(southWest, northEast);
 
     const map = L.map("map", {
@@ -46,7 +46,7 @@
     map.attributionControl.setPrefix("");
 
 
-    //// DARE map tile layer - It's a beautiful map, but for this project, I want to make my own.
+    //// DARE map tile layer for now - It's a beautiful map, but for this project, I plan to make my own.
     L.tileLayer(
         `https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png`, {
             attribution: '<a href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>',
