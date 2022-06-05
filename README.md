@@ -15,8 +15,16 @@ updated 4 June 2022
 
 - This project was built to meet requirements for Modules 8-10 of the [MAP 673: Design For Interactive Web Mapping](https://newmapsplus.github.io/map673/syllabus/) course at the [University of Kentucky](https://newmapsplus.as.uky.edu/).
 
-##### Anticipated Technology Requirements:
-- QGIS - Most of the heavy lifting behind the scenes is with QGIS for vector layer creation, editing, analysis, and processing of data prior to use for web mapping. Georeferencing of raster data, such as scans of hand drawn maps, will be done with QGIS.
+##### Methodology and Tools:
+- All software tools ran on a basic laptop with the [FreeBSD 13.1-RELEASE](https://freebsdfoundation.org/freebsd-project/what-is-freebsd/) operating system:
+
+> MSI Pulse GL66 laptop w/ external monitor
+> CPU: 11th Gen Intel i7-11800H (16) @ 2.304GHz
+> GPU: GeForce RTX 3070 Mobile / 8192MiB
+> Memory:  65204MiB
+
+- [QGIS 3.24.3-Tisler](https://www.qgis.org/en/site/forusers/alldownloads.html?highlight=FreeBSD#freebsd) performed most of the heavy lifting behind the scenes with vector layer creation, editing, analysis, and processing of data prior to use for web mapping. Georeferencing of raster data, such as scans of hand-drawn maps, will be done with QGIS.
+
 - VS Code - code editing and interaction with GitHub
 - GIMP - General editing and processing of raster images 
 - Inkscape - General editing of SVGs data
@@ -28,13 +36,13 @@ updated 4 June 2022
      - Bootstrap - JS/CSS library for general layout, theme, and styles
 - Github Pages (maybe Mapbox?)
 - Adobe Stock Photos (SVGs for map icons, etc.)
-- [Convertio](https://convertio.co/) used to convert Adobe Illustrator (.ai) files to SVG.
+- [Convertio](https://convertio.co/) was used to convert Adobe Illustrator (.ai) files to SVG.
 - possibly other hosting service for larger data (i.e., map tiles). 
 
 ##### Data files:
 - Roman roads, aqueducts, bridges (ShapeFiles) from the [Ancient World Mapping Center](https://awmc.unc.edu/wordpress/map-files/).
 
-- Ultimately, AWMC's [shapefile directory](https://awmc.unc.edu/awmc/map_data/shapefiles/political_shading/) has a decent collection of politcal maps showing the Roman Empire at various extents (from 60 B.C. to A.D. 200). However, the shapefiles were crude and did not align with shapefiles from Natural Earth's [10m Physical Vectors](https://www.naturalearthdata.com/downloads/10m-physical-vectors/), nor did they align to major natural physical barriers such as large rivers. Furthermore, I was unable to locate and vector files for the Early Roman Republic.
+- Ultimately, AWMC's [shapefile directory](https://awmc.unc.edu/awmc/map_data/shapefiles/political_shading/) has a decent collection of political maps showing the Roman Empire at various extents (from 60 B.C. to A.D. 200). However, the shapefiles were crude and did not align with shapefiles from Natural Earth's [10m Physical Vectors](https://www.naturalearthdata.com/downloads/10m-physical-vectors/), nor did they align to major natural physical barriers such as large rivers. Furthermore, I was unable to locate vector files for the Early Roman Republic.
 
 - Due to these shortfalls, I used QGIS to create the vector files I needed and align them with the Natural Earth vector files.<sup>1</sup> I referred to the various reference maps (see list below) to create additional vector files for the following time periods:
 
@@ -60,7 +68,7 @@ updated 4 June 2022
 
 ##### Datasets:
 
-- Roman Roads [data used in this project](data/RomanRoads.js) is derived primarily from the [Digital Atlas of Roman and Medieval Civilization Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU) but combined with data from [Mercator-E Project](https://fabricadesites.fcsh.unl.pt/mercator-e/) to add to the Hispania region, and [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c) to add to some of the missing segments in the Asia Minor region. The dataset from [The Roads of Roman Britain](https://roadsofromanbritain.org/index.html) was not incorporated, not because it was lacking — rather the oposite as it had more detail compared to all of the other datasets. If interested in Roman Roads in Britania specifically, be sure to check out their highly detailed research.
+- Roman Roads [data used in this project](data/RomanRoads.js) is derived primarily from the [Digital Atlas of Roman and Medieval Civilization Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU) but combined with data from [Mercator-E Project](https://fabricadesites.fcsh.unl.pt/mercator-e/) to add to the Hispania region, and [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c) to add to some of the missing segments in the Asia Minor region. The dataset from [The Roads of Roman Britain](https://roadsofromanbritain.org/index.html) was not incorporated, not because it was lacking — rather the oposite as it had more detail compared to all of the other datasets. If interested in Roman Roads in Britannia specifically, be sure to check out their highly detailed research.
 
 - [Project MERCURY-MINERVA-SIMREC (Computational Modeling in Roman Studies)](https://projectmercury.eu/datasets/)
 
