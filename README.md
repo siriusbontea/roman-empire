@@ -17,7 +17,7 @@ updated 5 June 2022
 
 ##### Methodology and Tools:
 - All software tools ran on a basic laptop with the [FreeBSD 13.1-RELEASE](https://freebsdfoundation.org/freebsd-project/what-is-freebsd/) operating system:
-````
+```
 MSI Pulse GL66 laptop w/ external monitor
 CPU: 11th Gen Intel i7-11800H (16) @ 2.304GHz
 GPU: GeForce RTX 3070 Mobile / 8192MiB
