@@ -15,26 +15,39 @@
 
 // // ////////// End of Projected
 
-// var southWest = L.latLng(-5, -20),
-//   northEast = L.latLng(80, 110),
-//   bounds = L.latLngBounds(southWest, northEast);
+var southWest = L.latLng(-5, -20),
+  northEast = L.latLng(80, 110),
+  bounds = L.latLngBounds(southWest, northEast);
 
-// var options = {
-//   // crs: crs,   // comment if not using projection other than WGS84
-//   center: [41.9100498, 12.4659593], // Rome
-//   zoom: 7.5,
-//   zoomSnap: 0.1,
-//   zoomDelta: 0.2,
-//   zoomControl: false,
-//   maxBounds: bounds,
-//   maxZoom: 11,
-//   minZoom: 5,
-// };
+var options = {
+  // crs: crs,   // comment if not using projection other than WGS84
+  center: [41.9100498, 12.4659593], // Rome
+  zoom: 7.5,
+  zoomSnap: 0.1,
+  zoomDelta: 0.2,
+  zoomControl: false,
+  maxBounds: bounds,
+  maxZoom: 11,
+  minZoom: 5,
+};
 
-// const map = L.map("map", options);
-// map.attributionControl.setPrefix("");
-// // map.scrollWheelZoom.disable();
 
+// mapbox API parameters
+const accessToken = 'pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg';
+const yourName = "siriusbontea";
+const yourMap = "cl41hks5e000x16udd55zcnuj"; // PlainTerrain
+
+const map = L.map("map", options);
+map.attributionControl.setPrefix("");
+// map.scrollWheelZoom.disable();
+
+ L.tileLayer(
+   `https://api.mapbox.com/styles/v1/${yourName}/${yourMap}/tiles/256/{z}/{x}/{y}?access_token=${accessToken}`, {
+     attribution: '',
+     // attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+     maxZoom: 18,
+   }
+ ).addTo(map);
 
 
 // // DARE map tiles layer for now - It's a beautiful map, but for this project, I plan to make my own.
@@ -56,20 +69,20 @@
   │ working!                                                                │
   └─────────────────────────────────────────────────────────────────────────┘
  */
-/// start of Mapbox GL JS (from instructions)
-mapboxgl.accessToken = 'pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg';
-const map = new mapboxgl.Map({
-container: 'map',
-style: 'mapbox://styles/siriusbontea/cl41hks5e000x16udd55zcnuj',
-center: [0,1],
-zoom: 0,
-projection: {
-  name: 'lambertConformalConic',
-  center: [12, 42],
-  parallels: [30, 30]
-}
-});
-/// end of Mapbox GL JS
+// /// start of Mapbox GL JS (from instructions)
+// mapboxgl.accessToken = 'pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg';
+// const map = new mapboxgl.Map({
+// container: 'map',
+// style: 'mapbox://styles/siriusbontea/cl41hks5e000x16udd55zcnuj',
+// center: [0,1],
+// zoom: 0,
+// projection: {
+//   name: 'lambertConformalConic',
+//   center: [12, 42],
+//   parallels: [30, 30]
+// }
+// });
+// /// end of Mapbox GL JS
 
 
 var romeIcon = L.icon({
