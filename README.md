@@ -17,12 +17,12 @@ updated 5 June 2022
 
 ##### Methodology and Tools:
 - All software tools ran on a basic laptop with the [FreeBSD 13.1-RELEASE](https://freebsdfoundation.org/freebsd-project/what-is-freebsd/) operating system:
-
-> MSI Pulse GL66 laptop w/ external monitor
-> CPU: 11th Gen Intel i7-11800H (16) @ 2.304GHz
-> GPU: GeForce RTX 3070 Mobile / 8192MiB
-> Memory:  65204MiB
-
+````
+MSI Pulse GL66 laptop w/ external monitor
+CPU: 11th Gen Intel i7-11800H (16) @ 2.304GHz
+GPU: GeForce RTX 3070 Mobile / 8192MiB
+Memory:  65204MiB
+```
 - [QGIS 3.24.3-Tisler](https://www.qgis.org/en/site/forusers/alldownloads.html?highlight=FreeBSD#freebsd) performed most of the heavy lifting behind the scenes with vector layer creation, editing, analysis, and processing of data prior to use for web mapping. Georeferencing of raster data, such as scans of hand-drawn maps, will be done with QGIS.
 
 - VS Code - code editing and interaction with GitHub
@@ -68,7 +68,7 @@ updated 5 June 2022
 
 ##### Datasets:
 
-- Roman Roads [data used in this project](data/RomanRoads.js) is derived primarily from the [Digital Atlas of Roman and Medieval Civilization Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU) but combined with data from [Mercator-E Project](https://fabricadesites.fcsh.unl.pt/mercator-e/) to add to the Hispania region, and [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c) to add to some of the missing segments in the Asia Minor region. The dataset from [The Roads of Roman Britain](https://roadsofromanbritain.org/index.html) was not incorporated, not because it was lacking — rather the oposite as it had more detail compared to all of the other datasets. If interested in Roman Roads in Britannia specifically, be sure to check out their highly detailed research.
+- Roman Roads [data used in this project](data/RomanRoads.js) is derived primarily from the [Digital Atlas of Roman and Medieval Civilization Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU) but combined with data from [Mercator-E Project](https://fabricadesites.fcsh.unl.pt/mercator-e/) to add to the Hispania region, and [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c) to add to some of the missing segments in the Asia Minor region. The dataset from [The Roads of Roman Britain](https://roadsofromanbritain.org/index.html) was not incorporated, not because it was lacking — rather the opposite as it had more detail compared to all of the other datasets. If interested in Roman Roads in Britannia specifically, be sure to check out their highly detailed research.
 
 - [Project MERCURY-MINERVA-SIMREC (Computational Modeling in Roman Studies)](https://projectmercury.eu/datasets/)
 
