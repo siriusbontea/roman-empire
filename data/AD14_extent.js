@@ -1,4 +1,4 @@
-var extentAD14 = {
+var extentAD14data = {
 "type": "FeatureCollection",
 "name": "Extent of Roman Empire, A.D. 14",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },

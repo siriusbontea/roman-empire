@@ -1,4 +1,4 @@
-var extent298BC = {
+var extent298BCdata = {
 "type": "FeatureCollection",
 "name": "298BC_extent_intersection",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },

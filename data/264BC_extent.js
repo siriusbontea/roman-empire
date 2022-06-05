@@ -1,4 +1,4 @@
-var extent264BC =
+var extent264BCdata =
 {
 "type": "FeatureCollection",
 "name": "Extent of Roman Empire, 264 B.C.",

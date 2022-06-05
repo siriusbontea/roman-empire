@@ -1,4 +1,4 @@
-var extent60BC =
+var extent60BCdata =
 
 {
 "type": "FeatureCollection",

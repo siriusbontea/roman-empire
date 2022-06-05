@@ -1,4 +1,4 @@
-var extent338BC = {
+var extent338BCdata = {
 "type": "FeatureCollection",
 "name": "Extent of Roman Empire, 338 B.C.",
 "crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },

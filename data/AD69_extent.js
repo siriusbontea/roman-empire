@@ -1,4 +1,4 @@
-var extentAD69 =
+var extentAD69data =
 {
 "type": "FeatureCollection",
 "name": "Extent of Roman Empire, A.D. 69",

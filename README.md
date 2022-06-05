@@ -59,6 +59,9 @@ updated 4 June 2022
 <br/> <sup>3</sup> The "Max extent" vector file is *not* to be used denote a particular time period, but rather to be used for clipping/intersection work within QGIS.  For example, regions in Mesopotamia and Germania Magna were temporary holdings at best or areas of Roman influence due to road/trade networks (and not necessarily Roman conquered territories).
 
 ##### Datasets:
+
+- Roman Roads [data used in this project](data/RomanRoads.js) is derived primarily from the [Digital Atlas of Roman and Medieval Civilization Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU) but combined with data from [Mercator-E Project](https://fabricadesites.fcsh.unl.pt/mercator-e/) to add to the Hispania region, and [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c) to add to some of the missing segments in the Asia Minor region. The dataset from [The Roads of Roman Britain](https://roadsofromanbritain.org/index.html) was not incorporated, not because it was lacking — rather the oposite as it had more detail compared to all of the other datasets. If interested in Roman Roads in Britania specifically, be sure to check out their highly detailed research.
+
 - [Project MERCURY-MINERVA-SIMREC (Computational Modeling in Roman Studies)](https://projectmercury.eu/datasets/)
 
 - [Juxtaposing GIS and Archaeologically Mapped Ancient Road Routes](https://www.mdpi.com/2673-7086/2/1/5/pdf) PDF - Journal article by Paddington Hodza and Kurtis A. Butler at the Wyoming Geographic Information Science Center, the University of Wyoming outlining some of the many challenges with the mapping of archaeological road networks with GIS.
