@@ -1,9 +1,9 @@
-##### Alpha Version 
+#### Alpha Version 
 updated 4 June 2022
 
 <img src="svg/RomanAquila_AdobeStock_229200876-gold.svg" style=" margin:auto ; width:175px ; text-align:middle; margin-left:50%; margin-right:50%; margin-top:-10px; margin-bottom:-10px; ">
 
-## Mapping the Infrastructure of the Roman Empire
+## Mapping the Infrastructure of the Roman Empire:
 
 ##### Webpage:
 [https://siriusbontea.github.io/roman-empire/](https://siriusbontea.github.io/roman-empire/)
@@ -58,12 +58,12 @@ updated 4 June 2022
 <br/> <sup>2</sup> There are inconsistencies for the 133 B.C. maps depending on the source material and will be the highest priority for revision.
 <br/> <sup>3</sup> The "Max extent" vector file is *not* to be used denote a particular time period, but rather to be used for clipping/intersection work within QGIS.  For example, regions in Mesopotamia and Germania Magna were temporary holdings at best or areas of Roman influence due to road/trade networks (and not necessarily Roman conquered territories).
 
-##### Datasets
+##### Datasets:
 - [Project MERCURY-MINERVA-SIMREC (Computational Modeling in Roman Studies)](https://projectmercury.eu/datasets/)
 
 - [Juxtaposing GIS and Archaeologically Mapped Ancient Road Routes](https://www.mdpi.com/2673-7086/2/1/5/pdf) PDF - Journal article by Paddington Hodza and Kurtis A. Butler at the Wyoming Geographic Information Science Center, the University of Wyoming outlining some of the many challenges with the mapping of archaeological road networks with GIS.
 
-###### Roman Road Network (version 2008)
+###### Roman Road Network (version 2008):
 - [Digital Atlas of Roman and Medieval Civilization Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU)
 
 This study provides a portable, digital version of the Roman roads identified in the Barrington Atlas, which users can visualize in combination with their own historical data. (2008) 
@@ -72,7 +72,7 @@ This study provides a portable, digital version of the Roman roads identified in
      - McCormick, Michael; Huang, Guoping; Zambotti, Giovanni; Lavash, Jessica, 2013, "Roman Road Network (version 2008)", https://doi.org/10.7910/DVN/TI0KAU, Harvard Dataverse, V1
 
 
-###### Roman roads in Britannia
+###### Roman roads in Britannia:
 
 - [The Roads of Roman Britain](https://roadsofromanbritain.org/index.html)
 
@@ -85,11 +85,22 @@ This study provides a portable, digital version of the Roman roads identified in
      -[Roman Roads in Cheshire](https://www.romanroads.org/gazetteer/cheshire/cheshire.html)
 
 
-###### Roman roads in Hispania
+###### Roman roads in Hispania:
 
 - [Mercator-E Project](https://fabricadesites.fcsh.unl.pt/mercator-e/)
 
      - [Interactive Map - Roman Roads](https://www.arcgis.com/home/webmap/viewer.html?webmap=0178a2683de44c81b5839aac2b48411e&extent=-10.6672,36.3778,3.5162,43.5015)
+
+###### Roman roads and milestones of Asia Minor:
+
+- [British Institute at Ankara](https://biaa.ac.uk/publication/open-access-electronic-publications/roman-roads/)
+
+      - [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c)
+
+
+##### Base Map:
+
+[My "Plain Terrain" Map created with Mapbox](https://api.mapbox.com/styles/v1/siriusbontea/cl41hks5e000x16udd55zcnuj.html?title=view&access_token=pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg&zoomwheel=true&fresh=true#4.79/45.4/9.88)
 
 ###### Base Map (option):
 
@@ -109,7 +120,7 @@ This study provides a portable, digital version of the Roman roads identified in
 
 - custom icons will be used to represent key locations (major cities, key terrain), location types (forts, towns), cultural areas (tribal locations), politcal boundaries (provicial areas).
 
-##### Draft Mock-up
+##### Draft Mock-up:
 - Link to [draft mock-up](data/outline.pdf) PDF
 
 ##### Reference Maps:
@@ -144,7 +155,7 @@ This study provides a portable, digital version of the Roman roads identified in
 - [Map of the Roman Empire under Hadrian (ruled 117–138 AD)](https://en.wikipedia.org/wiki/File:Roman_Empire_125.png)
 - [The Roman Empire in A.D. 117 at its greatest extent, at the time of Trajan's death](https://en.wikipedia.org/wiki/Roman_Empire#/media/File:Roman_Empire_Trajan_117AD.png)
 
-##### Additional References (general information, inspiration for colours, fonts, etc).
+##### Additional References (general information, inspiration for colours, fonts, etc.):
 
 - [What Did Ancient Rome Look Like? (Cinematic Animation)](https://www.youtube.com/watch?v=5XxA4CX_Ip8) - YouTube
 - [Tabula Peutingeriana" (Codex Vindobonensis 324)](https://www.tabula-peutingeriana.de/) - The Tabula Peutingeriana is a copy of an old roadmap of ancient Roman road network called *cursus publicus*.

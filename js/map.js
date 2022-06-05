@@ -15,50 +15,67 @@
 
 // // ////////// End of Projected
 
-var southWest = L.latLng(-5, -20),
-  northEast = L.latLng(80, 110),
-  bounds = L.latLngBounds(southWest, northEast);
+// var southWest = L.latLng(-5, -20),
+//   northEast = L.latLng(80, 110),
+//   bounds = L.latLngBounds(southWest, northEast);
 
-var options = {
-  // crs: crs,   // comment if not using projection other than WGS84
-  center: [41.9100498, 12.4659593], // Rome
-  zoom: 7.5,
-  zoomSnap: 0.1,
-  zoomDelta: 0.2,
-  zoomControl: false,
-  maxBounds: bounds,
-  maxZoom: 11,
-  minZoom: 5,
-};
+// var options = {
+//   // crs: crs,   // comment if not using projection other than WGS84
+//   center: [41.9100498, 12.4659593], // Rome
+//   zoom: 7.5,
+//   zoomSnap: 0.1,
+//   zoomDelta: 0.2,
+//   zoomControl: false,
+//   maxBounds: bounds,
+//   maxZoom: 11,
+//   minZoom: 5,
+// };
 
-const map = L.map("map", options);
-map.attributionControl.setPrefix("");
-// map.scrollWheelZoom.disable();
+// const map = L.map("map", options);
+// map.attributionControl.setPrefix("");
+// // map.scrollWheelZoom.disable();
 
 
 
-// DARE map tiles layer for now - It's a beautiful map, but for this project, I plan to make my own.
-L.tileLayer(
-  `https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png`, {
-    attribution: '<a href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>',
-    maxZoom: 11,
-  }
-).addTo(map);
-// end DARE map tiles
+// // DARE map tiles layer for now - It's a beautiful map, but for this project, I plan to make my own.
+// L.tileLayer(
+//   `https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png`, {
+//     attribution: '<a href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>',
+//     maxZoom: 11,
+//   }
+// ).addTo(map);
+// // end DARE map tiles
 
-///// start of Mapbox GL JS (from instructions)
-// mapboxgl.accessToken = 'pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg';
-// var map = new mapboxgl.Map({
-// container: 'map',
-// style: 'mapbox://styles/mapbox/streets-v11'
-// });
-///// end of Mapbox GL JS
+
+/* 
+  ┌─────────────────────────────────────────────────────────────────────────┐
+  │  Mapbox GL JS is cool in that it can do projected raster maps.          │
+  │ However, it does everything else differently with markers, etc.         │
+  │ compared to Leaflet.  New learning curve (nothing wrong with that),     │
+  │ but not enough time to mess with right now. I just need to get things   │
+  │ working!                                                                │
+  └─────────────────────────────────────────────────────────────────────────┘
+ */
+/// start of Mapbox GL JS (from instructions)
+mapboxgl.accessToken = 'pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg';
+const map = new mapboxgl.Map({
+container: 'map',
+style: 'mapbox://styles/siriusbontea/cl41hks5e000x16udd55zcnuj',
+center: [0,1],
+zoom: 0,
+projection: {
+  name: 'lambertConformalConic',
+  center: [12, 42],
+  parallels: [30, 30]
+}
+});
+/// end of Mapbox GL JS
 
 
 var romeIcon = L.icon({
   iconUrl:
-    "svg/RomanAquila_AdobeStock_229200876.svg", // placeholder icon for now
-  iconSize: [60, 66], // size of the icon
+    "svg/RomanAquila_AdobeStock_229200876-gold.svg", // placeholder icon for now
+  iconSize: [90, 60], // size of the icon
   iconAnchor: [5, 10], // point of the icon which will correspond to marker's location
   popupAnchor: [0, 0], // point from which the popup should open relative to the iconAnchor
 });
