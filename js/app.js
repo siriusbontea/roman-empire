@@ -116,24 +116,27 @@ var streets = L.tileLayer(mbUrl, {
 // /// end of Mapbox GL JS
 
 
+////////// This is just a placeholder for right now //////////////
 var romeIcon = L.icon({
     iconUrl: "svg/RomanAquila_AdobeStock_229200876-gold.svg", // placeholder icon for now
     iconSize: [90, 60], // size of the icon
     iconAnchor: [5, 10], // point of the icon which will correspond to marker's location
     popupAnchor: [0, 0], // point from which the popup should open relative to the iconAnchor
 });
-
 L.marker([41.9100498, 12.4659593], {
         icon: romeIcon,
     })
     .addTo(map)
     .bindTooltip(
-        `<img src='images/legionary_globe.png' class='center'><br>Geography of the Roman Empire, y'all!`, {
+        `<img src='images/legionary_globe.png' class='center' style='width: 150px'><br>Geography of the Roman Empire, y'all!`, {
             className: "blue-tooltip",
-            maxWidth: 300,
+            maxWidth: 200,
             sticky: true,
         }
     );
+
+
+
 
 // graticules 
 fetch("data/geo_lines.geojson")
@@ -196,129 +199,129 @@ fetch("data/10m_land.geojson")
         console.log(`Something went wrong: ${error}`);
     });
 
-    // Lakes
-    fetch("data/10m_lakes.geojson")
-        .then(function (response) {
-            console.log(response);
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-        })
-        .then(function (data) {
-            var data = L.geoJson(data, {
-                style: function (feature) {
-                    return {
-                        color: "#4BB6EF",
-                        weight: .5,
-                        opacity: 1,
-                        fillColor: "#4BB6EF",
-                        fillOpacity: .5,
-                        interactive: false,
-                    };
-                },
-            }).addTo(map);
-        })
-        .then(function () {
-            drawNewLayers();
-        })
-        .catch(function (error) {
-            console.log(`Something went wrong: ${error}`);
+// Lakes
+fetch("data/10m_lakes.geojson")
+    .then(function (response) {
+        console.log(response);
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    })
+    .then(function (data) {
+        var data = L.geoJson(data, {
+            style: function (feature) {
+                return {
+                    color: "#4BB6EF",
+                    weight: .5,
+                    opacity: 1,
+                    fillColor: "#4BB6EF",
+                    fillOpacity: .5,
+                    interactive: false,
+                };
+            },
+        }).addTo(map);
+    })
+    .then(function () {
+        drawNewLayers();
+    })
+    .catch(function (error) {
+        console.log(`Something went wrong: ${error}`);
+    });
+
+// Lakes and rivers centre lines
+fetch("data/10m_rivers_lake_centerlines.geojson")
+    .then(function (response) {
+        console.log(response);
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    })
+    .then(function (data) {
+        var data = L.geoJson(data, {
+            style: function (feature) {
+                return {
+                    color: "#4BB6EF",
+                    weight: .5,
+                    opacity: 1,
+                    fillColor: "#4BB6EF",
+                    fillOpacity: .5,
+                    interactive: false,
+                };
+            },
+        }).addTo(map);
+    })
+    .then(function () {
+        drawNewLayers();
+    })
+    .catch(function (error) {
+        console.log(`Something went wrong: ${error}`);
+    });
+
+// Lakes label
+fetch("data/10m_lakes_label.geojson")
+    .then(function (response) {
+        console.log(response);
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    })
+    .then(function (data) {
+        var data = L.geoJson(data, {
+            style: function (feature) {
+                return {
+                    color: "black",
+                    weight: .5,
+                    opacity: 1,
+                    fillColor: "#ffffff",
+                    fillOpacity: 0,
+                    interactive: false,
+                };
+            },
         });
+    })
+    .then(function () {
+        drawNewLayers();
+    })
+    .catch(function (error) {
+        console.log(`Something went wrong: ${error}`);
+    });
 
-        // Lakes and rivers centre lines
-        fetch("data/10m_rivers_lake_centerlines.geojson")
-            .then(function (response) {
-                console.log(response);
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-            })
-            .then(function (data) {
-                var data = L.geoJson(data, {
-                    style: function (feature) {
-                        return {
-                            color: "#4BB6EF",
-                            weight: .5,
-                            opacity: 1,
-                            fillColor: "#4BB6EF",
-                            fillOpacity: .5,
-                            interactive: false,
-                        };
-                    },
-                }).addTo(map);
-            })
-            .then(function () {
-                drawNewLayers();
-            })
-            .catch(function (error) {
-                console.log(`Something went wrong: ${error}`);
-            });
-
-        // Lakes label
-    fetch("data/10m_lakes_label.geojson")
-        .then(function (response) {
-            console.log(response);
-            if (response.ok) {
-                return response.json();
-            } else {
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-        })
-        .then(function (data) {
-            var data = L.geoJson(data, {
-                style: function (feature) {
-                    return {
-                        color: "black",
-                        weight: .5,
-                        opacity: 1,
-                        fillColor: "#ffffff",
-                        fillOpacity: 0,
-                        interactive: false,
-                    };
-                },
-            });
-        })
-        .then(function () {
-            drawNewLayers();
-        })
-        .catch(function (error) {
-            console.log(`Something went wrong: ${error}`);
-        });
-
-        // Fortifications
-        fetch("data/fortifications.geojson")
-            .then(function (response) {
-                console.log(response);
-                if (response.ok) {
-                    return response.json();
-                } else {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-            })
-            .then(function (data) {
-                var data = L.geoJson(data, {
-                    style: function (feature) {
-                        return {
-                            color: "black",
-                            weight: 1.7,
-                            opacity: 1,
-                            fillColor: "#ffffff",
-                            fillOpacity: 0,
-                            interactive: false,
-                        };
-                    },
-                }).addTo(map);
-            })
-            .then(function () {
-                drawNewLayers();
-            })
-            .catch(function (error) {
-                console.log(`Something went wrong: ${error}`);
-            });
+// Fortifications
+fetch("data/fortifications.geojson")
+    .then(function (response) {
+        console.log(response);
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    })
+    .then(function (data) {
+        var data = L.geoJson(data, {
+            style: function (feature) {
+                return {
+                    color: "black",
+                    weight: 1.7,
+                    opacity: 1,
+                    fillColor: "#ffffff",
+                    fillOpacity: 0,
+                    interactive: false,
+                };
+            },
+        }).addTo(map);
+    })
+    .then(function () {
+        drawNewLayers();
+    })
+    .catch(function (error) {
+        console.log(`Something went wrong: ${error}`);
+    });
 
 // Places High
 fetch("data/places_low.geojson")
@@ -352,8 +355,27 @@ fetch("data/places_low.geojson")
     });
 
 
+////  I think I need to make an array of the Roman Empire extent layers...
+const extentArray = [
+    "extent500BC", // index 0
+    "extent338BC", // index 1
+    "extent298BC", // index 2
+    "extent290BC", // index 3
+    "extent272BC", // index 4
+    "extent264BC", // index 5
+    "extent218BC", // index 6
+    "extent133BC", // index 7
+    "extent60BC", // index 8
+    "extentAD14", // index 9
+    "extentAD69", // index 10
+    "extentAD117", // index 11
+    "extentAD200", // index 12
+]
 
-///////////// Roman Empire extent layers
+
+
+
+/////////// Roman Empire extent layers
 // Extent of Roman Empire, 500 B.C.
 var extent500BC = L.geoJson(extent500BCdata, {
     style: function (feature) {
@@ -542,6 +564,117 @@ var romanRoads = L.geoJson(romanRoadsData, {
 });
 
 
+function drawMap(myLayers) {
+
+    // create Leaflet object with geometry data and add to map
+    const dataLayer = L.geoJson(myLayers[0], {
+        style: function (feature) {
+            return {
+                color: "black",
+                weight: 1,
+                fillOpacity: 1,
+                fillColor: "#1f78b4"
+            };
+        },
+        // add hover/touch functionality to each feature layer
+        onEachFeature: function (feature, layer) {
+            // when mousing over a layer
+            layer.on('mouseover', function () {
+                //change the stroke color and bring that element to the front
+                layer.setStyle({
+                    color: '#ffd70090',
+                    weight: 5
+                }).bringToFront();
+            });
+            // on mousing off layer
+            layer.on('mouseout', function () {
+                // reset the layer style to its original stroke color
+                layer.setStyle({
+                    color: '#000000',
+                    weight: 1
+                });
+            });
+        }
+    }).addTo(map);
+
+    L.geoJson(myLayers[1], {
+        style: function (feature) {
+            return {
+                color: "#333333",
+                weight: 2,
+                opacity: 1,
+                interactive: false,
+            };
+        },
+    }).addTo(map);
+
+
+    // create the slider
+    createSliderUI(dataLayer);
+
+    // call to initially color the map with first timestamp
+    updateMap(dataLayer, '500 B.C.');
+} // end drawMap()
+
+function updateMap(dataLayer, currentYear) {
+
+    // loop through each layer
+    dataLayer.eachLayer(function (layer) {
+         
+            layer.setStyle({
+                color: "#A91101",
+                fillColor: "#A91101",
+                weight: 1,
+                fillOpacity: 0.3,
+                interactive: false,
+            });
+    });
+
+} // end updateMap()
+
+
+function createSliderUI(dataLayer) {
+
+
+    // create Leaflet control for the slider
+    const sliderControl = L.control({
+        position: 'bottomleft'
+    });
+    // when added to the map
+    sliderControl.onAdd = function (map) {
+        // select an existing DOM element with an id of "ui-controls"
+        const slider = L.DomUtil.get("slider-control");
+        // disable scrolling of map while using controls
+        L.DomEvent.disableScrollPropagation(slider);
+        // disable click events while using controls
+        L.DomEvent.disableClickPropagation(slider);
+        // return the slider from the onAdd method
+        return slider;
+    }
+    // add the control to the map
+    sliderControl.addTo(map);
+
+    // select the form element
+    const slider = document.querySelector(".year-slider");
+    // listen for changes on input element
+    slider.addEventListener("input", function (e) {
+        // get the value of the selected option
+        const currentYear = e.target.value;
+        // update the map with current timestamp
+        updateMap(dataLayer, currentYear);
+        // update timestamp in period indicator heading
+        document.querySelector("#periodIndicator").innerHTML = currentYear;
+    });
+} // end createSliderUI()
+
+
+
+
+
+
+
+
+
 /* --------------- Toggle on/off info footer content ---------------  */
 var clicked = false; // start with false condition
 function myInfo() {
@@ -550,14 +683,13 @@ function myInfo() {
     var x = document.getElementById("footer");
     var y = document.getElementById("info-button");
     if (clicked) {
-           y.style.background = "#A91101";
-           y.style.color = "#fff9df";
+        y.style.background = "#A91101";
+        y.style.color = "#fff9df";
         x.style.height = "0px"; // no footer height
     } else {
-     y.style.background = "#fff9dfa0";
-     y.style.color = "#A91101";
+        y.style.background = "#fff9dfa0";
+        y.style.color = "#A91101";
         x.style.height = "60vh"; // footer 60% of viewport height
     }
     clicked = !clicked;
 }
-

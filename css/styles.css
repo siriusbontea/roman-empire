@@ -125,18 +125,25 @@ blockquote {
 }
 
 #slider {
-    background-color: #00000080;
-    padding: 50px 10px 0px 10px;
-    border-radius: 10%;
+    width: 300px;
+    padding: 8px 25px 8px 15px;
+    background: rgba(25, 25, 25, 0.8);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    color: whitesmoke;
 }
 
-#legend {
-    background-color: #00000080;
-    border-radius: 5%;
+#slider-control .min {
+    float: left;
 }
 
-#legend button {
-    display: block;
+#slider-control .max {
+    float: right;
+    margin-right: -15px;
+}
+
+.year-slider {
+    width: 100%;
 }
 
 #periodIndicator {
@@ -150,6 +157,17 @@ blockquote {
     font-weight: 700;
     font-size: 1.3rem;
 }
+
+
+#legend {
+    background-color: #00000080;
+    border-radius: 5%;
+}
+
+#legend button {
+    display: block;
+}
+
 
 #info-button {
     padding: 6px 8px;
