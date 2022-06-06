@@ -29,35 +29,78 @@ var options = {
   maxBounds: bounds,
   maxZoom: 11,
   minZoom: 5,
+  // layers: [plainTerrain, dare]
 };
 
+// Mapbox API parameters
+var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+var mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg'
 
-// mapbox API parameters
-const accessToken = 'pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg';
-const yourName = "siriusbontea";
-const yourMap = "cl41hks5e000x16udd55zcnuj"; // PlainTerrain
+// // mapbox API parameters
+// const accessToken = 'pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg';
+// const yourName = "siriusbontea";
+// const yourMap = "cl41hks5e000x16udd55zcnuj"; // PlainTerrain
+
+// const map = L.map("map", options);
+// map.attributionControl.setPrefix("");
+// // map.scrollWheelZoom.disable();
+
+//  L.tileLayer(
+//    `https://api.mapbox.com/styles/v1/${yourName}/${yourMap}/tiles/256/{z}/{x}/{y}?access_token=${accessToken}`, {
+//     //  attribution: '',
+//     //  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+//      maxZoom: 18,
+//    }
+//  ).addTo(map);
 
 const map = L.map("map", options);
 map.attributionControl.setPrefix("");
 // map.scrollWheelZoom.disable();
 
- L.tileLayer(
-   `https://api.mapbox.com/styles/v1/${yourName}/${yourMap}/tiles/256/{z}/{x}/{y}?access_token=${accessToken}`, {
-     attribution: '',
-     // attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-     maxZoom: 18,
-   }
- ).addTo(map);
+var baseLayers = {
+  'Terrain': plainTerrain,
+  'DARE': dare,
+  'Modern Streets': streets
+}
 
 
-// // DARE map tiles layer for now - It's a beautiful map, but for this project, I plan to make my own.
-// L.tileLayer(
-//   `https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png`, {
-//     attribution: '<a href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>',
-//     maxZoom: 11,
-//   }
-// ).addTo(map);
-// // end DARE map tiles
+var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+var mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg'
+
+
+var plainTerrain = L.tileLayer(mbUrl, {
+  id: 'siriusbontea/cl41hks5e000x16udd55zcnuj',
+  tileSize: 512,
+  zoomOffset: -1,
+  attribution: mbAttr
+});
+
+// DARE map tiles
+var dare = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {
+  maxZoom: 11,
+  attribution: '&copy; <a href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></a>'
+});
+
+var streets = L.tileLayer(mbUrl, {
+  id: 'mapbox/streets-v11',
+  tileSize: 512,
+  zoomOffset: -1,
+  attribution: mbAttr
+});
+
+// var overlays = {
+//   'Roman Roads': romanRoads
+// };
+
+
+
+// var layerControl = L.control.layers(baseLayers).addTo(map);
+
+
+
+
+
+
 
 
 /* 

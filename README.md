@@ -108,7 +108,19 @@ This study provides a portable, digital version of the Roman roads identified in
 
       - [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c)
 
+###### Points of Interest:
 
+- Data from [Klokantech Github](https://github.com/klokantech/roman-empire) which was derived from data from the [Centre for Digital Humanities, University of Gothenburg](https://dh.gu.se/dare/) and made into GeoJSON files:
+
+     - [places_high](data/places_high.geojson) GeoJSON
+     - [places_medium](data/places_medium.geojson) GeoJSON
+     - [places_low](data/places_low.geojson) GeoJSON
+     - [places_subsites](data/places_subsites.geojson) GeoJSON
+     - [fortifications](data/fortifications.geojson) GeoJSON
+     - [10m_lakes_label](data/10m_lakes_label.geojson) GeoJSON
+     - [10m_lakes](data/10m_lakes.geojson) GeoJSON
+     - [10m_rivers_lakes_centerlines](data/10m_rivers_lake_centerlines.geojson) GeoJSON
+     
 ##### Base Map:
 
 [My "Plain Terrain" Map created with Mapbox](https://api.mapbox.com/styles/v1/siriusbontea/cl41hks5e000x16udd55zcnuj.html?title=view&access_token=pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg&zoomwheel=true&fresh=true#4.79/45.4/9.88)
