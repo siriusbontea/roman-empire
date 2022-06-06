@@ -165,8 +165,8 @@ fetch("data/geo_lines.geojson")
         console.log(`Something went wrong: ${error}`);
     });
 
-// Map
-fetch("data/map_extent.geojson")
+// Land
+fetch("data/10m_land.geojson")
     .then(function (response) {
         console.log(response);
         if (response.ok) {
@@ -195,6 +195,162 @@ fetch("data/map_extent.geojson")
     .catch(function (error) {
         console.log(`Something went wrong: ${error}`);
     });
+
+    // Lakes
+    fetch("data/10m_lakes.geojson")
+        .then(function (response) {
+            console.log(response);
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+        })
+        .then(function (data) {
+            var data = L.geoJson(data, {
+                style: function (feature) {
+                    return {
+                        color: "#4BB6EF",
+                        weight: .5,
+                        opacity: 1,
+                        fillColor: "#4BB6EF",
+                        fillOpacity: .5,
+                        interactive: false,
+                    };
+                },
+            }).addTo(map);
+        })
+        .then(function () {
+            drawNewLayers();
+        })
+        .catch(function (error) {
+            console.log(`Something went wrong: ${error}`);
+        });
+
+        // Lakes and rivers centre lines
+        fetch("data/10m_rivers_lake_centerlines.geojson")
+            .then(function (response) {
+                console.log(response);
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+            })
+            .then(function (data) {
+                var data = L.geoJson(data, {
+                    style: function (feature) {
+                        return {
+                            color: "#4BB6EF",
+                            weight: .5,
+                            opacity: 1,
+                            fillColor: "#4BB6EF",
+                            fillOpacity: .5,
+                            interactive: false,
+                        };
+                    },
+                }).addTo(map);
+            })
+            .then(function () {
+                drawNewLayers();
+            })
+            .catch(function (error) {
+                console.log(`Something went wrong: ${error}`);
+            });
+
+        // Lakes label
+    fetch("data/10m_lakes_label.geojson")
+        .then(function (response) {
+            console.log(response);
+            if (response.ok) {
+                return response.json();
+            } else {
+                throw new Error(`HTTP error! status: ${response.status}`);
+            }
+        })
+        .then(function (data) {
+            var data = L.geoJson(data, {
+                style: function (feature) {
+                    return {
+                        color: "black",
+                        weight: .5,
+                        opacity: 1,
+                        fillColor: "#ffffff",
+                        fillOpacity: 0,
+                        interactive: false,
+                    };
+                },
+            });
+        })
+        .then(function () {
+            drawNewLayers();
+        })
+        .catch(function (error) {
+            console.log(`Something went wrong: ${error}`);
+        });
+
+        // Fortifications
+        fetch("data/fortifications.geojson")
+            .then(function (response) {
+                console.log(response);
+                if (response.ok) {
+                    return response.json();
+                } else {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+            })
+            .then(function (data) {
+                var data = L.geoJson(data, {
+                    style: function (feature) {
+                        return {
+                            color: "black",
+                            weight: 1.7,
+                            opacity: 1,
+                            fillColor: "#ffffff",
+                            fillOpacity: 0,
+                            interactive: false,
+                        };
+                    },
+                }).addTo(map);
+            })
+            .then(function () {
+                drawNewLayers();
+            })
+            .catch(function (error) {
+                console.log(`Something went wrong: ${error}`);
+            });
+
+// Places High
+fetch("data/places_low.geojson")
+    .then(function (response) {
+        console.log(response);
+        if (response.ok) {
+            return response.json();
+        } else {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+    })
+    .then(function (data) {
+        var data = L.geoJson(data, {
+            style: function (feature) {
+                return {
+                    color: "black",
+                    weight: .5,
+                    opacity: 1,
+                    fillColor: "#ffffff",
+                    fillOpacity: 0,
+                    interactive: false,
+                };
+            },
+        });
+    })
+    .then(function () {
+        drawNewLayers();
+    })
+    .catch(function (error) {
+        console.log(`Something went wrong: ${error}`);
+    });
+
 
 
 ///////////// Roman Empire extent layers

@@ -53,7 +53,7 @@ Memory:  65204MiB
      - [272 B.C. extent](data/272BC_extent_intersection.geojson) GeoJSON
      - [264 B.C. extent](data/264BC_extent_intersection.geojson) GeoJSON
      - [218 B.C. extent](data/218BC_extent_intersection.geojson) GeoJSON
-     - [133 B.C. extemt](data/133BC_extent_intersection.geojson) GeoJSON<sup>2</sup>
+     - [133 B.C. extent](data/133BC_extent_intersection.geojson) GeoJSON<sup>2</sup>
      - [60 B.C. extent](data/60BC_extent_intersection.geojson) GeoJSON
      - [A.D. 14 extent](data/AD14_extent_intersection.geojson) GeoJSON
      - [A.D. 69 extent](data/AD69_extent_intersection.geojson) GeoJSON
@@ -121,13 +121,13 @@ This study provides a portable, digital version of the Roman roads identified in
      - [10m_lakes](data/10m_lakes.geojson) GeoJSON
      - [10m_rivers_lakes_centerlines](data/10m_rivers_lake_centerlines.geojson) GeoJSON
 
-Type Identifier | Description | Zoom 
-:---: | --- | :---: 
-11 | Major settlement (capital, colonia, municipium) | 6
-17   |  Major fort (legionary fortress) | 6
-13 |   Civitas capital (Late Roman Gallia) | 8
-12    |       Settlement (civitas, vicus, other settlement) |8
-18 |     Fort (castrum, castellum) |8
+Type Identifier|Description|Zoom 
+:---:| ---|:---: 
+11 |Major settlement (capital, colonia, municipium) |6
+17 |Major fort (legionary fortress) |6
+13 |Civitas capital (Late Roman Gallia) |8
+12 |Settlement (civitas, vicus, other settlement) |8
+18 |Fort (castrum, castellum) |8
 53 |Fortlet, tower |10
 16 |Road or coastal station |8
 31 |Iron Age (Celtic) Oppidum |9
