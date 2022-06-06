@@ -46,7 +46,7 @@ font-style: normal;
 
 body {
     font-family: map-roman-normal,
-    serif;
+        serif;
     font-weight: 400;
     font-style: normal;
 }
@@ -57,7 +57,7 @@ p {
 
 .leaflet-container {
     font-family: map-roman-normal,
-    serif;
+        serif;
     font-size: 0.9rem;
     line-height: 1.4rem;
     font-weight: 400;
@@ -68,17 +68,12 @@ p {
     color: #A91101;
 }
 
-
-
 .indented {
     text-indent: 20pt;
     text-align: justify;
     /* Need to add @media breaks to allow non-justify for smaller screens! */
 }
 
-.social-font {
-    font-size: 1.5rem;
-}
 
 blockquote {
     padding-left: 25pt;
@@ -89,33 +84,12 @@ blockquote {
     /* Need to add @media breaks to allow non-justify for smaller screens! */
 }
 
-h1 {
-    color: #00416A; /* indigo dye colour */
-    font-weight: 700;
-    font-size: 1.8rem;
-}
-
-h2 {
-    color: #00416A;
-    font-size: 1.5rem;
-    font-weight: 500
-}
-
-a {
-    color: #00416A;
-    text-decoration: 1px underline dotted DimGray;
-}
-
-a:hover {
-    text-decoration: 1px underline;
-    color: MidnightBlue;
-    filter: drop-shadow(0rem 0rem 0.2rem Goldenrod);
-}
-
 #map {
-    height: 75vh;
-    border-top: 2px solid grey;
-    background-color: rgb(216, 216, 216);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 .aquila {
@@ -127,31 +101,26 @@ a:hover {
 }
 
 .blue-tooltip {
-  font-family: "Grand Hotel";
-  font-style: italic;
-  border-radius: 20px;
-  color: #0033a0;
-  font-size: 2em;
-  background-color: #ffffff3b;
-  border: 2px solid #63666a48;
-  text-shadow: #ffffff 0rem 0rem 4px;
+    font-family: "Grand Hotel";
+    font-style: italic;
+    border-radius: 20px;
+    color: #0033a0;
+    font-size: 2em;
+    background-color: #ffffff3b;
+    border: 2px solid #63666a48;
+    text-shadow: #ffffff 0rem 0rem 4px;
 }
 
 .leaflet-tooltip-left.blue-tooltip::before {
-  border-left-color: #63666a;
+    border-left-color: #63666a;
 }
 
 .leaflet-tooltip-right.blue-tooltip::before {
-  border-right-color: #63666a;
+    border-right-color: #63666a;
 }
 
 .leaflet-legend {
     width: 200px;
-    /* height: 180px; */
-    /* background-color: DarkGray; */
-    /* Legend is not shown on small screens. */
-    display: none;
-    
     color: #ffe6a2;
 }
 
@@ -162,29 +131,12 @@ a:hover {
 }
 
 #legend {
-background-color: #00000080;
-border-radius: 5%;
+    background-color: #00000080;
+    border-radius: 5%;
 }
 
 #legend button {
     display: block;
-}
-
-.legend-large,
-.legend-small {
-    border-radius: 50%;
-    border: 1.5px solid rgb(255, 255, 255);
-    color:rgb(255, 255, 255)
-}
-
-hr.small,
-hr.large {
-    width: 83px;
-    position: absolute;
-    top: -8px;
-    left: 55px;
-    border: 1.5px dashed rgb(0, 0, 0);
-    margin-top: 8px;
 }
 
 #periodIndicator {
@@ -199,58 +151,27 @@ hr.large {
     font-size: 1.3rem;
 }
 
-#info {
-    z-index: 1000;
-    display: none;
-    width: 260px;
-    position: absolute;
-    background-color: #00000080;
-    color: #ffffff;
-    border-radius: 5%;
-    /* top: 10px;
-    right: 10px; */
-}
-
-#info p {
-    text-transform: uppercase;
-    color: #ffffff;
-}
-
-#info h4 {
+#info-button {
+    padding: 6px 8px;
+    font-family: trajan-pro-3,
+    serif;
     font-weight: 700;
-    color: #ffffff;
-}
-
-#avatar {
-    border-radius: 9%;
-    filter: drop-shadow(0rem 0rem 0.2rem #8b8b8b);
-}
-
-#bio {
-    text-align: justify;
-    align-items: center;
-    align-content: center;
-     margin-left: 30px;
-     margin-right: 30px
-}
-
-#bio img {
-    display: none;
-}
-
-#bio a:hover img {
-    display: block;
+    font-style: normal;
+    background: #A91101;
+    color: #fff9df;
+    text-transform: uppercase;
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
+    border-radius: 10px;
+    padding: 1;
+    font-size: 1em;
+    /* Position */
     position: fixed;
-    bottom: 50px;
-    left: 5px;
-    width: 200px;
-    height: 200px;
-    z-index: 800;
-    border-radius: 100%;   
-}
-
-.dotted-underline {
-    text-decoration: 1px underline dotted DimGray;
+    top: 1%;
+    right: 50%;
+    /* Draw it on top of all elements */
+    z-index: 9999;
+    /* Cursor change on hover -- doesn't work on touch screensn */
+    cursor: pointer;
 }
 
 .center {
@@ -261,41 +182,68 @@ hr.large {
     width: auto;
 }
 
+/* This section below controls the style for the info section on the bottom */
 #footer {
-    display: none;
+    width: 100%;
+    background: #fff9dfbc;
+    box-shadow: 0 0 15px #00000080;
+    height: 0px;
+    padding: 0px;
+    /* display below the button to allow clicking if overlay covers screen */
+    z-index: 9000;
+    position: absolute;
+    /* 
+Hide the footer be default. This should not contain too much information. Link to a new page for extended content.
+*/
+    bottom: -10px;
+    /* If too much is included, enable scroll */
+    overflow: scroll;
 }
 
-/* Rule to toggle on/off legend. */
-.show-legend {
-    display: block;
-    margin-bottom: 10px;
+#footer div {
+    padding: 10px;
 }
 
-/* When screen is 768px and wider. */
-@media screen and (min-width: 768px) {
-    #map {
-        border-top: none;
-    }
+#footer h1 {
+    font-size: 1.7em;
+    color: #202020;
+    font-family: trajan-pro-3,
+    serif;
+    font-weight: 700;
+    font-style: normal;
+    margin: 0 0 0 0;
+}
 
-    .leaflet-legend {
-        display: block;
-    }
-
-    #legend button {
-        display: none;
-    }
-
-    #periodIndicator {
-        bottom: 120px;
-        left: 26.2%;
-          }
-
-    .flag {
-        max-height: 5%;
-    }
-
-    #footer {
-        display: block;
-    }
+#footer p {
+    font-size: 1.2em;
+    color: #202020;
+    font-family: map-roman-normal,
+    serif;
+    font-weight: 400;
+    font-style: normal;
+    padding-top: 1%;
    
+}
+
+#footer a {
+    color: #000000;
+    text-decoration: 0.1px underline dotted #6e6e6e;
+}
+
+#footer a:hover {
+    text-decoration: underline;
+    color: #9f0000;
+    filter: drop-shadow(0rem 0rem 0.4rem #000000);
+}
+
+#social a:hover {
+    text-decoration: underline;
+    color: #ffff00;
+    filter: drop-shadow(0rem 0rem 0.4rem #000000);
+}
+
+.social-font {
+    font-size: 1.5rem;
+    padding-left: 10px;
+    padding-right: 10px
 }

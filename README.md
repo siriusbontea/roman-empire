@@ -91,9 +91,9 @@ This study provides a portable, digital version of the Roman roads identified in
 
      - [Roman Roads in Lancashire](https://www.romanroads.org/gazetteer/lancspages.html)
 
-     -[Roman Roads in Cumbria](https://www.romanroads.org/gazetteer/cumbria/cumbriapages.html)
+     - [Roman Roads in Cumbria](https://www.romanroads.org/gazetteer/cumbria/cumbriapages.html)
 
-     -[Roman Roads in Cheshire](https://www.romanroads.org/gazetteer/cheshire/cheshire.html)
+     - [Roman Roads in Cheshire](https://www.romanroads.org/gazetteer/cheshire/cheshire.html)
 
 
 ###### Roman roads in Hispania:
@@ -106,7 +106,7 @@ This study provides a portable, digital version of the Roman roads identified in
 
 - [British Institute at Ankara](https://biaa.ac.uk/publication/open-access-electronic-publications/roman-roads/)
 
-      - [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c)
+     - [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c)
 
 ###### Points of Interest:
 
@@ -120,7 +120,33 @@ This study provides a portable, digital version of the Roman roads identified in
      - [10m_lakes_label](data/10m_lakes_label.geojson) GeoJSON
      - [10m_lakes](data/10m_lakes.geojson) GeoJSON
      - [10m_rivers_lakes_centerlines](data/10m_rivers_lake_centerlines.geojson) GeoJSON
-     
+
+Type Identifier | Description | Zoom 
+:---: | --- | :---: 
+11 | Major settlement (capital, colonia, municipium) | 6
+17   |  Major fort (legionary fortress) | 6
+13 |   Civitas capital (Late Roman Gallia) | 8
+12    |       Settlement (civitas, vicus, other settlement) |8
+18 |     Fort (castrum, castellum) |8
+53 |Fortlet, tower |10
+16 |Road or coastal station |8
+31 |Iron Age (Celtic) Oppidum |9
+35 |Late Roman Oppidum |9
+19 |Oasis |9
+61 |Sanctuary or temple |9
+66 |Bath |9
+32 |Tumulus| 10
+63 |Cemetery |10
+21 |Monastery |10
+24 |Church |10
+14 |Villa |10
+57 |Mine, quarry or production| 10
+49 |Pass |10
+51 |Bridge |10
+55 |Road/milestone |10
+52 |Aqueduct/dam/cistern/spring |10
+64 |Monument |10
+
 ##### Base Map:
 
 [My "Plain Terrain" Map created with Mapbox](https://api.mapbox.com/styles/v1/siriusbontea/cl41hks5e000x16udd55zcnuj.html?title=view&access_token=pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg&zoomwheel=true&fresh=true#4.79/45.4/9.88)
