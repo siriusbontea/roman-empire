@@ -356,21 +356,20 @@ fetch("data/places_low.geojson")
 
 
 ////  I think I need to make an array of the Roman Empire extent layers...
-const extentArray = [
-    "extent500BC", // index 0
-    "extent338BC", // index 1
-    "extent298BC", // index 2
-    "extent290BC", // index 3
-    "extent272BC", // index 4
-    "extent264BC", // index 5
-    "extent218BC", // index 6
-    "extent133BC", // index 7
-    "extent60BC", // index 8
-    "extentAD14", // index 9
-    "extentAD69", // index 10
-    "extentAD117", // index 11
-    "extentAD200", // index 12
-]
+const extentArray = {
+    1:"extent500BC", 
+    2:"extent338BC", 
+    3:"extent298BC", 
+    5:"extent272BC", 
+    6:"extent264BC", 
+    7:"extent218BC", 
+    8:"extent133BC", 
+    9:"extent60BC", 
+    10:"extentAD14", 
+    11:"extentAD69", 
+    12:"extentAD117", 
+    13:"extentAD200", 
+}
 
 
 
