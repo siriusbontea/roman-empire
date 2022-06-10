@@ -1,5 +1,5 @@
 #### Alpha Version 
-updated 5 June 2022
+updated 10 June 2022
 
 <img src="svg/RomanAquila_AdobeStock_229200876-gold.svg" style=" margin:auto ; width:175px ; text-align:middle; margin-left:50%; margin-right:50%; margin-top:-10px; margin-bottom:-10px; ">
 
@@ -46,25 +46,32 @@ Memory:  65204MiB
 
 - Due to these shortfalls, I used QGIS to create the vector files I needed and align them with the Natural Earth vector files.<sup>1</sup> I referred to the various reference maps (see list below) to create additional vector files for the following time periods:
 
-     - [500 B.C. extent](data/500BC_extent_intersection.geojson) GeoJSON
-     - [338 B.C. extent](data/338BC_extent_intersection.geojson) GeoJSON
-     - [298 B.C. extent](data/298BC_extent_intersection.geojson) GeoJSON
-     - [290 B.C. extent](data/290BC_extent_intersection.geojson) GeoJSON
-     - [272 B.C. extent](data/272BC_extent_intersection.geojson) GeoJSON
-     - [264 B.C. extent](data/264BC_extent_intersection.geojson) GeoJSON
-     - [218 B.C. extent](data/218BC_extent_intersection.geojson) GeoJSON
-     - [133 B.C. extent](data/133BC_extent_intersection.geojson) GeoJSON<sup>2</sup>
-     - [60 B.C. extent](data/60BC_extent_intersection.geojson) GeoJSON
-     - [A.D. 14 extent](data/AD14_extent_intersection.geojson) GeoJSON
-     - [A.D. 69 extent](data/AD69_extent_intersection.geojson) GeoJSON
-     - [A.D. 117 extent](data/AD117_extent_intersection.geojson) GeoJSON
-     - [A.D. 200 extent](data/AD200_extent_intersection.geojson) GeoJSON
-     - [Max extent](data/max_extent_intersection.geojson) GeoJSON<sup>3</sup>
+     - [500 B.C. extent](#) ~~GeoJSON~~
+     - [338 B.C. extent](#) ~~GeoJSON~~
+     - [298 B.C. extent](#) ~~GeoJSON~~
+     - [290 B.C. extent](#) ~~GeoJSON~~
+     - [272 B.C. extent](#) ~~GeoJSON~~
+     - [264 B.C. extent](#) ~~GeoJSON~~
+     - [218 B.C. extent](#) ~~GeoJSON~~
+     - [133 B.C. extent](#) ~~GeoJSON~~<sup>2</sup>
+     - [60 B.C. extent](#) ~~GeoJSON~~
+     - [A.D. 14 extent](#) ~~GeoJSON~~
+     - [A.D. 69 extent](#) ~~GeoJSON~~
+     - [A.D. 117 extent](#) ~~GeoJSON~~
+     - [A.D. 200 extent](#) ~~GeoJSON~~
+     - [Max extent](#) ~~GeoJSON~~<sup>3</sup>
 
 *Notes:* 
 <br/> <sup>1</sup> Some of these vector files, are still a bit rough (in my opinion), and will be further refined.
 <br/> <sup>2</sup> There are inconsistencies for the 133 B.C. maps depending on the source material and will be the highest priority for revision.
 <br/> <sup>3</sup> The "Max extent" vector file is *not* to be used denote a particular time period, but rather to be used for clipping/intersection work within QGIS.  For example, regions in Mesopotamia and Germania Magna were temporary holdings at best or areas of Roman influence due to road/trade networks (and not necessarily Roman conquered territories).
+
+#### UPDATE
+###### Maps total revision
+- [Combined 500 B.C. through A.D. 202](data/CombinedExtentLayers.geojson) GeoJSON
+- [Combined Major/Minor Roads and Fortifications](data/RomanRoadsWallsIntersect.geojson) GeoJSON
+
+Write-up to be prepared... Custom-built maps, etc. 
 
 ##### Datasets:
 
