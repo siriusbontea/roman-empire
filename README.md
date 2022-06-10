@@ -40,7 +40,7 @@ Memory:  65204MiB
 - possibly other hosting service for larger data (i.e., map tiles). 
 
 ##### Data files:
-- Roman roads, aqueducts, bridges (ShapeFiles) from the [Ancient World Mapping Center](https://awmc.unc.edu/wordpress/map-files/).
+- <strike>Roman roads, aqueducts, bridges (ShapeFiles) from the [Ancient World Mapping Center](https://awmc.unc.edu/wordpress/map-files/).
 
 - Ultimately, AWMC's [shapefile directory](https://awmc.unc.edu/awmc/map_data/shapefiles/political_shading/) has a decent collection of political maps showing the Roman Empire at various extents (from 60 B.C. to A.D. 200). However, the shapefiles were crude and did not align with shapefiles from Natural Earth's [10m Physical Vectors](https://www.naturalearthdata.com/downloads/10m-physical-vectors/), nor did they align to major natural physical barriers such as large rivers. Furthermore, I was unable to locate vector files for the Early Roman Republic.
 
@@ -64,7 +64,7 @@ Memory:  65204MiB
 *Notes:* 
 <br/> <sup>1</sup> Some of these vector files, are still a bit rough (in my opinion), and will be further refined.
 <br/> <sup>2</sup> There are inconsistencies for the 133 B.C. maps depending on the source material and will be the highest priority for revision.
-<br/> <sup>3</sup> The "Max extent" vector file is *not* to be used denote a particular time period, but rather to be used for clipping/intersection work within QGIS.  For example, regions in Mesopotamia and Germania Magna were temporary holdings at best or areas of Roman influence due to road/trade networks (and not necessarily Roman conquered territories).
+<br/> <sup>3</sup> The "Max extent" vector file is *not* to be used denote a particular time period, but rather to be used for clipping/intersection work within QGIS.  For example, regions in Mesopotamia and Germania Magna were temporary holdings at best or areas of Roman influence due to road/trade networks (and not necessarily Roman conquered territories).</strike>
 
 #### UPDATE
 ###### Maps total revision
