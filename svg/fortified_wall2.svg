@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="39.5476mm"
+   height="20.40275mm"
+   viewBox="0 0 39.5476 20.40275"
+   version="1.1"
+   id="svg5"
+   inkscape:version="1.2 (dc2aedaf03, 2022-05-15)"
+   sodipodi:docname="fortified_wall.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+   <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     showgrid="false"
+     inkscape:zoom="2.587745"
+     inkscape:cx="-37.870811"
+     inkscape:cy="11.786324"
+     inkscape:window-width="3840"
+     inkscape:window-height="2097"
+     inkscape:window-x="0"
+     inkscape:window-y="41"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+<defs
+   id="defs4">
+</defs>
+<g
+   transform="matrix(3.78,0,0,3.78,75.6,37.8)"
+   id="path467">
+<path
+   fill="none"
+   stroke="param(outline) #000"
+   stroke-width="param(outline-width) 1"
+   d="M 60,100 H 70 V 80 h 20 v 20 h 10"
+   stroke-linecap="butt"
+   id="path6" />
+</g>
+</svg>
