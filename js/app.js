@@ -138,533 +138,171 @@ L.marker([41.9100498, 12.4659593], {
 
 
 
-// graticules 
-fetch("data/geo_lines.geojson")
-    .then(function (response) {
-        console.log(response);
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+// graticulez and linez o' latitude
+var gratLines = omnivore
+    .topojson('data/geo_lines.topojson')
+    .on("ready", function (e) {
+        drawGeoLines(e.target.toGeoJSON());
     })
-    .then(function (data) {
-        var data = L.geoJson(data, {
-            style: function (feature) {
-                return {
-                    color: "#000",
-                    weight: 0.5,
-                    opacity: .5,
-                    interactive: false,
-                };
-            },
-        }).addTo(map);
-        drawMap(data);
+    .on("error", function (e) {
+        console.log(e.error[0].message);
     })
-    .then(function () {
-        drawNewLayers();
-    })
-    .catch(function (error) {
-        console.log(`Something went wrong: ${error}`);
-    });
+
 
 // Land
-fetch("data/10m_land.geojson")
-    .then(function (response) {
-        console.log(response);
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+var landLines = omnivore
+    .topojson('data/10m_land.topojson')
+    .on("ready", function (e) {
+        drawGeoLines(e.target.toGeoJSON());
     })
-    .then(function (data) {
-        var data = L.geoJson(data, {
-            style: function (feature) {
-                return {
-                    color: "black",
-                    weight: .5,
-                    opacity: 1,
-                    fillColor: "#ffffff",
-                    fillOpacity: 0,
-                    interactive: false,
-                };
-            },
-        }).addTo(map);
+    .on("error", function (e) {
+        console.log(e.error[0].message);
     })
-    .then(function () {
-        drawNewLayers();
-    })
-    .catch(function (error) {
-        console.log(`Something went wrong: ${error}`);
-    });
-
-// Lakes
-fetch("data/10m_lakes.geojson")
-    .then(function (response) {
-        console.log(response);
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-    })
-    .then(function (data) {
-        var data = L.geoJson(data, {
-            style: function (feature) {
-                return {
-                    color: "#4BB6EF",
-                    weight: .5,
-                    opacity: 1,
-                    fillColor: "#4BB6EF",
-                    fillOpacity: .5,
-                    interactive: false,
-                };
-            },
-        }).addTo(map);
-    })
-    .then(function () {
-        drawNewLayers();
-    })
-    .catch(function (error) {
-        console.log(`Something went wrong: ${error}`);
-    });
-
-// Lakes and rivers centre lines
-fetch("data/10m_rivers_lake_centerlines.geojson")
-    .then(function (response) {
-        console.log(response);
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-    })
-    .then(function (data) {
-        var data = L.geoJson(data, {
-            style: function (feature) {
-                return {
-                    color: "#4BB6EF",
-                    weight: .5,
-                    opacity: 1,
-                    fillColor: "#4BB6EF",
-                    fillOpacity: .5,
-                    interactive: false,
-                };
-            },
-        }).addTo(map);
-    })
-    .then(function () {
-        drawNewLayers();
-    })
-    .catch(function (error) {
-        console.log(`Something went wrong: ${error}`);
-    });
-
-// Lakes label
-fetch("data/10m_lakes_label.geojson")
-    .then(function (response) {
-        console.log(response);
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-    })
-    .then(function (data) {
-        var data = L.geoJson(data, {
-            style: function (feature) {
-                return {
-                    color: "black",
-                    weight: .5,
-                    opacity: 1,
-                    fillColor: "#ffffff",
-                    fillOpacity: 0,
-                    interactive: false,
-                };
-            },
-        });
-    })
-    .then(function () {
-        drawNewLayers();
-    })
-    .catch(function (error) {
-        console.log(`Something went wrong: ${error}`);
-    });
-
-// Fortifications
-fetch("data/fortifications.geojson")
-    .then(function (response) {
-        console.log(response);
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-    })
-    .then(function (data) {
-        var data = L.geoJson(data, {
-            style: function (feature) {
-                return {
-                    color: "black",
-                    weight: 1.7,
-                    opacity: 1,
-                    fillColor: "#ffffff",
-                    fillOpacity: 0,
-                    interactive: false,
-                };
-            },
-        }).addTo(map);
-    })
-    .then(function () {
-        drawNewLayers();
-    })
-    .catch(function (error) {
-        console.log(`Something went wrong: ${error}`);
-    });
-
-// Places High
-fetch("data/places_low.geojson")
-    .then(function (response) {
-        console.log(response);
-        if (response.ok) {
-            return response.json();
-        } else {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
-    })
-    .then(function (data) {
-        var data = L.geoJson(data, {
-            style: function (feature) {
-                return {
-                    color: "black",
-                    weight: .5,
-                    opacity: 1,
-                    fillColor: "#ffffff",
-                    fillOpacity: 0,
-                    interactive: false,
-                };
-            },
-        });
-    })
-    .then(function () {
-        drawNewLayers();
-    })
-    .catch(function (error) {
-        console.log(`Something went wrong: ${error}`);
-    });
 
 
-////  I think I need to make an array of the Roman Empire extent layers...
-const extentArray = {
-    1:"extent500BC", 
-    2:"extent338BC", 
-    3:"extent298BC", 
-    5:"extent272BC", 
-    6:"extent264BC", 
-    7:"extent218BC", 
-    8:"extent133BC", 
-    9:"extent60BC", 
-    10:"extentAD14", 
-    11:"extentAD69", 
-    12:"extentAD117", 
-    13:"extentAD200", 
-}
+// // Lakes
+// var lakeLines = omnivore
+//     .topojson('data/10m_lakes.topojson')
+//     .on("ready", function (e) {
+//         drawMap(e.target.toGeoJSON());
+//     })
+//     .on("error", function (e) {
+//         console.log(e.error[0].message);
+//     })
+
+
+// // Lakes and rivers centre lines
+// var lakeRiverLines = omnivore
+//     .topojson('data/10m_rivers_lake_centerlines.topojson')
+//     .on("ready", function (e) {
+//         drawMap(e.target.toGeoJSON());
+//     })
+//     .on("error", function (e) {
+//         console.log(e.error[0].message);
+//     })
+
+
+// // Lakes label
+// var lakeLabels = omnivore
+//     .topojson('data/10m_lakes_label.topojson')
+//     .on("ready", function (e) {
+//         drawMap(e.target.toGeoJSON());
+//     })
+//     .on("error", function (e) {
+//         console.log(e.error[0].message);
+//     })
+
+
+
+// // Major Roman Roads (class_code "M"), Minor Roman Roads (class_code "n"), and Fortifications (class_code "F").
+// var romanRoadsWalls = omnivore
+//     .topojson('data/RomanRoadsWallsIntersect_Min.topojson')
+//     .on("ready", function (e) {
+//         drawMap(e.target.toGeoJSON());
+//     })
+//     .on("error", function (e) {
+//         console.log(e.error[0].message);
+//     })
+
+
+
+// // Places High - Data takes a while to load.  Will need to trim this down and keep items specific to this map app:
+
+// // omnivore.topojson('data/places_high.topojson').addTo(map);
 
 
 
 
-/////////// Roman Empire extent layers
-// Extent of Roman Empire, 500 B.C.
-var extent500BC = L.geoJson(extent500BCdata, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-}).addTo(map);
-
-// Extent of Roman Empire, 338 B.C.
-var extent338BC = L.geoJson(extent338BCdata, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
-
-// Extent of Roman Empire, 298 B.C.
-var extent298BC = L.geoJson(extent298BCdata, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
-
-// Extent of Roman Empire, 290 B.C.
-var extent290BC = L.geoJson(extent290BCdata, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
-
-// Extent of Roman Empire, 272 B.C.
-var extent272BC = L.geoJson(extent272BCdata, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
-
-// Extent of Roman Empire, 264 B.C.
-var extent264BC = L.geoJson(extent264BCdata, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
-
-// Extent of Roman Empire, 218 B.C.
-var extent218BC = L.geoJson(extent218BCdata, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
-
-// Extent of Roman Empire, 133 B.C.
-var extent133BC = L.geoJson(extent133BCdata, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
-
-// Extent of Roman Empire, 60 B.C.
-var extent60BC = L.geoJson(extent60BCdata, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
+// /////////// Roman Empire extent layers
+// var empireExtent = omnivore
+//     .topojson('data/CombinedExtentLayers_v3.topojson')
+//     .on("ready", function (e) {
+//         drawMap(e.target.toGeoJSON());
+//     })
+//     .on("error", function (e) {
+//         console.log(e.error[0].message);
+//     })
 
 
-// Extent of Roman Empire, A.D. 14
-var extentAD14 = L.geoJson(extentAD14data, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
+var geoLines = [gratLines, landLines]
+
+// var data = [gratLines, landLines, lakeLines, lakeRiverLines, lakeLabels, romanRoadsWalls, empireExtent]
+
+function drawGeoLines(data) {
+    const lines = L.geoJson(data, {
+             
+                        style: function (feature) {
+                            return {
+                                color: '#20282e',
+                                weight: 2,
+                                fillOpacity: 1,
+                                fillColor: '#1f78b4'
+                            };
+                        },
+                    }).addTo(map);
+                }
+                // end drawMap()
+
+// /////////// drawMap()
+// function drawMap(data) {
+//     //crate Leaflet data layer and add to map
+//     const geolinez = L.geoJson(geoLines, {
+//         // style boroughs with initial default path options
+//         style: function (feature) {
+//             return {
+//                 color: '#20282e',
+//                 weight: 2,
+//                 fillOpacity: 1,
+//                 fillColor: '#1f78b4'
+//             };
+//         },
+//     }).addTo(map);
+// }
+// // end drawMap()
 
 
-// Extent of Roman Empire, A.D. 69
-var extentAD69 = L.geoJson(extentAD69data, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
 
 
-// Extent of Roman Empire, A.D. 117
-var extentAD117 = L.geoJson(extentAD117data, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
 
 
-// Extent of Roman Empire, A.D. 200
-var extentAD200 = L.geoJson(extentAD200data, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            fillColor: "#A91101",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
 
 
-/////////// Roads layer
 
-var romanRoads = L.geoJson(romanRoadsData, {
-    style: function (feature) {
-        return {
-            color: "#000",
-            weight: 1,
-            fillOpacity: 0.3,
-            interactive: false,
-        };
-    },
-});
+// ////// Slider stuff
+
+// function createSliderUI(dataLayer) {
 
 
-function drawMap(myLayers) {
+//     // create Leaflet control for the slider
+//     const sliderControl = L.control({
+//         position: 'bottomleft'
+//     });
+//     // when added to the map
+//     sliderControl.onAdd = function (map) {
+//         // select an existing DOM element with an id of "ui-controls"
+//         const slider = L.DomUtil.get("slider-control");
+//         // disable scrolling of map while using controls
+//         L.DomEvent.disableScrollPropagation(slider);
+//         // disable click events while using controls
+//         L.DomEvent.disableClickPropagation(slider);
+//         // return the slider from the onAdd method
+//         return slider;
+//     }
+//     // add the control to the map
+//     sliderControl.addTo(map);
 
-    // create Leaflet object with geometry data and add to map
-    const dataLayer = L.geoJson(myLayers[0], {
-        style: function (feature) {
-            return {
-                color: "black",
-                weight: 1,
-                fillOpacity: 1,
-                fillColor: "#1f78b4"
-            };
-        },
-        // add hover/touch functionality to each feature layer
-        onEachFeature: function (feature, layer) {
-            // when mousing over a layer
-            layer.on('mouseover', function () {
-                //change the stroke color and bring that element to the front
-                layer.setStyle({
-                    color: '#ffd70090',
-                    weight: 5
-                }).bringToFront();
-            });
-            // on mousing off layer
-            layer.on('mouseout', function () {
-                // reset the layer style to its original stroke color
-                layer.setStyle({
-                    color: '#000000',
-                    weight: 1
-                });
-            });
-        }
-    }).addTo(map);
-
-    L.geoJson(myLayers[1], {
-        style: function (feature) {
-            return {
-                color: "#333333",
-                weight: 2,
-                opacity: 1,
-                interactive: false,
-            };
-        },
-    }).addTo(map);
-
-
-    // create the slider
-    createSliderUI(dataLayer);
-
-    // call to initially color the map with first timestamp
-    updateMap(dataLayer, '500 B.C.');
-} // end drawMap()
-
-function updateMap(dataLayer, currentYear) {
-
-    // loop through each layer
-    dataLayer.eachLayer(function (layer) {
-         
-            layer.setStyle({
-                color: "#A91101",
-                fillColor: "#A91101",
-                weight: 1,
-                fillOpacity: 0.3,
-                interactive: false,
-            });
-    });
-
-} // end updateMap()
-
-
-function createSliderUI(dataLayer) {
-
-
-    // create Leaflet control for the slider
-    const sliderControl = L.control({
-        position: 'bottomleft'
-    });
-    // when added to the map
-    sliderControl.onAdd = function (map) {
-        // select an existing DOM element with an id of "ui-controls"
-        const slider = L.DomUtil.get("slider-control");
-        // disable scrolling of map while using controls
-        L.DomEvent.disableScrollPropagation(slider);
-        // disable click events while using controls
-        L.DomEvent.disableClickPropagation(slider);
-        // return the slider from the onAdd method
-        return slider;
-    }
-    // add the control to the map
-    sliderControl.addTo(map);
-
-    // select the form element
-    const slider = document.querySelector(".year-slider");
-    // listen for changes on input element
-    slider.addEventListener("input", function (e) {
-        // get the value of the selected option
-        const currentYear = e.target.value;
-        // update the map with current timestamp
-        updateMap(dataLayer, currentYear);
-        // update timestamp in period indicator heading
-        document.querySelector("#periodIndicator").innerHTML = currentYear;
-    });
-} // end createSliderUI()
+//     // select the form element
+//     const slider = document.querySelector(".year-slider");
+//     // listen for changes on input element
+//     slider.addEventListener("input", function (e) {
+//         // get the value of the selected option
+//         const currentYear = e.target.value;
+//         // update the map with current timestamp
+//         updateMap(dataLayer, currentYear);
+//         // update timestamp in period indicator heading
+//         document.querySelector("#periodIndicator").innerHTML = currentYear;
+//     });
+// } // end createSliderUI()
 
 
 

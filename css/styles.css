@@ -74,6 +74,25 @@ p {
     /* Need to add @media breaks to allow non-justify for smaller screens! */
 }
 
+/* START of Styling the Polygons! */
+.land {
+    fill: none;
+    stroke: black;
+    stroke-width: 3;
+    vector-effect: non-scaling-stroke;
+}
+
+
+
+
+
+
+
+
+
+/* END of Styling the Polygons! */
+
+
 
 blockquote {
     padding-left: 25pt;
