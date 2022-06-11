@@ -160,112 +160,121 @@ var landLines = omnivore
     })
 
 
-// // Lakes
-// var lakeLines = omnivore
-//     .topojson('data/10m_lakes.topojson')
-//     .on("ready", function (e) {
-//         drawMap(e.target.toGeoJSON());
-//     })
-//     .on("error", function (e) {
-//         console.log(e.error[0].message);
-//     })
+// Lakes
+var lakeLines = omnivore
+    .topojson('data/10m_lakes.topojson')
+    .on("ready", function (e) {
+        drawWaterLines(e.target.toGeoJSON());
+    })
+    .on("error", function (e) {
+        console.log(e.error[0].message);
+    })
 
 
-// // Lakes and rivers centre lines
-// var lakeRiverLines = omnivore
-//     .topojson('data/10m_rivers_lake_centerlines.topojson')
-//     .on("ready", function (e) {
-//         drawMap(e.target.toGeoJSON());
-//     })
-//     .on("error", function (e) {
-//         console.log(e.error[0].message);
-//     })
+// Lakes and rivers centre lines
+var lakeRiverLines = omnivore
+    .topojson('data/10m_rivers_lake_centerlines.topojson')
+    .on("ready", function (e) {
+        drawWaterLines(e.target.toGeoJSON());
+    })
+    .on("error", function (e) {
+        console.log(e.error[0].message);
+    })
 
 
-// // Lakes label
-// var lakeLabels = omnivore
-//     .topojson('data/10m_lakes_label.topojson')
-//     .on("ready", function (e) {
-//         drawMap(e.target.toGeoJSON());
-//     })
-//     .on("error", function (e) {
-//         console.log(e.error[0].message);
-//     })
-
-
-
-// // Major Roman Roads (class_code "M"), Minor Roman Roads (class_code "n"), and Fortifications (class_code "F").
-// var romanRoadsWalls = omnivore
-//     .topojson('data/RomanRoadsWallsIntersect_Min.topojson')
-//     .on("ready", function (e) {
-//         drawMap(e.target.toGeoJSON());
-//     })
-//     .on("error", function (e) {
-//         console.log(e.error[0].message);
-//     })
+// Lakes label
+var lakeLabels = omnivore
+    .topojson('data/10m_lakes_label.topojson')
+    .on("ready", function (e) {
+        drawWaterLines(e.target.toGeoJSON());
+    })
+    .on("error", function (e) {
+        console.log(e.error[0].message);
+    })
 
 
 
-// // Places High - Data takes a while to load.  Will need to trim this down and keep items specific to this map app:
+// Major Roman Roads (class_code "M"), Minor Roman Roads (class_code "n"), and Fortifications (class_code "F").
+var romanRoadsWalls = omnivore
+    .topojson('data/RomanRoadsWallsIntersect_Min.topojson')
+    .on("ready", function (e) {
+        drawRoadsWalls(e.target.toGeoJSON());
+    })
+    .on("error", function (e) {
+        console.log(e.error[0].message);
+    })
 
-// // omnivore.topojson('data/places_high.topojson').addTo(map);
 
 
+// Places High - Data takes a while to load.  Will need to trim this down and keep items specific to this map app:
+
+// omnivore.topojson('data/places_high.topojson').addTo(map);
+
+var waterLines = [lakeLines, lakeLabels, lakeRiverLines]
 
 
-// /////////// Roman Empire extent layers
-// var empireExtent = omnivore
-//     .topojson('data/CombinedExtentLayers_v3.topojson')
-//     .on("ready", function (e) {
-//         drawMap(e.target.toGeoJSON());
-//     })
-//     .on("error", function (e) {
-//         console.log(e.error[0].message);
-//     })
+/////////// Roman Empire extent layers
+var empireExtent = omnivore
+    .topojson('data/CombinedExtentLayers_v3.topojson')
+    .on("ready", function (e) {
+        drawExtent(e.target.toGeoJSON());
+    })
+    .on("error", function (e) {
+        console.log(e.error[0].message);
+    })
 
 
 var geoLines = [gratLines, landLines]
 
 // var data = [gratLines, landLines, lakeLines, lakeRiverLines, lakeLabels, romanRoadsWalls, empireExtent]
 
-function drawGeoLines(data) {
-    const lines = L.geoJson(data, {
-             
-                        style: function (feature) {
-                            return {
-                                color: '#20282e',
-                                weight: 2,
-                                fillOpacity: 1,
-                                fillColor: '#1f78b4'
-                            };
-                        },
-                    }).addTo(map);
-                }
-                // end drawMap()
+function drawGeoLines(geoLines) {
+    const lines = L.geoJson(geoLines, {
+        style: function (feature) {
+            return {
+                color: '#20282e',
+                weight: 2,
+                fillOpacity: 0,
+                fillColor: '#1f78b4'
+            };
+        },
+    }).addTo(map);
+}
 
-// /////////// drawMap()
-// function drawMap(data) {
-//     //crate Leaflet data layer and add to map
-//     const geolinez = L.geoJson(geoLines, {
-//         // style boroughs with initial default path options
-//         style: function (feature) {
-//             return {
-//                 color: '#20282e',
-//                 weight: 2,
-//                 fillOpacity: 1,
-//                 fillColor: '#1f78b4'
-//             };
-//         },
-//     }).addTo(map);
-// }
-// // end drawMap()
+function drawExtent(empireExtent) {
+    const extent = L.geoJson(empireExtent, {
+        style: function (feature) {
+            return {
+                color: '#A91101',
+                weight: 2,
+                fillOpacity: .4,
+                fillColor: '#A91101'
+            };
+        },
+    }).addTo(map);
+}
 
+function drawRoadsWalls(romanRoadsWalls) {
+    const roads = L.geoJson(romanRoadsWalls, {
+        style: function (feature) {
+            return {
+                color: '#333333',
+                weight: 1,
+                           };
+        },
+    }).addTo(map);
+}
 
-
-
-
-
-
+function drawWaterLines(waterLines) {
+    const roads = L.geoJson(waterLines, {
+        style: function (feature) {
+            return {
+                color: '#00416A',
+                weight: 1,
+            };
+        },
+    }).addTo(map);
+}
 
 
 // ////// Slider stuff
