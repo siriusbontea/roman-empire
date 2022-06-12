@@ -96,6 +96,7 @@ p {
 .leaflet-control-layers {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
     background: #fff;
+    padding: 1px;
     border-radius: 12px;
 }
 
@@ -103,12 +104,14 @@ p {
 .leaflet-control-layers-toggle {
     background-image: url("/svg/openlayers.svg");
     background-color: #A91101;
+    padding: 5px;
     border-radius: 10px;
 }
 
 .leaflet-touch .leaflet-control-layers-toggle {
     background-image: url("/svg/openlayers.svg");
     background-color: #A91101;
+    padding: 5px;
     border-radius: 10px;
 }
 
@@ -120,6 +123,7 @@ p {
     font-weight: 700;
     font-style: normal;
     border-radius: 10px;
+    padding: 5px;
 }
 
 
@@ -253,10 +257,7 @@ blockquote {
     border-right-color: #63666a;
 }
 
-.leaflet-legend {
-    width: 200px;
-    color: #ffe6a2;
-}
+
 
 
 /* START of Slider Styling */
@@ -327,21 +328,6 @@ blockquote {
 
 /* START of Legend Styling */
 
-#legend {
-    position: absolute;
-    bottom: 20px;
-    right: 30px;
-    width: 280px;
-    height:300px;
-    padding: 0 15px;
-    /* Add styles to match Leaflet UI elements */
-    background: #fff9df50;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
-    border: 1px solid #A91101;
-    border-radius: 15px;
-    z-index: 1000;
-}
-
 #legend-button {
     position: absolute;
     top: 140px;
@@ -370,6 +356,41 @@ blockquote {
      cursor: pointer;
 }
 
+#legend {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 300px;
+    height: 400px;
+    padding-top: 35px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 35px;
+    /* Add styles to match Leaflet UI elements */
+    background: #fff9dfbc;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
+    /* border: 2px solid #A91101; */
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+.flat-laurel-legend-top {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 300px;
+}
+
+.flat-laurel-legend-bottom {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 300px;
+}
 
 /* END of Legend Styling */
 
