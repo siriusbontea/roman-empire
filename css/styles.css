@@ -169,11 +169,12 @@ blockquote {
 }
 
 .aquila {
-    width: auto;
+    z-index: 1000;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    max-height: 20%;
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    width: 160px;
 }
 
 .laurel {
@@ -209,7 +210,26 @@ blockquote {
     color: #ffe6a2;
 }
 
+
+/* START of Slider Styling */
+
+/* comment this part for now... I don't remember what I was doing with .min .max */
+
+/* #slider-control .min {
+    float: left;
+}
+
+#slider-control .max {
+    float: right;
+    margin-right: -15px;
+} */
+
+.year-slider {
+    width: 100%;
+}
+
 #slider {
+    z-index: 1000;
     width: 300px;
     padding: 8px 25px 8px 15px;
     background: rgba(25, 25, 25, 0.8);
@@ -218,20 +238,7 @@ blockquote {
     color: whitesmoke;
 }
 
-#slider-control .min {
-    float: left;
-}
-
-#slider-control .max {
-    float: right;
-    margin-right: -15px;
-}
-
-.year-slider {
-    width: 100%;
-}
-
-#periodIndicator {
+#yearIndicator {
     z-index: 1000;
     position: absolute;
     bottom: 48px;
@@ -243,6 +250,7 @@ blockquote {
     font-size: 1.3rem;
 }
 
+/* END of Slider Styling */
 
 #legend {
     background-color: #00000080;

@@ -53,9 +53,9 @@ map.attributionControl.setPrefix("");
 
 
 var baseLayers = {
-    'Terrain': plainTerrain,
-    'DARE': dare,
-    'NatGeo': Esri_NatGeoWorldMap
+    'Terrain Map': plainTerrain,
+    'DARE map': dare,
+    'NatGeo map (modern)': Esri_NatGeoWorldMap
 };
 
 var overlays = {
@@ -142,7 +142,7 @@ var layerControl = L.control.layers(baseLayers, overlays).addTo(map);
 
 ////////// This is just a placeholder for right now //////////////
 var romeIcon = L.icon({
-    iconUrl: "svg/RomanAquila_AdobeStock_229200876-gold.svg", // placeholder icon for now
+    iconUrl: "svg/Colosseum_AdobeStock_203412188.svg", // placeholder icon for now
     iconSize: [90, 60], // size of the icon
     iconAnchor: [5, 10], // point of the icon which will correspond to marker's location
     popupAnchor: [0, 0], // point from which the popup should open relative to the iconAnchor

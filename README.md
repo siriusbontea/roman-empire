@@ -233,3 +233,7 @@ Type Identifier|Description|Zoom
 - [Roman Roads](https://en.wikipedia.org/wiki/Roman_roads) - Wikipedia
 - [Milliarium of Aiton](https://en.wikipedia.org/wiki/Milliarium_of_Aiton) Milliarium of Aiton is an ancient Roman milestone (milliarium) near Cluj-Napoca, Romania, and dates to A.D. 108. Roman Millarium provided metadata long before providing metadata was cool.
 
+##### Web resources:
+
+- Attribution for some icons:
+     - [Rome icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/rome)
