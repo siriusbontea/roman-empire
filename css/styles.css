@@ -77,7 +77,7 @@ p {
 
 /* START of Styling the Leaflet Layer Control  */
 .leaflet-top .leaflet-control {
-    margin-top: 30px;
+    margin-top: 39px;
 }
 
 .leaflet-bottom .leaflet-control {
@@ -89,26 +89,27 @@ p {
 }
 
 .leaflet-right .leaflet-control {
-    margin-right: 40px;
+    margin-right: 55px;
 }
 
 
 .leaflet-control-layers {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
     background: #fff;
-    border-radius: 10px;
+    border-radius: 12px;
 }
 
 
 .leaflet-control-layers-toggle {
-    background-image: url("/images/openlayers.png");
+    background-image: url("/svg/openlayers.svg");
     background-color: #A91101;
-    background-size: 36px 36px;
+    border-radius: 10px;
 }
 
 .leaflet-touch .leaflet-control-layers-toggle {
-    background-image: url("/images/openlayers.png");
+    background-image: url("/svg/openlayers.svg");
     background-color: #A91101;
+    border-radius: 10px;
 }
 
 .leaflet-control-layers-expanded {
@@ -118,6 +119,7 @@ p {
     serif;
     font-weight: 700;
     font-style: normal;
+    border-radius: 10px;
 }
 
 
@@ -181,12 +183,12 @@ blockquote {
     z-index: 1000;
     display: block;
     position: absolute;
-    top: 10px;
-    right: 12px;
+    top: 20px;
+    right: 27px;
     width: 105px;
 }
 
-.flat-laurel {
+.flat-laurel-slider {
     z-index: 1000;
     display: block;
     position: absolute;
@@ -194,6 +196,43 @@ blockquote {
     bottom: 10px;
     width: 300px;
 }
+
+.laurel-left-info {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    left: 29px;
+    top: 130px;
+    height: 80px;
+}
+
+.laurel-right-info {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    left: 130px;
+    top: 130px;
+    height: 80px;
+}
+
+.laurel-left-legend-button {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 110px;
+    top: 130px;
+    height: 80px;
+}
+
+.laurel-right-legend-button {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 12px;
+    top: 130px;
+    height: 80px;
+}
+
 
 .blue-tooltip {
     font-family: "Grand Hotel";
@@ -285,37 +324,81 @@ blockquote {
 
 /* END of Slider Styling */
 
+
+/* START of Legend Styling */
+
 #legend {
-    background-color: #00000080;
-    border-radius: 5%;
+    position: absolute;
+    bottom: 20px;
+    right: 30px;
+    width: 280px;
+    height:300px;
+    padding: 0 15px;
+    /* Add styles to match Leaflet UI elements */
+    background: #fff9df50;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+    border: 1px solid #A91101;
+    border-radius: 15px;
+    z-index: 1000;
 }
 
-#legend button {
-    display: block;
+#legend-button {
+    position: absolute;
+    top: 140px;
+    right: 45px;
+    
+    /* Add styles to match Leaflet UI elements */
+     padding-top: 10px;
+     padding-bottom: 15px;
+     padding-left:15px;
+     padding-right:14px;
+     /* font-family: trajan-pro-3, serif; */
+     font-family: 'EB Garamond',
+     serif;
+     font-style: italic;
+     font-weight: 800;
+     font-style: normal;
+     background: #A91101;
+     color: #fff9df;
+     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
+     border-radius: 15px;
+     font-size: 30px;
+     
+     /* Draw it on top of all elements */
+     z-index: 9999;
+     /* Cursor change on hover -- doesn't work on touch screensn */
+     cursor: pointer;
 }
 
+
+/* END of Legend Styling */
 
 #info-button {
-    padding: 6px 8px;
-    font-family: trajan-pro-3,
+    padding-top: 13px;
+    padding-bottom: 18px;
+    padding-left:20px;
+    padding-right:20px;
+    /* font-family: trajan-pro-3, serif; */
+    font-family: 'EB Garamond',
     serif;
-    font-weight: 700;
+    font-style: italic;
+    font-weight: 800;
     font-style: normal;
     background: #A91101;
     color: #fff9df;
-    text-transform: uppercase;
     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
-    border-radius: 10px;
-    font-size: 1em;
+    border-radius: 15px;
+    font-size: 60px;
     /* Position */
-    position: fixed;
-    top: 1%;
-    right: 50%;
+    position: absolute;
+    top: 140px;
+    left: 61px;
     /* Draw it on top of all elements */
     z-index: 9999;
     /* Cursor change on hover -- doesn't work on touch screensn */
     cursor: pointer;
 }
+
 
 .center {
     display: block;

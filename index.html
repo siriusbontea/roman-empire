@@ -8,28 +8,31 @@
 
     <link rel="icon" type="image/svg" href="svg/Kentucky_Wildcats_logo.svg">
 
-<!-- Bootstrap CSS -->
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
 
-        <!-- Bootstrap Slider CSS -->
-<link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css"
-    integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Bootstrap Slider CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/css/bootstrap-slider.min.css"
+        integrity="sha512-3q8fi8M0VS+X/3n64Ndpp6Bit7oXSiyCnzmlx6IDBLGlY5euFySyJ46RUlqIVs0DPCGOypqP8IRk/EyPvU28mQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <!-- Font Awesome icons (free version) used for social media icons -->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
 
-    <!-- Google font -->
-    <link href="https://fonts.googleapis.com/css2?family=Grand+Hotel&display=swap" rel="stylesheet">
+    <!-- Google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@1,700&family=Grand+Hotel&display=swap"
+        rel="stylesheet">
 
     <!-- Leaflet 1.8.0 CSS -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css"
         integrity="sha512-hoalWLoI8r4UszCkZ5kL8vayOGVae1oxXe/2A4AO6J9+580uKHDO3JdHb7NzwwzK5xr/Fs0W40kiNHxM9vyTtQ=="
         crossorigin="" />
 
-      
+
 
     <!-- Mapbox GL JS -->
     <!-- <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js'></script>
@@ -43,38 +46,49 @@
 </head>
 
 <body>
-    <div id='map' class="center">
+    <div id='map'>
         <img class="laurel" src="svg/laurel-wreath.svg">
         <img class="aquila" src="svg/RomanAquila_AdobeStock_229200876-gold.svg">
-        <img class="flat-laurel" src="svg/FlatLaurel_AdobeStock_222827192.svg">
+        <img class="flat-laurel-slider" src="svg/FlatLaurel_AdobeStock_222827192.svg">
+        <img class="laurel-left-info" src="svg/laurel_left_AdobeStock_252116415.svg">
+        <img class="laurel-right-info" src="svg/laurel_right_AdobeStock_252116415.svg">
+        <img class="laurel-left-legend-button" src="svg/laurel_left_AdobeStock_252116415.svg">
+        <img class="laurel-right-legend-button" src="svg/laurel_right_AdobeStock_252116415.svg">
         <!-- this embeds and anchors the info button in the map <div> element -->
-        <button id="info-button" onclick="myInfo()">Information</button>
+        <button id="info-button" onclick="myInfo()">i</button>
         <div id="footer">
             <div>
                 <h1 class="center">Infrastructure of the Roman Empire</h1>
-                <p><a href="https://github.com/siriusbontea/roman-empire#readme">Project Information</a>
+                <p class="center"><a href="https://github.com/siriusbontea/roman-empire#readme">Project Information</a>
                 </p>
 
             </div>
-            <div>
-                <p class="center">Copyright © <a href="https://siriusbontea.github.io/">Sirius T. Bontea</a> – A.D. 2022</p>
+            <div class="center">
+                <p>Copyright © <a href="https://siriusbontea.github.io/">Sirius T. Bontea</a> – A.D. 2022</p>
                 <div id="social">
-                <a href="https://www.linkedin.com/in/siriusbontea/"><i
-                        class="social-font fab fa-linkedin"></i></a>
-                <a href="https://github.com/siriusbontea"><i class="social-font fab fa-github"></i></a>
-                <a href="https://www.openstreetmap.org/user/Sirius%20T%20Bontea/history#map=3/43.94/-68.94"><i
-                        class="social-font fas fa-map"></i></a>
-                <a href="https://twitter.com/SiriusBontea"><i class="social-font fab fa-twitter"></i></a>
-                <a href="https://www.facebook.com/sirius.t.bontea"><i
-                        class="social-font fab fa-facebook-f"></i></a>
-                        </div>
+                    <a href="https://www.linkedin.com/in/siriusbontea/"><i class="social-font fab fa-linkedin"></i></a>
+                    <a href="https://github.com/siriusbontea"><i class="social-font fab fa-github"></i></a>
+                    <a href="https://www.openstreetmap.org/user/Sirius%20T%20Bontea/history#map=3/43.94/-68.94"><i
+                            class="social-font fas fa-map"></i></a>
+                    <a href="https://twitter.com/SiriusBontea"><i class="social-font fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/sirius.t.bontea"><i class="social-font fab fa-facebook-f"></i></a>
+                </div>
             </div>
         </div>
+
+        <button id="legend-button" onclick="myLegend()"><i class="fa fa-key" aria-hidden="true"></i>
+</button>
+
+        <section id="legend">
+            <h2>Legend</h2>
+            <p>Legendary items</p>
+        </section>
+
     </div>
-    
-    
-        
-   
+
+
+
+
 
 
     <!-- ui slider -->
@@ -90,20 +104,6 @@
 
 
 
-    <!-- legend -->
-    <div id="legend">
-        <div class="leaflet-legend">
-            <h2>
-                A Legendary Legend goes here.
-            </h2>
-        </div>
-        <button>Legend</button>
-    </div>
-
-   
-
-
-
 
 
 
@@ -114,17 +114,17 @@
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
         crossorigin="anonymous"></script>
 
-<!-- Bootstrap Slider JS -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"
-    integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA=="
-    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Bootstrap Slider JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"
+        integrity="sha512-f0VlzJbcEB6KiW8ZVtL+5HWPDyW1+nJEjguZ5IVnSQkvZbwBt2RfCBY0CBO1PsMAqxxrG4Di6TfsCPP3ZRwKpA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 
     <!-- Leaflet 1.8.0 JS -->
     <script src="https://unpkg.com/leaflet@1.8.0/dist/leaflet.js"
         integrity="sha512-BB3hKbKWOc9Ez/TAwyWxNXeoV9c1v6FIeYiBieIWkpLjauysF18NzgR1MBNBXf8/KABdlkX68nAhlwcDFLGPCQ=="
         crossorigin=""></script>
 
-    
+
 
     <!-- D3 JS -->
     <!-- <script src="https://d3js.org/d3.v7.min.js"></script> -->

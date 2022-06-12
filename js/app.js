@@ -15,12 +15,12 @@ var mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
 // DARE map tiles
 var dare = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {
     maxZoom: 11,
-    attribution: '&copy; <a href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></a>'
+    // attribution: '&copy; <a href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></a>'
 });
 
 // ESRI NatGeo tiles (thick modern National borders)
 var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
-    attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+    // attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
     maxZoom: 16
 });
 
@@ -29,7 +29,7 @@ var plainTerrain = L.tileLayer(mbUrl, {
     id: 'siriusbontea/cl41hks5e000x16udd55zcnuj',
     tileSize: 512,
     zoomOffset: -1,
-    attribution: mbAttr
+    // attribution: mbAttr
 });
 
 
@@ -420,4 +420,23 @@ function myInfo() {
         x.style.height = "60vh"; // footer 60% of viewport height
     }
     clicked = !clicked;
+}
+
+/* --------------- Toggle on/off legend content ---------------  */
+var clickedLegend = false; // start with false condition
+function myLegend() {
+    // create button that changes color on click
+    // create a footer overlay that displays 60% of the current viewport height
+    var x = document.getElementById("legend");
+    var y = document.getElementById("legend-button");
+    if (clickedLegend) {
+         y.style.background = "#fff9dfa0";
+         y.style.color = "#A91101";
+        x.style.display = "block"; // no footer height
+    } else {
+        y.style.background = "#A91101";
+        y.style.color = "#fff9df";
+        x.style.display = "none"; // footer 60% of viewport height
+    }
+    clickedLegend = !clickedLegend;
 }
