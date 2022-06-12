@@ -49,7 +49,7 @@ map.bounds = [],
         [-5, -20],
         [80, 110]
     ]);
-    map.attributionControl.setPrefix("");
+map.attributionControl.setPrefix("");
 
 
 var baseLayers = {
@@ -64,8 +64,8 @@ var overlays = {
 
 var layerControl = L.control.layers(baseLayers, overlays).addTo(map);
 
-	// var crownHill = L.marker([39.75, -105.09]).bindPopup('This is Crown Hill Park.');
-	// var rubyHill = L.marker([39.68, -105.00]).bindPopup('This is Ruby Hill Park.');
+// var crownHill = L.marker([39.75, -105.09]).bindPopup('This is Crown Hill Park.');
+// var rubyHill = L.marker([39.68, -105.00]).bindPopup('This is Ruby Hill Park.');
 
 
 
@@ -224,10 +224,9 @@ function drawGeoLines(geoLines) {
     const lines = L.geoJson(geoLines, {
         style: function (feature) {
             return {
-                color: '#20282e',
-                weight: 2,
-                fillOpacity: 0,
-                fillColor: '#1f78b4'
+                color: '#000',
+                weight: .5,
+                interactive: false,
             };
         },
     }).addTo(map);
@@ -237,25 +236,61 @@ function drawExtent(empireExtent) {
     const extent = L.geoJson(empireExtent, {
         style: function (feature) {
             return {
-                color: '#A91101',
-                weight: 4,
-                fillOpacity: .3,
-                fillColor: '#A91101'
+                color: '#000',
+                weight: 1, // set weight to 0 after the slider works
+                fillOpacity: .2,
+                fillColor: '#A91101',
+                interactive: false,
             };
         },
     }).addTo(map);
 }
 
-function drawRoadsWalls(romanRoadsWalls) {
-    const roads = L.geoJson(romanRoadsWalls, {
-        style: function (feature) {
-            return {
-                color: '#333333',
-                weight: 1,
-            };
-        },
-    }).addTo(map);
-}
+// function drawRoadsWalls(romanRoadsWalls) {
+//     const roads = L.geoJson(romanRoadsWalls, {
+//         style: function (feature) {
+//             return {
+//                 color: '#333333',
+//                 weight: 1,
+//             };
+//         },
+//     }).addTo(map);
+// }
+console.log("Here is the output of empireExtent:", empireExtent)
+
+// Major Roman Roads (class_code "M"), Minor Roman Roads (class_code "n"), and Fortifications (class_code "F").
+// function drawRoadsWalls(romanRoadsWalls) {
+//     const props = arcs.properties; // this is not the one... stuck on how to access the data in the data/RomanRoadsWallsIntersect_v4.topojson  !!!
+
+
+console.log("Here is the output of romanRoadsWalls:", L.geoJson(romanRoadsWalls))
+    
+console.log("Here is the output of data/RomanRoadsWallsIntersect_v4.geojson", data/RomanRoadsWallsIntersect_v4.geojson)
+
+    // romanRoadsWalls.eachLayer(function (layer) {
+
+        
+    //         if (props.CLASS[F]) {  // Black line for Fortification
+    //             layer.setStyle({
+    //                 color: 'black',
+    //                 weight: 3
+    //             });
+
+    //         } else if (props.CLASS[M]) { // Red line for Major Road
+    //             layer.setStyle({
+    //                 color: 'red',
+    //                 weight: 3
+    //             });
+    //         } else if (props.CLASS[n]) {
+    //             layer.setStyle({ 
+    //                 color: 'orange',
+    //                 weight: 3
+    //             });
+    //         };   
+    //     }).addTo(map);
+
+    // }
+
 
 //////////////// START of water section //////////////////
 
