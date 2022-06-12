@@ -263,9 +263,9 @@ console.log("Here is the output of empireExtent:", empireExtent)
 //     const props = arcs.properties; // this is not the one... stuck on how to access the data in the data/RomanRoadsWallsIntersect_v4.topojson  !!!
 
 
-console.log("Here is the output of romanRoadsWalls:", L.geoJson(romanRoadsWalls))
+// console.log("Here is the output of romanRoadsWalls:", L.geoJson(romanRoadsWalls))
     
-console.log("Here is the output of data/RomanRoadsWallsIntersect_v4.geojson", data/RomanRoadsWallsIntersect_v4.geojson)
+// console.log("Here is the output of data/RomanRoadsWallsIntersect_v4.geojson", data/RomanRoadsWallsIntersect_v4.geojson)
 
     // romanRoadsWalls.eachLayer(function (layer) {
 
