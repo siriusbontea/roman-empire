@@ -347,42 +347,56 @@ console.log("Here is the output of empireExtent:", empireExtent)
 
 // ////// Slider stuff
 
-// function createSliderUI(dataLayer) {
+////////// Start of function sequenceUI() - Function for event listener for slider
+function sequenceUI(girlsLayer, boysLayer) {
 
+    // create Leaflet control for the slider
+    const sliderControl = L.control({
+        position: 'bottomleft',
+    });
+    // when control is added
+    sliderControl.onAdd = function () {
 
-//     // create Leaflet control for the slider
-//     const sliderControl = L.control({
-//         position: 'bottomleft'
-//     });
-//     // when added to the map
-//     sliderControl.onAdd = function (map) {
-//         // select an existing DOM element with an id of "ui-controls"
-//         const slider = L.DomUtil.get("slider-control");
-//         // disable scrolling of map while using controls
-//         L.DomEvent.disableScrollPropagation(slider);
-//         // disable click events while using controls
-//         L.DomEvent.disableClickPropagation(slider);
-//         // return the slider from the onAdd method
-//         return slider;
-//     }
-//     // add the control to the map
-//     sliderControl.addTo(map);
+        // select the current slider with id of 'slider'
+        const controls = L.DomUtil.get("slider");
+        // disable scroll and click events on map beneath slider
+        L.DomEvent.disableScrollPropagation(controls);
+        L.DomEvent.disableClickPropagation(controls);
+        // return selection to control
+        return controls;
+    }
 
-//     // select the form element
-//     const slider = document.querySelector(".year-slider");
-//     // listen for changes on input element
-//     slider.addEventListener("input", function (e) {
-//         // get the value of the selected option
-//         const currentYear = e.target.value;
-//         // update the map with current timestamp
-//         updateMap(dataLayer, currentYear);
-//         // update timestamp in period indicator heading
-//         document.querySelector("#periodIndicator").innerHTML = currentYear;
-//     });
-// } // end createSliderUI()
+    // add it to the map
+    sliderControl.addTo(map);
+
+    // create Leaflet control for the current grade output
+    const gradeControl = L.control({
+        position: 'bottomleft'
 
 
 
+    });
+
+
+
+    // select the slider
+    const slider = document.querySelector("#slider input");
+    // select the slider's input and listen for change
+    slider.addEventListener("input", function (e) {
+        // current value of slider is current grade level
+        var currentGrade = e.target.value
+
+        // resize the circles with updated grade level
+        resizeCircles(girlsLayer, boysLayer, currentGrade);
+
+        //////// Adding the Grade Indicator for the slider
+
+        document.getElementById("gradeIndicator");
+        gradeIndicator.innerHTML = `<span>Grade ${currentGrade}</span>`
+
+        ///////
+    });
+} // end of function sequenceUI()
 
 
 
