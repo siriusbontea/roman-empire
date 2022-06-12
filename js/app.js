@@ -87,6 +87,13 @@ var streets = L.tileLayer(mbUrl, {
     attribution: mbAttr
 });
 
+
+
+
+
+
+
+
 //////// Not working yet...
 // var layerControl = L.control.layers(baseMaps).addTo(map);
 
@@ -160,43 +167,12 @@ var landLines = omnivore
     })
 
 
-// Lakes
-var lakeLines = omnivore
-    .topojson('data/10m_lakes.topojson')
-    .on("ready", function (e) {
-        drawWaterLines(e.target.toGeoJSON());
-    })
-    .on("error", function (e) {
-        console.log(e.error[0].message);
-    })
-
-
-// Lakes and rivers centre lines
-var lakeRiverLines = omnivore
-    .topojson('data/10m_rivers_lake_centerlines.topojson')
-    .on("ready", function (e) {
-        drawWaterLines(e.target.toGeoJSON());
-    })
-    .on("error", function (e) {
-        console.log(e.error[0].message);
-    })
-
-
-// Lakes label
-var lakeLabels = omnivore
-    .topojson('data/10m_lakes_label.topojson')
-    .on("ready", function (e) {
-        drawWaterLines(e.target.toGeoJSON());
-    })
-    .on("error", function (e) {
-        console.log(e.error[0].message);
-    })
 
 
 
 // Major Roman Roads (class_code "M"), Minor Roman Roads (class_code "n"), and Fortifications (class_code "F").
 var romanRoadsWalls = omnivore
-    .topojson('data/RomanRoadsWallsIntersect_Min.topojson')
+    .topojson('data/RomanRoadsWallsIntersect_v4.topojson')
     .on("ready", function (e) {
         drawRoadsWalls(e.target.toGeoJSON());
     })
@@ -210,12 +186,12 @@ var romanRoadsWalls = omnivore
 
 // omnivore.topojson('data/places_high.topojson').addTo(map);
 
-var waterLines = [lakeLines, lakeLabels, lakeRiverLines]
+// var waterLines = [lakeLines, lakeLabels, lakeRiverLines]
 
 
 /////////// Roman Empire extent layers
 var empireExtent = omnivore
-    .topojson('data/CombinedExtentLayers_v3.topojson')
+    .topojson('data/CombinedExtentLayers_v4.topojson')
     .on("ready", function (e) {
         drawExtent(e.target.toGeoJSON());
     })
@@ -226,7 +202,6 @@ var empireExtent = omnivore
 
 var geoLines = [gratLines, landLines]
 
-// var data = [gratLines, landLines, lakeLines, lakeRiverLines, lakeLabels, romanRoadsWalls, empireExtent]
 
 function drawGeoLines(geoLines) {
     const lines = L.geoJson(geoLines, {
@@ -246,8 +221,8 @@ function drawExtent(empireExtent) {
         style: function (feature) {
             return {
                 color: '#A91101',
-                weight: 2,
-                fillOpacity: .4,
+                weight: 4,
+                fillOpacity: .3,
                 fillColor: '#A91101'
             };
         },
@@ -265,16 +240,57 @@ function drawRoadsWalls(romanRoadsWalls) {
     }).addTo(map);
 }
 
-function drawWaterLines(waterLines) {
-    const roads = L.geoJson(waterLines, {
-        style: function (feature) {
-            return {
-                color: '#00416A',
-                weight: 1,
-            };
-        },
-    }).addTo(map);
-}
+//////////////// START of water section //////////////////
+
+// // Lakes
+// var lakeLines = omnivore
+//     .topojson('data/10m_lakes.topojson')
+//     .on("ready", function (e) {
+//         drawWaterLines(e.target.toGeoJSON());
+//     })
+//     .on("error", function (e) {
+//         console.log(e.error[0].message);
+//     })
+
+// // Lakes and rivers centre lines
+// var lakeRiverLines = omnivore
+//     .topojson('data/10m_rivers_lake_centerlines.topojson')
+//     .on("ready", function (e) {
+//         drawWaterLines(e.target.toGeoJSON());
+//     })
+//     .on("error", function (e) {
+//         console.log(e.error[0].message);
+//     })
+
+// // Lakes label
+// var lakeLabels = omnivore
+//     .topojson('data/10m_lakes_label.topojson')
+//     .on("ready", function (e) {
+//         drawWaterLines(e.target.toGeoJSON());
+//     })
+//     .on("error", function (e) {
+//         console.log(e.error[0].message);
+//     })
+
+// These water polygons kinda suck and don't line up nicely... Keeping the code for right now if I want to use the data (Latin names for lakes, rivers, etc.)
+
+// function drawWaterLines(waterLines) {
+//     const water = L.geoJson(waterLines, {
+//         style: function (feature) {
+//             return {
+//                 color: '#00416A',
+//                 weight: 0,
+//                 fillOpacity: 0,
+//                 fillColor: '#00416A',
+//             };
+//         },
+//     }).addTo(map);
+// }
+
+//////////////// END of water section
+
+
+
 
 
 // ////// Slider stuff

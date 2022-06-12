@@ -1,5 +1,5 @@
 #### Alpha Version 
-updated 10 June 2022
+updated 12 June 2022
 
 <img src="svg/RomanAquila_AdobeStock_229200876-gold.svg" style=" margin:auto ; width:175px ; text-align:middle; margin-left:50%; margin-right:50%; margin-top:-10px; margin-bottom:-10px; ">
 
@@ -11,7 +11,7 @@ updated 10 June 2022
 ##### Overview:
 - This project will attempt to provide an interactive mapping visualisation of Roman territorial expansion from 500 B.C. to A.D. 200. The primary focus is on Roman roads as it correlates to the growth of the empire. The Roman road network directly contributed to commerce, ease of travel, and enabled rapid movement of Roman armies and logistical resupply.
 
-- Why Roman roads anyway? They're longer lasting than modern roads! Some of these ancient roads didn't see much degradation until tanks rolled over them during World War 2, but even so, the roads were still in decent shape after the fact. Furthermore, Roman roads were marvels in engineering in terms of placement and would give the modern surveyor the run for their money if there was a contest of who could make a straighter road far over the horizon.
+- Why Roman roads anyway? They're longer-lasting than modern roads! Some of these ancient roads didn't see much degradation until tanks rolled over them during World War 2, but even so, the roads were still in decent shape after the fact. Furthermore, Roman roads were marvels in engineering in terms of placement and would give the modern surveyor the run for their money if there was a contest of who could make a straighter road far over the horizon.
 
 - This project was built to meet requirements for Modules 8-10 of the [MAP 673: Design For Interactive Web Mapping](https://newmapsplus.github.io/map673/syllabus/) course at the [University of Kentucky](https://newmapsplus.as.uky.edu/).
 
@@ -31,7 +31,7 @@ Memory:  65204MiB
 - GeoJSON - file format for most map data
 - CSV - file format for some of the map data (to save on file size if necessary)
 - HTML, CSS, JS
-     - Leaflet - Primary JS library for mapping requirements, user-interface, etc.
+     - Leaflet - Primary JS library for mapping requirements, user interface, etc.
      - PapaParse and omnivore - JS libraries for processing CSV data for use with Leaflet
      - Bootstrap - JS/CSS library for general layout, theme, and styles
 - Github Pages (maybe Mapbox?)
@@ -64,24 +64,35 @@ Memory:  65204MiB
 *Notes:* 
 <br/> <sup>1</sup> Some of these vector files, are still a bit rough (in my opinion), and will be further refined.
 <br/> <sup>2</sup> There are inconsistencies for the 133 B.C. maps depending on the source material and will be the highest priority for revision.
-<br/> <sup>3</sup> The "Max extent" vector file is *not* to be used denote a particular time period, but rather to be used for clipping/intersection work within QGIS.  For example, regions in Mesopotamia and Germania Magna were temporary holdings at best or areas of Roman influence due to road/trade networks (and not necessarily Roman conquered territories).</strike>
+<br/> <sup>3</sup> The "Max extent" vector file is *not* to be used to denote a particular time period, but rather to be used for clipping/intersection work within QGIS.  For example, regions in Mesopotamia and Germania Magna were temporary holdings at best or areas of Roman influence due to road/trade networks (and not necessarily Roman conquered territories).</strike>
 
-#### UPDATE
+### UPDATE
 ###### Maps total revision
-- [Combined 500 B.C. through A.D. 202](data/CombinedExtentLayers.geojson) GeoJSON
-- [Combined Major/Minor Roads and Fortifications](data/RomanRoadsWallsIntersect.geojson) GeoJSON
+- [Combined 500 B.C. through A.D. 117](data/CombinedExtentLayers_v4.geojson) GeoJSON
+- [Combined Major/Minor Roads and Fortifications](data/RomanRoadsWallsIntersect_v4.geojson) GeoJSON
 
-Write-up to be prepared... Custom-built maps, etc. 
+- In essence, I built custom polygons because the ones on the web failed to take into account terrain features. Below, we can see the standard shapefile posted all over the interwebs that, unfortunately, don't take into account terrain:
+
+![Old data](images/old_data.png)
+
+- And, here's my interpretation of what the historical Roman boundary should really look like:
+
+![New data](images/new_data.png)
+- In the early stages of the Roman Republic's expansion across the Italian peninsula, it is simply not realistic to think that Rome would prefer to gain control of mountainous alpine terrain over the fertile Po river valley. The old map files were an eye sore and badly needed fixing!
+
+- The data I've generated here is released under the [BSD 3-Clause License](LICENSE). So, if there are more fixes to be made, go for it! Or just do whatever you want.  It's BSD. :-)
 
 ##### Datasets:
 
-- Roman Roads [data used in this project](data/RomanRoads.js) is derived primarily from the [Digital Atlas of Roman and Medieval Civilization Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU) but combined with data from [Mercator-E Project](https://fabricadesites.fcsh.unl.pt/mercator-e/) to add to the Hispania region, and [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c) to add to some of the missing segments in the Asia Minor region. The dataset from [The Roads of Roman Britain](https://roadsofromanbritain.org/index.html) was not incorporated, not because it was lacking — rather the opposite as it had more detail compared to all of the other datasets. If interested in Roman Roads in Britannia specifically, be sure to check out their highly detailed research.
+- Roman Roads [data used in this project](data/RomanRoadsWallsIntersect_v4.geojson) is derived primarily from the [Digital Atlas of Roman and Medieval Civilization Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU) but combined with data from [Mercator-E Project](https://fabricadesites.fcsh.unl.pt/mercator-e/) to add to the Hispania region, and [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c) to add to some of the missing segments in the Asia Minor region. The dataset from [The Roads of Roman Britain](https://roadsofromanbritain.org/index.html) was not incorporated, not because it was lacking — rather the opposite as it had more detail compared to all of the other datasets. If interested in Roman Roads in Britannia specifically, be sure to check out their highly detailed research.
 
 - [Project MERCURY-MINERVA-SIMREC (Computational Modeling in Roman Studies)](https://projectmercury.eu/datasets/)
 
 - [Juxtaposing GIS and Archaeologically Mapped Ancient Road Routes](https://www.mdpi.com/2673-7086/2/1/5/pdf) PDF - Journal article by Paddington Hodza and Kurtis A. Butler at the Wyoming Geographic Information Science Center, the University of Wyoming outlining some of the many challenges with the mapping of archaeological road networks with GIS.
 
 ###### Roman Road Network (version 2008):
+##### This is the old dataset that inspired me to make a new dataset:
+
 - [Digital Atlas of Roman and Medieval Civilization Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU)
 
 This study provides a portable, digital version of the Roman roads identified in the Barrington Atlas, which users can visualize in combination with their own historical data. (2008) 
