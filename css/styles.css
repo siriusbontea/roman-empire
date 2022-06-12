@@ -74,6 +74,37 @@ p {
     /* Need to add @media breaks to allow non-justify for smaller screens! */
 }
 
+
+/* START of Styling the Leaflet Layer Control  */
+.leaflet-control-layers-toggle {
+    background-image: url("/images/openlayers.png");
+    background-color: #A91101;
+    background-size: 30px 30px;
+}
+
+.leaflet-touch .leaflet-control-layers-toggle {
+    background-image: url("/images/openlayers.png");
+    background-color: #A91101;
+}
+
+.leaflet-control-layers-expanded {
+    color: #ffe4ce;
+    background-color: #A91101;
+    font-family: trajan-pro-3,
+    serif;
+    font-weight: 700;
+    font-style: normal;
+}
+/* END of Styling the Leaflet Layer Control  */
+
+
+
+
+
+
+
+
+
 /* START of Styling the Polygons! */
 .land {
     fill: none;

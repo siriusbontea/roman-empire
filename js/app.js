@@ -1,77 +1,16 @@
-// // ////////// Start of Projected
-// var naprj = {
-//   epsg: "EPSG:3034",
-//   def: "+proj=lcc+lat_1=35+lat_2=65+lat_0=52+lon_0=10+x_0=4000000+y_0=2800000+ellps=GRS80+towgs84=0,0,0,0,0,0,0+units=m+no_defs",
-//   resolutions: [8192, 4096, 2048, 1024, 512, 256, 128],
-//   origin: [0, 0],
-// };
+// var cities = L.layerGroup();
 
-// var crs = new L.Proj.CRS(naprj.epsg, naprj.def, {
-//   resolutions: naprj.resolutions,
-//   origin: naprj.origin,
-// });
+// var mLittleton = L.marker([39.61, -105.02]).bindPopup('This is Littleton, CO.').addTo(cities);
+// var mDenver = L.marker([39.74, -104.99]).bindPopup('This is Denver, CO.').addTo(cities);
+// var mAurora = L.marker([39.73, -104.8]).bindPopup('This is Aurora, CO.').addTo(cities);
+// var mGolden = L.marker([39.77, -105.23]).bindPopup('This is Golden, CO.').addTo(cities);
 
-
-// // ////////// End of Projected
-
-var southWest = L.latLng(-5, -20),
-    northEast = L.latLng(80, 110),
-    bounds = L.latLngBounds(southWest, northEast);
-
-var options = {
-    // crs: crs,   // comment if not using projection other than WGS84
-    center: [41.9100498, 12.4659593], // Rome
-    zoom: 7.5,
-    zoomSnap: 0.1,
-    zoomDelta: 0.2,
-    zoomControl: false,
-    maxBounds: bounds,
-    maxZoom: 11,
-    minZoom: 5,
-    // layers: [plainTerrain, dare, streets]   /// layer options not working
-};
 
 // Mapbox API parameters
 var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
 var mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg'
 
-// // mapbox API parameters
-// const accessToken = 'pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg';
-// const yourName = "siriusbontea";
-// const yourMap = "cl41hks5e000x16udd55zcnuj"; // PlainTerrain
 
-// const map = L.map("map", options);
-// map.attributionControl.setPrefix("");
-// // map.scrollWheelZoom.disable();
-
-//  L.tileLayer(
-//    `https://api.mapbox.com/styles/v1/${yourName}/${yourMap}/tiles/256/{z}/{x}/{y}?access_token=${accessToken}`, {
-//     //  attribution: '',
-//     //  attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-//      maxZoom: 18,
-//    }
-//  ).addTo(map);
-
-const map = L.map("map", options);
-map.attributionControl.setPrefix("");
-// map.scrollWheelZoom.disable();
-
-var baseMaps = {
-    "Terrain": plainTerrain,
-    "DARE": dare,
-    "Modern Streets": streets
-};
-
-var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
-var mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg'
-
-// PlainTerrain custom tiles from Mapbox
-var plainTerrain = L.tileLayer(mbUrl, {
-    id: 'siriusbontea/cl41hks5e000x16udd55zcnuj',
-    tileSize: 512,
-    zoomOffset: -1,
-    attribution: mbAttr
-}).addTo(map);
 
 // DARE map tiles
 var dare = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {
@@ -79,48 +18,126 @@ var dare = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {
     attribution: '&copy; <a href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></a>'
 });
 
-// Mapbox streets-v11 tiles
-var streets = L.tileLayer(mbUrl, {
-    id: 'mapbox/streets-v11',
+// ESRI NatGeo tiles (thick modern National borders)
+var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+    attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+    maxZoom: 16
+});
+
+// PlainTerrain custom tiles from Mapbox
+var plainTerrain = L.tileLayer(mbUrl, {
+    id: 'siriusbontea/cl41hks5e000x16udd55zcnuj',
     tileSize: 512,
     zoomOffset: -1,
     attribution: mbAttr
 });
 
 
+var map = new L.map('map', {
+    center: [41.9100498, 12.4659593], // Rome
+    zoom: 7.5,
+    zoomSnap: 0.1,
+    zoomDelta: 0.2,
+    zoomControl: false,
+    maxZoom: 11,
+    minZoom: 5,
+    layers: [plainTerrain]
+});
+
+map.bounds = [],
+    map.setMaxBounds([
+        [-5, -20],
+        [80, 110]
+    ]);
+    map.attributionControl.setPrefix("");
+
+
+var baseLayers = {
+    'Terrain': plainTerrain,
+    'DARE': dare,
+    'NatGeo': Esri_NatGeoWorldMap
+};
+
+var overlays = {
+    // 'Cities': cities
+};
+
+var layerControl = L.control.layers(baseLayers, overlays).addTo(map);
+
+	// var crownHill = L.marker([39.75, -105.09]).bindPopup('This is Crown Hill Park.');
+	// var rubyHill = L.marker([39.68, -105.00]).bindPopup('This is Ruby Hill Park.');
 
 
 
+// var parks = L.layerGroup([crownHill, rubyHill]);
 
-
-
-//////// Not working yet...
-// var layerControl = L.control.layers(baseMaps).addTo(map);
-
-
-/* 
-  ┌─────────────────────────────────────────────────────────────────────────┐
-  │  Mapbox GL JS is cool in that it can do projected raster maps.          │
-  │ However, it does everything else differently with markers, etc.         │
-  │ compared to Leaflet.  New learning curve (nothing wrong with that),     │
-  │ but not enough time to mess with right now. I just need to get things   │
-  │ working!                                                                │
-  └─────────────────────────────────────────────────────────────────────────┘
- */
-// /// start of Mapbox GL JS (from instructions)
-// mapboxgl.accessToken = 'pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg';
-// const map = new mapboxgl.Map({
-// container: 'map',
-// style: 'mapbox://styles/siriusbontea/cl41hks5e000x16udd55zcnuj',
-// center: [0,1],
-// zoom: 0,
-// projection: {
-//   name: 'lambertConformalConic',
-//   center: [12, 42],
-//   parallels: [30, 30]
-// }
+// var satellite = L.tileLayer(mbUrl, {
+//     id: 'mapbox/satellite-v9',
+//     tileSize: 512,
+//     zoomOffset: -1,
+//     attribution: mbAttr
 // });
-// /// end of Mapbox GL JS
+// layerControl.addBaseLayer(satellite, 'Satellite');
+// layerControl.addOverlay(parks, 'Parks');
+
+
+
+
+
+// var southWest = L.latLng(-5, -20),
+//     northEast = L.latLng(80, 110),
+//     bounds = L.latLngBounds(southWest, northEast);
+
+// var options = {
+//     // crs: crs,   // comment if not using projection other than WGS84
+//     center: [41.9100498, 12.4659593], // Rome
+//     zoom: 7.5,
+//     zoomSnap: 0.1,
+//     zoomDelta: 0.2,
+//     zoomControl: false,
+//     maxBounds: bounds,
+//     maxZoom: 11,
+//     minZoom: 5,
+//     // layers: [dare, Esri_NatGeoWorldMap]   /// layer options not working
+// };
+
+// const map = L.map("map", options);
+// map.attributionControl.setPrefix("");
+// // map.scrollWheelZoom.disable();
+
+// // Mapbox API parameters
+// var mbAttr = 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>';
+// var mbUrl = 'https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token=pk.eyJ1Ijoic2lyaXVzYm9udGVhIiwiYSI6ImNrd3AzN3BnaDA4eGQycWswYmg2eGd2cjgifQ.7bGCHPM-V8bkUNxlXn9YOg'
+
+
+// var baseMaps = {
+//     // 'Terrain': plainTerrain,
+//     'DARE': dare,
+//     'NatGeo': Esri_NatGeoWorldMap
+// };
+
+// // // PlainTerrain custom tiles from Mapbox
+// // var plainTerrain = L.tileLayer(mbUrl, {
+// //     id: 'siriusbontea/cl41hks5e000x16udd55zcnuj',
+// //     tileSize: 512,
+// //     zoomOffset: -1,
+// //     attribution: mbAttr
+// // });
+
+// // DARE map tiles
+// var dare = L.tileLayer('https://dh.gu.se/tiles/imperium/{z}/{x}/{y}.png', {
+//     maxZoom: 11,
+//     attribution: '&copy; <a href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></a>'
+// });
+
+// // ESRI NatGeo tiles (thick modern National borders)
+// var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/NatGeo_World_Map/MapServer/tile/{z}/{y}/{x}', {
+//     attribution: 'Tiles &copy; Esri &mdash; National Geographic, Esri, DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO, NOAA, iPC',
+//     maxZoom: 16
+// });
+
+
+
 
 
 ////////// This is just a placeholder for right now //////////////
@@ -235,7 +252,7 @@ function drawRoadsWalls(romanRoadsWalls) {
             return {
                 color: '#333333',
                 weight: 1,
-                           };
+            };
         },
     }).addTo(map);
 }
