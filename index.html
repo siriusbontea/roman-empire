@@ -61,7 +61,18 @@
                 <h1 class="center">Infrastructure of the Roman Empire</h1>
                 <p class="center"><a href="https://github.com/siriusbontea/roman-empire#readme">Project Information</a>
                 </p>
-
+                <h3>Base Map Attributions:</h3>
+                <ul>
+                    <li>Plain Terrain Map &mdash; Map data &copy; <a
+                            href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a
+                            href="https://www.mapbox.com/">Mapbox</a>'</li>
+                    <li>Digital Atlas of the Roman Empire (DARE) &mdash; &copy; <a
+                            href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a
+                            href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></a></li>
+                    <li>Esri National Geographic World Map &mdash; Tiles &copy; Esri &mdash; National Geographic, Esri,
+                        DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO,
+                        NOAA, iPC</li>
+                </ul>
             </div>
             <div class="center">
                 <p>Copyright © <a href="https://siriusbontea.github.io/">Sirius T. Bontea</a> – A.D. 2022</p>
@@ -77,12 +88,12 @@
         </div>
 
         <button id="legend-button" onclick="myLegend()"><i class="fa fa-key" aria-hidden="true"></i>
-</button>
+        </button>
 
         <section id="legend">
             <img class="flat-laurel-legend-top" src="svg/FlatLaurel_AdobeStock_222827192.svg">
             <img class="flat-laurel-legend-bottom" src="svg/FlatLaurel_AdobeStock_222827192.svg">
-            
+
             <p>Legendary items</p>
         </section>
 
@@ -92,12 +103,12 @@
 
 
 
-<!-- ui slider -->
-<div id="slider" class="shadow-sm">
-    <input type="range" class="form-range" min="1" max="8" value="1" step="1" />
-</div>
-<!-- ui slider grade level indicator -->
-<div id="gradeIndicator">Grade 1</div>
+    <!-- ui slider -->
+    <div id="slider" class="shadow-sm">
+        <input type="range" class="form-range" min="1" max="8" value="1" step="1" />
+    </div>
+    <!-- ui slider grade level indicator -->
+    <div id="gradeIndicator">Grade 1</div>
 
 
 
@@ -151,9 +162,11 @@
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/proj4leaflet/1.0.2/proj4leaflet.min.js"
         integrity="sha512-GsAYl1wxzWW6azVpXkhyYfjMb2LbaOnlrqWMBdAk9xDcilinFvGMN+48Ajp/10u/9lcnh8YyS2CYNgung7ewHg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
-
+    <!-- The map -->
+    <script src='js/map.js'></script>
     <!-- The app -->
-    <script src='js/a2.js'></script>
+    <script src='js/app.js'></script>
+
 </body>
 
 </html>
