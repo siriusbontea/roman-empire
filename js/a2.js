@@ -148,15 +148,15 @@ var romeIcon = L.icon({
     popupAnchor: [0, 0], // point from which the popup should open relative to the iconAnchor
 });
 L.marker([41.9100498, 12.4659593], {
-        icon: romeIcon,
-    })
+    icon: romeIcon,
+})
     .addTo(map)
     .bindTooltip(
         `<img src='images/legionary_globe.png' class='center' style='width: 150px'><br>Geography of the Roman Empire, y'all!`, {
-            className: "blue-tooltip",
-            maxWidth: 200,
-            sticky: true,
-        }
+        className: "blue-tooltip",
+        maxWidth: 200,
+        sticky: true,
+    }
     );
 
 const d = {
@@ -175,11 +175,12 @@ const d = {
         //     d: 'data/RomanRoadsWallsIntersect_v4.topojson',
         //     f: '',
         // },
-        'empireExtent':{
+        'empireExtent': {
             d: 'data/CombinedExtentLayers_v4.topojson',
             f: 'CombinedExtentLayers_v4',
+            colors: ['#000', '#111', '#222', '#333', '#444', '#555', '#666']
         },
-    }  
+    }
 }
 
 for (let x in d.sources) {
@@ -188,17 +189,17 @@ for (let x in d.sources) {
             .then(function (r) {
                 return r.json();
             })
-      )  
+    )
 }
 
 Promise.all(d.in)
-    .then(function (r){
+    .then(function (r) {
         let i = 0
         for (let x in d.sources) {
             const geojson = topojson.feature(r[i], {
                 type: 'GeometryCollection',
                 geometries: r[i].objects[d.sources[x].f].geometries
-              });
+            });
             d.out[x] = geojson
             i++
         }
@@ -206,11 +207,11 @@ Promise.all(d.in)
         drawMap(d.out)
     })
 
-  function drawMap(d) {
+function drawMap(d) {
     drawGeoLines(d.gratLines)
     drawGeoLines(d.landLines)
     drawExtent(d.empireExtent)
-  }  
+}
 
 
 
@@ -218,8 +219,9 @@ function drawGeoLines(geoLines) {
     const lines = L.geoJson(geoLines, {
         style: function (feature) {
             return {
-                color: '#000',
-                weight: .5,
+                color: 'red',
+                weight: 2,
+                fillOpacity: 0,
                 interactive: false,
             };
         },
@@ -227,17 +229,44 @@ function drawGeoLines(geoLines) {
 }
 
 function drawExtent(empireExtent) {
+    const colors = d.sources.empireExtent.colors
     const extent = L.geoJson(empireExtent, {
         style: function (feature) {
-            return {
-                color: '#000',
-                weight: 1, // set weight to 0 after the slider works
-                fillOpacity: .2,
-                fillColor: '#A91101',
-                interactive: false,
-            };
+            const props = feature.properties.order
+            if (props < 7) {
+                return {
+                    color: colors[props],
+                    weight: 1, // set weight to 0 after the slider works
+                    fillOpacity: .6,
+                    fillColor: colors[props],
+                    interactive: false,
+                };
+            } else {
+                return {
+                    color: 'smoke',
+                    weight: 1, // set weight to 0 after the slider works
+                    fillOpacity: .2,
+                    fillColor: '#A91101',
+                    interactive: false,
+                };
+            }
         },
     }).addTo(map);
+    // listen somehow in change in order value
+    const order = 6
+    extent.eachLayer(function (i) {
+        if (i.feature.properties.order > order) {
+            i.setStyle({
+                opacity: 0,
+                fillOpacity: 0
+            })
+        } else {
+            i.setStyle({
+                opacity: 0.8,
+                fillOpacity: 0.8
+            })
+        }
+    })
 }
 
 // function drawRoadsWalls(romanRoadsWalls) {
@@ -258,32 +287,32 @@ function drawExtent(empireExtent) {
 
 
 // console.log("Here is the output of romanRoadsWalls:", L.geoJson(romanRoadsWalls))
-    
+
 // console.log("Here is the output of data/RomanRoadsWallsIntersect_v4.geojson", data/RomanRoadsWallsIntersect_v4.geojson)
 
-    // romanRoadsWalls.eachLayer(function (layer) {
+// romanRoadsWalls.eachLayer(function (layer) {
 
-        
-    //         if (props.CLASS[F]) {  // Black line for Fortification
-    //             layer.setStyle({
-    //                 color: 'black',
-    //                 weight: 3
-    //             });
 
-    //         } else if (props.CLASS[M]) { // Red line for Major Road
-    //             layer.setStyle({
-    //                 color: 'red',
-    //                 weight: 3
-    //             });
-    //         } else if (props.CLASS[n]) {
-    //             layer.setStyle({ 
-    //                 color: 'orange',
-    //                 weight: 3
-    //             });
-    //         };   
-    //     }).addTo(map);
+//         if (props.CLASS[F]) {  // Black line for Fortification
+//             layer.setStyle({
+//                 color: 'black',
+//                 weight: 3
+//             });
 
-    // }
+//         } else if (props.CLASS[M]) { // Red line for Major Road
+//             layer.setStyle({
+//                 color: 'red',
+//                 weight: 3
+//             });
+//         } else if (props.CLASS[n]) {
+//             layer.setStyle({ 
+//                 color: 'orange',
+//                 weight: 3
+//             });
+//         };   
+//     }).addTo(map);
+
+// }
 
 
 //////////////// START of water section //////////////////
@@ -424,8 +453,8 @@ function myLegend() {
     var x = document.getElementById("legend");
     var y = document.getElementById("legend-button");
     if (clickedLegend) {
-         y.style.background = "#fff9dfa0";
-         y.style.color = "#A91101";
+        y.style.background = "#fff9dfa0";
+        y.style.color = "#A91101";
         x.style.display = "block"; // no footer height
     } else {
         y.style.background = "#A91101";
