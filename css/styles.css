@@ -322,6 +322,19 @@ blockquote {
     font-size: 1.3rem;
 }
 
+ /* from Kenya example */
+#gradeIndicator {
+    z-index: 1000;
+    position: absolute;
+    bottom: 48px;
+    left: 2.3%;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 1.3rem;
+}
+
 
 /* END of Slider Styling */
 

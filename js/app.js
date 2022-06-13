@@ -189,7 +189,7 @@ var landLines = omnivore
 
 // Major Roman Roads (class_code "M"), Minor Roman Roads (class_code "n"), and Fortifications (class_code "F").
 var romanRoadsWalls = omnivore
-    .topojson('data/RomanRoadsWallsIntersect_v4.topojson')
+    .topojson('data/RomanRoadsWallsIntersect_v5.topojson')
     .on("ready", function (e) {
         drawRoadsWalls(e.target.toGeoJSON());
     })
@@ -208,7 +208,7 @@ var romanRoadsWalls = omnivore
 
 /////////// Roman Empire extent layers
 var empireExtent = omnivore
-    .topojson('data/CombinedExtentLayers_v4.topojson')
+    .topojson('data/CombinedExtentLayers_v5.topojson')
     .on("ready", function (e) {
         drawExtent(e.target.toGeoJSON());
     })
@@ -246,17 +246,18 @@ function drawExtent(empireExtent) {
     }).addTo(map);
 }
 
-// function drawRoadsWalls(romanRoadsWalls) {
-//     const roads = L.geoJson(romanRoadsWalls, {
-//         style: function (feature) {
-//             return {
-//                 color: '#333333',
-//                 weight: 1,
-//             };
-//         },
-//     }).addTo(map);
-// }
+function drawRoadsWalls(romanRoadsWalls) {
+    const roads = L.geoJson(romanRoadsWalls, {
+        style: function (feature) {
+            return {
+                color: '#333333',
+                weight: 1,
+            };
+        },
+    }).addTo(map);
+}
 console.log("Here is the output of empireExtent:", empireExtent)
+console.log("Here is the output of empireExtent.objects:", empireExtent.objects)
 
 // Major Roman Roads (class_code "M"), Minor Roman Roads (class_code "n"), and Fortifications (class_code "F").
 // function drawRoadsWalls(romanRoadsWalls) {
@@ -345,7 +346,7 @@ console.log("Here is the output of empireExtent:", empireExtent)
 
 
 
-// ////// Slider stuff
+// ////// Slider stuff (Kenya lesson example)
 
 ////////// Start of function sequenceUI() - Function for event listener for slider
 function sequenceUI(girlsLayer, boysLayer) {
@@ -371,7 +372,7 @@ function sequenceUI(girlsLayer, boysLayer) {
 
     // create Leaflet control for the current grade output
     const gradeControl = L.control({
-        position: 'bottomleft'
+        position: 'topleft'
 
 
 
@@ -403,14 +404,19 @@ function sequenceUI(girlsLayer, boysLayer) {
 
 
 
+
+
+
+
+
 /* --------------- Toggle on/off info footer content ---------------  */
-var clicked = false; // start with false condition
+var clickedFooter = false; // start with false condition
 function myInfo() {
     // create button that changes color on click
     // create a footer overlay that displays 60% of the current viewport height
     var x = document.getElementById("footer");
     var y = document.getElementById("info-button");
-    if (clicked) {
+    if (clickedFooter) {
         y.style.background = "#A91101";
         y.style.color = "#fff9df";
         x.style.height = "0px"; // no footer height
@@ -419,7 +425,7 @@ function myInfo() {
         y.style.color = "#A91101";
         x.style.height = "60vh"; // footer 60% of viewport height
     }
-    clicked = !clicked;
+    clickedFooter = !clickedFooter;
 }
 
 /* --------------- Toggle on/off legend content ---------------  */
@@ -432,11 +438,11 @@ function myLegend() {
     if (clickedLegend) {
          y.style.background = "#fff9dfa0";
          y.style.color = "#A91101";
-        x.style.display = "block"; // no footer height
+        x.style.display = "block"; // display
     } else {
         y.style.background = "#A91101";
         y.style.color = "#fff9df";
-        x.style.display = "none"; // footer 60% of viewport height
+        x.style.display = "none"; // no display
     }
     clickedLegend = !clickedLegend;
 }
