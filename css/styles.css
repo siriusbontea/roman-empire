@@ -49,6 +49,7 @@ body {
         serif;
     font-weight: 400;
     font-style: normal;
+    background-color: #6e6e6e;
 }
 
 p {
@@ -167,6 +168,7 @@ blockquote {
 }
 
 #map {
+    z-index: 1;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -278,7 +280,7 @@ blockquote {
 }
 
 #yearSlider {
-    z-index: 1000;
+    z-index: 9999;
     position: absolute;
     bottom: 50px;
     left: 50px;
@@ -291,7 +293,7 @@ blockquote {
 }
 
 #yearLabel, #yearValue {
-    z-index: 1000;
+    z-index: 9999;
     position: absolute;
     bottom: 25px;
     left: 25px;
@@ -304,14 +306,15 @@ blockquote {
 
 /* from Kenya lesson */
 #slider {
-    z-index: 3000;
+    z-index: 9999;
     background-color: #00000080;
     padding: 50px 10px 0px 10px;
-    border-radius: 10%;
+    width: 500px;
+    border-radius: 15px;
 }
 
 #gradeIndicator {
-    z-index: 3000;
+    z-index: 9999;
     position: absolute;
     bottom: 48px;
     left: 2.3%;
@@ -322,19 +325,7 @@ blockquote {
     font-size: 1.3rem;
 }
 
- /* from Kenya example */
-#gradeIndicator {
-    z-index: 1000;
-    position: absolute;
-    bottom: 48px;
-    left: 2.3%;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1.3rem;
-}
-
+ 
 
 /* END of Slider Styling */
 
@@ -441,6 +432,14 @@ blockquote {
     margin-right: auto;
     text-align: center;
     width: auto;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
 }
 
 /* This section below controls the style for the info section on the bottom */

@@ -9,8 +9,8 @@ Fortifications (class_code "F").
 
 Places:
 // type_code description zoom //
-*11 Major settlement(capital, colonia, municipium)
-*17 Major fort(legionary fortress)
+*11 Major settlement(capital, colonia, municipium) 6
+*17 Major fort(legionary fortress) 6
 *13 Civitas capital(Late Roman Gallia) 8
 *12 Settlement(civitas, vicus, other settlement) 8
 *18 Fort(castrum, castellum) 8
@@ -33,6 +33,7 @@ Places:
 *52 Aqueduct / dam / cistern / spring 10
 64 Monument 10
 
+Extent of Empire:
 From the CombinedExtentLayers_v5.geojson:
     "type": "Feature",
     "properties": {
