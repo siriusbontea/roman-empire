@@ -311,6 +311,8 @@ blockquote {
     padding: 50px 10px 0px 10px;
     width: 500px;
     border-radius: 15px;
+    position:absolute;
+    bottom: 0px
 }
 
 #gradeIndicator {
