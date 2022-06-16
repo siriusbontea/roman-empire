@@ -90,7 +90,8 @@ const d = {
         'empireExtent': {
             d: 'data/CombinedExtentLayers_v5.topojson',
             f: 'CombinedExtentLayers_v5',
-            colors: ['#000', '#111', '#222', '#333', '#444', '#555', '#666']
+            colors: ['#000000', '#161616', '#2D2D2D', '#434343', '#5A5A5A', '#707070', '#878787', '#9D9D9D', '#B4B4B4'], // ( 9 colours - Ramp #1 is Roman Republic
+            colors2: ['#B29C9A', '#B08580', '#AF6E67', '#AD564D', '#AC3F34', '#AA281A', '#A91101'] // 7 colours - Ramp #2 is Roman Empire
         },
     }
 }
@@ -135,8 +136,8 @@ function drawGeoLines(geoLines) {
     const lines = L.geoJson(geoLines, {
         style: function (feature) {
             return {
-                color: 'red',
-                weight: 2,
+                color: '#000',
+                weight: .5,
                 fillOpacity: 0,
                 interactive: false,
             };
@@ -265,34 +266,29 @@ function sequenceUI(empireExtent) {
     const yearControl = L.control({
         position: 'topleft'
 
-
-
     });
-
-
 
     // select the slider
     const slider = document.querySelector("yearSlider");
     // select the slider's input and listen for change
     slider.addEventListener("input", function (e) {
 
-        
-///// How do I pull this from CombinedExtentLayers_v5.topojson
-//   "type": "Feature",
-//   "properties": {
-//       "year_string": "500 B.C.",
-//       "long_name": "Extent of the Roman Republic, 500 B.C.",
-// current value of slider is year
-var currentYear = e.target.value
 
-
+        ///// How do I pull this from CombinedExtentLayers_v5.topojson
+        //   "type": "Feature",
+        //   "properties": {
+        //       "year_string": "500 B.C.",
+        //       "long_name": "Extent of the Roman Republic, 500 B.C.",
+        /////
+        // current value of slider is year
+        var currentYear = e.target.value
 
         // Adding the Year Indicator for the slider
 
         document.getElementById("yearIndicator");
         yearIndicator.innerHTML = `<span>${currentYear}</span>`
 
-        
+
     });
 } // end of function sequenceUI()
 
