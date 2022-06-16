@@ -172,8 +172,8 @@ const d = {
             f: '10m_land'
         },
         // 'romanRoadsWalls': {
-        //     d: 'data/RomanRoadsWallsIntersect_v4.topojson',
-        //     f: '',
+        //     d: 'data/t.json',
+        //     f: 'RomanRoadsWallsIntersect_v6',
         // },
         'empireExtent': {
             d: 'data/CombinedExtentLayers_v5.topojson',
@@ -196,6 +196,7 @@ Promise.all(d.in)
     .then(function (r) {
         let i = 0
         for (let x in d.sources) {
+            console.log(d.sources[x], r[i])
             const geojson = topojson.feature(r[i], {
                 type: 'GeometryCollection',
                 geometries: r[i].objects[d.sources[x].f].geometries
@@ -211,6 +212,7 @@ function drawMap(d) {
     drawGeoLines(d.gratLines)
     drawGeoLines(d.landLines)
     drawExtent(d.empireExtent)
+    drawRoadsWalls(d.romanRoadsWalls)
 }
 
 
@@ -269,16 +271,54 @@ function drawExtent(empireExtent) {
     })
 }
 
-// function drawRoadsWalls(romanRoadsWalls) {
-//     const roads = L.geoJson(romanRoadsWalls, {
-//         style: function (feature) {
-//             return {
-//                 color: '#333333',
-//                 weight: 1,
-//             };
-//         },
-//     }).addTo(map);
-// }
+function drawRoadsWalls() {
+    // console.log(romanRoadsWalls)
+    fetch('data/RomanRoadsWallsIntersect_v6.geojson')
+    .then(function (r) {
+        return r.json();
+    })
+    .then(function (r) {
+    //     const t = L.glify.layer({
+    //         geojson: r,
+    //         // paneName: 'foo',
+    //         glifyOptions: {
+    //             size: 2,
+    //             opacity: 0.8,
+    //             click (e, feature) {
+                      
+    //                 console.log({ e, feature }); 
+    //             },
+    //             sensitivity: 3,
+    //             hover(e, feature) {
+    //                 console.log('hover', feature);
+    //             }        
+    //         },
+    //         onAdd(){
+    //             console.log('onAdd callback');
+    //         },
+    //         onLayersInit(){
+    //             console.log('onLayersInit callback');
+    //         },
+    //         onRemove(){
+    //             console.log('onRemove callback');
+    //         },
+    //     }); 
+    //     console.log(t)
+    //     t.addTo(map)
+
+    const roads = L.geoJson(r, {
+        style: function (feature) {
+            return {
+                color: 'magenta',
+                weight: 2,
+            };
+        },
+    }).addTo(map);
+
+    })
+    
+    
+}
 // console.log("Here is the output of empireExtent:", empireExtent)
 
 // Major Roman Roads (class_code "M"), Minor Roman Roads (class_code "n"), and Fortifications (class_code "F").
