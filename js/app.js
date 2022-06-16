@@ -91,7 +91,7 @@ const d = {
             d: 'data/CombinedExtentLayers_v5.topojson',
             f: 'CombinedExtentLayers_v5',
             colors: ['#000000', '#222219', '#444433', '#66664D', '#898966', '#ABAB80', '#CDCD9A', '#F0F0B4', '#E7D49D'],
-            
+
             // ( 9 colours - Ramp #1 is Roman Republic
             // order 0 is 500 B.C.
             // order 8 is 60 B.C.
@@ -167,32 +167,35 @@ function drawExtent(empireExtent) {
                     fillColor: colors[props],
                     interactive: false,
                 };
-            } else if (props >= 10) {
+            } else if (props >= 9) {
+                const n = 9 - props
                 return {
-                    color: colors2[props],
+
+                    color: colors2[n],
                     weight: 1,
                     fillOpacity: .6,
-                    fillColor: colors2[props],
+                    fillColor: colors2[n],
                     interactive: false,
                 };
             }
         },
     }).addTo(map);
     // listen somehow in change in order value
-    const order = 15
-    extent.eachLayer(function (i) {
-        if (i.feature.properties.order > order) {
-            i.setStyle({
-                opacity: 0,
-                fillOpacity: 0
-            })
-        } else {
-            i.setStyle({
-                opacity: 0.8,
-                fillOpacity: 0.8
-            })
-        }
-    })
+    const order = 0
+    // extent.eachLayer(function (i) {
+    //     if (i.feature.properties.order > order) {
+    //         i.setStyle({
+    //             opacity: 0,
+    //             fillOpacity: 0
+    //         })
+    //     } else {
+    //         i.setStyle({
+    //             opacity: 0.8,
+    //             fillOpacity: 0.8
+    //         })
+    //     }
+    // })
+    sequenceUI(extent)
 }
 ///////////////
 
@@ -278,7 +281,7 @@ function sequenceUI(empireExtent) {
     });
 
     // select the slider
-    const slider = document.querySelector("yearSlider");
+    const slider = document.querySelector("#yearSlider");
     // select the slider's input and listen for change
     slider.addEventListener("input", function (e) {
 
@@ -291,13 +294,32 @@ function sequenceUI(empireExtent) {
         //       "long_name": "Extent of the Roman Republic, 500 B.C.",
         /////
 
-        const year = d.sources.empireExtent.year_string //  Is this the way?
+        let year = ""
 
         // current value of slider is year
 
         var currentYear = e.target.value
         // var currentYear = e.target.year
 
+        empireExtent.eachLayer(function (i) {
+            console.log(i.feature.properties)
+            if (i.feature.properties.order == currentYear) {
+                year = i.feature.properties.year_string
+            }
+
+                if (i.feature.properties.order > currentYear) {
+                    i.setStyle({
+                        opacity: 0,
+                        fillOpacity: 0
+                    })
+                } else {
+                    
+                    i.setStyle({
+                        opacity: 0.8,
+                        fillOpacity: 0.8
+                    })
+                }
+        })
 
         // Adding the Year Indicator for the slider
 
