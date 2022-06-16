@@ -83,10 +83,10 @@ const d = {
             d: 'data/10m_land.topojson',
             f: '10m_land'
         },
-        'romanRoadsWalls': {
-            d: 'data/RomanRoadsWallsIntersect_v5.topojson',
-            f: 'RomanRoadsWallsIntersect_v5',
-        },
+        // 'romanRoadsWalls': {
+        //     d: 'data/RomanRoadsWallsIntersect_v5.topojson',
+        //     f: 'RomanRoadsWallsIntersect_v5',
+        // },
         'empireExtent': {
             d: 'data/CombinedExtentLayers_v5.topojson',
             f: 'CombinedExtentLayers_v5',
@@ -126,6 +126,7 @@ function drawMap(d) {
     drawGeoLines(d.gratLines)
     drawGeoLines(d.landLines)
     drawExtent(d.empireExtent)
+    // drawRoadsWalls(d.romanRoadsWalls)   //// slow render - look at moving this layer to basemap in Mapbox
 }
 ////////////////////////////////////////
 
@@ -183,15 +184,63 @@ function drawExtent(empireExtent) {
         }
     })
 }
+///////////////
+
+function drawRoadsWalls() {
+    // console.log(romanRoadsWalls)
+    fetch('data/RomanRoadsWallsIntersect_v6.geojson')
+        .then(function (r) {
+            return r.json();
+        })
+        .then(function (r) {
+            //     const t = L.glify.layer({
+            //         geojson: r,
+            //         // paneName: 'foo',
+            //         glifyOptions: {
+            //             size: 2,
+            //             opacity: 0.8,
+            //             click (e, feature) {
+
+            //                 console.log({ e, feature }); 
+            //             },
+            //             sensitivity: 3,
+            //             hover(e, feature) {
+            //                 console.log('hover', feature);
+            //             }        
+            //         },
+            //         onAdd(){
+            //             console.log('onAdd callback');
+            //         },
+            //         onLayersInit(){
+            //             console.log('onLayersInit callback');
+            //         },
+            //         onRemove(){
+            //             console.log('onRemove callback');
+            //         },
+            //     }); 
+            //     console.log(t)
+            //     t.addTo(map)
+
+            const roads = L.geoJson(r, {
+                style: function (feature) {
+                    return {
+                        color: 'magenta',
+                        weight: 2,
+                    };
+                },
+            }).addTo(map);
+
+        })
+
+
+}
 
 
 
+// // ////// Slider stuff (Kenya lesson example)
 
-
-// ////// Slider stuff (Kenya lesson example)
-
-////////// Start of function sequenceUI() - Function for event listener for slider
-function sequenceUI(girlsLayer, boysLayer) {
+// ////////// Start of function sequenceUI() - Function for event listener for slider
+function sequenceUI(empireExtent) {
 
     // create Leaflet control for the slider
     const sliderControl = L.control({
@@ -200,8 +249,8 @@ function sequenceUI(girlsLayer, boysLayer) {
     // when control is added
     sliderControl.onAdd = function () {
 
-        // select the current slider with id of 'slider'
-        const controls = L.DomUtil.get("slider");
+        // select the current slider with id of 'year-slider'
+        const controls = L.DomUtil.get("yearSlider");
         // disable scroll and click events on map beneath slider
         L.DomEvent.disableScrollPropagation(controls);
         L.DomEvent.disableClickPropagation(controls);
@@ -213,7 +262,7 @@ function sequenceUI(girlsLayer, boysLayer) {
     sliderControl.addTo(map);
 
     // create Leaflet control for the current grade output
-    const gradeControl = L.control({
+    const yearControl = L.control({
         position: 'topleft'
 
 
@@ -223,29 +272,31 @@ function sequenceUI(girlsLayer, boysLayer) {
 
 
     // select the slider
-    const slider = document.querySelector("#slider input");
+    const slider = document.querySelector("yearSlider");
     // select the slider's input and listen for change
     slider.addEventListener("input", function (e) {
-        // current value of slider is current grade level
-        var currentGrade = e.target.value
 
-        // resize the circles with updated grade level
-        resizeCircles(girlsLayer, boysLayer, currentGrade);
+        
+///// How do I pull this from CombinedExtentLayers_v5.topojson
+//   "type": "Feature",
+//   "properties": {
+//       "year_string": "500 B.C.",
+//       "long_name": "Extent of the Roman Republic, 500 B.C.",
+// current value of slider is year
+var currentYear = e.target.value
 
-        //////// Adding the Grade Indicator for the slider
 
-        document.getElementById("gradeIndicator");
-        gradeIndicator.innerHTML = `<span>Grade ${currentGrade}</span>`
 
-        ///////
+        // Adding the Year Indicator for the slider
+
+        document.getElementById("yearIndicator");
+        yearIndicator.innerHTML = `<span>${currentYear}</span>`
+
+        
     });
 } // end of function sequenceUI()
 
 
-
-
-
-///////// 
 ///////// Note to self, don't break anything below here since the toggle buttons all work now:
 
 /* --------------- Toggle on/off info footer content ---------------  */

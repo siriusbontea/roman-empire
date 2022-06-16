@@ -237,7 +237,7 @@ blockquote {
     right: 12px;
     top: 130px;
     height: 80px;
-}
+    }
 
 
 .blue-tooltip {
@@ -259,75 +259,81 @@ blockquote {
     border-right-color: #63666a;
 }
 
-
+/* I'm calling this class "darkshadow" to avoid conflict with Bootstrap shadow class */
+.darkshadow {
+    -webkit-filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
+    filter: drop-shadow(3px 3px 2px rgba(0, 0, 0, .7));
+    /* Similar syntax to box-shadow */
+}
 
 
 /* START of Slider Styling */
 
-/* comment this part for now... I don't remember what I was doing with .min .max */
-
-/* #slider-control .min {
-    float: left;
-}
-
-#slider-control .max {
-    float: right;
-    margin-right: -15px;
-} */
-
-.year-slider {
-    width: 100%;
-}
-
 #yearSlider {
     z-index: 9999;
     position: absolute;
-    bottom: 50px;
-    left: 50px;
-    width: 300px;
-    /* padding: 8px 25px 8px 15px; */
-    background: rgba(25, 25, 25, 0.8);
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    bottom: 25px;
+    left: 17px;
+    width:300px;
+    padding: 40px 25px 25px 25px;
+    background: 0000;
     border-radius: 5px;
     color: whitesmoke;
 }
 
-#yearLabel, #yearValue {
+
+#yearIndicator {
     z-index: 9999;
     position: absolute;
-    bottom: 25px;
-    left: 25px;
-    padding-left: 10px;
-    padding-right: 10px;
+    bottom: 80px;
+    left: 130px;
     color: #ffffff;
+    font-family: trajan-pro-3,
+    serif;
     font-weight: 700;
-    font-size: 1.3rem;
+    font-style: normal;
+    font-size: 1.6rem;
+    text-shadow: #000000 0rem 0rem 2px,
+    #000000 0rem 0rem 4px,
+    #000000 0rem 0rem 6px,
+    #000000 0rem 0rem 8px;
 }
 
-/* from Kenya lesson */
-#slider {
-    z-index: 9999;
-    background-color: #00000080;
-    padding: 50px 10px 0px 10px;
-    width: 500px;
-    border-radius: 15px;
-    position:absolute;
-    bottom: 0px
+.form-range:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem #fff9dfa0;
 }
 
-#gradeIndicator {
-    z-index: 9999;
-    position: absolute;
-    bottom: 48px;
-    left: 2.3%;
-    padding-left: 10px;
-    padding-right: 10px;
-    color: #ffffff;
-    font-weight: 700;
-    font-size: 1.3rem;
+.form-range:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem #fff9dfa0;
 }
 
- 
+.form-range::-webkit-slider-thumb {
+    width: 2rem;
+    height: 2rem;
+    
+    background-color: #A91101;
+    
+}
+
+
+.form-range::-moz-range-thumb {
+    width: 1.2rem;
+    height: 1.8rem;
+    background-color: #A91101;
+}
+
+.form-range::-moz-range-thumb:active {
+    background-color: #ff1900;
+}
+
+.form-range::-moz-range-track {
+    
+    height: 1rem;
+    
+    background-color: #3a4046;
+    
+}
+
 
 /* END of Slider Styling */
 
