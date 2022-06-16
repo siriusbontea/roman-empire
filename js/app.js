@@ -90,8 +90,16 @@ const d = {
         'empireExtent': {
             d: 'data/CombinedExtentLayers_v5.topojson',
             f: 'CombinedExtentLayers_v5',
-            colors: ['#000000', '#161616', '#2D2D2D', '#434343', '#5A5A5A', '#707070', '#878787', '#9D9D9D', '#B4B4B4'], // ( 9 colours - Ramp #1 is Roman Republic
-            colors2: ['#B29C9A', '#B08580', '#AF6E67', '#AD564D', '#AC3F34', '#AA281A', '#A91101'] // 7 colours - Ramp #2 is Roman Empire
+            colors: ['#000000', '#222219', '#444433', '#66664D', '#898966', '#ABAB80', '#CDCD9A', '#F0F0B4', '#E7D49D'],
+            
+            // ( 9 colours - Ramp #1 is Roman Republic
+            // order 0 is 500 B.C.
+            // order 8 is 60 B.C.
+            // order 9 is A.D. 16
+            // order 15 is A.D. 202
+            // 7 colours - Ramp #2 is Roman Empire
+
+            colors2: ['#DEB887', '#D59C70', '#CC805A', '#C36444', '#BA482D', '#B12C17', '#A91101']
         },
     }
 }
@@ -147,30 +155,31 @@ function drawGeoLines(geoLines) {
 
 function drawExtent(empireExtent) {
     const colors = d.sources.empireExtent.colors
+    const colors2 = d.sources.empireExtent.colors2
     const extent = L.geoJson(empireExtent, {
         style: function (feature) {
             const props = feature.properties.order
-            if (props < 7) {
+            if (props < 9) {
                 return {
                     color: colors[props],
-                    weight: 1, // set weight to 0 after the slider works
+                    weight: 1,
                     fillOpacity: .6,
                     fillColor: colors[props],
                     interactive: false,
                 };
-            } else {
+            } else if (props >= 10) {
                 return {
-                    color: 'smoke',
-                    weight: 1, // set weight to 0 after the slider works
-                    fillOpacity: .2,
-                    fillColor: '#A91101',
+                    color: colors2[props],
+                    weight: 1,
+                    fillOpacity: .6,
+                    fillColor: colors2[props],
                     interactive: false,
                 };
             }
         },
     }).addTo(map);
     // listen somehow in change in order value
-    const order = 6
+    const order = 15
     extent.eachLayer(function (i) {
         if (i.feature.properties.order > order) {
             i.setStyle({
@@ -274,19 +283,27 @@ function sequenceUI(empireExtent) {
     slider.addEventListener("input", function (e) {
 
 
+
         ///// How do I pull this from CombinedExtentLayers_v5.topojson
         //   "type": "Feature",
         //   "properties": {
         //       "year_string": "500 B.C.",
         //       "long_name": "Extent of the Roman Republic, 500 B.C.",
         /////
+
+        const year = d.sources.empireExtent.year_string //  Is this the way?
+
         // current value of slider is year
+
         var currentYear = e.target.value
+        // var currentYear = e.target.year
+
 
         // Adding the Year Indicator for the slider
 
         document.getElementById("yearIndicator");
-        yearIndicator.innerHTML = `<span>${currentYear}</span>`
+        // yearIndicator.innerHTML = `<span>${currentYear}</span>`
+        yearIndicator.innerHTML = `<span>${year}</span>`
 
 
     });
