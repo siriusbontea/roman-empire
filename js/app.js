@@ -90,16 +90,7 @@ const d = {
         'empireExtent': {
             d: 'data/CombinedExtentLayers_v5.topojson',
             f: 'CombinedExtentLayers_v5',
-            colors: ['#000000', '#222219', '#444433', '#66664D', '#898966', '#ABAB80', '#CDCD9A', '#F0F0B4', '#E7D49D'],
-
-            // ( 9 colours - Ramp #1 is Roman Republic
-            // order 0 is 500 B.C.
-            // order 8 is 60 B.C.
-            // order 9 is A.D. 16
-            // order 15 is A.D. 202
-            // 7 colours - Ramp #2 is Roman Empire
-
-            colors2: ['#DEB887', '#D59C70', '#CC805A', '#C36444', '#BA482D', '#B12C17', '#A91101']
+            colors: ['#000000', '#222219', '#444433', '#66664D', '#898966', '#ABAB80', '#CDCD9A', '#F0F0B4', '#E7D49D', '#DEB887', '#D59C70', '#CC805A', '#C36444', '#BA482D', '#B12C17', '#A91101']
         },
     }
 }
@@ -155,11 +146,10 @@ function drawGeoLines(geoLines) {
 
 function drawExtent(empireExtent) {
     const colors = d.sources.empireExtent.colors
-    const colors2 = d.sources.empireExtent.colors2
     const extent = L.geoJson(empireExtent, {
         style: function (feature) {
             const props = feature.properties.order
-            if (props < 9) {
+             {
                 return {
                     color: colors[props],
                     weight: 1,
@@ -167,34 +157,24 @@ function drawExtent(empireExtent) {
                     fillColor: colors[props],
                     interactive: false,
                 };
-            } else if (props >= 9) {
-                const n = 9 - props
-                return {
-
-                    color: colors2[n],
-                    weight: 1,
-                    fillOpacity: .6,
-                    fillColor: colors2[n],
-                    interactive: false,
-                };
-            }
+            } 
         },
     }).addTo(map);
     // listen somehow in change in order value
     const order = 0
-    // extent.eachLayer(function (i) {
-    //     if (i.feature.properties.order > order) {
-    //         i.setStyle({
-    //             opacity: 0,
-    //             fillOpacity: 0
-    //         })
-    //     } else {
-    //         i.setStyle({
-    //             opacity: 0.8,
-    //             fillOpacity: 0.8
-    //         })
-    //     }
-    // })
+    extent.eachLayer(function (i) {
+        if (i.feature.properties.order > order) {
+            i.setStyle({
+                opacity: 0,
+                fillOpacity: 0
+            })
+        } else {
+            i.setStyle({
+                opacity: 0.8,
+                fillOpacity: 0.8
+            })
+        }
+    })
     sequenceUI(extent)
 }
 ///////////////
