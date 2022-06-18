@@ -271,14 +271,14 @@ blockquote {
 #longName {
     z-index: 9999;
     position: absolute;
-    bottom: 80px;
+    bottom: 200px;
     left: 130px;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1.6rem;
+    font-size: 1rem;
     text-shadow: #000000 0rem 0rem 2px,
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 6px,
@@ -288,65 +288,65 @@ blockquote {
 #titleHeader {
     z-index: 9999;
     position: absolute;
-    bottom: 80px;
+    bottom: 800px;
     left: 130px;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1.6rem;
+    font-size: 1rem;
     text-shadow: #000000 0rem 0rem 2px,
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 6px,
         #000000 0rem 0rem 8px;
 }
 
-#events1 {
+#eventOne {
     z-index: 9999;
     position: absolute;
-    bottom: 80px;
+    bottom: 500px;
     left: 130px;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1.6rem;
+    font-size: 1rem;
     text-shadow: #000000 0rem 0rem 2px,
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 6px,
         #000000 0rem 0rem 8px;
 }
 
-#events2 {
+#eventTwo {
     z-index: 9999;
     position: absolute;
-    bottom: 80px;
+    bottom: 400px;
     left: 130px;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1.6rem;
+    font-size: 1rem;
     text-shadow: #000000 0rem 0rem 2px,
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 6px,
         #000000 0rem 0rem 8px;
 }
 
-#rulers {
+#romeRulers {
     z-index: 9999;
     position: absolute;
-    bottom: 80px;
+    bottom: 600px;
     left: 130px;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1.6rem;
+    font-size: 1rem;
     text-shadow: #000000 0rem 0rem 2px,
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 6px,
@@ -356,14 +356,14 @@ blockquote {
 #emperorsShortName {
     z-index: 9999;
     position: absolute;
-    bottom: 80px;
+    bottom: 750px;
     left: 130px;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1.6rem;
+    font-size: 1rem;
     text-shadow: #000000 0rem 0rem 2px,
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 6px,

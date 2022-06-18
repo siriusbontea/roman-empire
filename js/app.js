@@ -88,9 +88,39 @@ const d = {
         //     f: 'RomanRoadsWallsIntersect_v5',
         // },
         'empireExtent': {
-            d: 'data/CombinedExtentLayers_v5.topojson',
-            f: 'CombinedExtentLayers_v5',
-            colors: ['#000000', '#222219', '#444433', '#66664D', '#898966', '#ABAB80', '#CDCD9A', '#F0F0B4', '#E7D49D', '#DEB887', '#D59C70', '#CC805A', '#C36444', '#BA482D', '#B12C17', '#A91101']
+            d: 'data/CombinedExtentLayers_v6.topojson',
+            f: 'CombinedExtentLayers_v6',
+            colors: ['#000000', '#222219', '#444433', '#66664D', '#898966', '#ABAB80', '#CDCD9A', '#F0F0B4', '#E7D49D', '#DEB887', '#D59C70', '#CC805A', '#C36444', '#BA482D', '#B12C17', '#A91101'],
+            ruler_image: [
+                `<img src='images/#'>`, // 0 - 500 B.C.
+                `<img src='images/#'>`, // 1 - 338 B.C.
+                `<img src='images/#'>`, // 2 - 298 B.C.
+                `<img src='images/#'>`, // 3 - 290 B.C.
+                `<img src='images/#'>`, // 4 - 272 B.C.
+                `<img src='images/#'>`, // 5 - 264 B.C.
+                `<img src='images/#'>`, // 6 - 218 B.C.
+                `<img src='images/#'>`, // 7 - 133 B.C.
+                `<img src='photos/#'>`, // 8 - 60 B.C. 
+                // Julius Caesar / https://www.britannica.com/biography/Julius-Caesar-Roman-ruler
+                // 27 BC to AD 14. / Caesar Augustus (aka Octavian) / https://en.wikipedia.org/wiki/Augustus#/media/File:Statue-Augustus.jpg
+                `<img src='photos/#'>`, // 9 - A.D. 16 
+                // Tiberius / https://i.pinimg.com/736x/49/c5/12/49c5127adb21f3b012e4aa1b3fa049e1--statue-of-emperor.jpg
+                `<img src='photos/#'>`, // 10 - A.D. 47  
+                // Claudius / https://live.staticflickr.com/3275/2941754707_29bb037b98_b.jpg
+                `<img src='photos/#'>`,         // 11 - A.D. 69 
+                // Galba / https://upload.wikimedia.org/wikipedia/commons/3/33/Roman_emperor_Galba%2C_Gustav_III%27s_Museum_of_Antiquities%2C_Stockholm_%2820%29_%2835867773310%29_edited.jpg
+                // Otho / https://en.wikipedia.org/wiki/Otho#/media/File:Otone_-_foto_di_euthman.jpg
+                //  Vitellius / http://p9.storage.canalblog.com/90/63/119589/108744668.jpg
+                // Vespasian / https://upload.wikimedia.org/wikipedia/commons/c/c6/Vespasianus01_pushkin.jpg
+
+                `<img src='photos/#'>`, // 12 - A.D. 84
+                // Domitian / https://en.wikipedia.org/wiki/Domitian#/media/File:Domiziano_da_collezione_albani,_fine_del_I_sec._dc._02.JPG
+                `<img src='photos/#'>`, // 13 - A.D. 102
+                // Trajan / https://en.wikipedia.org/wiki/Trajan#/media/File:Traianus_Glyptothek_Munich_72.jpg
+                `<img src='photos/#'>`, // 14 - A.D. 117
+                // Hadrian / https://museum.classics.cam.ac.uk/sites/museum.classics.cam.ac.uk/files/casts/531.JPG
+                `<img src='photos/#'>`, // 15 - Max Extent
+            ]
         },
     }
 }
@@ -118,7 +148,7 @@ Promise.all(d.in)
             d.out[x] = geojson
             i++
         }
-        console.log(d.out)
+        // console.log(d.out)
         drawMap(d.out)
     })
 
@@ -146,10 +176,11 @@ function drawGeoLines(geoLines) {
 
 function drawExtent(empireExtent) {
     const colors = d.sources.empireExtent.colors
+
     const extent = L.geoJson(empireExtent, {
         style: function (feature) {
             const props = feature.properties.order
-             {
+            if (props < 17) {
                 return {
                     color: colors[props],
                     weight: 1,
@@ -157,9 +188,19 @@ function drawExtent(empireExtent) {
                     fillColor: colors[props],
                     interactive: false,
                 };
-            } 
+            } else if (props < 0) {
+
+                return {
+                    color: '#000',
+                    weight: 1,
+                    fillOpacity: .6,
+                    fillColor: '#000',
+                    interactive: false,
+                };
+            }
         },
     }).addTo(map);
+
     // listen somehow in change in order value
     const order = 0
     extent.eachLayer(function (i) {
@@ -194,12 +235,12 @@ function drawRoadsWalls() {
             //             opacity: 0.8,
             //             click (e, feature) {
 
-            //                 console.log({ e, feature }); 
+            //                 console.log({ e, feature });
             //             },
             //             sensitivity: 3,
             //             hover(e, feature) {
             //                 console.log('hover', feature);
-            //             }        
+            //             }
             //         },
             //         onAdd(){
             //             console.log('onAdd callback');
@@ -210,7 +251,7 @@ function drawRoadsWalls() {
             //         onRemove(){
             //             console.log('onRemove callback');
             //         },
-            //     }); 
+            //     });
             //     console.log(t)
             //     t.addTo(map)
 
@@ -254,61 +295,79 @@ function sequenceUI(empireExtent) {
     // add it to the map
     sliderControl.addTo(map);
 
-    // create Leaflet control for the current grade output
+
+
+    //// START of year_string
+    // create Leaflet control for the current year output
     const yearControl = L.control({
         position: 'topleft'
-
     });
-
     // select the slider
     const slider = document.querySelector("#yearSlider");
     // select the slider's input and listen for change
     slider.addEventListener("input", function (e) {
-
-
-
-        ///// How do I pull this from CombinedExtentLayers_v5.topojson
-        //   "type": "Feature",
-        //   "properties": {
-        //       "year_string": "500 B.C.",
-        //       "long_name": "Extent of the Roman Republic, 500 B.C.",
-        /////
-
         let year = ""
+        let longname = ""
+        let titleheader = ""
+        let firstevent = ""
+        let secondevent = ""
+        let rulersfull = ""
+        let url = ""
 
         // current value of slider is year
-
         var currentYear = e.target.value
         // var currentYear = e.target.year
-
         empireExtent.eachLayer(function (i) {
-            console.log(i.feature.properties)
+            // console.log(i.feature.properties)
             if (i.feature.properties.order == currentYear) {
                 year = i.feature.properties.year_string
+                longname = i.feature.properties.long_name
+                titleheader = i.feature.properties.title_header
+                firstevent = i.feature.properties.event1
+                secondevent = i.feature.properties.event2
+                rulersfull = i.feature.properties.rulers
+                url = i.feature.properties.url
             }
+            if (i.feature.properties.order > currentYear) {
+                i.setStyle({
+                    opacity: 0,
+                    fillOpacity: 0
+                })
+            } else {
 
-                if (i.feature.properties.order > currentYear) {
-                    i.setStyle({
-                        opacity: 0,
-                        fillOpacity: 0
-                    })
-                } else {
-                    
-                    i.setStyle({
-                        opacity: 0.8,
-                        fillOpacity: 0.8
-                    })
-                }
+                i.setStyle({
+                    opacity: 0.8,
+                    fillOpacity: 0.8
+                })
+            }
         })
-
         // Adding the Year Indicator for the slider
-
         document.getElementById("yearIndicator");
-        // yearIndicator.innerHTML = `<span>${currentYear}</span>`
         yearIndicator.innerHTML = `<span>${year}</span>`
+        // ////////
+        document.getElementById("longName");
+        longName.innerHTML = `<span>${longname}</span>`
+
+        document.getElementById("titleHeader");
+        titleHeader.innerHTML = `<span>${titleheader}</span>`
+
+        document.getElementById("eventOne");
+        eventOne.innerHTML = `<span>${firstevent}</span>`
+
+        document.getElementById("eventTwo");
+        eventTwo.innerHTML = `<span>${secondevent}</span>`
+
+        document.getElementById("romeRulers");
+        romeRulers.innerHTML = `<span>${rulersfull}</span>`
+
 
 
     });
+
+
+
+
+
 } // end of function sequenceUI()
 
 
