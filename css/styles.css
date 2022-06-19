@@ -376,7 +376,7 @@ blockquote {
     position: absolute;
     top: 250px;
     left: 59px;
-    background-image: url('images/ruler-icon-off.png');
+    background-image: url('images/ruler-icon-on.png');
   background-color: #fff9dfbc;
   
     
@@ -572,7 +572,7 @@ blockquote {
     top: 250px;
     right: 38px;
 
-     background-image: url('images/sundial_events_icon_off.png');
+     background-image: url('images/sundial_events_icon_on.png');
      background-color: #fff9dfbc;
 
     /* Add styles to match Leaflet UI elements */

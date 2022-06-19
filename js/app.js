@@ -384,12 +384,12 @@ function myInfoPanel() {
     if (clickedInfoPanel) {
         y.style.background = "#fff9dfa0";
         y.style.color = "#A91101";
-         y.innerHTML = "<img src='images/sundial_events_icon_off.png'>"
+         y.innerHTML = "<img src='images/sundial_events_icon_on.png'>"
         x.style.display = "block"; // display
     } else {
         y.style.background = "#A91101";
         y.style.color = "#fff9df";
-         y.innerHTML = "<img src='images/sundial_events_icon_on.png'>"
+         y.innerHTML = "<img src='images/sundial_events_icon_off.png'>"
         x.style.display = "none"; // no display
     }
     clickedInfoPanel = !clickedInfoPanel;
@@ -404,13 +404,13 @@ function myRulerPanel() {
     if (clickedRulersPanel) {
         y.style.backgroundColor = "#fff9dfa0";
         y.style.color = "#A91101";
-        y.innerHTML = "<img src='images/ruler-icon-off.png'>"
+        y.innerHTML = "<img src='images/ruler-icon-on.png'>"
 
         x.style.display = "block"; // display
     } else {
         y.style.backgroundColor = "#A91101";
         y.style.color = "#fff9df";
-        y.innerHTML = "<img src='images/ruler-icon-on.png'>"
+        y.innerHTML = "<img src='images/ruler-icon-off.png'>"
 
         x.style.display = "none"; // no display
     }
