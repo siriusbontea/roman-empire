@@ -120,7 +120,7 @@ p {
     color: #ffe4ce;
     background-color: #A91101;
     font-family: trajan-pro-3,
-    serif;
+        serif;
     font-weight: 700;
     font-style: normal;
     border-radius: 10px;
@@ -237,7 +237,7 @@ blockquote {
     right: 12px;
     top: 130px;
     height: 80px;
-    }
+}
 
 
 .blue-tooltip {
@@ -268,11 +268,10 @@ blockquote {
 
 /* START of styling of data from CombinedExtentLayers TopoJSON */
 
-#longName {
+#yearIndicator {
     z-index: 9999;
     position: absolute;
-    bottom: 200px;
-    left: 130px;
+    top: 30px;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
@@ -284,6 +283,7 @@ blockquote {
         #000000 0rem 0rem 6px,
         #000000 0rem 0rem 8px;
 }
+
 
 #titleHeader {
     z-index: 9999;
@@ -336,12 +336,74 @@ blockquote {
         #000000 0rem 0rem 8px;
 }
 
+/* END of styling of data from CombinedExtentLayers TopoJSON */
+
+/* START of Rulers Panel Styling */
+
+#rulers-panel-button {
+    position: absolute;
+    top: 250px;
+    left: 59px;
+    background-image: url('images/ruler-icon-off.png');
+  background-color: #A91101;
+  
+    
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
+    border-radius: 15px;
+    /* Draw it on top of all elements */
+    z-index: 9999;
+    /* Cursor change on hover -- doesn't work on touch screensn */
+    cursor: pointer;
+}
+
+
+#rulers-panel {
+    position: absolute;
+    top: 350px;
+    left: 10px;
+    width: fit-content;
+    height: fit-content;
+    padding-top: 35px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 35px;
+    align-content: center;
+    text-align: center;
+    /* Add styles to match Leaflet UI elements */
+    background: #fff9dfbc;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
+    /* border: 2px solid #A91101; */
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+.flat-laurel-rulers-panel-top {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 0px;
+    
+     margin-left: auto;
+     margin-right: auto;
+     width: 50%;
+}
+
+.flat-laurel-rulers-panel-bottom {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 300px;
+     margin-left: auto;
+     margin-right: auto;
+}
+
+
+
 #romeRulers {
     z-index: 9999;
-    position: absolute;
-    bottom: 600px;
-    left: 130px;
-    color: #ffffff;
+       color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
@@ -355,10 +417,7 @@ blockquote {
 
 #emperorsShortName {
     z-index: 9999;
-    position: absolute;
-    bottom: 750px;
-    left: 130px;
-    color: #ffffff;
+   color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
@@ -372,10 +431,6 @@ blockquote {
 
 #romeRulersImage {
     z-index: 9999;
-    position: absolute;
-    bottom: 750px;
-    left: 130px;
-    color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
@@ -387,14 +442,11 @@ blockquote {
         #000000 0rem 0rem 8px;
 }
 
-
-
-
-
-
-
-
-
+.romeRulersImageStyle {
+    border-radius: 30px;
+    max-height: 250px;
+}
+/* END of Rulers Panel Styling */
 
 
 
@@ -409,32 +461,32 @@ blockquote {
 #yearSlider {
     z-index: 9999;
     position: absolute;
-    bottom: 70px;
+    bottom: 80px;
     left: 17px;
-    width:300px;
+    width: 300px;
     padding: 46 25px 25px 25px;
     background: 0000;
     border-radius: 5px;
     color: whitesmoke;
 }
 
-
-#yearIndicator {
+#longName {
     z-index: 9999;
     position: absolute;
-    bottom: 110px;
+    bottom: 45px;
     left: 28px;
     color: #ffffff;
     font-family: trajan-pro-3,
-    serif;
+        serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1.6rem;
+    font-size: 1.5rem;
     text-shadow: #000000 0rem 0rem 2px,
-    #000000 0rem 0rem 4px,
-    #000000 0rem 0rem 6px,
-    #000000 0rem 0rem 8px;
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 8px;
 }
+
 
 .form-range:focus::-webkit-slider-thumb {
     box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem #fff9dfa0;
@@ -447,9 +499,9 @@ blockquote {
 .form-range::-webkit-slider-thumb {
     width: 2rem;
     height: 2rem;
-    
+
     background-color: #A91101;
-    
+
 }
 
 
@@ -464,16 +516,84 @@ blockquote {
 }
 
 .form-range::-moz-range-track {
-    
+
     height: 1rem;
-    
+
     background-color: #3a4046;
-    
+
 }
 
 
 /* END of Slider Styling */
 
+/* START of Info Panel Styling */
+
+#info-panel-button {
+    position: absolute;
+    top: 240px;
+    right: 45px;
+
+    /* Add styles to match Leaflet UI elements */
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 14px;
+    /* font-family: trajan-pro-3, serif; */
+    font-family: 'EB Garamond',
+        serif;
+    font-style: italic;
+    font-weight: 800;
+    font-style: normal;
+    background: #fff9dfa0;
+    color: #A91101;
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
+    border-radius: 15px;
+    font-size: 30px;
+
+    /* Draw it on top of all elements */
+    z-index: 9999;
+    /* Cursor change on hover -- doesn't work on touch screensn */
+    cursor: pointer;
+}
+
+
+#info-panel {
+    position: absolute;
+    top: 300px;
+    right: 10px;
+    width: 400px;
+    height: 600px;
+    padding-top: 35px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 35px;
+    /* Add styles to match Leaflet UI elements */
+    background: #fff9dfbc;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
+    /* border: 2px solid #A91101; */
+    border-radius: 15px;
+    z-index: 1000;
+}
+
+.flat-laurel-info-panel-top {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 300px;
+}
+
+.flat-laurel-info-panel-bottom {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 300px;
+}
+
+/* END of Info Panel Styling */
 
 /* START of Legend Styling */
 
@@ -481,28 +601,28 @@ blockquote {
     position: absolute;
     top: 140px;
     right: 45px;
-    
+
     /* Add styles to match Leaflet UI elements */
-     padding-top: 10px;
-     padding-bottom: 15px;
-     padding-left:15px;
-     padding-right:14px;
-     /* font-family: trajan-pro-3, serif; */
-     font-family: 'EB Garamond',
-     serif;
-     font-style: italic;
-     font-weight: 800;
-     font-style: normal;
-     background: #fff9dfa0;
-     color: #A91101;
-     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
-     border-radius: 15px;
-     font-size: 30px;
-     
-     /* Draw it on top of all elements */
-     z-index: 9999;
-     /* Cursor change on hover -- doesn't work on touch screensn */
-     cursor: pointer;
+    padding-top: 10px;
+    padding-bottom: 15px;
+    padding-left: 15px;
+    padding-right: 14px;
+    /* font-family: trajan-pro-3, serif; */
+    font-family: 'EB Garamond',
+        serif;
+    font-style: italic;
+    font-weight: 800;
+    font-style: normal;
+    background: #fff9dfa0;
+    color: #A91101;
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
+    border-radius: 15px;
+    font-size: 30px;
+
+    /* Draw it on top of all elements */
+    z-index: 9999;
+    /* Cursor change on hover -- doesn't work on touch screensn */
+    cursor: pointer;
 }
 
 
@@ -547,11 +667,11 @@ blockquote {
 #info-button {
     padding-top: 13px;
     padding-bottom: 18px;
-    padding-left:20px;
-    padding-right:20px;
+    padding-left: 20px;
+    padding-right: 20px;
     /* font-family: trajan-pro-3, serif; */
     font-family: 'EB Garamond',
-    serif;
+        serif;
     font-style: italic;
     font-weight: 800;
     font-style: normal;
@@ -613,7 +733,7 @@ Hide the footer be default. This should not contain too much information. Link t
     font-size: 1.7em;
     color: #202020;
     font-family: trajan-pro-3,
-    serif;
+        serif;
     font-weight: 700;
     font-style: normal;
     margin: 0 0 0 0;
@@ -623,11 +743,11 @@ Hide the footer be default. This should not contain too much information. Link t
     font-size: 1.2em;
     color: #202020;
     font-family: map-roman-normal,
-    serif;
+        serif;
     font-weight: 400;
     font-style: normal;
     padding-top: 1%;
-   
+
 }
 
 #footer a {

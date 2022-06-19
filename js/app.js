@@ -361,7 +361,7 @@ function sequenceUI(empireExtent) {
         romeRulers.innerHTML = `<span>${rulersfull}</span>`
 
         document.getElementById("romeRulersImage");
-        romeRulersImage.innerHTML = `<span><img src="${rulersimage}"></span>`
+        romeRulersImage.innerHTML = `<span><img src="${rulersimage}" class="romeRulersImageStyle"></span>`
 
 
 
@@ -399,7 +399,6 @@ function myInfo() {
 var clickedLegend = false; // start with false condition
 function myLegend() {
     // create button that changes color on click
-    // create a footer overlay that displays 60% of the current viewport height
     var x = document.getElementById("legend");
     var y = document.getElementById("legend-button");
     if (clickedLegend) {
@@ -412,4 +411,43 @@ function myLegend() {
         x.style.display = "none"; // no display
     }
     clickedLegend = !clickedLegend;
+}
+
+/* --------------- Toggle on/off info panel content ---------------  */
+var clickedInfoPanel = false; // start with false condition
+function myInfoPanel() {
+    // create button that changes color on click
+    var x = document.getElementById("info-panel");
+    var y = document.getElementById("info-panel-button");
+    if (clickedInfoPanel) {
+        y.style.background = "#fff9dfa0";
+        y.style.color = "#A91101";
+        x.style.display = "block"; // display
+    } else {
+        y.style.background = "#A91101";
+        y.style.color = "#fff9df";
+        x.style.display = "none"; // no display
+    }
+    clickedInfoPanel = !clickedInfoPanel;
+}
+
+/* --------------- Toggle on/off rulers panel content ---------------  */
+var clickedRulersPanel = false; // start with false condition
+function myRulerPanel() {
+    // create button that changes image on click
+    var x = document.getElementById("rulers-panel");
+    var y = document.getElementById("rulers-panel-button");
+    if (clickedRulersPanel) {
+  y.style.backgroundColor = "#A91101";
+  y.style.color = "#fff9df";
+        y.innerHTML = "<img src='images/ruler-icon-off.png'>"
+        x.style.display = "block"; // display
+    } else {
+    y.style.backgroundColor = "#fff9dfa0";
+    y.style.color = "#A91101";
+                y.innerHTML = "<img src='images/ruler-icon-on.png'>"
+        
+        x.style.display = "none"; // no display
+    }
+    clickedRulersPanel = !clickedRulersPanel;
 }
