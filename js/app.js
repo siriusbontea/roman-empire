@@ -342,17 +342,19 @@ function sequenceUI(empireExtent) {
 var clickedFooter = false; // start with false condition
 function myInfo() {
     // create button that changes color on click
-    // create a footer overlay that displays 60% of the current viewport height
+    // create a footer overlay that displays 30% of the current viewport height
     var x = document.getElementById("footer");
     var y = document.getElementById("info-button");
     if (clickedFooter) {
         y.style.background = "#A91101";
         y.style.color = "#fff9df";
+        y.innerHTML = "<img src='images/footer_book_icon_off.png'>"
         x.style.height = "0px"; // no footer height
     } else {
         y.style.background = "#fff9dfa0";
         y.style.color = "#A91101";
-        x.style.height = "60vh"; // footer 60% of viewport height
+        y.innerHTML = "<img src='images/footer_book_icon_on.png'>"
+        x.style.height = "30vh"; // footer 30% of viewport height
     }
     clickedFooter = !clickedFooter;
 }
@@ -364,55 +366,74 @@ function myLegend() {
     var x = document.getElementById("legend");
     var y = document.getElementById("legend-button");
     if (clickedLegend) {
-        y.style.background = "#fff9dfa0";
-        y.style.color = "#A91101";
-        x.style.display = "block"; // display
-    } else {
         y.style.background = "#A91101";
         y.style.color = "#fff9df";
+        y.innerHTML = "<img src='images/map_legend_icon_off.png'>"
         x.style.display = "none"; // no display
+    } else {
+        y.style.background = "#fff9dfa0";
+        y.style.color = "#A91101";
+        y.innerHTML = "<img src='images/map_legend_icon_on.png'>"
+        x.style.display = "block"; // display
     }
     clickedLegend = !clickedLegend;
 }
 
-/* --------------- Toggle on/off info panel content ---------------  */
-var clickedInfoPanel = false; // start with false condition
-function myInfoPanel() {
-    // create button that changes color on click
-    var x = document.getElementById("info-panel");
-    var y = document.getElementById("info-panel-button");
-    if (clickedInfoPanel) {
-        y.style.background = "#fff9dfa0";
-        y.style.color = "#A91101";
-         y.innerHTML = "<img src='images/sundial_events_icon_on.png'>"
-        x.style.display = "block"; // display
-    } else {
+/* --------------- Toggle on/off events panel content ---------------  */
+var clickedEventsPanel = false; // start with false condition
+function myEventsPanel() {
+    var x = document.getElementById("events-panel");
+    var y = document.getElementById("events-panel-button");
+    if (clickedEventsPanel) {
         y.style.background = "#A91101";
         y.style.color = "#fff9df";
-         y.innerHTML = "<img src='images/sundial_events_icon_off.png'>"
-        x.style.display = "none"; // no display
+        y.innerHTML = "<img src='images/sundial_events_icon_off.png'>"
+        x.style.display = "none";
+    } else {
+        y.style.background = "#fff9dfa0";
+        y.style.color = "#A91101";
+        y.innerHTML = "<img src='images/sundial_events_icon_on.png'>"
+        x.style.display = "block";
     }
-    clickedInfoPanel = !clickedInfoPanel;
+    clickedEventsPanel = !clickedEventsPanel;
 }
 
 /* --------------- Toggle on/off rulers panel content ---------------  */
 var clickedRulersPanel = false; // start with false condition
 function myRulerPanel() {
-    // create button that changes image on click
     var x = document.getElementById("rulersPanel");
     var y = document.getElementById("rulers-panel-button");
     if (clickedRulersPanel) {
-        y.style.backgroundColor = "#fff9dfa0";
-        y.style.color = "#A91101";
-        y.innerHTML = "<img src='images/ruler-icon-on.png'>"
-
-        x.style.display = "block"; // display
-    } else {
         y.style.backgroundColor = "#A91101";
         y.style.color = "#fff9df";
-        y.innerHTML = "<img src='images/ruler-icon-off.png'>"
+        y.innerHTML = "<img src='images/ruler_icon_off.png'>"
+        x.style.display = "none";
+    } else {
 
-        x.style.display = "none"; // no display
+        y.style.backgroundColor = "#fff9dfa0";
+        y.style.color = "#A91101";
+        y.innerHTML = "<img src='images/ruler_icon_on.png'>"
+        x.style.display = "block";
     }
     clickedRulersPanel = !clickedRulersPanel;
+}
+
+/* --------------- Toggle on/off carousel panel content ---------------  */
+var clickedCarouselPanel = false; // start with false condition
+function myCarouselPanel() {
+    var x = document.getElementById("carouselPanel");
+    var y = document.getElementById("carousel-panel-button");
+    if (clickedCarouselPanel) {
+        y.style.backgroundColor = "#A91101";
+        y.style.color = "#fff9df";
+        y.innerHTML = "<img src='images/carousel_icon_off.png'>"
+        x.style.display = "none";
+    } else {
+
+        y.style.backgroundColor = "#fff9dfa0";
+        y.style.color = "#A91101";
+        y.innerHTML = "<img src='images/carousel_icon_on.png'>"
+        x.style.display = "block";
+    }
+    clickedCarouselPanel = !clickedCarouselPanel;
 }

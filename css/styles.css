@@ -75,6 +75,22 @@ p {
     /* Need to add @media breaks to allow non-justify for smaller screens! */
 }
 
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    width: auto;
+}
+
+.hide {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 
 /* START of Styling the Leaflet Layer Control  */
 .leaflet-top .leaflet-control {
@@ -90,7 +106,7 @@ p {
 }
 
 .leaflet-right .leaflet-control {
-    margin-right: 55px;
+    margin-right: 47px;
 }
 
 
@@ -181,16 +197,17 @@ blockquote {
     display: block;
     position: absolute;
     top: 10px;
-    left: 12px;
-    width: 160px;
+    left: 5px;
+    width: 143px;
 }
 
+/* base map layers */
 .laurel {
     z-index: 1000;
     display: block;
     position: absolute;
     top: 20px;
-    right: 27px;
+    right: 20px;
     width: 105px;
 }
 
@@ -203,23 +220,7 @@ blockquote {
     width: 300px;
 }
 
-.laurel-left-info {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    left: 29px;
-    top: 130px;
-    height: 80px;
-}
 
-.laurel-right-info {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    left: 130px;
-    top: 130px;
-    height: 80px;
-}
 
 .laurel-left-legend-button {
     z-index: 1000;
@@ -240,41 +241,8 @@ blockquote {
 }
 
 
-.laurel-left-rulers-button {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    left: 28px;
-    top: 240px;
-    height: 80px;
-}
 
-.laurel-right-rulers-button {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    left: 128px;
-    top: 240px;
-    height: 80px;
-}
 
-.laurel-left-events-button {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    right: 110px;
-    top: 240px;
-    height: 80px;
-}
-
-.laurel-right-events-button {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    right: 12px;
-    top: 240px;
-    height: 80px;
-}
 
 .blue-tooltip {
     font-family: "Grand Hotel";
@@ -305,10 +273,10 @@ blockquote {
 /* START of styling of data from CombinedExtentLayers TopoJSON */
 
 #yearIndicator {
-    z-index: 9999;
+    z-index: 1000;
     position: absolute;
     top: 10px;
-    left: 50%;
+    left: 200px;
     margin-left: auto;
     margin-right: auto;
     color: #ffffff;
@@ -318,24 +286,21 @@ blockquote {
     font-style: normal;
     font-size: 2rem;
     text-shadow: #000000 0rem 0rem 1px,
-    #000000 0rem 0rem 2px,
-    #000000 0rem 0rem 3px,
-    #000000 0rem 0rem 4px,
-    #000000 0rem 0rem 5px,
-    #000000 0rem 0rem 6px,
-    #000000 0rem 0rem 7px,
-    #000000 0rem 0rem 8px;
+        #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 3px,
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 5px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 7px,
+        #000000 0rem 0rem 8px;
 }
 
 
 #titleHeader {
-    z-index: 9999;
-    position: relative;
+    z-index: 1000;
+    position: absolute;
     top: 60px;
-    right: 50%;
-    left: 40%;
-    margin-left: auto;
-    margin-right: auto;
+    left: 200px;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
@@ -343,37 +308,37 @@ blockquote {
     font-style: normal;
     font-size: 1rem;
     text-shadow: #000000 0rem 0rem 1px,
-    #000000 0rem 0rem 2px,
-    #000000 0rem 0rem 3px,
+        #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 3px,
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 5px,
         #000000 0rem 0rem 6px,
-            #000000 0rem 0rem 7px,
+        #000000 0rem 0rem 7px,
         #000000 0rem 0rem 8px;
 }
 
 #eventOne {
-        z-index: 9999;
-        color: black;
-        font-family: trajan-pro-3,
+    z-index: 1000;
+    color: black;
+    font-family: trajan-pro-3,
         serif;
-        font-weight: 700;
-        font-style: normal;
-        font-size: 1rem;
-        padding-top: 5px;
-        text-shadow: #000000 0rem 0rem 0px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem;
+    padding-top: 5px;
+    text-shadow: #000000 0rem 0rem 0px;
 }
 
 #eventTwo {
-        z-index: 9999;
-        color: black;
-        font-family: trajan-pro-3,
+    z-index: 1000;
+    color: black;
+    font-family: trajan-pro-3,
         serif;
-        font-weight: 700;
-        font-style: normal;
-        font-size: 1rem;
-        padding-top: 20px;
-        text-shadow: #000000 0rem 0rem 0px;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem;
+    padding-top: 20px;
+    text-shadow: #000000 0rem 0rem 0px;
 }
 
 /* END of styling of data from CombinedExtentLayers TopoJSON */
@@ -382,16 +347,16 @@ blockquote {
 
 #rulers-panel-button {
     position: absolute;
-    top: 250px;
-    left: 59px;
-    background-image: url('images/ruler-icon-on.png');
-  background-color: #fff9dfbc;
-  
-    
+    top: 243px;
+    left: 42px;
+    background-image: url('images/ruler_icon_off.png');
+    background-color: #A91101;
+
+
     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
     border-radius: 15px;
     /* Draw it on top of all elements */
-    z-index: 9999;
+    z-index: 1000;
     /* Cursor change on hover -- doesn't work on touch screensn */
     cursor: pointer;
 }
@@ -404,6 +369,7 @@ blockquote {
 }
 
 #rulersPanel {
+    display: none;
     position: absolute;
     top: 350px;
     left: 10px;
@@ -424,14 +390,32 @@ blockquote {
     z-index: 1000;
     color: #ffffff;
     font-family: trajan-pro-3,
-    serif;
+        serif;
     font-weight: 700;
     font-style: normal;
     font-size: 1.3rem;
     text-shadow: #000000 0rem 0rem 2px,
-    #000000 0rem 0rem 4px,
-    #000000 0rem 0rem 6px,
-    #000000 0rem 0rem 8px;
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 8px;
+}
+
+.laurel-left-rulers-button {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 233px;
+    height: 80px;
+}
+
+.laurel-right-rulers-button {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    left: 110px;
+    top: 233px;
+    height: 80px;
 }
 
 .laurel-rulers-panel-top-left {
@@ -441,7 +425,7 @@ blockquote {
     top: 0px;
     left: 0px;
     width: 100px;
-    
+
 }
 
 .laurel-rulers-panel-bottom-right {
@@ -451,14 +435,14 @@ blockquote {
     right: 0px;
     bottom: 0px;
     width: 100px;
-  
+
 }
 
 
 
 #romeRulers {
-    z-index: 9999;
-       color: black;
+    z-index: 1000;
+    color: black;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
@@ -469,8 +453,8 @@ blockquote {
 }
 
 #emperorsShortName {
-    z-index: 9999;
-   color: #ffffff;
+    z-index: 1000;
+    color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
@@ -483,7 +467,7 @@ blockquote {
 }
 
 #romeRulersImage {
-    z-index: 9999;
+    z-index: 1000;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
@@ -499,12 +483,107 @@ blockquote {
     border-radius: 30px;
     max-width: 350px;
 }
+
 /* END of Rulers Panel Styling */
 
+/* START of Carousel Styling */
+#carousel-panel-button {
+    position: absolute;
+    top: 350px;
+    left: 42px;
+    background-image: url('images/carousel_icon_off.png');
+    background-color: #A91101;
 
 
+    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
+    border-radius: 15px;
+    /* Draw it on top of all elements */
+    z-index: 1000;
+    /* Cursor change on hover -- doesn't work on touch screensn */
+    cursor: pointer;
+}
 
+#carousel-panel-button:hover {
+    box-shadow: 0 0 12px rgb(255, 255, 255),
+        0 0 13px rgb(255, 255, 255),
+        0 0 14px rgb(255, 255, 255),
+        0 0 25px rgb(255, 255, 0);
+}
 
+#carouselPanel {
+    display: none;
+    position: absolute;
+    top: 200px;
+    bottom: 200px;
+left: 200px;
+right: 200px;
+
+    
+    max-width: auto;
+   
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 35px;
+    align-content: center;
+    text-align: center;
+    /* Add styles to match Leaflet UI elements */
+    background: #fff9dfbc;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
+    /* border: 2px solid #A91101; */
+    border-radius: 15px;
+    z-index: 1000;
+    color: #ffffff;
+    font-family: trajan-pro-3,
+        serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.3rem;
+    text-shadow: #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 8px;
+}
+
+.laurel-left-carousel-button {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    left: 12px;
+    top: 340px;
+    height: 80px;
+}
+
+.laurel-right-carousel-button {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    left: 110px;
+    top: 340px;
+    height: 80px;
+}
+
+.laurel-carousel-panel-top-left {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100px;
+
+}
+
+.laurel-carousel-panel-bottom-right {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 100px;
+
+}
+
+/* END of Carousel Styling */
 
 /* END of styling of data from CombinedExtentLayers TopoJSON */
 
@@ -512,7 +591,7 @@ blockquote {
 /* START of Slider Styling */
 
 #yearSlider {
-    z-index: 9999;
+    z-index: 1000;
     position: absolute;
     bottom: 80px;
     left: 17px;
@@ -523,8 +602,12 @@ blockquote {
     color: whitesmoke;
 }
 
+#yearSlider:hover {
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
 #longName {
-    z-index: 9999;
+    z-index: 1000;
     position: absolute;
     bottom: 45px;
     left: 28px;
@@ -534,9 +617,13 @@ blockquote {
     font-weight: 700;
     font-style: normal;
     font-size: 1.5rem;
-    text-shadow: #000000 0rem 0rem 2px,
+    text-shadow: #000000 0rem 0rem 1px,
+        #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 3px,
         #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 5px,
         #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 7px,
         #000000 0rem 0rem 8px;
 }
 
@@ -579,93 +666,79 @@ blockquote {
 
 /* END of Slider Styling */
 
-/* START of Info Panel Styling */
+/* START of Events Panel Styling */
 
-#info-panel-button {
+#events-panel-button {
     position: absolute;
-    top: 250px;
+    top: 243px;
     right: 38px;
-
-     background-image: url('images/sundial_events_icon_on.png');
-     background-color: #fff9dfbc;
-
-    /* Add styles to match Leaflet UI elements */
-   
-    /* font-family: trajan-pro-3, serif; */
-    font-family: 'EB Garamond',
-        serif;
-    font-style: italic;
-    font-weight: 800;
-    font-style: normal;
-    background: #fff9dfa0;
-    color: #A91101;
+    background-image: url('images/sundial_events_icon_off.png');
+    background-color: #A91101;
+    background: #A91101;
     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
     border-radius: 15px;
-    font-size: 30px;
-
     /* Draw it on top of all elements */
-    z-index: 9999;
+    z-index: 1000;
     /* Cursor change on hover -- doesn't work on touch screensn */
     cursor: pointer;
 }
 
-#info-panel-button:hover {
+#events-panel-button:hover {
     box-shadow: 0 0 12px rgb(255, 255, 255),
-    0 0 13px rgb(255, 255, 255),
-    0 0 14px rgb(255, 255, 255),
-    0 0 25px rgb(255, 255, 0);
+        0 0 13px rgb(255, 255, 255),
+        0 0 14px rgb(255, 255, 255),
+        0 0 25px rgb(255, 255, 0);
 }
 
 
-#info-panel {
+#events-panel {
+    display: none;
     position: absolute;
     top: 345px;
     right: 10px;
-     width: fit-content;
-     max-width: 400px;
-     height: fit-content;
-     padding-top: 25px;
-     padding-right: 25px;
-     padding-left: 25px;
-     padding-bottom: 35px;
+    width: fit-content;
+    max-width: 400px;
+    height: fit-content;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
+    padding-bottom: 35px;
     /* Add styles to match Leaflet UI elements */
     background: #fff9dfbc;
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
     /* border: 2px solid #A91101; */
-     color: #ffffff;
-     font-family: trajan-pro-3,
-     serif;
-     font-weight: 700;
-     font-style: normal;
-     font-size: 1.3rem;
-     text-shadow: #000000 0rem 0rem 2px,
-     #000000 0rem 0rem 4px,
-     #000000 0rem 0rem 6px,
-     #000000 0rem 0rem 8px;
+    color: #ffffff;
+    font-family: trajan-pro-3,
+        serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.3rem;
+    text-shadow: #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 8px;
     border-radius: 15px;
     z-index: 1000;
-
-
-   
 }
 
-.flat-laurel-info-panel-top {
+.laurel-left-events-button {
     z-index: 1000;
     display: block;
     position: absolute;
-    right: 0px;
-    top: 0px;
-    width: 300px;
+    right: 110px;
+    top: 233px;
+    height: 80px;
 }
 
-.flat-laurel-info-panel-bottom {
+.laurel-right-events-button {
     z-index: 1000;
     display: block;
     position: absolute;
-    right: 0px;
-    bottom: 0px;
-    width: 300px;
+    right: 12px;
+    top: 233px;
+    height: 80px;
 }
+
 
 /* END of Info Panel Styling */
 
@@ -674,27 +747,15 @@ blockquote {
 #legend-button {
     position: absolute;
     top: 140px;
-    right: 45px;
-
-    /* Add styles to match Leaflet UI elements */
-    padding-top: 10px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 14px;
-    /* font-family: trajan-pro-3, serif; */
-    font-family: 'EB Garamond',
-        serif;
-    font-style: italic;
-    font-weight: 800;
-    font-style: normal;
-    background: #fff9dfa0;
-    color: #A91101;
+    right: 38px;
+background-image: url('images/map_legend_icon_off.png');
+background-color: #A91101;
     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
     border-radius: 15px;
     font-size: 30px;
 
     /* Draw it on top of all elements */
-    z-index: 9999;
+    z-index: 1000;
     /* Cursor change on hover -- doesn't work on touch screensn */
     cursor: pointer;
 }
@@ -707,6 +768,7 @@ blockquote {
 }
 
 #legend {
+    display: none;
     position: absolute;
     bottom: 10px;
     right: 10px;
@@ -744,28 +806,21 @@ blockquote {
 
 /* END of Legend Styling */
 
+
+
+/* Footer / Info */
 #info-button {
-    padding-top: 13px;
-    padding-bottom: 18px;
-    padding-left: 20px;
-    padding-right: 20px;
+    position: absolute;
+    top: 140px;
+    left: 42px;
+    background-image: url('images/ruler_icon_off.png');
+    background-color: #A91101;
     /* font-family: trajan-pro-3, serif; */
-    font-family: 'EB Garamond',
-        serif;
-    font-style: italic;
-    font-weight: 800;
-    font-style: normal;
     background: #A91101;
     color: #fff9df;
     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
     border-radius: 15px;
-    font-size: 60px;
-    /* Position */
-    position: absolute;
-    top: 140px;
-    left: 61px;
-    /* Draw it on top of all elements */
-    z-index: 9999;
+    z-index: 1000;
     /* Cursor change on hover -- doesn't work on touch screensn */
     cursor: pointer;
 }
@@ -777,21 +832,25 @@ blockquote {
         0 0 25px rgb(255, 255, 0);
 }
 
-.center {
+.laurel-left-info {
+    z-index: 1000;
     display: block;
-    margin-left: auto;
-    margin-right: auto;
-    text-align: center;
-    width: auto;
+    position: absolute;
+    left: 12px;
+    top: 130px;
+    height: 80px;
 }
 
-.hide {
-    display: none;
+.laurel-right-info {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    left: 110px;
+    top: 130px;
+    height: 80px;
 }
 
-.show {
-    display: block;
-}
+
 
 /* This section below controls the style for the info section on the bottom */
 #footer {
@@ -801,11 +860,8 @@ blockquote {
     height: 0px;
     padding: 0px;
     /* display below the button to allow clicking if overlay covers screen */
-    z-index: 9000;
+    z-index: 1001;
     position: absolute;
-    /* 
-Hide the footer be default. This should not contain too much information. Link to a new page for extended content.
-*/
     bottom: -10px;
     /* If too much is included, enable scroll */
     overflow: scroll;
@@ -851,6 +907,13 @@ Hide the footer be default. This should not contain too much information. Link t
     text-decoration: underline;
     color: #ffff00;
     filter: drop-shadow(0rem 0rem 0.4rem #000000);
+}
+
+.footer-img {
+    float: right;
+    height: 10vh;
+    margin-left: 5%;
+    filter: drop-shadow(0px 0px 4px rgb(255, 255, 255));
 }
 
 .social-font {

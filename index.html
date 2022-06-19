@@ -58,13 +58,28 @@
         <img class="laurel-right-rulers-button darkshadow" src="svg/laurel_right_AdobeStock_252116415.svg">
         <img class="laurel-left-events-button darkshadow" src="svg/laurel_left_AdobeStock_252116415.svg">
         <img class="laurel-right-events-button darkshadow" src="svg/laurel_right_AdobeStock_252116415.svg">
+        <img class="laurel-left-carousel-button darkshadow" src="svg/laurel_left_AdobeStock_252116415.svg">
+        <img class="laurel-right-carousel-button darkshadow" src="svg/laurel_right_AdobeStock_252116415.svg">
         <!-- this embeds and anchors the info button in the map <div> element -->
-        <button id="info-button" onclick="myInfo()">i</button>
+        <button id="info-button" onclick="myInfo()"><img src="images/footer_book_icon_off.png"></button>
+
+
+
         <div id="footer">
             <div>
                 <h1 class="center">Infrastructure of the Roman Empire</h1>
-                <p class="center"><a href="https://github.com/siriusbontea/roman-empire#readme">Project Information</a>
-                </p>
+                <h3>Project Notes:
+                </h3>
+                <ul>
+                    <li>This webpage was built to meet requirements for Module 10 (Final Projects) of
+                        the <a href="https://newmapsplus.github.io/map673/syllabus/">MAP 673: Programming For Web
+                            Mapping</a>
+                        course at the
+                        <a href="https://newmapsplus.as.uky.edu/">University of Kentucky</a>.
+                    </li>
+                </ul>
+                <h3 class="center"><a href="https://github.com/siriusbontea/roman-empire#readme">Detailed Project Information on GitHub</a>
+                </h3>
                 <h3>Base Map Attributions:</h3>
                 <ul>
                     <li>Plain Terrain Map &mdash; Map data &copy; <a
@@ -77,8 +92,12 @@
                         DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO,
                         NOAA, iPC</li>
                 </ul>
+                <img src="svg/University_of_Kentucky_logo.svg" class="footer-img">
             </div>
+        
+
             <div class="center">
+                
                 <p>Copyright © <a href="https://siriusbontea.github.io/">Sirius T. Bontea</a> – A.D. 2022</p>
                 <div id="social">
                     <a href="https://www.linkedin.com/in/siriusbontea/"><i class="social-font fab fa-linkedin"></i></a>
@@ -90,8 +109,9 @@
                 </div>
             </div>
         </div>
-<!-- Start of Legend -->
-        <button id="legend-button" onclick="myLegend()"><i class="fa fa-key" aria-hidden="true"></i>
+
+        <!-- Start of Legend -->
+        <button id="legend-button" onclick="myLegend()"><img src="images/map_legend_icon_off.png"></i>
         </button>
 
         <section id="legend">
@@ -100,38 +120,53 @@
 
             <p>Legendary items</p>
         </section>
-<!-- End of Legend -->
-    <!-- Start of info panel -->
-        <button id="info-panel-button" onclick="myInfoPanel()"><img src="images/sundial_events_icon_on.png">
+        <!-- End of Legend -->
+        <!-- Start of events panel -->
+        <button id="events-panel-button" onclick="myEventsPanel()"><img src="images/sundial_events_icon_off.png">
         </button>
-            <section id="info-panel">
-                Events:
+        <section id="events-panel">
+            Events:
             <img class="laurel-rulers-panel-top-left" src="svg/corner_laurel_top_left_AdobeStock_472550524.svg">
             <img class="laurel-rulers-panel-bottom-right" src="svg/corner_laurel_bottom_right_AdobeStock_472550524.svg">
-     
-            <div id="eventOne">In the face of a potential Sabine invasion, the Senate passed a senatus consultum authorizing the
+
+            <div id="eventOne">In the face of a potential Sabine invasion, the Senate passed a senatus consultum
+                authorizing the
                 consuls to appoint a
                 dictator, a magistrate who held absolute power during a national emergency.</div>
-            <div id="eventTwo">The Roman Republic used this political mothodology and appointed dictators in response to crises over
+            <div id="eventTwo">The Roman Republic used this political mothodology and appointed dictators in response to
+                crises over
                 several subsequent centuries.</div>
         </section>
-<!-- End of info panel -->
+        <!-- End of events panel -->
 
-<!-- Start of rulers panel -->
-<button id="rulers-panel-button" onclick="myRulerPanel()">
-    <!-- <img src="images/clear58x58.png"> -->
-    <img src="images/ruler-icon-on.png">
-</button>
-<section id="rulersPanel">
-    Rulers of Rome:
-    <img class="laurel-rulers-panel-top-left" src="svg/corner_laurel_top_left_AdobeStock_472550524.svg">
-    <img class="laurel-rulers-panel-bottom-right" src="svg/corner_laurel_bottom_right_AdobeStock_472550524.svg">
+        <!-- Start of rulers panel -->
+        <button id="rulers-panel-button" onclick="myRulerPanel()">
+            <img src="images/ruler_icon_off.png">
+        </button>
+        <section id="rulersPanel">
+            Rulers of Rome:
+            <img class="laurel-rulers-panel-top-left" src="svg/corner_laurel_top_left_AdobeStock_472550524.svg">
+            <img class="laurel-rulers-panel-bottom-right" src="svg/corner_laurel_bottom_right_AdobeStock_472550524.svg">
 
-    <div id="romeRulers">Manius Tullius Longus<br>Servius Sulpicius Camerinus Cornutus</div>
-    <div id="emperorsShortName"></div>
-    <div id="romeRulersImage"></div>
-</section>
-<!-- End of rulers panel -->
+            <div id="romeRulers">Manius Tullius Longus<br>Servius Sulpicius Camerinus Cornutus</div>
+            <div id="emperorsShortName"></div>
+            <div id="romeRulersImage"></div>
+        </section>
+        <!-- End of rulers panel -->
+
+        <!-- Start of photo carousel panel -->
+        <button id="carousel-panel-button" onclick="myCarouselPanel()">
+            <img src="images/carousel_icon_off.png">
+        </button>
+        <section id="carouselPanel">
+            Photos of Roman Roads:
+            <img class="laurel-carousel-panel-top-left" src="svg/corner_laurel_top_left_AdobeStock_472550524.svg">
+            <img class="laurel-carousel-panel-bottom-right" src="svg/corner_laurel_bottom_right_AdobeStock_472550524.svg">
+
+         <!-- ADD PHOTO CAROUSEL CODE HERE -->
+        
+        </section>
+        <!-- End of photo carousel panel -->
 
 
 
@@ -143,7 +178,7 @@
 
 
     <!-- ui slider -->
-        <div id="slider-div" class="show">
+    <div id="slider-div" class="show">
 
         <input id="yearSlider" type="range" class="form-range" min="0" max="15" value="0" step="1" />
     </div>
@@ -151,12 +186,12 @@
     <!-- ui slider grade level indicator -->
     <div id="longName">Extent of the Roman Republic, 500 B.C.</div>
 
-     <!-- Pulling the data from CombinedExtentLayers TopoJSON-->
-    
+    <!-- Pulling the data from CombinedExtentLayers TopoJSON-->
+
     <div id="yearIndicator">500 B.C.</div>
-    
+
     <div id="titleHeader">Year of the Consulship of Longus and Cornutus</div>
-    
+
 
 
 
