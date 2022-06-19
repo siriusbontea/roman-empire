@@ -313,7 +313,7 @@ function sequenceUI(empireExtent) {
         let secondevent = ""
         let rulersfull = ""
         let rulersimage = ""
-
+       
         // current value of slider is year
         var currentYear = e.target.value
         // var currentYear = e.target.year
@@ -327,6 +327,7 @@ function sequenceUI(empireExtent) {
                 secondevent = i.feature.properties.event2
                 rulersfull = i.feature.properties.rulers
                 rulersimage = i.feature.properties.ruler_image_link
+              
             }
             if (i.feature.properties.order > currentYear) {
                 i.setStyle({
@@ -362,8 +363,6 @@ function sequenceUI(empireExtent) {
 
         document.getElementById("romeRulersImage");
         romeRulersImage.innerHTML = `<span><img src="${rulersimage}" class="romeRulersImageStyle"></span>`
-
-
 
     });
 
@@ -435,17 +434,18 @@ function myInfoPanel() {
 var clickedRulersPanel = false; // start with false condition
 function myRulerPanel() {
     // create button that changes image on click
-    var x = document.getElementById("rulers-panel");
+    var x = document.getElementById("rulersPanel");
     var y = document.getElementById("rulers-panel-button");
     if (clickedRulersPanel) {
-  y.style.backgroundColor = "#A91101";
-  y.style.color = "#fff9df";
-        y.innerHTML = "<img src='images/ruler-icon-off.png'>"
+          y.style.backgroundColor = "#fff9dfa0";
+          y.style.color = "#A91101";
+          y.innerHTML = "<img src='images/ruler-icon-on.png'>"
+  
         x.style.display = "block"; // display
     } else {
-    y.style.backgroundColor = "#fff9dfa0";
-    y.style.color = "#A91101";
-                y.innerHTML = "<img src='images/ruler-icon-on.png'>"
+  y.style.backgroundColor = "#A91101";
+  y.style.color = "#fff9df";
+  y.innerHTML = "<img src='images/ruler-icon-off.png'>"
         
         x.style.display = "none"; // no display
     }

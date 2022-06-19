@@ -345,7 +345,7 @@ blockquote {
     top: 250px;
     left: 59px;
     background-image: url('images/ruler-icon-off.png');
-  background-color: #A91101;
+  background-color: #fff9dfbc;
   
     
     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
@@ -357,15 +357,16 @@ blockquote {
 }
 
 
-#rulers-panel {
+#rulersPanel {
     position: absolute;
     top: 350px;
     left: 10px;
     width: fit-content;
+    max-width: 400px;
     height: fit-content;
-    padding-top: 35px;
-    padding-right: 10px;
-    padding-left: 10px;
+    padding-top: 25px;
+    padding-right: 25px;
+    padding-left: 25px;
     padding-bottom: 35px;
     align-content: center;
     text-align: center;
@@ -375,44 +376,50 @@ blockquote {
     /* border: 2px solid #A91101; */
     border-radius: 15px;
     z-index: 1000;
+    color: #ffffff;
+    font-family: trajan-pro-3,
+    serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.3rem;
+    text-shadow: #000000 0rem 0rem 2px,
+    #000000 0rem 0rem 4px,
+    #000000 0rem 0rem 6px,
+    #000000 0rem 0rem 8px;
 }
 
-.flat-laurel-rulers-panel-top {
+.flat-laurel-rulers-panel-top-left {
     z-index: 1000;
     display: block;
     position: absolute;
     top: 0px;
+    left: 0px;
+    width: 100px;
     
-     margin-left: auto;
-     margin-right: auto;
-     width: 50%;
 }
 
-.flat-laurel-rulers-panel-bottom {
+.flat-laurel-rulers-panel-bottom-right {
     z-index: 1000;
     display: block;
     position: absolute;
     right: 0px;
     bottom: 0px;
-    width: 300px;
-     margin-left: auto;
-     margin-right: auto;
+    width: 100px;
+  
 }
 
 
 
 #romeRulers {
     z-index: 9999;
-       color: #ffffff;
+       color: black;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
     font-style: normal;
     font-size: 1rem;
-    text-shadow: #000000 0rem 0rem 2px,
-        #000000 0rem 0rem 4px,
-        #000000 0rem 0rem 6px,
-        #000000 0rem 0rem 8px;
+    padding-top: 5px;
+    text-shadow: #000000 0rem 0rem 0px;
 }
 
 #emperorsShortName {
@@ -444,7 +451,7 @@ blockquote {
 
 .romeRulersImageStyle {
     border-radius: 30px;
-    max-height: 250px;
+    max-width: 350px;
 }
 /* END of Rulers Panel Styling */
 
