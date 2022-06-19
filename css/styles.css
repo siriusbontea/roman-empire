@@ -583,6 +583,12 @@ right: 200px;
 
 }
 
+#carouselIndicators {
+    z-index:1002;
+}
+
+
+
 /* END of Carousel Styling */
 
 /* END of styling of data from CombinedExtentLayers TopoJSON */
