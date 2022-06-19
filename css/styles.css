@@ -103,14 +103,14 @@ p {
 
 
 .leaflet-control-layers-toggle {
-    background-image: url("/svg/openlayers.svg");
+    background-image: url("/images/maplayers.png");
     background-color: #A91101;
     padding: 5px;
     border-radius: 10px;
 }
 
 .leaflet-touch .leaflet-control-layers-toggle {
-    background-image: url("/svg/openlayers.svg");
+    background-image: url("/images/maplayers.png");
     background-color: #A91101;
     padding: 5px;
     border-radius: 10px;
@@ -288,14 +288,14 @@ blockquote {
 #titleHeader {
     z-index: 9999;
     position: absolute;
-    bottom: 800px;
-    left: 130px;
+    bottom: 50px;
+    left: 15px;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1rem;
+    font-size: .9rem;
     text-shadow: #000000 0rem 0rem 2px,
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 6px,
@@ -370,7 +370,22 @@ blockquote {
         #000000 0rem 0rem 8px;
 }
 
-
+#romeRulersImage {
+    z-index: 9999;
+    position: absolute;
+    bottom: 750px;
+    left: 130px;
+    color: #ffffff;
+    font-family: trajan-pro-3,
+        serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem;
+    text-shadow: #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 8px;
+}
 
 
 
@@ -394,10 +409,10 @@ blockquote {
 #yearSlider {
     z-index: 9999;
     position: absolute;
-    bottom: 25px;
+    bottom: 70px;
     left: 17px;
     width:300px;
-    padding: 40px 25px 25px 25px;
+    padding: 46 25px 25px 25px;
     background: 0000;
     border-radius: 5px;
     color: whitesmoke;
@@ -407,8 +422,8 @@ blockquote {
 #yearIndicator {
     z-index: 9999;
     position: absolute;
-    bottom: 80px;
-    left: 130px;
+    bottom: 110px;
+    left: 28px;
     color: #ffffff;
     font-family: trajan-pro-3,
     serif;

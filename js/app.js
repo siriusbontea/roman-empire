@@ -102,15 +102,15 @@ const d = {
                 `<img src='images/#'>`, // 7 - 133 B.C.
                 `<img src='photos/#'>`, // 8 - 60 B.C. 
                 // Julius Caesar / https://www.britannica.com/biography/Julius-Caesar-Roman-ruler
-                // 27 BC to AD 14. / Caesar Augustus (aka Octavian) / https://en.wikipedia.org/wiki/Augustus#/media/File:Statue-Augustus.jpg
+                // 27 BC to AD 14. / Caesar Augustus (aka Octavian) / https://sothebys-md.brightspotcdn.com/e5/38/05562c1d4b0686e692a436815f8d/l20107-bl3pv-8.jpg
                 `<img src='photos/#'>`, // 9 - A.D. 16 
                 // Tiberius / https://i.pinimg.com/736x/49/c5/12/49c5127adb21f3b012e4aa1b3fa049e1--statue-of-emperor.jpg
                 `<img src='photos/#'>`, // 10 - A.D. 47  
                 // Claudius / https://live.staticflickr.com/3275/2941754707_29bb037b98_b.jpg
                 `<img src='photos/#'>`,         // 11 - A.D. 69 
-                // Galba / https://upload.wikimedia.org/wikipedia/commons/3/33/Roman_emperor_Galba%2C_Gustav_III%27s_Museum_of_Antiquities%2C_Stockholm_%2820%29_%2835867773310%29_edited.jpg
+                // Galba / http://ancientrome.ru/art/img/7/7853.jpg
                 // Otho / https://en.wikipedia.org/wiki/Otho#/media/File:Otone_-_foto_di_euthman.jpg
-                //  Vitellius / http://p9.storage.canalblog.com/90/63/119589/108744668.jpg
+                //  Vitellius / https://www.anticstore.com/DocBD/commerce/antiquaire/galerie-sismann-622/objet/66332/AnticStore-Large-Ref-66332_02.jpg
                 // Vespasian / https://upload.wikimedia.org/wikipedia/commons/c/c6/Vespasianus01_pushkin.jpg
 
                 `<img src='photos/#'>`, // 12 - A.D. 84
@@ -183,8 +183,8 @@ function drawExtent(empireExtent) {
             if (props < 17) {
                 return {
                     color: colors[props],
-                    weight: 1,
-                    fillOpacity: .6,
+                    weight: 2,
+                    fillOpacity: 1,
                     fillColor: colors[props],
                     interactive: false,
                 };
@@ -212,7 +212,7 @@ function drawExtent(empireExtent) {
         } else {
             i.setStyle({
                 opacity: 0.8,
-                fillOpacity: 0.8
+                fillOpacity: 0.6
             })
         }
     })
@@ -312,7 +312,7 @@ function sequenceUI(empireExtent) {
         let firstevent = ""
         let secondevent = ""
         let rulersfull = ""
-        let url = ""
+        let rulersimage = ""
 
         // current value of slider is year
         var currentYear = e.target.value
@@ -326,7 +326,7 @@ function sequenceUI(empireExtent) {
                 firstevent = i.feature.properties.event1
                 secondevent = i.feature.properties.event2
                 rulersfull = i.feature.properties.rulers
-                url = i.feature.properties.url
+                rulersimage = i.feature.properties.ruler_image_link
             }
             if (i.feature.properties.order > currentYear) {
                 i.setStyle({
@@ -359,6 +359,9 @@ function sequenceUI(empireExtent) {
 
         document.getElementById("romeRulers");
         romeRulers.innerHTML = `<span>${rulersfull}</span>`
+
+        document.getElementById("romeRulersImage");
+        romeRulersImage.innerHTML = `<span><img src="${rulersimage}"></span>`
 
 
 
