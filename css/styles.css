@@ -317,10 +317,14 @@ blockquote {
     font-weight: 700;
     font-style: normal;
     font-size: 2rem;
-    text-shadow: #000000 0rem 0rem 2px,
-        #000000 0rem 0rem 4px,
-        #000000 0rem 0rem 6px,
-        #000000 0rem 0rem 8px;
+    text-shadow: #000000 0rem 0rem 1px,
+    #000000 0rem 0rem 2px,
+    #000000 0rem 0rem 3px,
+    #000000 0rem 0rem 4px,
+    #000000 0rem 0rem 5px,
+    #000000 0rem 0rem 6px,
+    #000000 0rem 0rem 7px,
+    #000000 0rem 0rem 8px;
 }
 
 
@@ -329,7 +333,7 @@ blockquote {
     position: relative;
     top: 60px;
     right: 50%;
-    left: 42%;
+    left: 40%;
     margin-left: auto;
     margin-right: auto;
     color: #ffffff;
@@ -337,10 +341,14 @@ blockquote {
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: .9rem;
-    text-shadow: #000000 0rem 0rem 2px,
+    font-size: 1rem;
+    text-shadow: #000000 0rem 0rem 1px,
+    #000000 0rem 0rem 2px,
+    #000000 0rem 0rem 3px,
         #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 5px,
         #000000 0rem 0rem 6px,
+            #000000 0rem 0rem 7px,
         #000000 0rem 0rem 8px;
 }
 
@@ -388,6 +396,12 @@ blockquote {
     cursor: pointer;
 }
 
+#rulers-panel-button:hover {
+    box-shadow: 0 0 12px rgb(255, 255, 255),
+        0 0 13px rgb(255, 255, 255),
+        0 0 14px rgb(255, 255, 255),
+        0 0 25px rgb(255, 255, 0);
+}
 
 #rulersPanel {
     position: absolute;
@@ -595,6 +609,13 @@ blockquote {
     cursor: pointer;
 }
 
+#info-panel-button:hover {
+    box-shadow: 0 0 12px rgb(255, 255, 255),
+    0 0 13px rgb(255, 255, 255),
+    0 0 14px rgb(255, 255, 255),
+    0 0 25px rgb(255, 255, 0);
+}
+
 
 #info-panel {
     position: absolute;
@@ -678,6 +699,12 @@ blockquote {
     cursor: pointer;
 }
 
+#legend-button:hover {
+    box-shadow: 0 0 12px rgb(255, 255, 255),
+        0 0 13px rgb(255, 255, 255),
+        0 0 14px rgb(255, 255, 255),
+        0 0 25px rgb(255, 255, 0);
+}
 
 #legend {
     position: absolute;
@@ -743,6 +770,12 @@ blockquote {
     cursor: pointer;
 }
 
+#info-button:hover {
+    box-shadow: 0 0 12px rgb(255, 255, 255),
+        0 0 13px rgb(255, 255, 255),
+        0 0 14px rgb(255, 255, 255),
+        0 0 25px rgb(255, 255, 0);
+}
 
 .center {
     display: block;
