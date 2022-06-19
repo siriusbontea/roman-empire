@@ -54,6 +54,10 @@
         <img class="laurel-right-info darkshadow" src="svg/laurel_right_AdobeStock_252116415.svg">
         <img class="laurel-left-legend-button darkshadow" src="svg/laurel_left_AdobeStock_252116415.svg">
         <img class="laurel-right-legend-button darkshadow" src="svg/laurel_right_AdobeStock_252116415.svg">
+        <img class="laurel-left-rulers-button darkshadow" src="svg/laurel_left_AdobeStock_252116415.svg">
+        <img class="laurel-right-rulers-button darkshadow" src="svg/laurel_right_AdobeStock_252116415.svg">
+        <img class="laurel-left-events-button darkshadow" src="svg/laurel_left_AdobeStock_252116415.svg">
+        <img class="laurel-right-events-button darkshadow" src="svg/laurel_right_AdobeStock_252116415.svg">
         <!-- this embeds and anchors the info button in the map <div> element -->
         <button id="info-button" onclick="myInfo()">i</button>
         <div id="footer">
@@ -98,14 +102,13 @@
         </section>
 <!-- End of Legend -->
     <!-- Start of info panel -->
-        <button id="info-panel-button" onclick="myInfoPanel()"><i class="fa fa-key" aria-hidden="true"></i>
+        <button id="info-panel-button" onclick="myInfoPanel()"><img src="images/sundial_events_icon_on.png">
         </button>
             <section id="info-panel">
-            <img class="flat-laurel-info-panel-top" src="svg/FlatLaurel_AdobeStock_222827192.svg">
-            <img class="flat-laurel-info-panel-bottom" src="svg/FlatLaurel_AdobeStock_222827192.svg">
-        <div id="yearIndicator">500 B.C.</div>
-            
-            <div id="titleHeader">Year of the Consulship of Longus and Cornutus</div>
+                Events:
+            <img class="laurel-rulers-panel-top-left" src="svg/corner_laurel_top_left_AdobeStock_472550524.svg">
+            <img class="laurel-rulers-panel-bottom-right" src="svg/corner_laurel_bottom_right_AdobeStock_472550524.svg">
+     
             <div id="eventOne">In the face of a potential Sabine invasion, the Senate passed a senatus consultum authorizing the
                 consuls to appoint a
                 dictator, a magistrate who held absolute power during a national emergency.</div>
@@ -121,8 +124,8 @@
 </button>
 <section id="rulersPanel">
     Rulers of Rome:
-    <img class="flat-laurel-rulers-panel-top-left" src="svg/corner_laurel_top_left_AdobeStock_472550524.svg">
-    <img class="flat-laurel-rulers-panel-bottom-right" src="svg/corner_laurel_bottom_right_AdobeStock_472550524.svg">
+    <img class="laurel-rulers-panel-top-left" src="svg/corner_laurel_top_left_AdobeStock_472550524.svg">
+    <img class="laurel-rulers-panel-bottom-right" src="svg/corner_laurel_bottom_right_AdobeStock_472550524.svg">
 
     <div id="romeRulers">Manius Tullius Longus<br>Servius Sulpicius Camerinus Cornutus</div>
     <div id="emperorsShortName"></div>
@@ -150,7 +153,9 @@
 
      <!-- Pulling the data from CombinedExtentLayers TopoJSON-->
     
-   
+    <div id="yearIndicator">500 B.C.</div>
+    
+    <div id="titleHeader">Year of the Consulship of Longus and Cornutus</div>
     
 
 

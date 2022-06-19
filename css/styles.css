@@ -240,6 +240,42 @@ blockquote {
 }
 
 
+.laurel-left-rulers-button {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    left: 28px;
+    top: 240px;
+    height: 80px;
+}
+
+.laurel-right-rulers-button {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    left: 128px;
+    top: 240px;
+    height: 80px;
+}
+
+.laurel-left-events-button {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 110px;
+    top: 240px;
+    height: 80px;
+}
+
+.laurel-right-events-button {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 12px;
+    top: 240px;
+    height: 80px;
+}
+
 .blue-tooltip {
     font-family: "Grand Hotel";
     font-style: italic;
@@ -271,13 +307,16 @@ blockquote {
 #yearIndicator {
     z-index: 9999;
     position: absolute;
-    top: 30px;
+    top: 10px;
+    left: 50%;
+    margin-left: auto;
+    margin-right: auto;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1rem;
+    font-size: 2rem;
     text-shadow: #000000 0rem 0rem 2px,
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 6px,
@@ -287,9 +326,12 @@ blockquote {
 
 #titleHeader {
     z-index: 9999;
-    position: absolute;
-    bottom: 50px;
-    left: 15px;
+    position: relative;
+    top: 60px;
+    right: 50%;
+    left: 42%;
+    margin-left: auto;
+    margin-right: auto;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
@@ -303,37 +345,27 @@ blockquote {
 }
 
 #eventOne {
-    z-index: 9999;
-    position: absolute;
-    bottom: 500px;
-    left: 130px;
-    color: #ffffff;
-    font-family: trajan-pro-3,
+        z-index: 9999;
+        color: black;
+        font-family: trajan-pro-3,
         serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1rem;
-    text-shadow: #000000 0rem 0rem 2px,
-        #000000 0rem 0rem 4px,
-        #000000 0rem 0rem 6px,
-        #000000 0rem 0rem 8px;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 1rem;
+        padding-top: 5px;
+        text-shadow: #000000 0rem 0rem 0px;
 }
 
 #eventTwo {
-    z-index: 9999;
-    position: absolute;
-    bottom: 400px;
-    left: 130px;
-    color: #ffffff;
-    font-family: trajan-pro-3,
+        z-index: 9999;
+        color: black;
+        font-family: trajan-pro-3,
         serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1rem;
-    text-shadow: #000000 0rem 0rem 2px,
-        #000000 0rem 0rem 4px,
-        #000000 0rem 0rem 6px,
-        #000000 0rem 0rem 8px;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 1rem;
+        padding-top: 20px;
+        text-shadow: #000000 0rem 0rem 0px;
 }
 
 /* END of styling of data from CombinedExtentLayers TopoJSON */
@@ -388,7 +420,7 @@ blockquote {
     #000000 0rem 0rem 8px;
 }
 
-.flat-laurel-rulers-panel-top-left {
+.laurel-rulers-panel-top-left {
     z-index: 1000;
     display: block;
     position: absolute;
@@ -398,7 +430,7 @@ blockquote {
     
 }
 
-.flat-laurel-rulers-panel-bottom-right {
+.laurel-rulers-panel-bottom-right {
     z-index: 1000;
     display: block;
     position: absolute;
@@ -537,14 +569,14 @@ blockquote {
 
 #info-panel-button {
     position: absolute;
-    top: 240px;
-    right: 45px;
+    top: 250px;
+    right: 38px;
+
+     background-image: url('images/sundial_events_icon_off.png');
+     background-color: #fff9dfbc;
 
     /* Add styles to match Leaflet UI elements */
-    padding-top: 10px;
-    padding-bottom: 15px;
-    padding-left: 15px;
-    padding-right: 14px;
+   
     /* font-family: trajan-pro-3, serif; */
     font-family: 'EB Garamond',
         serif;
@@ -566,20 +598,34 @@ blockquote {
 
 #info-panel {
     position: absolute;
-    top: 300px;
+    top: 345px;
     right: 10px;
-    width: 400px;
-    height: 600px;
-    padding-top: 35px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 35px;
+     width: fit-content;
+     max-width: 400px;
+     height: fit-content;
+     padding-top: 25px;
+     padding-right: 25px;
+     padding-left: 25px;
+     padding-bottom: 35px;
     /* Add styles to match Leaflet UI elements */
     background: #fff9dfbc;
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
     /* border: 2px solid #A91101; */
+     color: #ffffff;
+     font-family: trajan-pro-3,
+     serif;
+     font-weight: 700;
+     font-style: normal;
+     font-size: 1.3rem;
+     text-shadow: #000000 0rem 0rem 2px,
+     #000000 0rem 0rem 4px,
+     #000000 0rem 0rem 6px,
+     #000000 0rem 0rem 8px;
     border-radius: 15px;
     z-index: 1000;
+
+
+   
 }
 
 .flat-laurel-info-panel-top {

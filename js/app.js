@@ -52,6 +52,7 @@ From the CombinedExtentLayers_v5.geojson:
 
 */
 /////////
+
 ///////// This is just a placeholder for right now //////////////
 var romeIcon = L.icon({
     iconUrl: "svg/Colosseum_AdobeStock_203412188.svg", // placeholder icon for now
@@ -91,36 +92,6 @@ const d = {
             d: 'data/CombinedExtentLayers_v6.topojson',
             f: 'CombinedExtentLayers_v6',
             colors: ['#000000', '#222219', '#444433', '#66664D', '#898966', '#ABAB80', '#CDCD9A', '#F0F0B4', '#E7D49D', '#DEB887', '#D59C70', '#CC805A', '#C36444', '#BA482D', '#B12C17', '#A91101'],
-            ruler_image: [
-                `<img src='images/#'>`, // 0 - 500 B.C.
-                `<img src='images/#'>`, // 1 - 338 B.C.
-                `<img src='images/#'>`, // 2 - 298 B.C.
-                `<img src='images/#'>`, // 3 - 290 B.C.
-                `<img src='images/#'>`, // 4 - 272 B.C.
-                `<img src='images/#'>`, // 5 - 264 B.C.
-                `<img src='images/#'>`, // 6 - 218 B.C.
-                `<img src='images/#'>`, // 7 - 133 B.C.
-                `<img src='photos/#'>`, // 8 - 60 B.C. 
-                // Julius Caesar / https://www.britannica.com/biography/Julius-Caesar-Roman-ruler
-                // 27 BC to AD 14. / Caesar Augustus (aka Octavian) / https://sothebys-md.brightspotcdn.com/e5/38/05562c1d4b0686e692a436815f8d/l20107-bl3pv-8.jpg
-                `<img src='photos/#'>`, // 9 - A.D. 16 
-                // Tiberius / https://i.pinimg.com/736x/49/c5/12/49c5127adb21f3b012e4aa1b3fa049e1--statue-of-emperor.jpg
-                `<img src='photos/#'>`, // 10 - A.D. 47  
-                // Claudius / https://live.staticflickr.com/3275/2941754707_29bb037b98_b.jpg
-                `<img src='photos/#'>`,         // 11 - A.D. 69 
-                // Galba / http://ancientrome.ru/art/img/7/7853.jpg
-                // Otho / https://en.wikipedia.org/wiki/Otho#/media/File:Otone_-_foto_di_euthman.jpg
-                //  Vitellius / https://www.anticstore.com/DocBD/commerce/antiquaire/galerie-sismann-622/objet/66332/AnticStore-Large-Ref-66332_02.jpg
-                // Vespasian / https://upload.wikimedia.org/wikipedia/commons/c/c6/Vespasianus01_pushkin.jpg
-
-                `<img src='photos/#'>`, // 12 - A.D. 84
-                // Domitian / https://en.wikipedia.org/wiki/Domitian#/media/File:Domiziano_da_collezione_albani,_fine_del_I_sec._dc._02.JPG
-                `<img src='photos/#'>`, // 13 - A.D. 102
-                // Trajan / https://en.wikipedia.org/wiki/Trajan#/media/File:Traianus_Glyptothek_Munich_72.jpg
-                `<img src='photos/#'>`, // 14 - A.D. 117
-                // Hadrian / https://museum.classics.cam.ac.uk/sites/museum.classics.cam.ac.uk/files/casts/531.JPG
-                `<img src='photos/#'>`, // 15 - Max Extent
-            ]
         },
     }
 }
@@ -271,8 +242,6 @@ function drawRoadsWalls() {
 
 
 
-// // ////// Slider stuff (Kenya lesson example)
-
 // ////////// Start of function sequenceUI() - Function for event listener for slider
 function sequenceUI(empireExtent) {
 
@@ -313,7 +282,7 @@ function sequenceUI(empireExtent) {
         let secondevent = ""
         let rulersfull = ""
         let rulersimage = ""
-       
+
         // current value of slider is year
         var currentYear = e.target.value
         // var currentYear = e.target.year
@@ -327,7 +296,7 @@ function sequenceUI(empireExtent) {
                 secondevent = i.feature.properties.event2
                 rulersfull = i.feature.properties.rulers
                 rulersimage = i.feature.properties.ruler_image_link
-              
+
             }
             if (i.feature.properties.order > currentYear) {
                 i.setStyle({
@@ -366,14 +335,8 @@ function sequenceUI(empireExtent) {
 
     });
 
-
-
-
-
 } // end of function sequenceUI()
 
-
-///////// Note to self, don't break anything below here since the toggle buttons all work now:
 
 /* --------------- Toggle on/off info footer content ---------------  */
 var clickedFooter = false; // start with false condition
@@ -421,10 +384,12 @@ function myInfoPanel() {
     if (clickedInfoPanel) {
         y.style.background = "#fff9dfa0";
         y.style.color = "#A91101";
+         y.innerHTML = "<img src='images/sundial_events_icon_off.png'>"
         x.style.display = "block"; // display
     } else {
         y.style.background = "#A91101";
         y.style.color = "#fff9df";
+         y.innerHTML = "<img src='images/sundial_events_icon_on.png'>"
         x.style.display = "none"; // no display
     }
     clickedInfoPanel = !clickedInfoPanel;
@@ -437,16 +402,16 @@ function myRulerPanel() {
     var x = document.getElementById("rulersPanel");
     var y = document.getElementById("rulers-panel-button");
     if (clickedRulersPanel) {
-          y.style.backgroundColor = "#fff9dfa0";
-          y.style.color = "#A91101";
-          y.innerHTML = "<img src='images/ruler-icon-on.png'>"
-  
+        y.style.backgroundColor = "#fff9dfa0";
+        y.style.color = "#A91101";
+        y.innerHTML = "<img src='images/ruler-icon-off.png'>"
+
         x.style.display = "block"; // display
     } else {
-  y.style.backgroundColor = "#A91101";
-  y.style.color = "#fff9df";
-  y.innerHTML = "<img src='images/ruler-icon-off.png'>"
-        
+        y.style.backgroundColor = "#A91101";
+        y.style.color = "#fff9df";
+        y.innerHTML = "<img src='images/ruler-icon-on.png'>"
+
         x.style.display = "none"; // no display
     }
     clickedRulersPanel = !clickedRulersPanel;
