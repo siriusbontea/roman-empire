@@ -190,6 +190,7 @@ blockquote {
     bottom: 0;
     left: 0;
     right: 0;
+    
 }
 
 .aquila {
@@ -487,9 +488,9 @@ blockquote {
 #instructions {
     z-index: 1000;
     position: absolute;
-    bottom: 120px;
+    bottom: 130px;
     left: 28px;
-    width: 550px;
+    width: 380px;
     color: #ffffff;
     font-family: 'Times New Roman', Times, serif,
     serif;
@@ -507,8 +508,8 @@ blockquote {
 }
 
 .instruction-icon {
-    width: 40px;
-
+    width: 38px;
+    border-radius: 12px;
 }
 
 /* END of Intructions Styling */
@@ -730,7 +731,7 @@ background-color: #A91101;
     position: absolute;
     bottom: 10px;
     right: 10px;
-    width: 300px;
+    width: 350px;
     height: 400px;
     padding-top: 35px;
     padding-right: 10px;
@@ -741,7 +742,9 @@ background-color: #A91101;
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
     /* border: 2px solid #A91101; */
     border-radius: 15px;
+    overflow:scroll;
     z-index: 1000;
+    
 }
 
 .flat-laurel-legend-top {
