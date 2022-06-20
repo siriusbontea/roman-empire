@@ -56,7 +56,7 @@ From the CombinedExtentLayers_v5.geojson:
 ///////// This is just a placeholder for right now //////////////
 var romeIcon = L.icon({
     iconUrl: "svg/Colosseum_AdobeStock_203412188.svg", // placeholder icon for now
-    iconSize: [90, 60], // size of the icon
+    iconSize: [60, 40], // size of the icon
     iconAnchor: [5, 10], // point of the icon which will correspond to marker's location
     popupAnchor: [0, 0], // point from which the popup should open relative to the iconAnchor
 });
@@ -155,7 +155,7 @@ function drawExtent(empireExtent) {
                 return {
                     color: colors[props],
                     weight: 2,
-                    fillOpacity: 1,
+                    fillOpacity: .6,
                     fillColor: colors[props],
                     interactive: false,
                 };
@@ -163,7 +163,7 @@ function drawExtent(empireExtent) {
 
                 return {
                     color: '#000',
-                    weight: 1,
+                    weight: 2,
                     fillOpacity: .6,
                     fillColor: '#000',
                     interactive: false,
@@ -183,6 +183,7 @@ function drawExtent(empireExtent) {
         } else {
             i.setStyle({
                 opacity: 0.8,
+                weight: 2,
                 fillOpacity: 0.6
             })
         }
@@ -307,7 +308,8 @@ function sequenceUI(empireExtent) {
 
                 i.setStyle({
                     opacity: 0.8,
-                    fillOpacity: 0.8
+                    weight: 2,
+                    fillOpacity: 0.6
                 })
             }
         })

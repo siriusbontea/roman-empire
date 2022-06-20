@@ -1,0 +1,199 @@
+
+/* START of Slider Styling */
+
+#yearSlider {
+    z-index: 1000;
+    position: absolute;
+    bottom: 80px;
+    left: 17px;
+    width: 300px;
+    
+    background: 0000;
+    border-radius: 30px;
+    color: whitesmoke;
+}
+
+#yearSlider:hover {
+    box-shadow: 0 0 15px rgb(255, 255, 255);
+}
+
+#longName {
+    z-index: 1000;
+    position: absolute;
+    bottom: 48px;
+    left: 28px;
+    color: #ffffff;
+    font-family: trajan-pro-3,
+        serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-shadow: #000000 0rem 0rem 1px,
+        #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 3px,
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 5px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 7px,
+        #000000 0rem 0rem 8px;
+}
+
+#slider-note {
+   z-index: 1000;
+   position: absolute;
+   bottom: 45px;
+   left: 28px;
+   color: #ffffff;
+   font-family: trajan-pro-3,
+   serif;
+   font-weight: 700;
+   font-style: normal;
+   font-size: 1.5rem;
+   text-shadow: #000000 0rem 0rem 1px,
+   #000000 0rem 0rem 2px,
+   #000000 0rem 0rem 3px,
+   #000000 0rem 0rem 4px,
+   #000000 0rem 0rem 5px,
+   #000000 0rem 0rem 6px,
+   #000000 0rem 0rem 7px,
+   #000000 0rem 0rem 8px;
+}
+
+
+
+/* .form-range:focus::-webkit-slider-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem #fff9dfa0;
+}
+
+.form-range:focus::-moz-range-thumb {
+    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem #fff9dfa0;
+}  */
+
+/* .form-range::-webkit-slider-thumb {
+    width: 2rem;
+    height: 2rem;
+
+    background-color: #A91101;
+
+}
+
+
+.form-range::-moz-range-thumb {
+    width: 1.2rem;
+    height: 1.8rem;
+    background-color: #A91101;
+}
+
+.form-range::-moz-range-thumb:active {
+    background-color: #ff1900;
+}
+
+.form-range::-moz-range-track {
+
+    height: 1rem;
+
+    background-color: #3a4046;
+
+}
+*/
+
+/* Chrome Safari */
+input[type=range] {
+    -webkit-appearance: none;
+    margin: 18px 0;
+    width: 100%;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #fff9df;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 20px;
+    border-radius: 10px;
+    background: #A91101;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -14px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #fff9df;
+}
+/* Mozilla Firefox */
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #fff9df;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 20px;
+    border-radius: 10px;
+    background: #A91101;
+    cursor: pointer;
+}
+/* Internet Explorer */
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #fff9df;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #fff9df;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 20px;
+    border-radius: 10px;
+    background: #A91101;
+    cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #fff9df;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #fff9df;
+}
+
+/* END of Slider Styling */

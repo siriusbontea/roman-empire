@@ -16,13 +16,14 @@ var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/re
     maxZoom: 16
 });
 
-// PlainTerrain custom tiles from Mapbox
-var plainTerrain = L.tileLayer(mbUrl, {
-    id: 'siriusbontea/cl41hks5e000x16udd55zcnuj',
-    tileSize: 512,
-    zoomOffset: -1,
-    // attribution: mbAttr
-});
+/* ---------- This map is a work in progress. Custom road layers will be added within Mapbox ------------*/
+// // PlainTerrain custom tiles from Mapbox
+// var plainTerrain = L.tileLayer(mbUrl, {
+//     id: 'siriusbontea/cl41hks5e000x16udd55zcnuj',
+//     tileSize: 512,
+//     zoomOffset: -1,
+//     // attribution: mbAttr
+// });
 
 
 var map = new L.map('map', {
@@ -33,7 +34,7 @@ var map = new L.map('map', {
     zoomControl: false,
     maxZoom: 11,
     minZoom: 5,
-    layers: [plainTerrain]
+    layers: [dare]
 });
 
 map.bounds = [],
@@ -45,7 +46,7 @@ map.attributionControl.setPrefix(""); // hide attrinution and citation - place i
 
 
 var baseLayers = {
-    'Terrain Map': plainTerrain,
+    // 'Terrain Map': plainTerrain,
     'DARE map': dare,
     'NatGeo map (modern)': Esri_NatGeoWorldMap
 };

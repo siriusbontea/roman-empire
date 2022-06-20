@@ -241,9 +241,6 @@ blockquote {
 }
 
 
-
-
-
 .blue-tooltip {
     font-family: "Grand Hotel";
     font-style: italic;
@@ -594,83 +591,8 @@ right: 200px;
 /* END of styling of data from CombinedExtentLayers TopoJSON */
 
 
-/* START of Slider Styling */
-
-#yearSlider {
-    z-index: 1000;
-    position: absolute;
-    bottom: 80px;
-    left: 17px;
-    width: 300px;
-    padding: 46 25px 25px 25px;
-    background: 0000;
-    border-radius: 5px;
-    color: whitesmoke;
-}
-
-#yearSlider:hover {
-    box-shadow: 0 0 15px rgb(255, 255, 255);
-}
-
-#longName {
-    z-index: 1000;
-    position: absolute;
-    bottom: 45px;
-    left: 28px;
-    color: #ffffff;
-    font-family: trajan-pro-3,
-        serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.5rem;
-    text-shadow: #000000 0rem 0rem 1px,
-        #000000 0rem 0rem 2px,
-        #000000 0rem 0rem 3px,
-        #000000 0rem 0rem 4px,
-        #000000 0rem 0rem 5px,
-        #000000 0rem 0rem 6px,
-        #000000 0rem 0rem 7px,
-        #000000 0rem 0rem 8px;
-}
 
 
-.form-range:focus::-webkit-slider-thumb {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem #fff9dfa0;
-}
-
-.form-range:focus::-moz-range-thumb {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem #fff9dfa0;
-}
-
-.form-range::-webkit-slider-thumb {
-    width: 2rem;
-    height: 2rem;
-
-    background-color: #A91101;
-
-}
-
-
-.form-range::-moz-range-thumb {
-    width: 1.2rem;
-    height: 1.8rem;
-    background-color: #A91101;
-}
-
-.form-range::-moz-range-thumb:active {
-    background-color: #ff1900;
-}
-
-.form-range::-moz-range-track {
-
-    height: 1rem;
-
-    background-color: #3a4046;
-
-}
-
-
-/* END of Slider Styling */
 
 /* START of Events Panel Styling */
 
@@ -865,6 +787,7 @@ background-color: #A91101;
     box-shadow: 0 0 15px #00000080;
     height: 0px;
     padding: 0px;
+    pointer-events: none;
     /* display below the button to allow clicking if overlay covers screen */
     z-index: 1001;
     position: absolute;
