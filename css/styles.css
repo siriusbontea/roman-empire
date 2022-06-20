@@ -483,6 +483,36 @@ blockquote {
 
 /* END of Rulers Panel Styling */
 
+/* START of Intructions Styling */
+#instructions {
+    z-index: 1000;
+    position: absolute;
+    bottom: 120px;
+    left: 28px;
+    width: 550px;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif,
+    serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem;
+    text-shadow: #000000 0rem 0rem 1px,
+        #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 3px,
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 5px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 7px,
+        #000000 0rem 0rem 8px;
+}
+
+.instruction-icon {
+    width: 40px;
+
+}
+
+/* END of Intructions Styling */
+
 /* START of Carousel Styling */
 #carousel-panel-button {
     position: absolute;
