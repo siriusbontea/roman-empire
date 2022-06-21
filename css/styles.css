@@ -149,11 +149,6 @@ p {
 
 
 
-
-
-
-
-
 /* START of Styling the Polygons! */
 .land {
     fill: none;
@@ -271,11 +266,23 @@ blockquote {
 
 /* START of styling of data from CombinedExtentLayers TopoJSON */
 
-#yearIndicator {
+
+
+#page-title {
+    margin: auto;
+    text-align: center;
     z-index: 1000;
     position: absolute;
     top: 10px;
-    left: 200px;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+
+
+
+#yearIndicator {
+    
     margin-left: auto;
     margin-right: auto;
     color: #ffffff;
@@ -296,10 +303,7 @@ blockquote {
 
 
 #titleHeader {
-    z-index: 1000;
-    position: absolute;
-    top: 60px;
-    left: 200px;
+
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
