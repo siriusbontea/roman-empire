@@ -157,7 +157,7 @@ function drawExtent(empireExtent) {
                     weight: 2,
                     fillOpacity: .6,
                     fillColor: colors[props],
-                    interactive: false,
+                    // interactive: false,
                 };
             } else if (props < 0) {
 
@@ -166,10 +166,16 @@ function drawExtent(empireExtent) {
                     weight: 2,
                     fillOpacity: .6,
                     fillColor: '#000',
-                    interactive: false,
+                    // interactive: false,
                 };
             }
         },
+        onEachFeature: function (feature, layer) {
+            const props = feature.properties
+            console.log(props)
+            const popupContent = `<h2>${props.long_name}</h2>${props.event1}<br>${props.event2}`
+            layer.bindPopup(popupContent)
+        }
     }).addTo(map);
 
     // listen somehow in change in order value
@@ -187,7 +193,31 @@ function drawExtent(empireExtent) {
                 fillOpacity: 0.6
             })
         }
+        i.on('mouseover', function (e) {
+            i.setStyle({
+                color: 'yellow',
+            })
+            i.bringToFront()
+        })
+        i.on('mouseout', function (e) {
+            const props = i.feature.properties.order
+            i.setStyle({
+                color: colors[props]
+            })
+
+        })
     })
+
+    // extent.on('mouseover', function (e) {
+        
+    //     e.target.setStyle({
+    //         color: 'yellow',
+    //     })
+    // })
+    // extent.on('mouseout', function (e) {
+        
+    //     extent.resetStyle()
+    // })
     sequenceUI(extent)
 }
 ///////////////
