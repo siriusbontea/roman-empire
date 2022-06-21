@@ -210,6 +210,7 @@ blockquote {
     top: 20px;
     right: 20px;
     width: 105px;
+    pointer-events: none;
 }
 
 .flat-laurel-slider {
@@ -731,23 +732,39 @@ background-color: #A91101;
     position: absolute;
     bottom: 10px;
     right: 10px;
-    width: 350px;
-    height: 400px;
-    padding-top: 35px;
+    width: 450px;
+    height: 600px;
+    padding-top: 5px;
     padding-right: 10px;
     padding-left: 10px;
-    padding-bottom: 35px;
+    padding-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 12pt;
     /* Add styles to match Leaflet UI elements */
     background: #fff9dfbc;
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
     /* border: 2px solid #A91101; */
     border-radius: 15px;
     overflow:scroll;
-    z-index: 1000;
-    
+    z-index: 1000; 
 }
 
-.flat-laurel-legend-top {
+#legend h1 {
+    color: #ffffff;
+    font-family: trajan-pro-3,
+    serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-shadow: #000000 0rem 0rem 2px,
+    #000000 0rem 0rem 4px,
+    #000000 0rem 0rem 6px,
+    #000000 0rem 0rem 8px;
+}
+
+/* The laurels are broken with the current legend from the DARE website: https: //imperium.ahlfeldt.se/ */
+
+/* .flat-laurel-legend-top {
     z-index: 1000;
     display: block;
     position: absolute;
@@ -763,7 +780,7 @@ background-color: #A91101;
     right: 0px;
     bottom: 0px;
     width: 300px;
-}
+} */
 
 /* END of Legend Styling */
 
