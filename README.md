@@ -68,8 +68,8 @@ Memory:  65204MiB
 
 ### UPDATE
 ###### Maps total revision
-- [Combined 500 B.C. through A.D. 117](data/CombinedExtentLayers_v4.geojson) GeoJSON
-- [Combined Major/Minor Roads and Fortifications](data/RomanRoadsWallsIntersect_v4.geojson) GeoJSON
+- [Combined 500 B.C. through A.D. 117](data/CombinedExtentLayers_v6.topojson) TopoJSON
+- [Combined Major/Minor Roads and Fortifications](data/RomanRoadsWallsIntersect_v6.topojson) TopoJSON
 
 - In essence, I built custom polygons because the ones on the web failed to take into account terrain features. Below, we can see the standard shapefile posted all over the interwebs that, unfortunately, don't take into account terrain:
 
