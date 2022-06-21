@@ -741,7 +741,7 @@ background-color: #A91101;
     font-family: 'Times New Roman', Times, serif;
     font-size: 12pt;
     /* Add styles to match Leaflet UI elements */
-    background: #fff9dfbc;
+    background: #fff9dfdc;
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
     /* border: 2px solid #A91101; */
     border-radius: 15px;
@@ -832,18 +832,19 @@ background-color: #A91101;
 
 /* This section below controls the style for the info section on the bottom */
 #footer {
-    width: 100%;
-    background: #fff9dfbc;
-    box-shadow: 0 0 15px #00000080;
-    height: 0px;
-    padding: 0px;
-    pointer-events: none;
-    /* display below the button to allow clicking if overlay covers screen */
-    z-index: 1001;
     position: absolute;
-    bottom: -10px;
+    display: none;
+    width: 100%;
+    height: 30vh;
+    bottom: 0px;
+    background: #fff9dfe2;
+    box-shadow: 0 0 15px #00000080;
+    padding: 0px;
+    z-index: 1001;
     /* If too much is included, enable scroll */
     overflow: scroll;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.3rem;
 }
 
 #footer div {
@@ -851,24 +852,20 @@ background-color: #A91101;
 }
 
 #footer h1 {
-    font-size: 1.7em;
-    color: #202020;
+    color: #ffffff;
     font-family: trajan-pro-3,
-        serif;
+    serif;
     font-weight: 700;
     font-style: normal;
-    margin: 0 0 0 0;
-}
-
-#footer p {
-    font-size: 1.2em;
-    color: #202020;
-    font-family: map-roman-normal,
-        serif;
-    font-weight: 400;
-    font-style: normal;
-    padding-top: 1%;
-
+    font-size: 2rem;
+    text-shadow: #000000 0rem 0rem 1px,
+    #000000 0rem 0rem 2px,
+    #000000 0rem 0rem 3px,
+    #000000 0rem 0rem 4px,
+    #000000 0rem 0rem 5px,
+    #000000 0rem 0rem 6px,
+    #000000 0rem 0rem 7px,
+    #000000 0rem 0rem 8px;
 }
 
 #footer a {
@@ -889,10 +886,29 @@ background-color: #A91101;
 }
 
 .footer-img {
-    float: right;
-    height: 10vh;
-    margin-left: 5%;
-    filter: drop-shadow(0px 0px 4px rgb(255, 255, 255));
+    position: absolute;
+    top: 10px;
+    right: 0px;
+    margin-right: 25px;
+    max-width: 23vw;
+    max-height: 150px;
+    
+}
+
+.footer75left {
+    position: absolute;
+    left: 0;
+    margin: 25px;
+    max-width: 72vw;
+}
+
+.footer25right {
+    position: absolute;
+    right: 0;
+    top: 0;
+    margin-right: 10px;
+    margin-top: 160px;
+    max-width: 23vw;
 }
 
 .social-font {

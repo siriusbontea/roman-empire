@@ -351,12 +351,14 @@ function myInfo() {
         y.style.background = "#A91101";
         y.style.color = "#fff9df";
         y.innerHTML = "<img src='images/footer_book_icon_off.png'>"
-        x.style.height = "0px"; // no footer height
+        // x.style.height = "0px"; // no footer height
+        x.style.display = "none"; // no display
     } else {
         y.style.background = "#fff9dfa0";
         y.style.color = "#A91101";
         y.innerHTML = "<img src='images/footer_book_icon_on.png'>"
-        x.style.height = "30vh"; // footer 30% of viewport height
+        // x.style.height = "30vh"; // footer 30% of viewport height
+        x.style.display = "block"; // display
     }
     clickedFooter = !clickedFooter;
 }
