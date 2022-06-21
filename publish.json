@@ -1,0 +1,7 @@
+{
+    "title": "Mapping the Infrastructure of the Roman Empire",
+    "info": "This project provides an interactive mapping visualisation of Roman territorial expansion from 500 B.C. to A.D. 200. The primary focus is on Roman roads as it correlates to the growth of the empire. The Roman road network directly contributed to commerce, ease of travel, and enabled rapid movement of Roman armies and logistical resupply.",
+    "coordinates": [39.3480144, -94.9158407],
+    "author": "Sirius T. Bontea",
+    "link": "https://siriusbontea.github.io/roman-empire/"
+}

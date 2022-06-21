@@ -237,3 +237,5 @@ Type Identifier|Description|Zoom
 
 - Attribution for some icons:
      - [Rome icons created by Freepik - Flaticon](https://www.flaticon.com/free-icons/rome)
+
+###### See my other projects at [siriusbontea.github.io](https://siriusbontea.github.io)
