@@ -17,13 +17,13 @@ var Esri_NatGeoWorldMap = L.tileLayer('https://server.arcgisonline.com/ArcGIS/re
 });
 
 /* ---------- This map is a work in progress. Custom road layers will be added within Mapbox ------------*/
-// // PlainTerrain custom tiles from Mapbox
-// var plainTerrain = L.tileLayer(mbUrl, {
-//     id: 'siriusbontea/cl41hks5e000x16udd55zcnuj',
-//     tileSize: 512,
-//     zoomOffset: -1,
-//     // attribution: mbAttr
-// });
+// PlainTerrain custom tiles from Mapbox
+var plainTerrain = L.tileLayer(mbUrl, {
+    id: 'siriusbontea/cl41hks5e000x16udd55zcnuj',
+    tileSize: 512,
+    zoomOffset: -1,
+    // attribution: mbAttr
+});
 
 
 var map = new L.map('map', {
@@ -46,9 +46,9 @@ map.attributionControl.setPrefix(""); // hide attrinution and citation - place i
 
 
 var baseLayers = {
-    // 'Terrain Map': plainTerrain,
     'DARE map': dare,
-    'NatGeo map (modern)': Esri_NatGeoWorldMap
+    'NatGeo map (modern)': Esri_NatGeoWorldMap,
+    'Terrain Map': plainTerrain
 };
 
 // Note: Leaflet examples for layergroup overlays for city/park preserved in a2.js as a reference
