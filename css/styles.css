@@ -374,11 +374,11 @@ blockquote {
 #rulersPanel {
     display: none;
     position: absolute;
-    top: 350px;
-    left: 10px;
+    top: 0px;
+    right: 0px;
     width: fit-content;
-    max-width: 400px;
-    height: fit-content;
+    width: 40vw;
+    height: 100vh;
     padding-top: 25px;
     padding-right: 25px;
     padding-left: 25px;
@@ -389,8 +389,8 @@ blockquote {
     background: #fff9dfbc;
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
     /* border: 2px solid #A91101; */
-    border-radius: 15px;
-    z-index: 1000;
+    /* border-radius: 15px; */
+    z-index: 2000;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
@@ -658,11 +658,11 @@ right: 200px;
 #events-panel {
     display: none;
     position: absolute;
-    top: 345px;
-    right: 10px;
+    top: 0px;
+    right: 0px;
     width: fit-content;
-    max-width: 400px;
-    height: fit-content;
+    width: 40vw;
+    height: 100vh;
     padding-top: 25px;
     padding-right: 25px;
     padding-left: 25px;
@@ -681,7 +681,7 @@ right: 200px;
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 6px,
         #000000 0rem 0rem 8px;
-    border-radius: 15px;
+    /* border-radius: 15px; */
     z-index: 1000;
 }
 
@@ -839,7 +839,7 @@ background-color: #A91101;
     position: absolute;
     display: none;
     width: 100%;
-    height: 30vh;
+    height: 40vh;
     bottom: 0px;
     background: #fff9dfe2;
     box-shadow: 0 0 15px #00000080;

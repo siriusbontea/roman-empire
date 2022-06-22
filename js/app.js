@@ -289,7 +289,7 @@ function sequenceUI(empireExtent) {
     sliderControl.onAdd = function () {
 
         // select the current slider with id of 'year-slider'
-        const controls = L.DomUtil.get("yearSlider");
+        const controls = L.DomUtil.get("slider-div");
         // disable scroll and click events on map beneath slider
         L.DomEvent.disableScrollPropagation(controls);
         L.DomEvent.disableClickPropagation(controls);
