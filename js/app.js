@@ -171,10 +171,10 @@ function drawExtent(empireExtent) {
             }
         },
         onEachFeature: function (feature, layer) {
-            const props = feature.properties
-            console.log(props)
-            const popupContent = `<h2>${props.long_name}</h2>${props.event1}<br>${props.event2}`
-            layer.bindPopup(popupContent)
+            if (feature.properties.order == 0) {
+                makePopups (feature.properties, layer)
+            }
+            
         }
     }).addTo(map);
 
@@ -193,7 +193,7 @@ function drawExtent(empireExtent) {
                 fillOpacity: 0.6
             })
         }
-        i.on('mouseover', function (e) {
+        i.on('mouseover click', function (e) {
             i.setStyle({
                 color: 'yellow',
             })
@@ -221,6 +221,11 @@ function drawExtent(empireExtent) {
     sequenceUI(extent)
 }
 ///////////////
+
+function makePopups (props, layer) {
+    const popupContent = `<h2>${props.long_name}</h2>${props.event1}<br>${props.event2}`
+    layer.bindPopup(popupContent)
+}
 
 function drawRoadsWalls() {
     // console.log(romanRoadsWalls)
@@ -295,8 +300,6 @@ function sequenceUI(empireExtent) {
     // add it to the map
     sliderControl.addTo(map);
 
-
-
     //// START of year_string
     // create Leaflet control for the current year output
     const yearControl = L.control({
@@ -329,11 +332,16 @@ function sequenceUI(empireExtent) {
                 rulersimage = i.feature.properties.ruler_image_link
 
             }
+            makePopups (i.feature.properties, i)
+
             if (i.feature.properties.order > currentYear) {
                 i.setStyle({
                     opacity: 0,
                     fillOpacity: 0
                 })
+
+                i.unbindPopup()
+
             } else {
 
                 i.setStyle({
@@ -348,7 +356,7 @@ function sequenceUI(empireExtent) {
         yearIndicator.innerHTML = `<span>${year}</span>`
         // ////////
         document.getElementById("longName");
-        longName.innerHTML = `<span>${longname}</span>`
+        // longName.innerHTML = `<span>${longname}</span>`
 
         document.getElementById("titleHeader");
         titleHeader.innerHTML = `<span>${titleheader}</span>`
@@ -364,6 +372,10 @@ function sequenceUI(empireExtent) {
 
         document.getElementById("romeRulersImage");
         romeRulersImage.innerHTML = `<span><img src="${rulersimage}" class="romeRulersImageStyle"></span>`
+
+        const empireContent = document.getElementById("empire-content");
+        empireContent.innerHTML = `<span>${firstevent}</span>
+                                   <span><img src="${rulersimage}" class="romeRulersImageStyle"></span>`
 
     });
 
