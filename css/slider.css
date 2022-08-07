@@ -3,9 +3,9 @@
 
 #yearSlider {
     z-index: 1000;
-    position: absolute;
+    /* position: absolute;
     bottom: 80px;
-    left: 17px;
+    left: 17px; */
     width: 300px;
     
     background: 0000;

@@ -157,7 +157,7 @@ function drawExtent(empireExtent) {
                     weight: 2,
                     fillOpacity: .6,
                     fillColor: colors[props],
-                    interactive: false,
+                    // interactive: false,
                 };
             } else if (props < 0) {
 
@@ -166,10 +166,16 @@ function drawExtent(empireExtent) {
                     weight: 2,
                     fillOpacity: .6,
                     fillColor: '#000',
-                    interactive: false,
+                    // interactive: false,
                 };
             }
         },
+        onEachFeature: function (feature, layer) {
+            if (feature.properties.order == 0) {
+                makePopups (feature.properties, layer)
+            }
+            
+        }
     }).addTo(map);
 
     // listen somehow in change in order value
@@ -187,10 +193,39 @@ function drawExtent(empireExtent) {
                 fillOpacity: 0.6
             })
         }
+        i.on('mouseover click', function (e) {
+            i.setStyle({
+                color: 'yellow',
+            })
+            i.bringToFront()
+        })
+        i.on('mouseout', function (e) {
+            const props = i.feature.properties.order
+            i.setStyle({
+                color: colors[props]
+            })
+
+        })
     })
+
+    // extent.on('mouseover', function (e) {
+        
+    //     e.target.setStyle({
+    //         color: 'yellow',
+    //     })
+    // })
+    // extent.on('mouseout', function (e) {
+        
+    //     extent.resetStyle()
+    // })
     sequenceUI(extent)
 }
 ///////////////
+
+function makePopups (props, layer) {
+    const popupContent = `<h2>${props.long_name}</h2>${props.event1}<br>${props.event2}`
+    layer.bindPopup(popupContent)
+}
 
 function drawRoadsWalls() {
     // console.log(romanRoadsWalls)
@@ -254,7 +289,7 @@ function sequenceUI(empireExtent) {
     sliderControl.onAdd = function () {
 
         // select the current slider with id of 'year-slider'
-        const controls = L.DomUtil.get("yearSlider");
+        const controls = L.DomUtil.get("slider-div");
         // disable scroll and click events on map beneath slider
         L.DomEvent.disableScrollPropagation(controls);
         L.DomEvent.disableClickPropagation(controls);
@@ -264,8 +299,6 @@ function sequenceUI(empireExtent) {
 
     // add it to the map
     sliderControl.addTo(map);
-
-
 
     //// START of year_string
     // create Leaflet control for the current year output
@@ -299,11 +332,16 @@ function sequenceUI(empireExtent) {
                 rulersimage = i.feature.properties.ruler_image_link
 
             }
+            makePopups (i.feature.properties, i)
+
             if (i.feature.properties.order > currentYear) {
                 i.setStyle({
                     opacity: 0,
                     fillOpacity: 0
                 })
+
+                i.unbindPopup()
+
             } else {
 
                 i.setStyle({
@@ -318,7 +356,7 @@ function sequenceUI(empireExtent) {
         yearIndicator.innerHTML = `<span>${year}</span>`
         // ////////
         document.getElementById("longName");
-        longName.innerHTML = `<span>${longname}</span>`
+        // longName.innerHTML = `<span>${longname}</span>`
 
         document.getElementById("titleHeader");
         titleHeader.innerHTML = `<span>${titleheader}</span>`
@@ -334,6 +372,10 @@ function sequenceUI(empireExtent) {
 
         document.getElementById("romeRulersImage");
         romeRulersImage.innerHTML = `<span><img src="${rulersimage}" class="romeRulersImageStyle"></span>`
+
+        const empireContent = document.getElementById("empire-content");
+        empireContent.innerHTML = `<span>${firstevent}</span>
+                                   <span><img src="${rulersimage}" class="romeRulersImageStyle"></span>`
 
     });
 
