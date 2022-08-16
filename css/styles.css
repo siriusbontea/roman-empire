@@ -141,6 +141,7 @@ p {
     font-style: normal;
     border-radius: 10px;
     padding: 5px;
+    z-index: 4000;
 }
 
 
@@ -219,7 +220,7 @@ blockquote {
 
 
 
-.laurel-left-legend-button {
+/* .laurel-left-legend-button {
     z-index: 1000;
     display: block;
     position: absolute;
@@ -235,7 +236,7 @@ blockquote {
     right: 12px;
     top: 130px;
     height: 80px;
-}
+} */
 
 
 .blue-tooltip {
@@ -271,7 +272,7 @@ blockquote {
 #page-title {
     margin: auto;
     text-align: center;
-    z-index: 1000;
+    z-index: 1;
     position: absolute;
     top: 10px;
     left: 50%;
@@ -303,7 +304,7 @@ blockquote {
 
 
 #titleHeader {
-
+    z-index: 1;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
