@@ -48,8 +48,9 @@ body {
     font-family: map-roman-normal,
         serif;
     font-weight: 400;
-    font-style: normal;
+    font-style: 10px;
     background-color: #6e6e6e;
+
 }
 
 p {
@@ -57,11 +58,11 @@ p {
 }
 
 .leaflet-container {
-    font-family: map-roman-normal,
-        serif;
-    font-size: 0.9rem;
+    font-family: serif;
+    font-size: 1rem;
     line-height: 1.4rem;
     font-weight: 400;
+    /* border-radius: 40px; */
 }
 
 .red-bold {
@@ -94,19 +95,19 @@ p {
 
 /* START of Styling the Leaflet Layer Control  */
 .leaflet-top .leaflet-control {
-    margin-top: 39px;
+    margin-top: 14px;
 }
 
 .leaflet-bottom .leaflet-control {
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 
 .leaflet-left .leaflet-control {
-    margin-left: 10px;
+    margin-left: 5px;
 }
 
 .leaflet-right .leaflet-control {
-    margin-right: 47px;
+    margin-right: 20px;
 }
 
 
@@ -120,13 +121,19 @@ p {
 
 .leaflet-control-layers-toggle {
     background-image: url("/images/maplayers.png");
+    z-index: 1000;
+    max-width: 33px;
+    max-height: 33px;
     background-color: #A91101;
     padding: 5px;
-    border-radius: 10px;
+    border-radius: 20px;
 }
 
 .leaflet-touch .leaflet-control-layers-toggle {
+    z-index: 1000;
     background-image: url("/images/maplayers.png");
+    max-width: 33px;
+    max-height: 33px;
     background-color: #A91101;
     padding: 5px;
     border-radius: 10px;
@@ -134,15 +141,38 @@ p {
 
 .leaflet-control-layers-expanded {
     color: #ffe4ce;
+    z-index: 1000;
     background-color: #A91101;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
+    font-size: .8rem;
+    line-height: 2rem;
     font-style: normal;
     border-radius: 10px;
     padding: 5px;
-    z-index: 4000;
+    
 }
+
+/* base map layers */
+.laurel {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    width: 70px;
+    pointer-events: none;
+}
+
+/* .flat-laurel-slider {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    left: 30px;
+    bottom: 10px;
+    width: 300px;
+} */
 
 
 /* END of Styling the Leaflet Layer Control  */
@@ -175,7 +205,7 @@ blockquote {
     padding-right: 25pt;
     font-size: 1rem;
     background-color: #ffe4ce;
-    text-align: justify;
+    /* text-align: justify; */
     /* Need to add @media breaks to allow non-justify for smaller screens! */
 }
 
@@ -193,32 +223,41 @@ blockquote {
     z-index: 1000;
     display: block;
     position: absolute;
-    top: 10px;
-    left: 5px;
-    width: 143px;
-}
-
-/* base map layers */
-.laurel {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    width: 105px;
-    pointer-events: none;
-}
-
-.flat-laurel-slider {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    left: 30px;
-    bottom: 10px;
-    width: 300px;
+    top: 2px;
+    left: 2px;
+    width: 90px;
 }
 
 
+/* Leaflet popup overrides */
+.leaflet-popup-tip {
+    background: #0000;
+    color: #0000;
+  }
+
+.leaflet-popup-content-wrapper {
+    z-index: 5000;
+    background: #0009;
+    color: #ffe4ce;
+    border-radius: 29px;
+    max-width: 375px;
+    max-height: 375px;
+    overflow: auto;
+}
+
+.empire-extent-tooltip {
+    /* font-family: "Lato"; */
+    /* font-weight: bold; */
+    z-index: 5000;
+    color: #A91101;
+    border: 1px solid #A91101;
+    font-size: .8em;
+    border-radius: 30px;
+   
+    /* background-color: rgba(0, 61, 85, 0.308); */
+    /* filter: drop-shadow(0rem 0rem 0.1rem #000000); */
+    /* text-shadow: rgb(0, 0, 0) 0rem 0rem 2px; */
+  }
 
 /* .laurel-left-legend-button {
     z-index: 1000;
@@ -239,24 +278,8 @@ blockquote {
 } */
 
 
-.blue-tooltip {
-    font-family: "Grand Hotel";
-    font-style: italic;
-    border-radius: 20px;
-    color: #0033a0;
-    font-size: 2em;
-    background-color: #ffffff3b;
-    border: 2px solid #63666a48;
-    text-shadow: #ffffff 0rem 0rem 4px;
-}
 
-.leaflet-tooltip-left.blue-tooltip::before {
-    border-left-color: #63666a;
-}
 
-.leaflet-tooltip-right.blue-tooltip::before {
-    border-right-color: #63666a;
-}
 
 /* I'm calling this class "darkshadow" to avoid conflict with Bootstrap shadow class */
 .darkshadow {
@@ -270,20 +293,20 @@ blockquote {
 
 
 #page-title {
-    margin: auto;
     text-align: center;
-    z-index: 1;
+    z-index: 2;
     position: absolute;
-    top: 10px;
-    left: 50%;
-    transform: translate(-50%, 0%);
+    bottom: 45px;
+    margin-left: 20px;
+    transform: translate(-50% + 20px);
+    
 }
 
 
 
 
 #yearIndicator {
-    
+    z-index: 2;
     margin-left: auto;
     margin-right: auto;
     color: #ffffff;
@@ -291,7 +314,7 @@ blockquote {
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 2rem;
+    font-size: 1.1rem;
     text-shadow: #000000 0rem 0rem 1px,
         #000000 0rem 0rem 2px,
         #000000 0rem 0rem 3px,
@@ -304,10 +327,61 @@ blockquote {
 
 
 #titleHeader {
-    z-index: 1;
+    z-index: 2;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: .7rem;
+    text-shadow: #000000 0rem 0rem 1px,
+        #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 3px,
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 5px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 7px,
+        #000000 0rem 0rem 8px;
+}
+
+#eventOne {
+    z-index: 4;
+    color: black;
+    font-family: trajan-pro-3,
+        serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem;
+    padding-top: 5px;
+    text-shadow: #000000 0rem 0rem 0px;
+}
+
+#eventTwo {
+    z-index: 4;
+    color: black;
+    font-family: trajan-pro-3,
+        serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1rem;
+    padding-top: 20px;
+    text-shadow: #000000 0rem 0rem 0px;
+}
+
+/* END of styling of data from CombinedExtentLayers TopoJSON */
+
+
+
+/* START of Intructions Styling */
+#instructions {
+    z-index: 1000;
+    position: absolute;
+    bottom: 130px;
+    left: 28px;
+    width: 380px;
+    color: #ffffff;
+    font-family: 'Times New Roman', Times, serif,
+    serif;
     font-weight: 700;
     font-style: normal;
     font-size: 1rem;
@@ -321,44 +395,93 @@ blockquote {
         #000000 0rem 0rem 8px;
 }
 
-#eventOne {
-    z-index: 1000;
-    color: black;
-    font-family: trajan-pro-3,
-        serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1rem;
-    padding-top: 5px;
-    text-shadow: #000000 0rem 0rem 0px;
+.instruction-icon {
+    width: 38px;
+    border-radius: 12px;
 }
 
-#eventTwo {
-    z-index: 1000;
-    color: black;
-    font-family: trajan-pro-3,
-        serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1rem;
-    padding-top: 20px;
-    text-shadow: #000000 0rem 0rem 0px;
-}
+/* END of Intructions Styling */
+
 
 /* END of styling of data from CombinedExtentLayers TopoJSON */
+
+
+
+
+/* START of Legend Styling */
+
+#legend {
+    display: none;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 450px;
+    height: 600px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 5px;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 10pt;
+    /* Add styles to match Leaflet UI elements */
+    background: #fff9dfdc;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
+    /* border: 2px solid #A91101; */
+    border-radius: 15px;
+    overflow:scroll;
+    z-index: 1000; 
+}
+
+#legend h1 {
+    color: #ffffff;
+    font-family: trajan-pro-3,
+    serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-shadow: #000000 0rem 0rem 2px,
+    #000000 0rem 0rem 4px,
+    #000000 0rem 0rem 6px,
+    #000000 0rem 0rem 8px;
+}
+
+/* The laurels are broken with the current legend from the DARE website: https: //imperium.ahlfeldt.se/ */
+
+/* .flat-laurel-legend-top {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    width: 300px;
+}
+
+.flat-laurel-legend-bottom {
+    z-index: 1000;
+    display: block;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    width: 300px;
+} */
+
+/* END of Legend Styling */
 
 /* START of Rulers Panel Styling */
 
 #rulers-panel-button {
     position: absolute;
-    top: 243px;
-    left: 42px;
-    background-image: url('images/ruler_icon_off.png');
+    top: 140px;
+    left: 20px;
+    /* background-image: url('images/ruler_icon_off.svg'); */
+    /* Don't need background-image because the effect is done in JS */
     background-color: #A91101;
+    width: 40px;
+    height: 40px;
 
 
     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
-    border-radius: 15px;
+    border-radius: 10px;
     /* Draw it on top of all elements */
     z-index: 1000;
     /* Cursor change on hover -- doesn't work on touch screensn */
@@ -380,10 +503,10 @@ blockquote {
     width: fit-content;
     width: 40vw;
     height: 100vh;
-    padding-top: 25px;
-    padding-right: 25px;
-    padding-left: 25px;
-    padding-bottom: 35px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+    padding-bottom: 5px;
     align-content: center;
     text-align: center;
     /* Add styles to match Leaflet UI elements */
@@ -397,7 +520,7 @@ blockquote {
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1.3rem;
+    font-size: 1rem;
     text-shadow: #000000 0rem 0rem 2px,
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 6px,
@@ -408,18 +531,18 @@ blockquote {
     z-index: 1000;
     display: block;
     position: absolute;
-    left: 12px;
-    top: 233px;
-    height: 80px;
+    left: 3px;
+    top: 135px;
+    height: 50px;
 }
 
 .laurel-right-rulers-button {
     z-index: 1000;
     display: block;
     position: absolute;
-    left: 110px;
-    top: 233px;
-    height: 80px;
+    left: 60px;
+    top: 135px;
+    height: 50px;
 }
 
 .laurel-rulers-panel-top-left {
@@ -490,319 +613,15 @@ blockquote {
 
 /* END of Rulers Panel Styling */
 
-/* START of Intructions Styling */
-#instructions {
-    z-index: 1000;
-    position: absolute;
-    bottom: 130px;
-    left: 28px;
-    width: 380px;
-    color: #ffffff;
-    font-family: 'Times New Roman', Times, serif,
-    serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1rem;
-    text-shadow: #000000 0rem 0rem 1px,
-        #000000 0rem 0rem 2px,
-        #000000 0rem 0rem 3px,
-        #000000 0rem 0rem 4px,
-        #000000 0rem 0rem 5px,
-        #000000 0rem 0rem 6px,
-        #000000 0rem 0rem 7px,
-        #000000 0rem 0rem 8px;
-}
-
-.instruction-icon {
-    width: 38px;
-    border-radius: 12px;
-}
-
-/* END of Intructions Styling */
-
-/* START of Carousel Styling */
-#carousel-panel-button {
-    position: absolute;
-    top: 350px;
-    left: 42px;
-    background-image: url('images/carousel_icon_off.png');
-    background-color: #A91101;
-
-
-    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
-    border-radius: 15px;
-    /* Draw it on top of all elements */
-    z-index: 1000;
-    /* Cursor change on hover -- doesn't work on touch screensn */
-    cursor: pointer;
-}
-
-#carousel-panel-button:hover {
-    box-shadow: 0 0 12px rgb(255, 255, 255),
-        0 0 13px rgb(255, 255, 255),
-        0 0 14px rgb(255, 255, 255),
-        0 0 25px rgb(255, 255, 0);
-}
-
-#carouselPanel {
-    display: none;
-    position: absolute;
-    top: 200px;
-    bottom: 200px;
-left: 200px;
-right: 200px;
-
-    
-    max-width: auto;
-   
-    padding-top: 25px;
-    padding-right: 25px;
-    padding-left: 25px;
-    padding-bottom: 35px;
-    align-content: center;
-    text-align: center;
-    /* Add styles to match Leaflet UI elements */
-    background: #fff9dfbc;
-    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
-    /* border: 2px solid #A91101; */
-    border-radius: 15px;
-    z-index: 1000;
-    color: #ffffff;
-    font-family: trajan-pro-3,
-        serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.3rem;
-    text-shadow: #000000 0rem 0rem 2px,
-        #000000 0rem 0rem 4px,
-        #000000 0rem 0rem 6px,
-        #000000 0rem 0rem 8px;
-}
-
-.laurel-left-carousel-button {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    left: 12px;
-    top: 340px;
-    height: 80px;
-}
-
-.laurel-right-carousel-button {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    left: 110px;
-    top: 340px;
-    height: 80px;
-}
-
-.laurel-carousel-panel-top-left {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    top: 0px;
-    left: 0px;
-    width: 100px;
-
-}
-
-.laurel-carousel-panel-bottom-right {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    width: 100px;
-
-}
-
-#carouselIndicators {
-    z-index:1002;
-}
-
-
-
-/* END of Carousel Styling */
-
-/* END of styling of data from CombinedExtentLayers TopoJSON */
-
-
-
-
-
-/* START of Events Panel Styling */
-
-#events-panel-button {
-    position: absolute;
-    top: 243px;
-    right: 38px;
-    background-image: url('images/sundial_events_icon_off.png');
-    background-color: #A91101;
-    background: #A91101;
-    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
-    border-radius: 15px;
-    /* Draw it on top of all elements */
-    z-index: 1000;
-    /* Cursor change on hover -- doesn't work on touch screensn */
-    cursor: pointer;
-}
-
-#events-panel-button:hover {
-    box-shadow: 0 0 12px rgb(255, 255, 255),
-        0 0 13px rgb(255, 255, 255),
-        0 0 14px rgb(255, 255, 255),
-        0 0 25px rgb(255, 255, 0);
-}
-
-
-#events-panel {
-    display: none;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    width: fit-content;
-    width: 40vw;
-    height: 100vh;
-    padding-top: 25px;
-    padding-right: 25px;
-    padding-left: 25px;
-    padding-bottom: 35px;
-    /* Add styles to match Leaflet UI elements */
-    background: #fff9dfbc;
-    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
-    /* border: 2px solid #A91101; */
-    color: #ffffff;
-    font-family: trajan-pro-3,
-        serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.3rem;
-    text-shadow: #000000 0rem 0rem 2px,
-        #000000 0rem 0rem 4px,
-        #000000 0rem 0rem 6px,
-        #000000 0rem 0rem 8px;
-    /* border-radius: 15px; */
-    z-index: 1000;
-}
-
-.laurel-left-events-button {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    right: 110px;
-    top: 233px;
-    height: 80px;
-}
-
-.laurel-right-events-button {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    right: 12px;
-    top: 233px;
-    height: 80px;
-}
-
-
-/* END of Info Panel Styling */
-
-/* START of Legend Styling */
-
-#legend-button {
-    position: absolute;
-    top: 140px;
-    right: 38px;
-background-image: url('images/map_legend_icon_off.png');
-background-color: #A91101;
-    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
-    border-radius: 15px;
-    font-size: 30px;
-
-    /* Draw it on top of all elements */
-    z-index: 1000;
-    /* Cursor change on hover -- doesn't work on touch screensn */
-    cursor: pointer;
-}
-
-#legend-button:hover {
-    box-shadow: 0 0 12px rgb(255, 255, 255),
-        0 0 13px rgb(255, 255, 255),
-        0 0 14px rgb(255, 255, 255),
-        0 0 25px rgb(255, 255, 0);
-}
-
-#legend {
-    display: none;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 450px;
-    height: 600px;
-    padding-top: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 5px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 12pt;
-    /* Add styles to match Leaflet UI elements */
-    background: #fff9dfdc;
-    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
-    /* border: 2px solid #A91101; */
-    border-radius: 15px;
-    overflow:scroll;
-    z-index: 1000; 
-}
-
-#legend h1 {
-    color: #ffffff;
-    font-family: trajan-pro-3,
-    serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.5rem;
-    text-shadow: #000000 0rem 0rem 2px,
-    #000000 0rem 0rem 4px,
-    #000000 0rem 0rem 6px,
-    #000000 0rem 0rem 8px;
-}
-
-/* The laurels are broken with the current legend from the DARE website: https: //imperium.ahlfeldt.se/ */
-
-/* .flat-laurel-legend-top {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    right: 0px;
-    top: 0px;
-    width: 300px;
-}
-
-.flat-laurel-legend-bottom {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    width: 300px;
-} */
-
-/* END of Legend Styling */
-
-
-
 /* Footer / Info */
 #info-button {
     position: absolute;
-    top: 140px;
-    left: 42px;
-    background-image: url('images/ruler_icon_off.png');
-    background-color: #A91101;
-    /* font-family: trajan-pro-3, serif; */
+    top: 75px;
+    left: 20px;
+    width: 40px;
+    height: 40px;
     background: #A91101;
-    color: #fff9df;
-    /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
-    border-radius: 15px;
+    border-radius: 10px;
     z-index: 1000;
     /* Cursor change on hover -- doesn't work on touch screensn */
     cursor: pointer;
@@ -819,18 +638,18 @@ background-color: #A91101;
     z-index: 1000;
     display: block;
     position: absolute;
-    left: 12px;
-    top: 130px;
-    height: 80px;
+    left: 3px;
+    top: 70px;
+    height: 50px;
 }
 
 .laurel-right-info {
     z-index: 1000;
     display: block;
     position: absolute;
-    left: 110px;
-    top: 130px;
-    height: 80px;
+    left: 60px;
+    top: 70px;
+    height: 50px;
 }
 
 
@@ -840,7 +659,7 @@ background-color: #A91101;
     position: absolute;
     display: none;
     width: 100%;
-    height: 40vh;
+    height: 70vh;
     bottom: 0px;
     background: #fff9dfe2;
     box-shadow: 0 0 15px #00000080;
@@ -849,7 +668,7 @@ background-color: #A91101;
     /* If too much is included, enable scroll */
     overflow: scroll;
     font-family: 'Times New Roman', Times, serif;
-    font-size: 1.3rem;
+    font-size: .9rem;
 }
 
 #footer div {
@@ -862,7 +681,7 @@ background-color: #A91101;
     serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 2rem;
+    font-size: 1.2rem;
     text-shadow: #000000 0rem 0rem 1px,
     #000000 0rem 0rem 2px,
     #000000 0rem 0rem 3px,
@@ -920,4 +739,20 @@ background-color: #A91101;
     font-size: 1.5rem;
     padding-left: 10px;
     padding-right: 10px
+}
+
+/* ****************************************************************************************** */
+/* ****************************************************************************************** */
+/* ****************************************************************************************** */
+
+/* Begin Desktop styling here */
+@media only screen and (min-width: 768px) {
+
+    body {
+        font-family: map-roman-normal,
+            serif;
+        font-weight: 400;
+        font-style: normal;
+        background-color: #6e6e6e;
+    }
 }
