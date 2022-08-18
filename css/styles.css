@@ -120,7 +120,7 @@ p {
 
 
 .leaflet-control-layers-toggle {
-    background-image: url("/images/maplayers.png");
+    background-image: url("images/maplayers.png");
     z-index: 1000;
     max-width: 33px;
     max-height: 33px;
@@ -131,7 +131,7 @@ p {
 
 .leaflet-touch .leaflet-control-layers-toggle {
     z-index: 1000;
-    background-image: url("/images/maplayers.png");
+    background-image: url("images/maplayers.png");
     max-width: 33px;
     max-height: 33px;
     background-color: #A91101;
