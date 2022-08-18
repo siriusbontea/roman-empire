@@ -3,99 +3,27 @@
 
 #yearSlider {
     z-index: 1000;
-    /* position: absolute;
-    bottom: 80px;
-    left: 17px; */
     width: 300px;
-    
-    background: 0000;
+    background: transparent;
     border-radius: 30px;
     color: whitesmoke;
-}
+    /* position: relative; */
+    
+ 
+      }
+
+#slider-div {
+    margin-left: calc(50% + 20px);
+    transform: translateX(-50%);
+    bottom: -10px;
+    }
 
 #yearSlider:hover {
     box-shadow: 0 0 15px rgb(255, 255, 255);
 }
 
-#longName {
-    z-index: 1000;
-    position: absolute;
-    bottom: 48px;
-    left: 28px;
-    color: #ffffff;
-    font-family: trajan-pro-3,
-        serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.5rem;
-    text-shadow: #000000 0rem 0rem 1px,
-        #000000 0rem 0rem 2px,
-        #000000 0rem 0rem 3px,
-        #000000 0rem 0rem 4px,
-        #000000 0rem 0rem 5px,
-        #000000 0rem 0rem 6px,
-        #000000 0rem 0rem 7px,
-        #000000 0rem 0rem 8px;
-}
-
-#slider-note {
-   z-index: 1000;
-   position: absolute;
-   bottom: 45px;
-   left: 28px;
-   color: #ffffff;
-   font-family: trajan-pro-3,
-   serif;
-   font-weight: 700;
-   font-style: normal;
-   font-size: 1.5rem;
-   text-shadow: #000000 0rem 0rem 1px,
-   #000000 0rem 0rem 2px,
-   #000000 0rem 0rem 3px,
-   #000000 0rem 0rem 4px,
-   #000000 0rem 0rem 5px,
-   #000000 0rem 0rem 6px,
-   #000000 0rem 0rem 7px,
-   #000000 0rem 0rem 8px;
-}
 
 
-
-/* .form-range:focus::-webkit-slider-thumb {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem #fff9dfa0;
-}
-
-.form-range:focus::-moz-range-thumb {
-    box-shadow: 0 0 0 1px #fff, 0 0 0 0.25rem #fff9dfa0;
-}  */
-
-/* .form-range::-webkit-slider-thumb {
-    width: 2rem;
-    height: 2rem;
-
-    background-color: #A91101;
-
-}
-
-
-.form-range::-moz-range-thumb {
-    width: 1.2rem;
-    height: 1.8rem;
-    background-color: #A91101;
-}
-
-.form-range::-moz-range-thumb:active {
-    background-color: #ff1900;
-}
-
-.form-range::-moz-range-track {
-
-    height: 1rem;
-
-    background-color: #3a4046;
-
-}
-*/
 
 /* Chrome Safari */
 input[type=range] {

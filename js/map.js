@@ -42,7 +42,7 @@ map.bounds = [],
         [-5, -20], // Southwest
         [80, 110] // Northeast
     ]);
-map.attributionControl.setPrefix(""); // hide attrinution and citation - place it somewhere else to improve the Fung Shui of the site.
+map.attributionControl.setPrefix(""); // hide attribution and citation - place it somewhere else to improve the Fung Shui of the site.
 
 
 var baseLayers = {
