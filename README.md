@@ -1,5 +1,5 @@
-#### Release Version 1 
-updated 20 June 2022
+#### Release Version 2 
+updated 18 August 2022
 
 <img src="svg/RomanAquila_AdobeStock_229200876-gold.svg" style=" margin:auto ; width:175px ; text-align:middle; margin-left:50%; margin-right:50%; margin-top:-10px; margin-bottom:-10px; ">
 
@@ -84,7 +84,7 @@ Memory:  65204MiB
 
 ##### Datasets:
 
-- Roman Roads [data used in this project](data/RomanRoadsWallsIntersect_v4.geojson) is derived primarily from the [Digital Atlas of Roman and Medieval Civilization Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU) but combined with data from [Mercator-E Project](https://fabricadesites.fcsh.unl.pt/mercator-e/) to add to the Hispania region, and [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c) to add to some of the missing segments in the Asia Minor region. The dataset from [The Roads of Roman Britain](https://roadsofromanbritain.org/index.html) was not incorporated, not because it was lacking — rather the opposite as it had more detail compared to all of the other datasets. If interested in Roman Roads in Britannia specifically, be sure to check out their highly detailed research.
+- Roman Roads [data used in this project](data/RomanRoadsWallsIntersect_v6.geojson) is derived primarily from the [Digital Atlas of Roman and Medieval Civilization Dataverse](https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU) but combined with data from [Mercator-E Project](https://fabricadesites.fcsh.unl.pt/mercator-e/) to add to the Hispania region, and [VOL. 4 THE ROADS Fasc. 4.1 NOTES ON THE ITINERARIA](http://library.biaa.ac.uk/cgi-bin/koha/opac-retrieve-file.pl?id=5417eb858dee0a9bdd06f2d8671bbc0c) to add to some of the missing segments in the Asia Minor region. The dataset from [The Roads of Roman Britain](https://roadsofromanbritain.org/index.html) was not incorporated, not because it was lacking — rather the opposite as it had more detail compared to all of the other datasets. If interested in Roman Roads in Britannia specifically, be sure to check out their highly detailed research.
 
 - [Project MERCURY-MINERVA-SIMREC (Computational Modeling in Roman Studies)](https://projectmercury.eu/datasets/)
 
