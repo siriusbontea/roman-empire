@@ -131,7 +131,7 @@ p {
 
 .leaflet-touch .leaflet-control-layers-toggle {
     z-index: 1000;
-    background-image: url("/images/maplayers.svg");
+    background-image: url("https://siriusbontea.github.io/roman-empire/images/maplayers.svg");
     max-width: 33px;
     max-height: 33px;
     background-color: #A91101;
