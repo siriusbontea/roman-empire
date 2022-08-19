@@ -92,7 +92,7 @@ const d = {
         'empireExtent': {
             d: 'data/CombinedExtentLayers_v6.topojson',
             f: 'CombinedExtentLayers_v6',
-            colors: ['#000000', '#222219', '#444433', '#66664D', '#898966', '#ABAB80', '#CDCD9A', '#F0F0B4', '#E7D49D', '#DEB887', '#D59C70', '#CC805A', '#C36444', '#BA482D', '#B12C17', '#A91101'],
+            colors: ['#05006f', '#290069', '#3b0062', '#48005c', '#540055', '#5e004f', '#670049', '#6f0042', '#77003c', '#7f0035', '#86002f', '#8d0028', '#940220', '#9b0718', '#a20c0e', '#A91101'],
         },
     }
 }
@@ -385,7 +385,7 @@ function sequenceUI(empireExtent) {
         romeRulers.innerHTML = `<span>${rulersfull}</span>`
 
         document.getElementById("romeRulersImage");
-        romeRulersImage.innerHTML = `<span><img src="${rulersimage}" class="romeRulersImageStyle"></span>`
+        romeRulersImage.innerHTML = `<span><img src="${rulersimage}"></span>`
 
         const empireContent = document.getElementById("empire-content");
         empireContent.innerHTML = `<span>${firstevent}</span>

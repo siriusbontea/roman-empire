@@ -120,7 +120,7 @@ p {
 
 
 .leaflet-control-layers-toggle {
-    background-image: url("images/maplayers.png");
+    background-image: url("/images/maplayers.svg");
     z-index: 1000;
     max-width: 33px;
     max-height: 33px;
@@ -131,7 +131,7 @@ p {
 
 .leaflet-touch .leaflet-control-layers-toggle {
     z-index: 1000;
-    background-image: url("images/maplayers.png");
+    background-image: url("/images/maplayers.svg");
     max-width: 33px;
     max-height: 33px;
     background-color: #A91101;
@@ -498,11 +498,10 @@ blockquote {
 #rulersPanel {
     display: none;
     position: absolute;
-    top: 0px;
+    top: 30%;
     right: 0px;
-    width: fit-content;
-    width: 40vw;
-    height: 100vh;
+    width: 300px;
+    height: 300px;
     padding-top: 5px;
     padding-right: 5px;
     padding-left: 5px;
@@ -510,7 +509,7 @@ blockquote {
     align-content: center;
     text-align: center;
     /* Add styles to match Leaflet UI elements */
-    background: #fff9dfbc;
+    background: #fff9df88;
     /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
     /* border: 2px solid #A91101; */
     /* border-radius: 15px; */
@@ -520,7 +519,7 @@ blockquote {
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1rem;
+    font-size: .8rem;
     text-shadow: #000000 0rem 0rem 2px,
         #000000 0rem 0rem 4px,
         #000000 0rem 0rem 6px,
@@ -594,7 +593,7 @@ blockquote {
 }
 
 #romeRulersImage {
-    z-index: 1000;
+    z-index: 4;
     font-family: trajan-pro-3,
         serif;
     font-weight: 700;
@@ -607,6 +606,7 @@ blockquote {
 }
 
 .romeRulersImageStyle {
+    z-index: 4;
     border-radius: 30px;
     max-width: 350px;
 }
