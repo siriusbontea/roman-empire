@@ -120,7 +120,7 @@ p {
 
 
 .leaflet-control-layers-toggle {
-    background-image: url("/images/maplayers.svg");
+    background-image: url("https://siriusbontea.github.io/roman-empire/images/maplayers.svg");
     z-index: 1000;
     max-width: 33px;
     max-height: 33px;
