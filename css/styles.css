@@ -830,7 +830,7 @@ blockquote {
         padding-left: 25pt;
     padding-right: 25pt;
     font-size: 1rem;
-        text-align: justify;
+        /* text-align: justify; */
         /* Need to add @media breaks to allow non-justify for smaller screens! */
     }
     
