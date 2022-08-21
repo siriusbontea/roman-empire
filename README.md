@@ -1,5 +1,5 @@
 #### Release Version 2 
-updated 18 August 2022
+updated 20 August 2022
 
 <img src="svg/RomanAquila_AdobeStock_229200876-gold.svg" style=" margin:auto ; width:175px ; text-align:middle; margin-left:50%; margin-right:50%; margin-top:-10px; margin-bottom:-10px; ">
 
@@ -23,7 +23,7 @@ CPU: 11th Gen Intel i7-11800H (16) @ 2.304GHz
 GPU: GeForce RTX 3070 Mobile / 8192MiB
 Memory:  65204MiB
 ```
-- [QGIS 3.24.3-Tisler](https://www.qgis.org/en/site/forusers/alldownloads.html?highlight=FreeBSD#freebsd) performed most of the heavy lifting behind the scenes with vector layer creation, editing, analysis, and processing of data prior to use for web mapping. Georeferencing of raster data, such as scans of hand-drawn maps, will be done with QGIS.
+- [QGIS 3.26.2- Buenos Aires](https://www.qgis.org/en/site/forusers/alldownloads.html?highlight=FreeBSD#freebsd) performed most of the heavy lifting behind the scenes with vector layer creation, editing, analysis, and processing of data prior to use for web mapping. Georeferencing of raster data, such as scans of hand-drawn maps, will be done with QGIS.
 
 - VS Code - code editing and interaction with GitHub
 - GIMP - General editing and processing of raster images 

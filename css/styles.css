@@ -49,7 +49,7 @@ body {
         serif;
     font-weight: 400;
     font-style: 10px;
-    background-color: #6e6e6e;
+    background-color: #000000;
 
 }
 
@@ -62,17 +62,22 @@ p {
     font-size: 1rem;
     line-height: 1.4rem;
     font-weight: 400;
-    /* border-radius: 40px; */
+    z-index: 1;
 }
 
 .red-bold {
-    font-style: bold;
+    font-weight: 700;
     color: #A91101;
+}
+
+.bold-underline {
+    font-weight: 700;
+    text-decoration: underline;
 }
 
 .indented {
     text-indent: 20pt;
-    text-align: justify;
+    text-align: left;
     /* Need to add @media breaks to allow non-justify for smaller screens! */
 }
 
@@ -81,7 +86,7 @@ p {
     margin-left: auto;
     margin-right: auto;
     text-align: center;
-    width: auto;
+    /* width: auto; */
 }
 
 .hide {
@@ -96,26 +101,31 @@ p {
 /* START of Styling the Leaflet Layer Control  */
 .leaflet-top .leaflet-control {
     margin-top: 14px;
+    z-index: 5;
 }
 
 .leaflet-bottom .leaflet-control {
     margin-bottom: 5px;
+    z-index: 5;
 }
 
 .leaflet-left .leaflet-control {
     margin-left: 5px;
+    z-index: 5;
 }
 
 .leaflet-right .leaflet-control {
     margin-right: 20px;
+    z-index: 5;
 }
 
 
 .leaflet-control-layers {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.6);
-    background: #fff;
-    padding: 1px;
+    background: rgb(0, 0, 0);
+    padding: 1.5px;
     border-radius: 12px;
+    z-index: 5;
 }
 
 
@@ -201,16 +211,16 @@ p {
 
 
 blockquote {
-    padding-left: 25pt;
-    padding-right: 25pt;
-    font-size: 1rem;
+    padding-left: 15pt;
+    padding-right: 15pt;
+    font-size: .8rem;
     background-color: #ffe4ce;
-    /* text-align: justify; */
+    text-align: left;
     /* Need to add @media breaks to allow non-justify for smaller screens! */
 }
 
 #map {
-    z-index: 1;
+    z-index: 2;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -231,6 +241,7 @@ blockquote {
 
 /* Leaflet popup overrides */
 .leaflet-popup-tip {
+    z-index: 5000;
     background: #0000;
     color: #0000;
   }
@@ -259,23 +270,13 @@ blockquote {
     /* text-shadow: rgb(0, 0, 0) 0rem 0rem 2px; */
   }
 
-/* .laurel-left-legend-button {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    right: 110px;
-    top: 130px;
-    height: 80px;
+.laurel-left-legend-button {
+      display: none;
 }
 
 .laurel-right-legend-button {
-    z-index: 1000;
-    display: block;
-    position: absolute;
-    right: 12px;
-    top: 130px;
-    height: 80px;
-} */
+        display: none;
+   }
 
 
 
@@ -299,13 +300,27 @@ blockquote {
     bottom: 45px;
     margin-left: 20px;
     transform: translate(-50% + 20px);
-    
+    pointer-events: none;
+}
+
+#sundialIcon {
+    z-index: 2;
+    background-color: #ffe4ce;
+    position: absolute;
+    padding: 3px;
+    bottom: 5px;
+    left: 5px;
+    width: 40px;
+    height: 40px;
+    background: #A91101;
+    border-radius: 15px;
+    border-color: #000000;
+    border-style: outset;
 }
 
 
-
-
 #yearIndicator {
+    display: none;
     z-index: 2;
     margin-left: auto;
     margin-right: auto;
@@ -325,8 +340,30 @@ blockquote {
         #000000 0rem 0rem 8px;
 }
 
+#yearIndicatorLargeScreen {
+    display: block;
+    z-index: 10;
+    position: absolute;
+    bottom: 30px;
+    left: 50px;
+    color: #ffffff;
+    font-family: trajan-pro-3,
+        serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.1rem;
+    text-shadow: #000000 0rem 0rem 1px,
+        #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 3px,
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 5px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 7px,
+        #000000 0rem 0rem 8px;
+}
 
 #titleHeader {
+    display: none;
     z-index: 2;
     color: #ffffff;
     font-family: trajan-pro-3,
@@ -351,7 +388,7 @@ blockquote {
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1rem;
+    font-size: .80rem;
     padding-top: 5px;
     text-shadow: #000000 0rem 0rem 0px;
 }
@@ -363,8 +400,8 @@ blockquote {
         serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1rem;
-    padding-top: 20px;
+    font-size: .80rem;
+    padding-top: 15px;
     text-shadow: #000000 0rem 0rem 0px;
 }
 
@@ -412,37 +449,7 @@ blockquote {
 
 #legend {
     display: none;
-    position: absolute;
-    bottom: 10px;
-    right: 10px;
-    width: 450px;
-    height: 600px;
-    padding-top: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 5px;
-    font-family: 'Times New Roman', Times, serif;
-    font-size: 10pt;
-    /* Add styles to match Leaflet UI elements */
-    background: #fff9dfdc;
-    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
-    /* border: 2px solid #A91101; */
-    border-radius: 15px;
-    overflow:scroll;
-    z-index: 1000; 
-}
-
-#legend h1 {
-    color: #ffffff;
-    font-family: trajan-pro-3,
-    serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1.5rem;
-    text-shadow: #000000 0rem 0rem 2px,
-    #000000 0rem 0rem 4px,
-    #000000 0rem 0rem 6px,
-    #000000 0rem 0rem 8px;
+  
 }
 
 /* The laurels are broken with the current legend from the DARE website: https: //imperium.ahlfeldt.se/ */
@@ -470,20 +477,21 @@ blockquote {
 /* START of Rulers Panel Styling */
 
 #rulers-panel-button {
+    display: none;
     position: absolute;
-    top: 140px;
-    left: 20px;
+    /* top: 140px; */
+    /* left: 20px; */
     /* background-image: url('images/ruler_icon_off.svg'); */
     /* Don't need background-image because the effect is done in JS */
-    background-color: #A91101;
-    width: 40px;
-    height: 40px;
+    background-color: #fff9dfa0;
+    /* width: 40px; */
+    /* height: 40px; */
 
 
     /* box-shadow: 0 0 15px rgba(0, 0, 0, 0.548); */
     border-radius: 10px;
     /* Draw it on top of all elements */
-    z-index: 1000;
+    z-index: 3;
     /* Cursor change on hover -- doesn't work on touch screensn */
     cursor: pointer;
 }
@@ -497,51 +505,25 @@ blockquote {
 
 #rulersPanel {
     display: none;
-    position: absolute;
-    top: 30%;
-    right: 0px;
-    width: 300px;
-    height: 300px;
-    padding-top: 5px;
-    padding-right: 5px;
-    padding-left: 5px;
-    padding-bottom: 5px;
-    align-content: center;
-    text-align: center;
-    /* Add styles to match Leaflet UI elements */
-    background: #fff9df88;
-    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
-    /* border: 2px solid #A91101; */
-    /* border-radius: 15px; */
-    z-index: 2000;
-    color: #ffffff;
-    font-family: trajan-pro-3,
-        serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: .8rem;
-    text-shadow: #000000 0rem 0rem 2px,
-        #000000 0rem 0rem 4px,
-        #000000 0rem 0rem 6px,
-        #000000 0rem 0rem 8px;
+    
 }
 
 .laurel-left-rulers-button {
     z-index: 1000;
-    display: block;
+    display: none;
     position: absolute;
-    left: 3px;
-    top: 135px;
-    height: 50px;
+    /* left: 3px; */
+    /* top: 135px; */
+    /* height: 50px; */
 }
 
 .laurel-right-rulers-button {
     z-index: 1000;
-    display: block;
+    display: none;
     position: absolute;
-    left: 60px;
-    top: 135px;
-    height: 50px;
+    /* left: 60px; */
+    /* top: 135px; */
+    /* height: 50px; */
 }
 
 .laurel-rulers-panel-top-left {
@@ -616,13 +598,14 @@ blockquote {
 /* Footer / Info */
 #info-button {
     position: absolute;
-    top: 75px;
-    left: 20px;
+    top: 90px;
+    right: 20px;
     width: 40px;
     height: 40px;
     background: #A91101;
     border-radius: 10px;
     z-index: 1000;
+    padding: 2px;
     /* Cursor change on hover -- doesn't work on touch screensn */
     cursor: pointer;
 }
@@ -635,20 +618,20 @@ blockquote {
 }
 
 .laurel-left-info {
-    z-index: 1000;
+    z-index: 2;
     display: block;
     position: absolute;
-    left: 3px;
-    top: 70px;
+    right: 60px;
+    top: 88px;
     height: 50px;
 }
 
 .laurel-right-info {
-    z-index: 1000;
+    z-index: 2;
     display: block;
     position: absolute;
-    left: 60px;
-    top: 70px;
+    right: 3px;
+    top: 88px;
     height: 50px;
 }
 
@@ -661,7 +644,7 @@ blockquote {
     width: 100%;
     height: 70vh;
     bottom: 0px;
-    background: #fff9dfe2;
+    background: #fff9dff3;
     box-shadow: 0 0 15px #00000080;
     padding: 0px;
     z-index: 1001;
@@ -681,7 +664,24 @@ blockquote {
     serif;
     font-weight: 700;
     font-style: normal;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
+    text-shadow: #000000 0rem 0rem 1px,
+    #000000 0rem 0rem 2px,
+    #000000 0rem 0rem 3px,
+    #000000 0rem 0rem 4px,
+    #000000 0rem 0rem 5px,
+    #000000 0rem 0rem 6px,
+    #000000 0rem 0rem 7px,
+    #000000 0rem 0rem 8px;
+}
+
+#footer h2 {
+    color: #ffffff;
+    font-family: trajan-pro-3,
+    serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 0.9rem;
     text-shadow: #000000 0rem 0rem 1px,
     #000000 0rem 0rem 2px,
     #000000 0rem 0rem 3px,
@@ -710,29 +710,32 @@ blockquote {
 }
 
 .footer-img {
-    position: absolute;
+    position: relative;
     top: 10px;
     right: 0px;
-    margin-right: 25px;
-    max-width: 23vw;
+    max-width: 50vw;
     max-height: 150px;
     
 }
 
+.static-maps {
+    width: 100%;
+}
+
 .footer75left {
-    position: absolute;
+    position: relative;
     left: 0;
-    margin: 25px;
-    max-width: 72vw;
+    margin: 0px;
+    max-width: 100vw;
 }
 
 .footer25right {
-    position: absolute;
-    right: 0;
-    top: 0;
+    position: relative;
+
+  
     margin-right: 10px;
-    margin-top: 160px;
-    max-width: 23vw;
+    margin-top: 50px;
+    max-width: 100vw;
 }
 
 .social-font {
@@ -746,7 +749,7 @@ blockquote {
 /* ****************************************************************************************** */
 
 /* Begin Desktop styling here */
-@media only screen and (min-width: 768px) {
+@media only screen and (min-width: 767px) and (min-height: 767px) {
 
     body {
         font-family: map-roman-normal,
@@ -755,4 +758,410 @@ blockquote {
         font-style: normal;
         background-color: #6e6e6e;
     }
+    p {
+        margin: auto;
+    }
+    
+    .leaflet-container {
+        font-family: serif;
+        font-size: 1rem;
+        line-height: 1.4rem;
+        font-weight: 400;
+        /* border-radius: 40px; */
+    }
+    
+    .red-bold {
+        font-style: bold;
+        color: #A91101;
+    }
+    
+    .indented {
+        text-indent: 20pt;
+        text-align: justify;
+        /* Need to add @media breaks to allow non-justify for smaller screens! */
+    }
+    
+    
+    
+    /* START of Styling the Leaflet Layer Control  */
+    .leaflet-top .leaflet-control {
+        margin-top: 21px;
+    }
+    
+    .leaflet-bottom .leaflet-control {
+        margin-bottom: 5px;
+    }
+    
+    .leaflet-left .leaflet-control {
+        margin-left: 5px;
+    }
+    
+    .leaflet-right .leaflet-control {
+        margin-right: 29px;
+    }
+    
+    
+    
+    .leaflet-control-layers-toggle {
+          max-width: 43px;
+        max-height: 43px;
+       }
+    
+    .leaflet-touch .leaflet-control-layers-toggle {
+
+   
+        max-width: 43px;
+        max-height: 43px;
+    
+    }
+    
+    .leaflet-control-layers-expanded {
+             font-size: 1rem;
+        }
+    
+    /* base map layers */
+    .laurel {
+           width: 100px;
+        
+    }
+    
+       
+    blockquote {
+        padding-left: 25pt;
+    padding-right: 25pt;
+    font-size: 1rem;
+        text-align: justify;
+        /* Need to add @media breaks to allow non-justify for smaller screens! */
+    }
+    
+    .aquila {
+       top: 5px;
+        left: 5px;
+        width: 150px;
+    }
+    
+    
+    /* Leaflet popup overrides */
+    .leaflet-popup-tip {
+        background: #0000;
+        color: #0000;
+      }
+    
+    .leaflet-popup-content-wrapper {
+        max-width: 500px;
+        max-height: 800px;
+    }
+    
+    .empire-extent-tooltip {
+         font-size: 1rem;
+        border-radius: 30px;
+    }
+   
+    /* START of styling of data from CombinedExtentLayers TopoJSON */
+    
+    
+    
+    #page-title {
+        top: 10px;
+        text-align: center;
+    z-index: 2;
+    position: absolute;
+    bottom: 100px;
+        margin-left: 50%;
+        transform: translate(-50%);
+        
+    }
+    
+    #yearIndicatorLargeScreen {
+        display: block;
+        left: 310px;
+        bottom: 40px;
+    }
+    
+
+        
+    #yearIndicator {
+        display: block;
+        font-size: 2rem;
+
+         }
+    
+        
+    #titleHeader {
+        display: block;
+        font-size: 1.1rem;
+        
+    }
+    
+    #sundialIcon {
+      left: 265px;
+    }
+
+   
+    /* START of Rulers Panel Styling */
+    
+    
+    
+   /* The rulersPanel is actually the panel for the Key Events... Will need to fix names for consistency */
+    #rulersPanel {
+        display: block;
+        position: absolute;
+    bottom: 5px;
+    left: 5px;
+    width: 260px;
+    height: 440px;
+    padding-top: 5px;
+    padding-right: 5px;
+    padding-left: 5px;
+     align-content: center;
+    text-align: center;
+    /* Add styles to match Leaflet UI elements */
+    background: #fff9dfb1;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
+    border: .5px solid #A91101;
+    border-radius: 15px;
+    z-index: 3;
+    color: #ffffff;
+    font-family: trajan-pro-3,
+        serif;
+    font-weight: 700;
+    font-style: normal;
+    font-size: 1.5rem;
+    text-shadow: #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 8px;
+        
+    }
+    
+    #rulers-panel-button {
+        z-index: 5;
+        display: block;
+        bottom: 15px;
+        left: 30px;
+        width: 50px;
+        height: 50px;
+       }
+
+    .laurel-left-rulers-button {
+        display: block;
+        left: 3px;
+        bottom: 3px;
+        height: 75px;
+    }
+    
+    .laurel-right-rulers-button {
+        display: block;
+        left: 79px;
+        bottom: 3px;
+        height: 75px;
+    }
+    
+   
+    
+    /* END of Rulers Panel Styling */
+    
+    /* Footer / Info */
+    #info-button {
+        left: auto;
+        top: 120px;
+        right: 28px;
+        width: 50px;
+        height: 50px;    
+    }
+    
+    #info-button:hover {
+        box-shadow: 0 0 12px rgb(255, 255, 255),
+            0 0 13px rgb(255, 255, 255),
+            0 0 14px rgb(255, 255, 255),
+            0 0 25px rgb(255, 255, 0);
+    }
+    
+    .laurel-left-info {
+        left: auto;
+        right: 78px;
+        top: 108px;
+        height: 75px;
+    }
+    
+    .laurel-right-info {
+        left: auto;
+        right: 3px;
+        top: 108px;
+        height: 75px;
+    }
+    
+    
+/* Legend Styling */
+
+
+    #legendPanel {
+        z-index: 4; 
+        display: block;
+        position: absolute;
+        bottom: 5px;
+        right: 5px;
+        width: 250px;
+        height: 545px;
+        padding-top: 5px;
+        padding-right: 5px;
+        padding-left: 10px;
+        padding-bottom: 5px;
+        line-height: 139%;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 10pt;
+        /* Add styles to match Leaflet UI elements */
+    background: #fff9dfce;
+    /* box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4); */
+    border: .5px solid #A91101;
+    border-radius: 15px;
+      
+        /* overflow:scroll; */
+     
+    }
+    
+    #legendPanel h1 {
+        color: #ffffff;
+        font-family: trajan-pro-3,
+        serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 1.5rem;
+        text-shadow: #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 8px;
+    }
+
+#legend-button {
+    z-index: 5;
+    display: block;
+    position:absolute;
+    right: 27px;
+    bottom: 15px;
+    height: 75px;
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;   
+    background-color: #fff9dfa0; 
+     /* Cursor change on hover -- doesn't work on touch screens */
+     cursor: pointer;
+}
+
+
+#legend-button:hover {
+    box-shadow: 0 0 12px rgb(255, 255, 255),
+        0 0 13px rgb(255, 255, 255),
+        0 0 14px rgb(255, 255, 255),
+        0 0 25px rgb(255, 255, 0);
+}
+
+.laurel-left-legend-button {
+    z-index: 5;
+    display: block;
+    position: absolute;
+    right: 75px;
+    bottom: 3px;
+    height: 75px;
+}
+
+.laurel-right-legend-button {
+    z-index: 5;
+    display: block;
+    position: absolute;
+    right: 3px;
+    bottom: 3px;
+    height: 75px;
+}
+    
+    /* This section below controls the style for the info section on the bottom */
+    #footer {
+        position: absolute;
+        display: none;
+        width: 100%;
+        height: 70vh;
+        bottom: 0px;
+        background: #fff9df;
+        box-shadow: 0 0 15px #00000080;
+        padding-left: 7%;
+        padding-right: 7%;
+        z-index: 1001;
+        /* If too much is included, enable scroll */
+        overflow: scroll;
+        font-family: 'Times New Roman', Times, serif;
+        font-size: 1.1rem;
+    }
+    
+    #footer div {
+        padding: 10px;
+    }
+    
+    #footer h1 {
+        color: #ffffff;
+        font-family: trajan-pro-3,
+        serif;
+        font-weight: 700;
+        font-style: normal;
+        font-size: 1.8rem;
+        text-shadow: #000000 0rem 0rem 1px,
+        #000000 0rem 0rem 2px,
+        #000000 0rem 0rem 3px,
+        #000000 0rem 0rem 4px,
+        #000000 0rem 0rem 5px,
+        #000000 0rem 0rem 6px,
+        #000000 0rem 0rem 7px,
+        #000000 0rem 0rem 8px;
+    }
+    
+    #footer a {
+        color: #000000;
+        text-decoration: 0.1px underline dotted #6e6e6e;
+    }
+    
+    #footer a:hover {
+        text-decoration: underline;
+        color: #9f0000;
+        filter: drop-shadow(0rem 0rem 0.4rem #000000);
+    }
+    
+    #social a:hover {
+        text-decoration: underline;
+        color: #ffff00;
+        filter: drop-shadow(0rem 0rem 0.4rem #000000);
+    }
+    
+    .footer-img {
+      
+        max-height: 150px;
+    }
+    
+    .static-maps {
+        width: 80%;
+       margin-left: 10%;
+       margin-right: 10%;
+    }
+
+    .footer75left {
+        position: absolute;
+        left: 0;
+        margin: 55px;
+        max-width: 72vw;
+    }
+    
+    .footer25right {
+        position: absolute;
+        right: 0;
+        top: 0;
+        margin-right: 10px;
+        margin-top: 160px;
+        max-width: 23vw;
+    }
+    
+    .social-font {
+        font-size: 1.5rem;
+        padding-left: 10px;
+        padding-right: 10px
+    }
+    
+
 }

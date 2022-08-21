@@ -75,23 +75,36 @@
 
 
         <div id="footer">
-            <div class="footer75left">
+            <div>
                 <h1 class="center">Infrastructure of the Roman Empire</h1>
-                <h3>Project Notes:
-                </h3>
+                <hr>
+                <h2>Project Notes:
+                </h2>
                 <ul>
                     <li>
-                        This project provides an interactive mapping visualisation of Roman territorial expansion from 500 B.C. to A.D. 200.
-                        The primary focus is on Roman roads as it correlates to the growth of the empire. The Roman road network directly
-                        contributed to commerce, ease of travel, and enabled rapid movement of Roman armies and logistical resupply.
+                        This project provides an interactive mapping visualisation of Roman territorial expansion from
+                        500 B.C. to A.D. 200.
+                        The primary focus is on Roman roads as it correlates to the growth of the empire. The Roman road
+                        network directly
+                        contributed to commerce, ease of travel, and enabled rapid movement of Roman armies and
+                        logistical resupply.
                     </li>
                     <li>
-                        Why Roman roads anyway? They're longer-lasting than modern roads! Some of these ancient roads didn't see much
-                        degradation until tanks rolled over them during World War 2, but even so, the roads were still in decent shape after
+                        Why Roman roads anyway? They're longer-lasting than modern roads! Some of these ancient roads
+                        didn't see much
+                        degradation until tanks rolled over them during World War 2, but even so, the roads were still
+                        in decent shape after
                         the
-                        fact. Furthermore, Roman roads were marvels in engineering in terms of placement and would give the modern surveyor
+                        fact. Furthermore, Roman roads were marvels in engineering in terms of placement and would give
+                        the modern surveyor
                         the
-                        run for their money if there was a contest of who could make a straighter road far over the horizon.
+                        run for their money if there was a contest of who could make a straighter road far over the
+                        horizon.
+                    <li>
+                        Credit for the primary basemap depicting the Roman road network and the corresponding legend
+                        goes to Digital Atlas of the Roman Empire (DARE) project at the <a
+                            ref="https://dh.gu.se/">University of Gothenburg, Sweden</a>.
+                    </li>
                     </li>
                     <li>This webpage was built to meet requirements for Module 10 (Final Projects) of
                         the <a href="https://newmapsplus.github.io/map673/syllabus/">MAP 673: Programming For Web
@@ -99,15 +112,11 @@
                         course at the
                         <a href="https://newmapsplus.as.uky.edu/">University of Kentucky</a>.
                     </li>
-                    
+
                 </ul>
-                <!-- <section id="legend"> -->
-                    <!-- <img class="flat-laurel-legend-top" src="svg/FlatLaurel_AdobeStock_222827192.svg">
-                        <img class="flat-laurel-legend-bottom" src="svg/FlatLaurel_AdobeStock_222827192.svg"> -->
-            
-            
-            
-                    <!-- 
+                <hr>
+
+             <!-- 
               ┌────────────────────────────────────────────────────────────────┐
               │ Legend below is shamelessly lifted (with slight modifications) │
               │ from the Digital Atlas of the Roman Empire (DARE) website at:  │
@@ -123,644 +132,857 @@
               │                                                                │
               └────────────────────────────────────────────────────────────────┘
              -->
-            
-            
-                    <!-- </button> -->
-                    <h1>Legend</h1>
-                    <em>from the Digital Atlas of the Roman Empire (DARE)</em>
-                    by the <a href="https://dh.gu.se/">University of Gothenburg, Sweden</a>
-            
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><em>Placename</em></td>
-                                <td>Zoom</td>
-                            </tr>
-                            <tr>
-                                <td>Ancient place name (major places), e.g. <span style="font-size:110%">HERCULANEUM</span></td>
-                                <td>7</td>
-                            </tr>
-                            <tr>
-                                <td>Ancient place name (all other places), e.g. <span style="font-size:110%">Stabiae</span></td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <td>Ancient name of rivers, e.g. <span style="color:blue">Aufidus</span> (repeated)</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <td>Ancient name of lakes, e.g. <span style="color:blue">Lemannus</span></td>
-                                <td>7</td>
-                            </tr>
-                            <tr>
-                                <td>Ancient name of road, e.g. <span style="color:red">Via Appia</span> (repeated)</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>Ancient name of natural features (island, mountain, cape) e.g. <span
-                                        style="color:brown;letter-spacing:2">Vosegus Mons</span></td>
-                                <td>9</td>
-                            </tr>
-                            <tr>
-                                <td>Modern placename, e.g. <i>Terzigno</i></td>
-                                <td>10</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td><em>Ancient name</em></td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>Poseidonia/Paestum</td>
-                                <td>Alternate names, only one is selected for the map</td>
-                            </tr>
-                            <tr>
-                                <td>‘Delphinis’</td>
-                                <td>Name in its attested form</td>
-                            </tr>
-                            <tr>
-                                <td>Mediolan(i)um</td>
-                                <td>Variant spelling</td>
-                            </tr>
-                            <tr>
-                                <td>[Vicus Aventia]</td>
-                                <td>Name known only from earlier or later source</td>
-                            </tr>
-                            <tr>
-                                <td>*Neronia</td>
-                                <td>Reconstructed name</td>
-                            </tr>
-                            <tr>
-                                <td> Med(...)</td>
-                                <td>Name only partially known</td>
-                            </tr>
-                        </tbody>
-                    </table><br>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td colspan="2"><em>Map Symbols</em></td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>Symbol</td>
-                                <td>Identifier</td>
-                                <td>Description</td>
-                                <td>Zoom</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/circlew12.png"></td> -->
-                                <td><img src="svg/settlement.svg" width="15px"></td>
-                                <td>11</td>
-                                <td>Major settlement (capital, <em>colonia, municipium</em>)</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/square10.png"></td> -->
-                                <td><img src="svg/square.svg" width="14px"></td>
-                                <td>17</td>
-                                <td>Major fort (legionary fortress)</td>
-                                <td>6</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/circlew9.png"></td> -->
-                                <td><img src="svg/settlement.svg" width="12px"></td>
-                                <td>13</td>
-                                <td><em>Civitas</em> capital (Late Roman Gallia)</td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/circlew9.png"></td> -->
-                                <td><img src="svg/settlement.svg" width="12px"></td>
-                                <td>12</td>
-                                <td>Settlement (<em>civitas, vicus</em>, other settlement)</td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/square8.png"></td> -->
-                                <td><img src="svg/square.svg" width="11px"></td>
-                                <td>18</td>
-                                <td>Fort (<em>castrum, castellum</em>)</td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/square6.png"></td> -->
-                                <td><img src="svg/square.svg" width="8px"></td>
-                                <td>53</td>
-                                <td>Fortlet, tower</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/diamond10.png"></td> -->
-                                <td><img src="svg/diamond.svg" width="14px"></td>
-                                <td>16</td>
-                                <td>Road or coastal station</td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/circle_brown8.png"></td> -->
-                                <td><img src="svg/circle_brown.svg" width="13px"></td>
-                                <td>31</td>
-                                <td>Iron Age (Celtic) Oppidum</td>
-                                <td>9</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/circle8.png"></td> -->
-                                <td><img src="svg/circle.svg" width="13px"></td>
-                                <td>35</td>
-                                <td>Late Roman Oppidum</td>
-                                <td>9</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/oasis16.png"></td> -->
-                                <td><img src="svg/oasis.svg" width="20px"></td>
-                                <td>19</td>
-                                <td>Oasis</td>
-                                <td>9</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/star12.png"></td> -->
-                                <td><img src="svg/star.svg" width="15px"></td>
-                                <td>61</td>
-                                <td>Sanctuary or temple</td>
-                                <td>9</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/mount14.png"></td> -->
-                                <td><img src="svg/mount.svg" width="13px"></td>
-                                <td>66</td>
-                                <td>Bath</td>
-                                <td>9</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/tumulus12.png"></td> -->
-                                <td><img src="svg/tumulus.svg" width="17px"></td>
-                                <td>32</td>
-                                <td>Tumulus</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/cemetery8.png"></td> -->
-                                <td><img src="svg/cemetery.svg" width="13px"></td>
-                                <td>63</td>
-                                <td>Cemetery</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/church16.png"></td> -->
-                                <td><img src="svg/church.svg" width="17px"></td>
-                                <td>21</td>
-                                <td>Monastery</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/church16.png"></td> -->
-                                <td><img src="svg/church.svg" width="17px"></td>
-                                <td>24</td>
-                                <td>Church</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/villa16.png"></td> -->
-                                <td><img src="svg/villa.svg" width="15px"></td>
-                                <td>14</td>
-                                <td>Villa</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/mine16.png"></td> -->
-                                <td><img src="svg/mine.svg" width="20px"></td>
-                                <td>57</td>
-                                <td>Mine, quarry or production</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/pass16.png"></td> -->
-                                <td><img src="svg/pass.svg" width="18px"></td>
-                                <td>49</td>
-                                <td>Pass</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/bridge16.png"></td> -->
-                                <td><img src="svg/bridge.svg" width="22px"></td>
-                                <td>51</td>
-                                <td>Bridge</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/circle4.png"></td> -->
-                                <td><img src="svg/circle.svg" width="7px"></td>
-                                <td>55</td>
-                                <td>Road/milestone</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/circle4.png"></td> -->
-                                <td><img src="svg/circle.svg" width="7px"></td>
-                                <td>52</td>
-                                <td>Aqueduct/dam/cistern/spring</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <!-- <td><img src="/pics/circle4.png"></td> -->
-                                <td><img src="svg/circle.svg" width="7px"></td>
-                                <td>64</td>
-                                <td>Monument</td>
-                                <td>10</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table>
-                        <tbody>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:2px solid purple">&nbsp;</div>
-                                </td>
-                                <td>Province, e.g. <span style="font-size:130%;font-family:times,serif">Raetia</span></td>
-                                <td>5-7</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Roman roads in Britain. Source: <a
-                                        href="http://www.romanroadsinbritain.info/data.html" target="_blank"
-                                        title="Roman Roads of Britain">The Secret History of the Roman Roads of Britain</a>,
-                                    <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA</a>
-                                </td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:3px solid red">&nbsp;</div>
-                                </td>
-                                <td>Main routes</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:2px solid red">&nbsp;</div>
-                                </td>
-                                <td>Principal branches</td>
-                                <td>7</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid red">&nbsp;</div>
-                                </td>
-                                <td>Minor branches</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2">Roman roads (Barrington Atlas). Source: <a
-                                        href="http://awmc.unc.edu/wordpress/map-files/" target="_blank"
-                                        title="Ancient World Mapping Center">Ancient World Mapping Center</a> (AWMC), <a
-                                        href="http://creativecommons.org/licenses/by-nc/3.0/" target="_blank">CC BY-NC 3.0</a>
-                                </td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:3px solid red">&nbsp;</div>
-                                </td>
-                                <td>Major roads</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:2px solid red">&nbsp;</div>
-                                </td>
-                                <td>Minor roads</td>
-                                <td>7</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid #ffcc00">&nbsp;</div>
-                                </td>
-                                <td>Aqueducts. Source: <a href="http://www.romaq.org" target="_blank" title="ROMAQ">ROMAQ - The
-                                        Atlas
-                                        Project of Roman Aqueducts</a></td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:2px solid #303030">&nbsp;</div>
-                                </td>
-                                <td><i>Limes</i>, citywall</td>
-                                <td>7</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:2px solid #009900">&nbsp;</div>
-                                </td>
-                                <td>Ancient coastline (<a href="http://awmc.unc.edu/wordpress/map-files/" target="_blank"
-                                        title="Ancient World Mapping Center">AWMC, CC BY-NC 3.0</a>)</td>
-                                <td>8-9</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid rgb(0,0,153);background:rgb(165,191,221)">&nbsp;</div>
-                                </td>
-                                <td>Perennial/Permanent lakes and rivers</td>
-                                <td>5</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px dashed rgb(0,0,153);background:rgb(168,202,208)">&nbsp;</div>
-                                </td>
-                                <td>Non-Perennial/Intermittent/Fluctuating lakes and rivers</td>
-                                <td>8</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><em>Elevation</em><br>Source: <a
-                                        href="http://www.cgiar-csi.org/data/srtm-90m-digital-elevation-database-v4-1"
-                                        target="_blank">SRTM
-                                        90m Digital Elevation Database v4.1 | CGIAR-CSI</a></td>
-                                <td>Zoom</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(224,222,216)">&nbsp;</div>
-                                </td>
-                                <td>5000 m</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(170,159,141)">&nbsp;</div>
-                                </td>
-                                <td>4000 m</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(170,135,83)">&nbsp;</div>
-                                </td>
-                                <td>3500 m</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(185,152,90)">&nbsp;</div>
-                                </td>
-                                <td>3000 m</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(195,167,107)">&nbsp;</div>
-                                </td>
-                                <td>2500 m</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(202,185,130)">&nbsp;</div>
-                                </td>
-                                <td>2000 m</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(211,202,157)">&nbsp;</div>
-                                </td>
-                                <td>1500 m</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(222,214,163)">&nbsp;</div>
-                                </td>
-                                <td>1000 m</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(239,235,192)">&nbsp;</div>
-                                </td>
-                                <td>500 m</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(172,208,165)">&nbsp;</div>
-                                </td>
-                                <td>0 m</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(200,230,255)">&nbsp;</div>
-                                </td>
-                                <td>Sea level (Coast lines are modern)</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(167,223,210)">&nbsp;</div>
-                                </td>
-                                <td>Below sea level</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:2px solid #8b4513">&nbsp;</div>
-                                </td>
-                                <td>Elevation every 100 m</td>
-                                <td>11</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid #8b4513">&nbsp;</div>
-                                </td>
-                                <td>Elevation every 50 m</td>
-                                <td>11</td>
-                            </tr>
-                            <tr>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                                <td>&nbsp;</td>
-                            </tr>
-                            <tr>
-                                <td colspan="2"><em>Land Cover</em><br> Modern Forest and seminatural areas<br>Source: <a
-                                        href="http://www.eea.europa.eu/data-and-maps/data/ds_resolveuid/1edceaea-6b08-40e0-8b74-07a87a22c957"
-                                        target="_blank">Corine Land Cover 2000 seamless vector data - version 16</a>, © European
-                                    Environment
-                                    Agency (EEA)</td>
-                                <td>Zoom</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(128,255,0)">&nbsp;</div>
-                                </td>
-                                <td>Broad-leaved forest</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(0,166,0)">&nbsp;</div>
-                                </td>
-                                <td>Coniferous forest</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(77,255,0)">&nbsp;</div>
-                                </td>
-                                <td>Mixed forest</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(204,242,77)">&nbsp;</div>
-                                </td>
-                                <td>Natural grasslands</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(166,255,128)">&nbsp;</div>
-                                </td>
-                                <td>Moors and heathland</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(166,230,77)">&nbsp;</div>
-                                </td>
-                                <td>Sclerophyllous vegetation</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(166,242,0)">&nbsp;</div>
-                                </td>
-                                <td>Transitional woodland-shrub</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(230,230,230)">&nbsp;</div>
-                                </td>
-                                <td>Beaches, dunes, sands</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(166,230,204)">&nbsp;</div>
-                                </td>
-                                <td>Glaciers and perpetual snow</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(166,166,255)">&nbsp;</div>
-                                </td>
-                                <td>Inland Marshes</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(77,77,255)">&nbsp;</div>
-                                </td>
-                                <td>Peat Bogs</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(204,204,255)">&nbsp;</div>
-                                </td>
-                                <td>Salt Marshes</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(230,230,255)">&nbsp;</div>
-                                </td>
-                                <td>Salines</td>
-                                <td>10</td>
-                            </tr>
-                            <tr>
-                                <td>
-                                    <div style="border:1px solid black;background:rgb(166,166,230)">&nbsp;</div>
-                                </td>
-                                <td>Intertidal Flats</td>
-                                <td>10</td>
-                            </tr>
-                        </tbody>
-                    </table>
+
+
+                <h2>Detailed Legend</h2>
+                <em>from the Digital Atlas of the Roman Empire (DARE)</em>
+                by the <a href="https://dh.gu.se/">University of Gothenburg, Sweden</a>
+
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><em>Placename</em></td>
+                            <td>Zoom</td>
+                        </tr>
+                        <tr>
+                            <td>Ancient place name (major places), e.g. <span style="font-size:110%">HERCULANEUM</span>
+                            </td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>Ancient place name (all other places), e.g. <span style="font-size:110%">Stabiae</span>
+                            </td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>Ancient name of rivers, e.g. <span style="color:blue">Aufidus</span> (repeated)</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <td>Ancient name of lakes, e.g. <span style="color:blue">Lemannus</span></td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>Ancient name of road, e.g. <span style="color:red">Via Appia</span> (repeated)</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>Ancient name of natural features (island, mountain, cape) e.g. <span
+                                    style="color:brown;letter-spacing:2">Vosegus Mons</span></td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <td>Modern placename, e.g. <i>Terzigno</i></td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td><em>Ancient name</em></td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Poseidonia/Paestum</td>
+                            <td>Alternate names, only one is selected for the map</td>
+                        </tr>
+                        <tr>
+                            <td>‘Delphinis’</td>
+                            <td>Name in its attested form</td>
+                        </tr>
+                        <tr>
+                            <td>Mediolan(i)um</td>
+                            <td>Variant spelling</td>
+                        </tr>
+                        <tr>
+                            <td>[Vicus Aventia]</td>
+                            <td>Name known only from earlier or later source</td>
+                        </tr>
+                        <tr>
+                            <td>*Neronia</td>
+                            <td>Reconstructed name</td>
+                        </tr>
+                        <tr>
+                            <td> Med(...)</td>
+                            <td>Name only partially known</td>
+                        </tr>
+                    </tbody>
+                </table><br>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td colspan="2"><em>Map Symbols</em></td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>Symbol</td>
+                            <td>Identifier</td>
+                            <td>Description</td>
+                            <td>Zoom</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/circlew12.png"></td> -->
+                            <td><img src="svg/settlement.svg" width="15px"></td>
+                            <td>11</td>
+                            <td>Major settlement (capital, <em>colonia, municipium</em>)</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/square10.png"></td> -->
+                            <td><img src="svg/square.svg" width="14px"></td>
+                            <td>17</td>
+                            <td>Major fort (legionary fortress)</td>
+                            <td>6</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/circlew9.png"></td> -->
+                            <td><img src="svg/settlement.svg" width="12px"></td>
+                            <td>13</td>
+                            <td><em>Civitas</em> capital (Late Roman Gallia)</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/circlew9.png"></td> -->
+                            <td><img src="svg/settlement.svg" width="12px"></td>
+                            <td>12</td>
+                            <td>Settlement (<em>civitas, vicus</em>, other settlement)</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/square8.png"></td> -->
+                            <td><img src="svg/square.svg" width="11px"></td>
+                            <td>18</td>
+                            <td>Fort (<em>castrum, castellum</em>)</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/square6.png"></td> -->
+                            <td><img src="svg/square.svg" width="8px"></td>
+                            <td>53</td>
+                            <td>Fortlet, tower</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/diamond10.png"></td> -->
+                            <td><img src="svg/diamond.svg" width="14px"></td>
+                            <td>16</td>
+                            <td>Road or coastal station</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/circle_brown8.png"></td> -->
+                            <td><img src="svg/circle_brown.svg" width="13px"></td>
+                            <td>31</td>
+                            <td>Iron Age (Celtic) Oppidum</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/circle8.png"></td> -->
+                            <td><img src="svg/circle.svg" width="13px"></td>
+                            <td>35</td>
+                            <td>Late Roman Oppidum</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/oasis16.png"></td> -->
+                            <td><img src="svg/oasis.svg" width="20px"></td>
+                            <td>19</td>
+                            <td>Oasis</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/star12.png"></td> -->
+                            <td><img src="svg/star.svg" width="15px"></td>
+                            <td>61</td>
+                            <td>Sanctuary or temple</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/mount14.png"></td> -->
+                            <td><img src="svg/mount.svg" width="13px"></td>
+                            <td>66</td>
+                            <td>Bath</td>
+                            <td>9</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/tumulus12.png"></td> -->
+                            <td><img src="svg/tumulus.svg" width="17px"></td>
+                            <td>32</td>
+                            <td>Tumulus</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/cemetery8.png"></td> -->
+                            <td><img src="svg/cemetery.svg" width="13px"></td>
+                            <td>63</td>
+                            <td>Cemetery</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/church16.png"></td> -->
+                            <td><img src="svg/church.svg" width="17px"></td>
+                            <td>21</td>
+                            <td>Monastery</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/church16.png"></td> -->
+                            <td><img src="svg/church.svg" width="17px"></td>
+                            <td>24</td>
+                            <td>Church</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/villa16.png"></td> -->
+                            <td><img src="svg/villa.svg" width="15px"></td>
+                            <td>14</td>
+                            <td>Villa</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/mine16.png"></td> -->
+                            <td><img src="svg/mine.svg" width="20px"></td>
+                            <td>57</td>
+                            <td>Mine, quarry or production</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/pass16.png"></td> -->
+                            <td><img src="svg/pass.svg" width="18px"></td>
+                            <td>49</td>
+                            <td>Pass</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/bridge16.png"></td> -->
+                            <td><img src="svg/bridge.svg" width="22px"></td>
+                            <td>51</td>
+                            <td>Bridge</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/circle4.png"></td> -->
+                            <td><img src="svg/circle.svg" width="7px"></td>
+                            <td>55</td>
+                            <td>Road/milestone</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/circle4.png"></td> -->
+                            <td><img src="svg/circle.svg" width="7px"></td>
+                            <td>52</td>
+                            <td>Aqueduct/dam/cistern/spring</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <!-- <td><img src="/pics/circle4.png"></td> -->
+                            <td><img src="svg/circle.svg" width="7px"></td>
+                            <td>64</td>
+                            <td>Monument</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <table>
+                    <tbody>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:2px solid purple">&nbsp;</div>
+                            </td>
+                            <td>Province, e.g. <span style="font-size:130%;font-family:times,serif">Raetia</span></td>
+                            <td>5-7</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Roman roads in Britain. Source: <a
+                                    href="http://www.romanroadsinbritain.info/data.html" target="_blank"
+                                    title="Roman Roads of Britain">The Secret History of the Roman Roads of Britain</a>,
+                                <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC
+                                    BY-NC-SA</a>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:3px solid red">&nbsp;</div>
+                            </td>
+                            <td>Main routes</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:2px solid red">&nbsp;</div>
+                            </td>
+                            <td>Principal branches</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid red">&nbsp;</div>
+                            </td>
+                            <td>Minor branches</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">Roman roads (Barrington Atlas). Source: <a
+                                    href="http://awmc.unc.edu/wordpress/map-files/" target="_blank"
+                                    title="Ancient World Mapping Center">Ancient World Mapping Center</a> (AWMC), <a
+                                    href="http://creativecommons.org/licenses/by-nc/3.0/" target="_blank">CC BY-NC
+                                    3.0</a>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:3px solid red">&nbsp;</div>
+                            </td>
+                            <td>Major roads</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:2px solid red">&nbsp;</div>
+                            </td>
+                            <td>Minor roads</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid #ffcc00">&nbsp;</div>
+                            </td>
+                            <td>Aqueducts. Source: <a href="http://www.romaq.org" target="_blank" title="ROMAQ">ROMAQ -
+                                    The
+                                    Atlas
+                                    Project of Roman Aqueducts</a></td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:2px solid #303030">&nbsp;</div>
+                            </td>
+                            <td><i>Limes</i>, citywall</td>
+                            <td>7</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:2px solid #009900">&nbsp;</div>
+                            </td>
+                            <td>Ancient coastline (<a href="http://awmc.unc.edu/wordpress/map-files/" target="_blank"
+                                    title="Ancient World Mapping Center">AWMC, CC BY-NC 3.0</a>)</td>
+                            <td>8-9</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid rgb(0,0,153);background:rgb(165,191,221)">&nbsp;</div>
+                            </td>
+                            <td>Perennial/Permanent lakes and rivers</td>
+                            <td>5</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px dashed rgb(0,0,153);background:rgb(168,202,208)">&nbsp;</div>
+                            </td>
+                            <td>Non-Perennial/Intermittent/Fluctuating lakes and rivers</td>
+                            <td>8</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><em>Elevation</em><br>Source: <a
+                                    href="http://www.cgiar-csi.org/data/srtm-90m-digital-elevation-database-v4-1"
+                                    target="_blank">SRTM
+                                    90m Digital Elevation Database v4.1 | CGIAR-CSI</a></td>
+                            <td>Zoom</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(224,222,216)">&nbsp;</div>
+                            </td>
+                            <td>5000 m</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(170,159,141)">&nbsp;</div>
+                            </td>
+                            <td>4000 m</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(170,135,83)">&nbsp;</div>
+                            </td>
+                            <td>3500 m</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(185,152,90)">&nbsp;</div>
+                            </td>
+                            <td>3000 m</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(195,167,107)">&nbsp;</div>
+                            </td>
+                            <td>2500 m</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(202,185,130)">&nbsp;</div>
+                            </td>
+                            <td>2000 m</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(211,202,157)">&nbsp;</div>
+                            </td>
+                            <td>1500 m</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(222,214,163)">&nbsp;</div>
+                            </td>
+                            <td>1000 m</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(239,235,192)">&nbsp;</div>
+                            </td>
+                            <td>500 m</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(172,208,165)">&nbsp;</div>
+                            </td>
+                            <td>0 m</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(200,230,255)">&nbsp;</div>
+                            </td>
+                            <td>Sea level (Coast lines are modern)</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(167,223,210)">&nbsp;</div>
+                            </td>
+                            <td>Below sea level</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:2px solid #8b4513">&nbsp;</div>
+                            </td>
+                            <td>Elevation every 100 m</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid #8b4513">&nbsp;</div>
+                            </td>
+                            <td>Elevation every 50 m</td>
+                            <td>11</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><em>Land Cover</em><br> Modern Forest and seminatural areas<br>Source: <a
+                                    href="http://www.eea.europa.eu/data-and-maps/data/ds_resolveuid/1edceaea-6b08-40e0-8b74-07a87a22c957"
+                                    target="_blank">Corine Land Cover 2000 seamless vector data - version 16</a>, ©
+                                European
+                                Environment
+                                Agency (EEA)</td>
+                            <td>Zoom</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(128,255,0)">&nbsp;</div>
+                            </td>
+                            <td>Broad-leaved forest</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(0,166,0)">&nbsp;</div>
+                            </td>
+                            <td>Coniferous forest</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(77,255,0)">&nbsp;</div>
+                            </td>
+                            <td>Mixed forest</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(204,242,77)">&nbsp;</div>
+                            </td>
+                            <td>Natural grasslands</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(166,255,128)">&nbsp;</div>
+                            </td>
+                            <td>Moors and heathland</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(166,230,77)">&nbsp;</div>
+                            </td>
+                            <td>Sclerophyllous vegetation</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(166,242,0)">&nbsp;</div>
+                            </td>
+                            <td>Transitional woodland-shrub</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(230,230,230)">&nbsp;</div>
+                            </td>
+                            <td>Beaches, dunes, sands</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(166,230,204)">&nbsp;</div>
+                            </td>
+                            <td>Glaciers and perpetual snow</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(166,166,255)">&nbsp;</div>
+                            </td>
+                            <td>Inland Marshes</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(77,77,255)">&nbsp;</div>
+                            </td>
+                            <td>Peat Bogs</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(204,204,255)">&nbsp;</div>
+                            </td>
+                            <td>Salt Marshes</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(230,230,255)">&nbsp;</div>
+                            </td>
+                            <td>Salines</td>
+                            <td>10</td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div style="border:1px solid black;background:rgb(166,166,230)">&nbsp;</div>
+                            </td>
+                            <td>Intertidal Flats</td>
+                            <td>10</td>
+                        </tr>
+                    </tbody>
+                </table>
                 <!-- </section> -->
-            
-            
+
+
                 <!-- End of Legend -->
-                <h3><a href="https://github.com/siriusbontea/roman-empire#readme">Detailed Project Information on GitHub <i class="social-font fab fa-github"></i></a>
-                </h3>
-                <h3>Base Map Attributions:</h3>
+                <br>
+                <hr>
+                <h2>Updating the datasets</h2>
+                <p class="indented">Many online sources contain the shapefiles for depicting the extent of the Roman
+                    Empire during different periods of time. However, the datasets are often the same which would
+                    indicate there was an originating source that was copied and distributed far and wide.</p>
+                <p class="indented">One such source is from Harvard University's <a
+                        href="https://dataverse.harvard.edu/dataset.xhtml?persistentId=doi:10.7910/DVN/TI0KAU">Digital
+                        Atlas of Roman and Medieval Civilization Dataverse</a> from 2008. This study provides a
+                    portable, digital version of the Roman roads identified in the Barrington Atlas, which users can
+                    visualise in combination with their own historical data.
+                    <blockquote>Citation:<br>
+                        McCormick, Michael; Huang, Guoping; Zambotti, Giovanni; Lavash, Jessica, 2013, "Roman Road
+                        Network (version 2008)", https://doi.org/10.7910/DVN/TI0KAU, Harvard Dataverse, V1</blockquote>
+                </p>
+                <p class="indented">Unfortunately, the Harvard dataset is not adequate enough when overlaid on a highly
+                    detailed terrain map. The example below shows the 2008 dataset over a topographic base map:</p>
+                <img src="images/old_data.png" class="static-maps">
+                <p class="indented">It becomes readily apparent that there is a mismatch. Taken at face value, the map
+                    interpreted in a way that shows how the Romans opted to conquer mountainous alpine territory instead
+                    of focusing their efforts on subduing towns and settlements in the fertile Po River Valley! This, of
+                    course, is not a logical conclusion. I applaud the work that went into creating the original
+                    shapefiles. However, I wanted to show a more realistic portrayal of what Roman territorial expansion
+                    may have looked like.</p>
+                <p class="indented">I was inspired by the old to create the new. Below, is my interpretation of what the
+                    boundaries may have looked like:</p>
+                <img src="images/new_data.png" class="static-maps">
+                <p class="indented">I used QGIS to perform most of the heavy lifting behind the scenes with vector layer
+                    creation, editing, analysis, and processing of data prior to use for web mapping. The Roman Empire
+                    extent layers were created from scratch and took into account terrain features that would have been
+                    obstacles to the deployment of Roman soldiers. There were many additional considerations taken into
+                    account besides terrain. The territorial boundaries in the new dataset better align with the Roman
+                    road network and account for more recent archeological findings.</p>
+
+                <br>
+                <hr>
+                
+                <h2>Base Map Attributions:</h2>
                 <ul>
-                    <li>Plain Terrain Map &mdash; Map data &copy; <a
-                            href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a
-                            href="https://www.mapbox.com/">Mapbox</a>'</li>
+
                     <li>Digital Atlas of the Roman Empire (DARE) &mdash; &copy; <a
                             href="https://cdh.hum.gu.se/">Universitas Gothoburgensis</a>,<a
                             href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a></a></li>
                     <li>Esri National Geographic World Map &mdash; Tiles &copy; Esri &mdash; National Geographic, Esri,
                         DeLorme, NAVTEQ, UNEP-WCMC, USGS, NASA, ESA, METI, NRCAN, GEBCO,
                         NOAA, iPC</li>
+                    <li>Plain Terrain Map &mdash; Map data &copy; <a
+                            href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a
+                            href="https://www.mapbox.com/">Mapbox</a>'</li>
                 </ul>
+<hr>
+<h2>Tools, Resources, and Methodology</h2>
+                <p class="indented">Add stuff here.</p>
+                <br>
+                <hr>
+                <h2>Additional Project Information</h2>
+                <p class="indented">Dozens of maps and datasets were examined and referenced to create the new dataset
+                    displayed here. This includes independent research in Britain, Spain, Turkey, and elsewhere. Please
+                    check out my Github page for a comprehensive list of tools, resources, and methods used for this
+                    project.</p><p class="center"><a href="https://github.com/siriusbontea/roman-empire#readme"><i
+                        class="social-font fab fa-github"></i><br>https://github.com/siriusbontea/roman-empire#readme</a></p>
+                <br>
+                <hr>
 
-            </div>
-        
-
-
-        <div>
-            <img src="svg/University_of_Kentucky_logo.svg" class="footer-img">
-            <div class="footer25right center">
-            <p>Copyright © <a href="https://siriusbontea.github.io/">Sirius T. Bontea</a> – A.D. 2022</p>
-            <div id="social">
-                <a href="https://www.linkedin.com/in/siriusbontea/"><i class="social-font fab fa-linkedin"></i></a>
-                <a href="https://github.com/siriusbontea"><i class="social-font fab fa-github"></i></a>
-                <a href="https://www.openstreetmap.org/user/Sirius%20T%20Bontea/history#map=3/43.94/-68.94"><i
-                        class="social-font fas fa-map"></i></a>
-                <a href="https://twitter.com/SiriusBontea"><i class="social-font fab fa-twitter"></i></a>
-                <a href="https://www.facebook.com/sirius.t.bontea"><i class="social-font fab fa-facebook-f"></i></a>
+                <img src="svg/University_of_Kentucky_logo.svg" class="footer-img center">
+              <hr>
+                    <p class="center">Copyright © <a href="https://siriusbontea.github.io/">Sirius T. Bontea</a><br>A.D. 2022</p>
+                    <div id="social" class="center">
+                        <a href="https://www.linkedin.com/in/siriusbontea/"><i
+                                class="social-font fab fa-linkedin"></i></a>
+                        <a href="https://github.com/siriusbontea"><i class="social-font fab fa-github"></i></a>
+                        <a href="https://www.openstreetmap.org/user/Sirius%20T%20Bontea/history#map=3/43.94/-68.94"><i
+                                class="social-font fas fa-map"></i></a>
+                        <a href="https://twitter.com/SiriusBontea"><i class="social-font fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/sirius.t.bontea"><i
+                                class="social-font fab fa-facebook-f"></i></a>
+                             
+                                
+                                   
+                             
                 </div>
             </div>
         </div>
-</div>
     </div>
 
     <!-- Start of Legend -->
-    <!-- <button id="legend-button" onclick="myLegend()"><img src="images/map_legend_icon_off.png"></i>
-    </button> -->
+    <button id="legend-button" onclick="myLegend()">
+        <img src="images/map_legend_icon_on.svg">
+    </button>
+    <section id="legendPanel">
+        <h1>Legend:</h1>
+        <div><table>
+            <tbody>
+             
+                <tr class="bold-underline">
+                    <td>Symbol</td>
+                
+                    <td class="center">Description</td>
+               
+                </tr>
+                <tr>
+                    <!-- <td><img src="/pics/circlew12.png"></td> -->
+                    <td><img src="svg/settlement.svg" width="15px" class="center"></td>
+                 
+                    <td>Major settlement<br>(capital, <em>colonia, municipium</em>)</td>
+                   
+                </tr>
+               
+                <tr>
+               
+                    <td><img src="svg/square.svg" width="14px" class="center"></td>
+                    
+                    <td>Major fort (legionary fortress)</td>
+                    
+                </tr>
+                <tr>
+              
+                    <td><img src="svg/settlement.svg" width="12px" class="center"></td>
+                   
+                    <td><em>Civitas</em> capital (Late Roman Gallia)</td>
+                 
+                </tr>
+                <tr>
+                 
+                    <td><img src="svg/settlement.svg" width="12px" class="center"></td>
+                    
+                    <td>Settlement (<em>civitas, vicus</em>, other settlement)</td>
+                  
+                </tr>
+                <tr>
+            
+                    <td><img src="svg/square.svg" width="11px" class="center"></td>
+                   
+                    <td>Fort (<em>castrum, castellum</em>)</td>
+                  
+                </tr>
+                <tr>
+                 
+                    <td><img src="svg/square.svg" width="8px" class="center"></td>
+                 
+                    <td>Fortlet, tower</td>
+                  
+                </tr>
+                <tr>
+                    
+                    <td><img src="svg/diamond.svg" width="14px" class="center"></td>
+                 
+                    <td>Road or coastal station</td>
+                 
+                </tr>
+                <tr>
+             
+                    <td><img src="svg/circle_brown.svg" width="13px" class="center"></td>
+                  
+                    <td>Iron Age (Celtic) Oppidum</td>
+               
+                </tr>
+                <tr>
+             
+                    <td><img src="svg/circle.svg" width="13px" class="center"></td>
+                 
+                    <td>Late Roman Oppidum</td>
+             
+                </tr>
+                <tr>
+                    
+                    <td><img src="svg/oasis.svg" width="20px" class="center"></td>
+                 
+                    <td>Oasis</td>
+               
+                </tr>
+                <tr>
+                   
+                    <td><img src="svg/star.svg" width="15px" class="center"></td>
+                
+                    <td>Sanctuary or temple</td>
+                 
+                </tr>
+                <tr>
+            
+                    <td><img src="svg/mount.svg" width="13px" class="center"></td>
+                    
+                    <td>Bath</td>
+                  
+                </tr>
+                <tr>
+               
+                    <td><img src="svg/tumulus.svg" width="17px" class="center"></td>
+             
+                    <td>Tumulus</td>
+                 
+                </tr>
+                <tr>
+               
+                    <td><img src="svg/cemetery.svg" width="13px" class="center"></td>
+              
+                    <td>Cemetery</td>
+              
+                </tr>
+                <tr>
+              
+                    <td><img src="svg/church.svg" width="17px" class="center"></td>
+                
+                    <td>Monastery/Church</td>
+                   
+                </tr>
+               
+                <tr>
+               
+                    <td><img src="svg/villa.svg" width="15px" class="center"></td>
+              
+                    <td>Villa</td>
+               
+                </tr>
+                <tr>
+               
+                    <td><img src="svg/mine.svg" width="20px" class="center"></td>
+                    
+                    <td>Mine, quarry or production</td>
+                 
+                </tr>
+                <tr>
+                  
+                    <td><img src="svg/pass.svg" width="18px" class="center"></td>
+               
+                    <td>Pass</td>
+                
+                </tr>
+                <tr>
+                
+                    <td><img src="svg/bridge.svg" width="22px" class="center"></td>
+                 
+                    <td>Bridge</td>
+                   
+                </tr>
+                <tr>
+         
+                    <td><img src="svg/circle.svg" width="7px" class="center"></td>
+                
+                    <td>Road/milestone</td>
+                  
+                </tr>
+             
+            </tbody>
+        </table></div>
 
-    
+    </section>
+
 
     <!-- Start of events panel -->
     <!-- <button id="events-panel-button" onclick="myEventsPanel()"><img src="images/sundial_events_icon_off.png">
     </button> -->
-    
+
     <!-- End of events panel -->
 
     <!-- Start of rulers panel -->
     <button id="rulers-panel-button" onclick="myRulerPanel()">
-        <img src="images/ruler_icon_off.svg">
+        <img src="images/ruler_icon_on.svg">
     </button>
     <section id="rulersPanel">
-        Rulers of Rome:
+        Key Events:
         <!-- <img class="laurel-rulers-panel-top-left" src="svg/corner_laurel_top_left_AdobeStock_472550524.svg">
         <img class="laurel-rulers-panel-bottom-right" src="svg/corner_laurel_bottom_right_AdobeStock_472550524.svg"> -->
-        <div id="romeRulersImage"></div>
-        <div id="eventOne"></div>
-        
-        <div id="emperorsShortName"></div>
-        
+        <!-- <div id="romeRulersImage"></div> -->
+        <div id="eventOne">In the face of a potential Sabine invasion, the Senate passed a <i>senatus consultum</i> authorizing the consuls to appoint a dictator, a magistrate who held absolute power during a national emergency.</div>
+        <div id="eventTwo">The Roman Republic used this political methodology and appointed dictators in response to crises over several subsequent centuries.</div>
+
+        <!-- <div id="emperorsShortName"></div> -->
+
     </section>
     <!-- End of rulers panel -->
 
@@ -798,10 +1020,10 @@
 
     <!-- ui slider -->
     <div id="slider-div" class="show">
-        
+
         <input id="yearSlider" type="range" class="form-range" min="0" max="15" value="0" step="1" />
         <!-- <span id="slider-note"><p>Explore historical extent of Roman Empire</p></span> -->
-        
+
         <!-- <div id="longName">Extent of the Roman Republic, 500 B.C.</div> -->
     </div>
 
@@ -809,14 +1031,18 @@
     <!-- <div id="longName">Extent of the Roman Republic, 500 B.C.</div> -->
 
     <!-- Pulling the data from CombinedExtentLayers TopoJSON-->
+<div id="sundialIcon"><img src="images/sundial_slider_icon.svg"></div>
+
 
     <div id="page-title">
         <div id="yearIndicator">500 B.C.</div>
 
         <div id="titleHeader">Year of the Consulship of Longus and Cornutus</div>
         <!-- <div id="empire-content"></div> -->
-        
+
     </div>
+
+<div id="yearIndicatorLargeScreen" class="center">500 B.C.</div>
 
     <!-- <section id="events-panel">
         Events:
@@ -831,7 +1057,7 @@
             crises over
             several subsequent centuries.</div>
     </section> -->
-    
+
 
 
 
@@ -841,8 +1067,8 @@
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
+    </script>
 
     <!-- Bootstrap Slider JS -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"

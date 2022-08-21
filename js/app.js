@@ -156,7 +156,7 @@ function drawExtent(empireExtent) {
                 return {
                     color: colors[props],
                     weight: 2,
-                    fillOpacity: .6,
+                    fillOpacity: .3,
                     fillColor: colors[props],
                     // interactive: false,
                 };
@@ -165,7 +165,7 @@ function drawExtent(empireExtent) {
                 return {
                     color: '#000',
                     weight: 2,
-                    fillOpacity: .6,
+                    fillOpacity: .3,
                     fillColor: '#000',
                     // interactive: false,
                 };
@@ -189,21 +189,25 @@ function drawExtent(empireExtent) {
             })
         } else {
             i.setStyle({
-                opacity: 0.8,
+                opacity: 0.6,
                 weight: 2,
-                fillOpacity: 0.6
+                fillOpacity: 0.3
             })
         }
         i.on('mouseover click', function (e) {
             i.setStyle({
                 color: 'yellow',
+                // weight: 3,
+                // opacity: 1,
             })
             i.bringToFront()
         })
         i.on('mouseout', function (e) {
             const props = i.feature.properties.order
             i.setStyle({
-                color: colors[props]
+                color: colors[props],
+                // weight: 2,
+                // opacity: 0,
             })
 
         })
@@ -359,15 +363,18 @@ function sequenceUI(empireExtent) {
             } else {
 
                 i.setStyle({
-                    opacity: 0.8,
+                    opacity: 0.6,
                     weight: 2,
-                    fillOpacity: 0.6
+                    fillOpacity: 0.3
                 })
             }
         })
         // Adding the Year Indicator for the slider
         document.getElementById("yearIndicator");
         yearIndicator.innerHTML = `<span>${year}</span>`
+          // Adding the Year Indicator for the slider (Large Screen)
+          document.getElementById("yearIndicatorLargeScreen");
+          yearIndicatorLargeScreen.innerHTML = `<span>${year}</span>`
         // ////////
         document.getElementById("longName");
         // longName.innerHTML = `<span>${longname}</span>`
@@ -419,25 +426,25 @@ function myInfo() {
     clickedFooter = !clickedFooter;
 }
 
-// /* --------------- Toggle on/off legend content ---------------  */
-// var clickedLegend = false; // start with false condition
-// function myLegend() {
-//     // create button that changes color on click
-//     var x = document.getElementById("legend");
-//     var y = document.getElementById("legend-button");
-//     if (clickedLegend) {
-//         y.style.background = "#A91101";
-//         y.style.color = "#fff9df";
-//         y.innerHTML = "<img src='images/map_legend_icon_off.png'>"
-//         x.style.display = "none"; // no display
-//     } else {
-//         y.style.background = "#fff9dfa0";
-//         y.style.color = "#A91101";
-//         y.innerHTML = "<img src='images/map_legend_icon_on.png'>"
-//         x.style.display = "block"; // display
-//     }
-//     clickedLegend = !clickedLegend;
-// }
+/* --------------- Toggle on/off legend content ---------------  */
+var clickedLegend = true; // start with false condition
+function myLegend() {
+    // create button that changes color on click
+    var x = document.getElementById("legendPanel");
+    var y = document.getElementById("legend-button");
+    if (clickedLegend) {
+        y.style.background = "#A91101";
+        y.style.color = "#fff9df";
+        y.innerHTML = "<img src='images/map_legend_icon_off.svg'>"
+        x.style.display = "none"; // no display
+    } else {
+        y.style.background = "#fff9dfa0";
+        y.style.color = "#A91101";
+        y.innerHTML = "<img src='images/map_legend_icon_on.svg'>"
+        x.style.display = "block"; // display
+    }
+    clickedLegend = !clickedLegend;
+}
 
 // /* --------------- Toggle on/off events panel content ---------------  */
 // var clickedEventsPanel = false; // start with false condition
@@ -459,13 +466,13 @@ function myInfo() {
 // }
 
 /* --------------- Toggle on/off rulers panel content ---------------  */
-var clickedRulersPanel = false; // start with false condition
+var clickedRulersPanel = true; // start with false condition
 function myRulerPanel() {
     var x = document.getElementById("rulersPanel");
     var y = document.getElementById("rulers-panel-button");
     if (clickedRulersPanel) {
         y.style.backgroundColor = "#A91101";
-        y.style.color = "#fff9df";
+        y.style.color = "#fff9dfa0";
         y.innerHTML = "<img src='images/ruler_icon_off.svg'>"
         x.style.display = "none";
     } else {

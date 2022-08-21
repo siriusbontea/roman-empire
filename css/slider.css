@@ -3,7 +3,7 @@
 
 #yearSlider {
     z-index: 1000;
-    width: 300px;
+    width: 230px;
     background: transparent;
     border-radius: 30px;
     color: whitesmoke;
@@ -13,8 +13,7 @@
       }
 
 #slider-div {
-    margin-left: calc(50% + 20px);
-    transform: translateX(-50%);
+    margin-left: 47px;
     bottom: -10px;
     }
 
@@ -125,3 +124,19 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 /* END of Slider Styling */
+
+/* Begin Desktop styling here */
+@media only screen and (min-width: 767px) and (min-height: 767px) {
+
+    #yearSlider {
+      
+        width: 200px;
+    
+          }
+
+
+    #slider-div {
+        margin-left: 308px;
+        bottom: -10px;
+        }
+    }
