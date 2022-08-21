@@ -233,7 +233,11 @@ function makePopups (props, layer) {
     const style =
     "margin-left:auto;margin-right:auto;width:100%;height:100%;border-radius:10px;background-color:000;border:1px solid #A91101;";
 
-    const popupContent = `<h2>${props.long_name}</h2><hr>${props.event1}<hr>${props.event2}<hr><h4>Rulers of Rome:</h4>${props.rulers}<br><img src="${props.ruler_image_link}" style="${style}">`
+    const popupContent = `<p class="center" style="padding: 0px;
+    margin: 0px; font-size:1.1rem; text-decoration: underline;"><b>${props.long_name}</b></p><p class="indented" style="padding: 0px;
+    margin: 0px;">${props.event1}</p><p class="indented" style="padding: 0px;
+    margin: 0px;">${props.event2}</p><p class="center" style="padding: 0px;
+    margin: 0px; font-size:1.1rem; text-decoration: underline;"><b>Rulers of Rome:</b></p>${props.rulers}<br><img src="${props.ruler_image_link}" style="${style}">`
     layer.bindPopup(popupContent, {
         className: "empire-extent-tooltip",
         sticky: true,

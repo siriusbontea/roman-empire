@@ -53,8 +53,10 @@ body {
 
 }
 
-p {
-    margin: auto;
+  /* Get rid of the extra space between paragraphs */
+  p {
+    padding: 0px;
+    margin: 0px;
 }
 
 .leaflet-container {
@@ -758,10 +760,8 @@ blockquote {
         font-style: normal;
         background-color: #6e6e6e;
     }
-    p {
-        margin: auto;
-    }
-    
+
+      
     .leaflet-container {
         font-family: serif;
         font-size: 1rem;
@@ -777,7 +777,7 @@ blockquote {
     
     .indented {
         text-indent: 20pt;
-        text-align: justify;
+        /* text-align: justify; */
         /* Need to add @media breaks to allow non-justify for smaller screens! */
     }
     
