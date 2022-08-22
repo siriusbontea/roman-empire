@@ -315,9 +315,9 @@ blockquote {
     width: 40px;
     height: 40px;
     background: #A91101;
-    border-radius: 15px;
+    border-radius: 18px;
     border-color: #000000;
-    border-style: outset;
+    border-style: solid;
 }
 
 
