@@ -231,13 +231,28 @@ function makePopups(props, layer) {
 
 
     const style =
-        "margin-left:auto;margin-right:auto;width:100%;height:100%;border-radius:10px;background-color:000;border:1px solid #A91101;";
+        "margin-left:auto;margin-right:auto;text-align:center;max-width:320px;max-height:150px;border-radius:10px;background-color:000;border:1px solid #A91101;";
 
     const popupContent = `<p class="center" style="padding: 0px;
-    margin: 0px; font-size:1.1rem; text-decoration: underline;"><b>${props.long_name}</b></p><p class="indented" style="padding: 0px;
-    margin: 0px;">${props.event1}</p><p class="indented" style="padding: 0px;
-    margin: 0px;">${props.event2}</p><p class="center" style="padding: 0px;
-    margin: 0px; font-size:1.1rem; text-decoration: underline;"><b>Rulers of Rome:</b></p>${props.rulers}<br><img src="${props.ruler_image_link}" style="${style}">`
+    margin: 0px; font-size:1.1rem; text-decoration: underline;"><b>${props.long_name}</b></p>
+    
+    <p class="center"><img src="${props.image_link2}" style="${style}"></p>
+
+    <p class="indented" style="padding: 0px;
+    margin: 0px;">${props.event2}</p>
+  
+    <p class="center" ><img src="${props.image_link}" style="${style}"></p>
+    
+    
+    <p class="center" style="padding: 0px;
+    margin: 0px; font-size:1.1rem; text-decoration: underline;"><b>Rulers of Rome:</b></p><p class="center" style="padding: 0px;
+    margin: 0px;">${props.rulers}</p><p class="center" style="padding: 0px;
+    margin: 0px;"><img src="${props.ruler_image_link}" style="${style}"></p>
+    
+    
+
+
+    `
     layer.bindPopup(popupContent, {
         className: "empire-extent-tooltip",
         sticky: true,
@@ -338,6 +353,7 @@ function sequenceUI(empireExtent) {
         let secondevent = ""
         let rulersfull = ""
         let rulersimage = ""
+        let roadimage = ""
 
         // current value of slider is year
         var currentYear = e.target.value
@@ -352,6 +368,7 @@ function sequenceUI(empireExtent) {
                 secondevent = i.feature.properties.event2
                 rulersfull = i.feature.properties.rulers
                 rulersimage = i.feature.properties.ruler_image_link
+                roadimage = i.feature.properties.image_link
 
             }
             makePopups(i.feature.properties, i)
@@ -398,7 +415,8 @@ function sequenceUI(empireExtent) {
         document.getElementById("romeRulersImage");
         romeRulersImage.innerHTML = `<span><img src="${rulersimage}"></span>`
 
-        console.log(`${props.ruler_image_link}`)
+        document.getElementById("roadImage");
+        romeRulersImage.innerHTML = `<span><img src="${roadimage}"></span>`
 
         // document.getElementById("romeRulersImage");
         // romeRulersImage.innerHTML = `<span><img src="${props.ruler_image_link}"</span>`
