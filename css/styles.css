@@ -577,16 +577,12 @@ blockquote {
 }
 
 #romeRulersImage {
-    z-index: 4;
-    font-family: trajan-pro-3,
-        serif;
-    font-weight: 700;
-    font-style: normal;
-    font-size: 1rem;
-    text-shadow: #000000 0rem 0rem 2px,
-        #000000 0rem 0rem 4px,
-        #000000 0rem 0rem 6px,
-        #000000 0rem 0rem 8px;
+    z-index: 9999;
+    position: absolute;
+    top: 10px;
+    left:10px;
+    width: auto;
+    height: auto;
 }
 
 .romeRulersImageStyle {

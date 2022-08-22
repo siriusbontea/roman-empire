@@ -13,6 +13,7 @@
       }
 
 #slider-div {
+    position: absolute;
     margin-left: 47px;
     bottom: -10px;
     }
@@ -69,6 +70,7 @@ input[type=range]::-moz-range-track {
     background: #fff9df;
     border-radius: 1.3px;
     border: 0.2px solid #010101;
+    translate: 0px 6px;
 }
 
 input[type=range]::-moz-range-thumb {
@@ -79,6 +81,7 @@ input[type=range]::-moz-range-thumb {
     border-radius: 10px;
     background: #A91101;
     cursor: pointer;
+    translate: 0px 6px;
 }
 /* Internet Explorer */
 input[type=range]::-ms-track {

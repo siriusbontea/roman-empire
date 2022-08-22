@@ -65,13 +65,13 @@ L.marker([41.9100498, 12.4659593], {
         interactive: false,
     })
     .addTo(map)
-    // .bindTooltip(
-    //     `<img src='images/legionary_globe.png' class='center' style='width: 150px'><br>Geography of the Roman Empire, y'all!`, {
-    //         className: "blue-tooltip",
-    //         maxWidth: 200,
-    //         sticky: true,
-    //     }
-    // );
+// .bindTooltip(
+//     `<img src='images/legionary_globe.png' class='center' style='width: 150px'><br>Geography of the Roman Empire, y'all!`, {
+//         className: "blue-tooltip",
+//         maxWidth: 200,
+//         sticky: true,
+//     }
+// );
 
 const d = {
     'in': [],
@@ -173,9 +173,9 @@ function drawExtent(empireExtent) {
         },
         onEachFeature: function (feature, layer) {
             if (feature.properties.order == 0) {
-                makePopups (feature.properties, layer)
+                makePopups(feature.properties, layer)
             }
-            
+
         }
     }).addTo(map);
 
@@ -214,24 +214,24 @@ function drawExtent(empireExtent) {
     })
 
     // extent.on('mouseover', function (e) {
-        
+
     //     e.target.setStyle({
     //         color: 'yellow',
     //     })
     // })
     // extent.on('mouseout', function (e) {
-        
+
     //     extent.resetStyle()
     // })
     sequenceUI(extent)
 }
 ///////////////
 
-function makePopups (props, layer) {
+function makePopups(props, layer) {
 
-    
+
     const style =
-    "margin-left:auto;margin-right:auto;width:100%;height:100%;border-radius:10px;background-color:000;border:1px solid #A91101;";
+        "margin-left:auto;margin-right:auto;width:100%;height:100%;border-radius:10px;background-color:000;border:1px solid #A91101;";
 
     const popupContent = `<p class="center" style="padding: 0px;
     margin: 0px; font-size:1.1rem; text-decoration: underline;"><b>${props.long_name}</b></p><p class="indented" style="padding: 0px;
@@ -243,7 +243,7 @@ function makePopups (props, layer) {
         sticky: true,
         direction: "auto",
         offset: [0, 250],
-      });
+    });
 }
 
 
@@ -354,7 +354,7 @@ function sequenceUI(empireExtent) {
                 rulersimage = i.feature.properties.ruler_image_link
 
             }
-            makePopups (i.feature.properties, i)
+            makePopups(i.feature.properties, i)
 
             if (i.feature.properties.order > currentYear) {
                 i.setStyle({
@@ -376,9 +376,9 @@ function sequenceUI(empireExtent) {
         // Adding the Year Indicator for the slider
         document.getElementById("yearIndicator");
         yearIndicator.innerHTML = `<span>${year}</span>`
-          // Adding the Year Indicator for the slider (Large Screen)
-          document.getElementById("yearIndicatorLargeScreen");
-          yearIndicatorLargeScreen.innerHTML = `<span>${year}</span>`
+        // Adding the Year Indicator for the slider (Large Screen)
+        document.getElementById("yearIndicatorLargeScreen");
+        yearIndicatorLargeScreen.innerHTML = `<span>${year}</span>`
         // ////////
         document.getElementById("longName");
         // longName.innerHTML = `<span>${longname}</span>`
@@ -398,13 +398,20 @@ function sequenceUI(empireExtent) {
         document.getElementById("romeRulersImage");
         romeRulersImage.innerHTML = `<span><img src="${rulersimage}"></span>`
 
-        const empireContent = document.getElementById("empire-content");
-        empireContent.innerHTML = `<span>${firstevent}</span>
-                                   <span><img src="${rulersimage}" class="romeRulersImageStyle"></span>`
+        console.log(`${props.ruler_image_link}`)
+
+        // document.getElementById("romeRulersImage");
+        // romeRulersImage.innerHTML = `<span><img src="${props.ruler_image_link}"</span>`
+
+
+        // const empireContent = document.getElementById("empire-content");
+        // empireContent.innerHTML = `<span>${firstevent}</span>
+        //                            <span><img src="${rulersimage}" class="romeRulersImageStyle"></span>`
 
     });
 
 } // end of function sequenceUI()
+
 
 
 /* --------------- Toggle on/off info footer content ---------------  */
