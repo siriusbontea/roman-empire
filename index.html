@@ -78,10 +78,17 @@
             <div>
                 <h1 class="center">Infrastructure of the Roman Empire</h1>
                 <hr>
+                <h2>Video Introduction:</h2>
+                <ul>
+                    <li>Check out the video introduction for this project on <a href="https://www.youtube.com/channel/UCV1Lb9bNrTf2NGdLMO2F_Bg">YouTube<i class="social-font fab fa-youtube"></i></a></li>
+                </ul>
+
                 <h2>Project Notes:
                 </h2>
                 <ul>
-                    <li>With more than 56% of internet traffic going through mobile devices as of January 2022, this project aimed to tackle the challenge of simultaneously providing mobile-friendly and full-desktop experiences through responsive web design.</li>
+                    <li>With more than 56% of internet traffic going through mobile devices as of January 2022, this
+                        project aimed to tackle the challenge of simultaneously providing mobile-friendly and
+                        full-desktop experiences through responsive web design.</li>
                     <li>
                         This project provides an interactive mapping visualisation of Roman territorial expansion from
                         500 B.C. to A.D. 117.
@@ -117,7 +124,7 @@
                 </ul>
                 <hr>
 
-             <!-- 
+                <!-- 
               ┌────────────────────────────────────────────────────────────────┐
               │ Legend below is shamelessly lifted (with slight modifications) │
               │ from the Digital Atlas of the Roman Empire (DARE) website at:  │
@@ -726,14 +733,15 @@
                         Atlas of Roman and Medieval Civilization Dataverse</a> from 2008. This study provides a
                     portable, digital version of the Roman roads identified in the Barrington Atlas, which users can
                     visualise in combination with their own historical data.
-                    <blockquote>Citation:<br>
-                        McCormick, Michael; Huang, Guoping; Zambotti, Giovanni; Lavash, Jessica, 2013, "Roman Road
-                        Network (version 2008)", https://doi.org/10.7910/DVN/TI0KAU, Harvard Dataverse, V1</blockquote>
+                <blockquote>Citation:<br>
+                    McCormick, Michael; Huang, Guoping; Zambotti, Giovanni; Lavash, Jessica, 2013, "Roman Road
+                    Network (version 2008)", https://doi.org/10.7910/DVN/TI0KAU, Harvard Dataverse, V1</blockquote>
                 </p>
                 <p class="indented">Unfortunately, the Harvard dataset is not adequate enough when overlaid on a highly
                     detailed terrain map. The example below shows the 2008 dataset over a topographic base map:</p>
                 <img src="images/old_data.png" class="static-maps">
-                <p class="indented">It becomes readily apparent that there is a mismatch. Taken at face value, the map can be
+                <p class="indented">It becomes readily apparent that there is a mismatch. Taken at face value, the map
+                    can be
                     interpreted in a way that shows how the Romans opted to conquer mountainous alpine territory instead
                     of focusing their efforts on subduing towns and settlements in the fertile Po River Valley! This, of
                     course, is not a logical conclusion. I applaud the work that went into creating the original
@@ -751,7 +759,7 @@
 
                 <br>
                 <hr>
-                
+
                 <h2>Base Map Attributions:</h2>
                 <ul>
 
@@ -765,36 +773,60 @@
                             href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a
                             href="https://www.mapbox.com/">Mapbox</a>'</li>
                 </ul>
-<hr>
-<h2>Tools, Resources, and Methodology</h2>
-                <p class="indented red-bold">Add stuff here about Leaflet, FreeBSD, QGIS, Inkscape, MapShaper, Ninja Skillz, Mapbox, etc.</p>
+                <hr>
+                <h2>Tools, Resources, and Methodology</h2>
+                <ul>
+                    <li>All software tools ran on a basic laptop with the <a href="https://freebsdfoundation.org/freebsd-project/what-is-freebsd/">FreeBSD
+                    13.1-RELEASE</a> operating system:
+                    <blockquote>
+                    MSI Pulse GL66 laptop w/ external monitor<br>
+                    CPU: 11th Gen Intel i7-11800H (16) @ 2.304GHz<br>
+                    GPU: GeForce RTX 3070 Mobile / 8192MiB<br>
+                    Memory: 65204MiB
+                    </blockquote>
+                    <li><a href="https://www.qgis.org/en/site/forusers/alldownloads.html?highlight=FreeBSD#freebsd">QGIS 3.26.2-Buenos Aires</a> was used for all data layer creation, and data processing and editing. 
+                     </li> 
+                    
+                    <li><a href="https://freebsd.pkgs.org/13/freebsd-amd64/vscode-1.70.2_1.pkg.html">VS Code OSS 1.70.2</a> was used for code editing and interaction with GitHub</li>
+                    <li><a href="https://freebsd.pkgs.org/13/freebsd-amd64/gimp-2.10.32,2.pkg.html">GIMP 2.10.32</a> was used for general editing and processing of raster images</li>
+                    <li><a href="https://freebsd.pkgs.org/13/freebsd-amd64/inkscape-1.2.1_4.pkg.html">Inkscape 1.2.1</a> was used to edit and create custom SVGs.
+                    The GeoJSON file format for most map data of the map data and later converted to TopoJSON file format to optimise webpage download times.</li>
+                    <li>And last, but certainly not least, the <a href="https://leafletjs.com/">Leaflet Javascipt Library 1.8.0</a> was used for mapping requirements, user interface, etc.</li>
+              
+                </ul>
                 <br>
                 <hr>
+
+
                 <h2>Additional Project Information</h2>
                 <p class="indented">Dozens of maps and datasets were examined and referenced to create the new dataset
-                    displayed here. This includes independent research from Britain, Spain, Turkey, and elsewhere. Please
+                    displayed here. This includes independent research from Britain, Spain, Turkey, and elsewhere.
+                    Please
                     check out my Github page for a comprehensive list of tools, resources, and methods used for this
-                    project.</p><p class="center"><a href="https://github.com/siriusbontea/roman-empire#readme"><i
-                        class="social-font fab fa-github"></i><br>https://github.com/siriusbontea/roman-empire#readme</a></p>
+                    project.</p>
+                <p class="center"><a href="https://github.com/siriusbontea/roman-empire#readme"><i
+                            class="social-font fab fa-github"></i><br>https://github.com/siriusbontea/roman-empire#readme</a>
+                </p>
                 <br>
                 <hr>
 
                 <img src="svg/University_of_Kentucky_logo.svg" class="footer-img center">
-              <hr>
-                    <p class="center">Copyright © <a href="https://siriusbontea.github.io/">Sirius T. Bontea</a><br>A.D. 2022</p>
-                    <div id="social" class="center">
-                        <a href="https://www.linkedin.com/in/siriusbontea/"><i
-                                class="social-font fab fa-linkedin"></i></a>
-                        <a href="https://github.com/siriusbontea"><i class="social-font fab fa-github"></i></a>
-                        <a href="https://www.openstreetmap.org/user/Sirius%20T%20Bontea/history#map=3/43.94/-68.94"><i
-                                class="social-font fas fa-map"></i></a>
-                        <a href="https://twitter.com/SiriusBontea"><i class="social-font fab fa-twitter"></i></a>
-                        <a href="https://www.facebook.com/sirius.t.bontea"><i
-                                class="social-font fab fa-facebook-f"></i></a>
-                             
-                                
-                                   
-                             
+                <hr>
+                <p class="center">Copyright © <a href="https://siriusbontea.github.io/">Sirius T. Bontea</a><br>A.D.
+                    2022</p>
+                <div id="social" class="center">
+                    <a href="https://www.linkedin.com/in/siriusbontea/"><i class="social-font fab fa-linkedin"></i></a>
+                    <a href="https://github.com/siriusbontea"><i class="social-font fab fa-github"></i></a>
+                    <a href="https://www.openstreetmap.org/user/Sirius%20T%20Bontea/history#map=3/43.94/-68.94"><i
+                            class="social-font fas fa-map"></i></a>
+                    <a href="https://twitter.com/SiriusBontea"><i class="social-font fab fa-twitter"></i></a>
+                    <a href="https://www.facebook.com/sirius.t.bontea"><i class="social-font fab fa-facebook-f"></i></a>
+                    <a href="https://www.youtube.com/channel/UCV1Lb9bNrTf2NGdLMO2F_Bg"><i class="social-font fab fa-youtube"></i></a>
+                    
+
+
+
+
                 </div>
             </div>
         </div>
@@ -806,160 +838,162 @@
     </button>
     <section id="legendPanel">
         <h1>Legend:</h1>
-        <div><table>
-            <tbody>
-             
-                <tr class="bold-underline">
-                    <td>Symbol</td>
-                
-                    <td class="center">Description</td>
-               
-                </tr>
-                <tr>
-                    <!-- <td><img src="/pics/circlew12.png"></td> -->
-                    <td><img src="svg/settlement.svg" width="15px" class="center"></td>
-                 
-                    <td>Major settlement<br>(capital, <em>colonia, municipium</em>)</td>
-                   
-                </tr>
-               
-                <tr>
-               
-                    <td><img src="svg/square.svg" width="14px" class="center"></td>
-                    
-                    <td>Major fort (legionary fortress)</td>
-                    
-                </tr>
-                <tr>
-              
-                    <td><img src="svg/settlement.svg" width="12px" class="center"></td>
-                   
-                    <td><em>Civitas</em> capital (Late Roman Gallia)</td>
-                 
-                </tr>
-                <tr>
-                 
-                    <td><img src="svg/settlement.svg" width="12px" class="center"></td>
-                    
-                    <td>Settlement (<em>civitas, vicus</em>, other settlement)</td>
-                  
-                </tr>
-                <tr>
-            
-                    <td><img src="svg/square.svg" width="11px" class="center"></td>
-                   
-                    <td>Fort (<em>castrum, castellum</em>)</td>
-                  
-                </tr>
-                <tr>
-                 
-                    <td><img src="svg/square.svg" width="8px" class="center"></td>
-                 
-                    <td>Fortlet, tower</td>
-                  
-                </tr>
-                <tr>
-                    
-                    <td><img src="svg/diamond.svg" width="14px" class="center"></td>
-                 
-                    <td>Road or coastal station</td>
-                 
-                </tr>
-                <tr>
-             
-                    <td><img src="svg/circle_brown.svg" width="13px" class="center"></td>
-                  
-                    <td>Iron Age (Celtic) Oppidum</td>
-               
-                </tr>
-                <tr>
-             
-                    <td><img src="svg/circle.svg" width="13px" class="center"></td>
-                 
-                    <td>Late Roman Oppidum</td>
-             
-                </tr>
-                <tr>
-                    
-                    <td><img src="svg/oasis.svg" width="20px" class="center"></td>
-                 
-                    <td>Oasis</td>
-               
-                </tr>
-                <tr>
-                   
-                    <td><img src="svg/star.svg" width="15px" class="center"></td>
-                
-                    <td>Sanctuary or temple</td>
-                 
-                </tr>
-                <tr>
-            
-                    <td><img src="svg/mount.svg" width="13px" class="center"></td>
-                    
-                    <td>Bath</td>
-                  
-                </tr>
-                <tr>
-               
-                    <td><img src="svg/tumulus.svg" width="17px" class="center"></td>
-             
-                    <td>Tumulus</td>
-                 
-                </tr>
-                <tr>
-               
-                    <td><img src="svg/cemetery.svg" width="13px" class="center"></td>
-              
-                    <td>Cemetery</td>
-              
-                </tr>
-                <tr>
-              
-                    <td><img src="svg/church.svg" width="17px" class="center"></td>
-                
-                    <td>Monastery/Church</td>
-                   
-                </tr>
-               
-                <tr>
-               
-                    <td><img src="svg/villa.svg" width="15px" class="center"></td>
-              
-                    <td>Villa</td>
-               
-                </tr>
-                <tr>
-               
-                    <td><img src="svg/mine.svg" width="20px" class="center"></td>
-                    
-                    <td>Mine, quarry or production</td>
-                 
-                </tr>
-                <tr>
-                  
-                    <td><img src="svg/pass.svg" width="18px" class="center"></td>
-               
-                    <td>Pass</td>
-                
-                </tr>
-                <tr>
-                
-                    <td><img src="svg/bridge.svg" width="22px" class="center"></td>
-                 
-                    <td>Bridge</td>
-                   
-                </tr>
-                <tr>
-         
-                    <td><img src="svg/circle.svg" width="7px" class="center"></td>
-                
-                    <td>Road/milestone</td>
-                  
-                </tr>
-             
-            </tbody>
-        </table></div>
+        <div>
+            <table>
+                <tbody>
+
+                    <tr class="bold-underline">
+                        <td>Symbol</td>
+
+                        <td class="center">Description</td>
+
+                    </tr>
+                    <tr>
+                        <!-- <td><img src="/pics/circlew12.png"></td> -->
+                        <td><img src="svg/settlement.svg" width="15px" class="center"></td>
+
+                        <td>Major settlement<br>(capital, <em>colonia, municipium</em>)</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><img src="svg/square.svg" width="14px" class="center"></td>
+
+                        <td>Major fort (legionary fortress)</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/settlement.svg" width="12px" class="center"></td>
+
+                        <td><em>Civitas</em> capital (Late Roman Gallia)</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/settlement.svg" width="12px" class="center"></td>
+
+                        <td>Settlement (<em>civitas, vicus</em>, other settlement)</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/square.svg" width="11px" class="center"></td>
+
+                        <td>Fort (<em>castrum, castellum</em>)</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/square.svg" width="8px" class="center"></td>
+
+                        <td>Fortlet, tower</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/diamond.svg" width="14px" class="center"></td>
+
+                        <td>Road or coastal station</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/circle_brown.svg" width="13px" class="center"></td>
+
+                        <td>Iron Age (Celtic) Oppidum</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/circle.svg" width="13px" class="center"></td>
+
+                        <td>Late Roman Oppidum</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/oasis.svg" width="20px" class="center"></td>
+
+                        <td>Oasis</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/star.svg" width="15px" class="center"></td>
+
+                        <td>Sanctuary or temple</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/mount.svg" width="13px" class="center"></td>
+
+                        <td>Bath</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/tumulus.svg" width="17px" class="center"></td>
+
+                        <td>Tumulus</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/cemetery.svg" width="13px" class="center"></td>
+
+                        <td>Cemetery</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/church.svg" width="17px" class="center"></td>
+
+                        <td>Monastery/Church</td>
+
+                    </tr>
+
+                    <tr>
+
+                        <td><img src="svg/villa.svg" width="15px" class="center"></td>
+
+                        <td>Villa</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/mine.svg" width="20px" class="center"></td>
+
+                        <td>Mine, quarry or production</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/pass.svg" width="18px" class="center"></td>
+
+                        <td>Pass</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/bridge.svg" width="22px" class="center"></td>
+
+                        <td>Bridge</td>
+
+                    </tr>
+                    <tr>
+
+                        <td><img src="svg/circle.svg" width="7px" class="center"></td>
+
+                        <td>Road/milestone</td>
+
+                    </tr>
+
+                </tbody>
+            </table>
+        </div>
 
     </section>
 
@@ -981,8 +1015,11 @@
 
 
         <div id="romeRulersImage"></div>
-        <div id="eventOne">In the face of a potential Sabine invasion, the Senate passed a <i>senatus consultum</i> authorizing the consuls to appoint a dictator, a magistrate who held absolute power during a national emergency.<br><br>The Roman Republic used this political methodology and appointed dictators in response to crises over several subsequent centuries.</div>
-        
+        <div id="eventOne">In the face of a potential Sabine invasion, the Senate passed a <i>senatus consultum</i>
+            authorizing the consuls to appoint a dictator, a magistrate who held absolute power during a national
+            emergency.<br><br>The Roman Republic used this political methodology and appointed dictators in response to
+            crises over several subsequent centuries.</div>
+
 
         <!-- <div id="emperorsShortName"></div> -->
 
@@ -1038,7 +1075,7 @@
     <!-- <div id="longName">Extent of the Roman Republic, 500 B.C.</div> -->
 
     <!-- Pulling the data from CombinedExtentLayers TopoJSON-->
-<div id="sundialIcon"><img src="images/sundial_slider_icon.svg"></div>
+    <div id="sundialIcon"><img src="images/sundial_slider_icon.svg"></div>
 
 
     <div id="page-title">
@@ -1049,7 +1086,7 @@
 
     </div>
 
-<div id="yearIndicatorLargeScreen" class="center">500 B.C.</div>
+    <div id="yearIndicatorLargeScreen" class="center">500 B.C.</div>
 
     <!-- <section id="events-panel">
         Events:
@@ -1075,7 +1112,7 @@
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous">
-    </script>
+        </script>
 
     <!-- Bootstrap Slider JS -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/11.0.2/bootstrap-slider.min.js"
