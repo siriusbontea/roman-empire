@@ -286,17 +286,17 @@ blockquote {
 
 #sundialIcon {
     z-index: 2;
-    background-color: #ffe4ce;
+    /* background-color: #ffe4ce; */
     position: absolute;
-    padding: 3px;
+    /* padding:3px; */
     bottom: 5px;
-    left: 5px;
-    width: 40px;
-    height: 40px;
-    background: #A91101;
-    border-radius: 18px;
-    border-color: #000000;
-    border-style: solid;
+    /* left: 5px; */
+    width: 45px;
+    height: 45px;
+    /* background: #A91101; */
+    /* border-radius: 18px; */
+    /* border-color: #000000; */
+    /* border-style: solid; */
 }
 
 #yearIndicator {
@@ -325,7 +325,7 @@ blockquote {
     z-index: 10;
     position: absolute;
     bottom: 40px;
-    left: 49px;
+    left: 56px;
     color: #ffffff;
     font-family: trajan-pro-3,
         serif;
@@ -842,7 +842,7 @@ blockquote {
 
     #yearIndicatorLargeScreen {
         display: block;
-        left: 310px;
+        left: 326px;
         bottom: 40px;
     }
 
@@ -862,7 +862,7 @@ blockquote {
     }
 
     #sundialIcon {
-        left: 265px;
+        left: 270px;
     }
 
 
